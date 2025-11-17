@@ -1,0 +1,52 @@
+###############################################
+# COURTDOMINION — BUDGET ONLY (MONTHLY COSTS)
+###############################################
+
+========= INFRASTRUCTURE =========
+USED        Railway ............................ $5/mo
+USED        Vercel .............................. $0/mo
+USED        Cloudflare .......................... $0/mo
+USED        Domain Provider ...................... ~$1/mo
+
+========= AUTH & USER MGMT =========
+USED        Clerk (Free Tier) .................... $0/mo
+
+========= EMAIL & NOTIFICATIONS =========
+USED        Resend (Free Tier) ................... $0/mo
+
+========= ANALYTICS =========
+USED        PostHog (Free Tier) .................. $0/mo
+
+========= AUTOMATION =========
+USED        GitHub Actions ........................ $0/mo
+
+========= SUPPORT (STARTING JAN 1) =========
+USED_LATER  Freshdesk (Jan Start) ................ ~$19/mo
+
+========= NOT USED / REMOVED =========
+NOT_USED    Sentry ................................ $26/mo
+NOT_USED    Stripe ................................. usage-based
+NOT_USED    HelpScout ............................. $25/mo
+NOT_USED    HubSpot Starter ....................... $56/mo
+NOT_USED    Resend (Paid Tier) .................... $20/mo
+NOT_USED    Mailchimp (Paid) ...................... $13–25/mo
+NOT_USED    SEMrush / Ahrefs ...................... $99–199/mo
+NOT_USED    Buffer / Hootsuite .................... $15–40/mo
+NOT_USED    Hotjar / FullStory .................... $39–99/mo
+NOT_USED    UptimeRobot ........................... $7–13/mo
+NOT_USED    Pingdom ............................... $15–50/mo
+NOT_USED    Slack Paid ............................ $7/mo
+NOT_USED    External CronSvc ...................... $5–10/mo
+NOT_USED    Datadog ............................... $15–25/mo
+NOT_USED    LogRocket ............................. $15–99/mo
+NOT_USED    Render ................................ $5–20/mo
+NOT_USED    DigitalOcean App ...................... $5–20/mo
+NOT_USED    Twilio SMS ............................ $15/mo
+
+###############################################
+# ACTIVE MONTHLY SPEND (NOW): $6/mo
+# ACTIVE MONTHLY SPEND (JAN): $25/mo
+# TOTAL ONE-TIME COSTS BEFORE JAN 20: $42
+# TOTAL THROUGH JAN 20: $54 (ROUND TO $60)
+###############################################
+

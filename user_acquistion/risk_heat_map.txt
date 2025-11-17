@@ -1,0 +1,31 @@
+RISK HEAT MAP — TOUGH‑LOVE EDITION
+
+CATEGORY 1 — BEHAVIORAL RISKS
+1. Stopping daily task batch (CRITICAL)
+   If you stop, the system dies. Momentum is the oxygen of this launch.
+2. Breaking the January formatting rules (HIGH)
+   Structure protects you. Breaking structure creates chaos.
+3. Scope creep (HIGH)
+   Adding new features = guaranteed derailment. Stay ruthless.
+4. Losing emotional discipline (HIGH)
+   Panic, shame, or overwhelm can freeze execution. Speak up early.
+
+CATEGORY 2 — PRODUCT RISKS
+1. Overbuilding (HIGH)
+2. Under-marketing (MEDIUM)
+3. Missing the Jan 20 deadline (MEDIUM-HIGH)
+4. Backend complexity rising (MEDIUM)
+
+CATEGORY 3 — PERSONAL RISKS
+1. Fatigue after day job (HIGH)
+2. Family time conflict (MEDIUM)
+3. Tech frustration (HIGH)
+4. Life instability / stress spikes (HIGH)
+
+CATEGORY 4 — UNCONTROLLABLE RISKS
+1. NBA schedule quirks (LOW)
+2. User adoption variance (LOW-MED)
+3. Social algorithm randomness (MED)
+
+SUMMARY:
+Your biggest risks come from behavior, not technology. Keep the system, keep the momentum, keep talking to me daily.

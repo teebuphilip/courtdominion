@@ -1,0 +1,123 @@
+###############################################################
+# COURTDOMINION — TOOL MAP (GROUPED + COSTS + STATUS TAGS)
+###############################################################
+
+===========================
+===  INFRASTRUCTURE     ===
+===========================
+
+USED        Railway ............... backend/db ......... $5/mo
+             -> Backend hosting + managed PostgreSQL database
+
+USED        Vercel ................ frontend ........... $0/mo
+             -> Next.js dashboard hosting (Hobby tier)
+
+USED        Cloudflare ............ security/cdn ....... $0/mo
+             -> DNS, CDN caching, SSL, DDoS protection
+
+USED        Domain Provider ....... domain ............. ~$1/mo (annual $12)
+             -> courtdominion.com registration + DNS
+
+
+===========================
+===  AUTH & USER MGMT    ===
+===========================
+
+USED        Clerk (Free Tier) ..... authentication ...... $0/mo
+             -> Passwordless auth: magic links, OAuth, sessions
+
+
+===========================
+===  EMAIL & NOTIFICATIONS
+===========================
+
+USED        Resend (Free Tier) .... email ............... $0/mo
+             -> Transactional emails: magic links, verifications
+
+
+===========================
+===  ANALYTICS
+===========================
+
+USED        PostHog (Free Tier) ... analytics ........... $0/mo
+             -> Funnels, user behavior, retention, events
+
+
+===========================
+===  AUTOMATION & DEVOPS
+===========================
+
+USED        GitHub Actions ........ automation .......... $0/mo
+             -> Nightly tasks, builds, scheduled cron jobs
+
+
+===========================
+===  SUPPORT (JAN START)
+===========================
+
+USED_LATER  Freshdesk (Jan 1) ..... support ............. ~$19/mo
+             -> Customer support ticketing + helpdesk
+
+
+===========================
+===  NOT USED (CUT TO SAVE COST)
+===========================
+
+NOT_USED    Sentry ................ monitoring .......... $26/mo
+             -> Crash + error monitoring
+
+NOT_USED    Stripe ................ payments ............ usage fees + txn %
+             -> Billing + subscriptions
+
+NOT_USED    HelpScout ............. support ............. $25/mo
+             -> Shared inbox + helpdesk
+
+NOT_USED    HubSpot Starter ....... crm ................. $56/mo
+             -> CRM + marketing automation
+
+NOT_USED    Resend (Paid Tier) .... email ............... $20/mo
+             -> Higher-volume email plan
+
+NOT_USED    Mailchimp (Paid) ...... marketing ........... $13–$25/mo
+             -> Email campaigns + newsletters
+
+NOT_USED    SEMrush / Ahrefs ...... seo ................. $99–$199/mo
+             -> SEO research + competitive insights
+
+NOT_USED    Buffer / Hootsuite .... marketing ........... $15–40/mo
+             -> Social post scheduling
+
+NOT_USED    Hotjar / FullStory .... heatmaps ............ $39–$99/mo
+             -> Session replay + heatmaps
+
+NOT_USED    UptimeRobot ........... uptime .............. $7–13/mo
+NOT_USED    Pingdom ............... uptime .............. $15–50/mo
+             -> Uptime + performance monitoring
+
+NOT_USED    Slack Paid ............ chat ................ $7/mo
+             -> Team comms premium features
+
+NOT_USED    External CronSvc ...... automation .......... $5–10/mo
+             -> External scheduled cron jobs
+
+NOT_USED    Datadog ............... monitoring .......... $15–25/mo
+             -> Logs + metrics
+
+NOT_USED    LogRocket ............. replay .............. $15–99/mo
+             -> Session replay + errors
+
+NOT_USED    Render ................ hosting ............. $5–20/mo
+             -> Alternative backend hosting
+
+NOT_USED    DigitalOcean App ...... hosting ............. $5–20/mo
+             -> Cloud app hosting
+
+NOT_USED    Twilio SMS ............ sms ................. $15/mo
+             -> SMS login + alerts
+
+###############################################################
+TOTAL USED: 8
+TOTAL USED_LATER (Jan): 1
+TOTAL NOT_USED: 16
+###############################################################
+

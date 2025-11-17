@@ -1,0 +1,1355 @@
+
+COST SUMMARY:
+Week 0-6: $6/week (domain only)
+Week 7-9: $11/week (+ Railway $5)
+Week 10: $30/week (+ Freshdesk $19)
+Total to Launch: $105
+
+================================================================================
+WEEK 0: DESKTOP & ENVIRONMENT SETUP
+Nov 14-20, 2024
+================================================================================
+
+DAY 1 - Thursday, Nov 14, 2024 (TODAY)
+Time: 1.5 hours
+Tasks:
+[ ] Install Homebrew (Mac) or Chocolatey (Windows)
+    Mac: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    Windows: PowerShell as Admin, run Chocolatey install
+[ ] Install Git: brew install git (Mac) or choco install git (Windows)
+[ ] Configure Git:
+    git config --global user.name "Your Name"
+    git config --global user.email "your@email.com"
+[ ] Install VS Code: brew install --cask visual-studio-code (Mac) or choco install vscode (Windows)
+[ ] Open VS Code, install extensions: Python, Prettier, ESLint, Tailwind CSS IntelliSense
+Checkpoint: Git and VS Code working
+
+---
+
+DAY 2 - Friday, Nov 15, 2024
+Time: 2 hours
+Tasks:
+[ ] Install Node.js v20: brew install node@20 (Mac) or choco install nodejs (Windows)
+[ ] Verify: node --version && npm --version (should show v20.x)
+[ ] Install Python 3.11: brew install python@3.11 (Mac) or choco install python (Windows)
+[ ] Verify: python3 --version (should show 3.11.x)
+[ ] Install PostgreSQL: brew install postgresql@15 (Mac) or choco install postgresql (Windows)
+[ ] Start PostgreSQL: brew services start postgresql@15 (Mac) or net start postgresql-x64-15 (Windows)
+[ ] Verify: psql --version
+Checkpoint: Node, Python, PostgreSQL all installed and verified
+
+---
+
+DAY 3 - Saturday, Nov 16, 2024
+Time: 2.5 hours
+Tasks:
+[ ] Create GitHub account (if don't have): https://github.com/signup
+[ ] Setup SSH key for GitHub:
+    ssh-keygen -t ed25519 -C "your@email.com"
+    cat ~/.ssh/id_ed25519.pub (copy this)
+    Add to GitHub: Settings → SSH Keys → New SSH Key
+[ ] Test SSH: ssh -T git@github.com (should say "Hi username!")
+[ ] Create new repository: "court-dominion" (private)
+[ ] Clone your existing backend code (if you have it) OR create folder:
+    mkdir ~/projects/court-dominion
+    cd ~/projects/court-dominion
+    git init
+[ ] Copy your 14 backend files into this folder (if you have them)
+Checkpoint: GitHub setup, project folder created
+
+---
+
+DAY 4 - Sunday, Nov 17, 2024
+Time: 3 hours
+Tasks:
+[ ] Setup backend API locally:
+    cd ~/projects/court-dominion
+    mkdir backend
+    (Copy your Python files here: dbb2_*.py, sql/*.sql, requirements.txt)
+[ ] Create Python virtual environment:
+    python3 -m venv venv
+    source venv/bin/activate (Mac) or venv\Scripts\activate (Windows)
+[ ] Install dependencies:
+    pip install -r dbb2_requirements.txt
+[ ] Create PostgreSQL database:
+    createdb nba_projections
+[ ] Run database schemas:
+    psql -d nba_projections -f sql/dbb2_database_schema.sql
+    psql -d nba_projections -f sql/dbb2_scoring_schema.sql
+[ ] Create .env file:
+    echo "DATABASE_URL=postgresql://localhost/nba_projections" > .env
+Checkpoint: Database created and schemas loaded
+
+---
+
+DAY 5 - Monday, Nov 18, 2024
+Time: 2 hours
+Tasks:
+[ ] Test backend API:
+    cd backend/app
+    python dbb2_main.py
+[ ] Open browser: http://localhost:8000/docs (should see Swagger UI)
+[ ] Test with demo API key:
+    curl -H "X-API-Key: free_demo_key_12345" http://localhost:8000/health
+[ ] Test player projection:
+    curl -H "X-API-Key: free_demo_key_12345" http://localhost:8000/projections/5year/201939
+[ ] Verify all endpoints load in Swagger UI
+[ ] Fix any errors in terminal
+Checkpoint: Backend API fully working locally
+
+---
+
+DAY 6 - Tuesday, Nov 19, 2024
+Time: 1.5 hours
+Tasks:
+[ ] Sign up for accounts (all free tiers):
+[ ] Clerk: https://clerk.com (authentication)
+    - Create application: "Court Dominion"
+    - Choose "Email + Magic Links"
+    - Save API keys (publishable key + secret key)
+[ ] Vercel: https://vercel.com (frontend hosting)
+    - Sign up with GitHub
+    - Don't deploy anything yet
+[ ] Railway: https://railway.app (backend hosting)
+    - Sign up with GitHub
+    - Don't deploy anything yet
+[ ] Resend: https://resend.com (email)
+    - Create API key
+    - Verify domain later
+[ ] PostHog: https://posthog.com (analytics)
+    - Create project: "Court Dominion"
+    - Save project API key
+Checkpoint: All accounts created, API keys saved in notes
+
+---
+
+DAY 7 - Wednesday, Nov 20, 2024
+Time: 2.5 hours
+Tasks:
+[ ] Create Next.js project:
+    cd ~/projects/court-dominion
+    npx create-next-app@latest frontend --typescript --tailwind --app
+[ ] Navigate to frontend: cd frontend
+[ ] Install Clerk:
+    npm install @clerk/nextjs
+[ ] Install shadcn/ui:
+    npx shadcn-ui@latest init
+    (Choose: New York style, Slate color, CSS variables: yes)
+[ ] Create .env.local file:
+    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_...
+    CLERK_SECRET_KEY=sk_test_...
+    NEXT_PUBLIC_API_URL=http://localhost:8000
+[ ] Start dev server: npm run dev
+[ ] Open browser: http://localhost:3000
+Checkpoint: Next.js running with Clerk installed
+
+WEEK 0 COMPLETE ✅
+Total hours: 15 hours (avg 2.1 hours/day)
+
+================================================================================
+WEEK 1: FOUNDATION
+Nov 21-27, 2024
+================================================================================
+
+DAY 8 - Thursday, Nov 21, 2024
+Time: 3 hours
+Tasks:
+[ ] Setup Clerk authentication in Next.js:
+[ ] Create middleware.ts:
+    export { authMiddleware } from "@clerk/nextjs";
+[ ] Wrap app in ClerkProvider (app/layout.tsx)
+[ ] Create sign-in page: app/sign-in/[[...sign-in]]/page.tsx
+[ ] Create sign-up page: app/sign-up/[[...sign-up]]/page.tsx
+[ ] Add Clerk UserButton to navbar
+[ ] Test: Sign up with your email, verify magic link works
+Checkpoint: Can sign up and log in
+
+---
+
+DAY 9 - Friday, Nov 22, 2024
+Time: 3.5 hours
+Tasks:
+[ ] Create API utility functions:
+[ ] Create lib/api.ts:
+    - fetchWithAuth() function
+    - API endpoints constants
+    - Error handling wrapper
+[ ] Test API connection:
+    - Create test page: app/test/page.tsx
+    - Fetch /health endpoint
+    - Display result in UI
+[ ] Create app/dashboard/layout.tsx (sidebar + navbar)
+[ ] Create app/dashboard/page.tsx (dashboard home)
+[ ] Add navigation links (Dashboard, Players, Leagues, Settings)
+Checkpoint: Dashboard layout exists, API connected
+
+---
+
+DAY 10 - Saturday, Nov 23, 2024
+Time: 4 hours
+Tasks:
+[ ] Install shadcn components you'll need:
+    npx shadcn-ui@latest add button
+    npx shadcn-ui@latest add input
+    npx shadcn-ui@latest add card
+    npx shadcn-ui@latest add table
+    npx shadcn-ui@latest add dialog
+    npx shadcn-ui@latest add badge
+    npx shadcn-ui@latest add select
+[ ] Create components/PlayerCard.tsx (displays player projection)
+[ ] Create components/SearchBar.tsx (search input component)
+[ ] Test components on dashboard page
+Checkpoint: UI components library ready
+
+---
+
+DAY 11 - Sunday, Nov 24, 2024
+Time: 4 hours
+Tasks:
+[ ] Create app/dashboard/players/page.tsx (player search)
+[ ] Add search input field
+[ ] Connect to /players?q=search API endpoint
+[ ] Display search results in grid of PlayerCards
+[ ] Add loading state (skeleton cards)
+[ ] Add empty state ("No players found")
+[ ] Test: Search for "curry", see Stephen Curry card
+Checkpoint: Player search working
+
+---
+
+DAY 12 - Monday, Nov 25, 2024
+Time: 3 hours
+Tasks:
+[ ] Create app/dashboard/players/[id]/page.tsx (player detail)
+[ ] Fetch player projection from API (/projections/5year/{id})
+[ ] Display all stats in organized cards:
+    - Basic stats (PPG, RPG, APG)
+    - Shooting (FG%, 3P%, FT%)
+    - Advanced (Games played, confidence score)
+[ ] Add "Add to League" button (disabled for now)
+[ ] Add back button to search
+Checkpoint: Player detail page complete
+
+---
+
+DAY 13 - Tuesday, Nov 26, 2024
+Time: 3 hours
+Tasks:
+[ ] Create app/dashboard/leagues/page.tsx (my leagues list)
+[ ] Fetch leagues from API (/leagues)
+[ ] Display in cards with:
+    - League name
+    - Scoring type
+    - Roster count
+    - "View" button
+[ ] Add "Create League" button
+[ ] Add empty state ("No leagues yet - create your first!")
+Checkpoint: Leagues list page done
+
+---
+
+DAY 14 - Wednesday, Nov 27, 2024
+Time: 3 hours
+Tasks:
+[ ] Git commit all work so far:
+    git add .
+    git commit -m "Week 1 complete: foundation and routing"
+    git push origin main
+[ ] Test entire flow:
+    - Sign up new account
+    - Navigate all pages
+    - Search for players
+    - View player details
+[ ] Fix any bugs found
+[ ] Update README.md with setup instructions
+Checkpoint: Week 1 code committed and tested
+
+WEEK 1 COMPLETE ✅
+Total hours: 23.5 hours (avg 3.4 hours/day)
+
+================================================================================
+WEEK 2: CORE DASHBOARD - PART 1
+Nov 28 - Dec 4, 2024
+================================================================================
+
+DAY 15 - Thursday, Nov 28, 2024 (THANKSGIVING)
+Time: 1 hour (light day)
+Tasks:
+[ ] Plan dashboard home page layout on paper
+[ ] List what stats to show:
+    - Total leagues count
+    - Total players rostered
+    - Recent activity feed
+[ ] Sketch wireframe
+Checkpoint: Dashboard planned
+
+---
+
+DAY 16 - Friday, Nov 29, 2024
+Time: 4 hours
+Tasks:
+[ ] Build dashboard home page (app/dashboard/page.tsx):
+[ ] Add stats cards:
+    - Fetch league count from API
+    - Show "X leagues" stat
+    - Show "Welcome back" message
+[ ] Add "Quick Actions" section:
+    - "Create League" button → /dashboard/leagues/create
+    - "Search Players" button → /dashboard/players
+[ ] Add recent activity placeholder (build later)
+Checkpoint: Dashboard home functional
+
+---
+
+DAY 17 - Saturday, Nov 30, 2024
+Time: 4 hours
+Tasks:
+[ ] Improve player search page:
+[ ] Add filters:
+    - Position filter (PG, SG, SF, PF, C)
+    - Team filter (dropdown of NBA teams)
+[ ] Add sorting options:
+    - By name
+    - By PPG
+    - By projected value
+[ ] Add pagination (20 players per page)
+Checkpoint: Advanced player search working
+
+---
+
+DAY 18 - Sunday, Dec 1, 2024
+Time: 4 hours
+Tasks:
+[ ] Create player comparison feature:
+[ ] Add "Compare" button on player cards
+[ ] Create app/dashboard/players/compare/page.tsx
+[ ] Select 2-4 players
+[ ] Show side-by-side stats table
+[ ] Highlight better stats in green
+Checkpoint: Player comparison tool done
+
+---
+
+DAY 19 - Monday, Dec 2, 2024
+Time: 3 hours
+Tasks:
+[ ] Improve UI polish on all pages so far:
+[ ] Add loading skeletons everywhere
+[ ] Add error states (try/catch with error messages)
+[ ] Add toast notifications (install: npx shadcn-ui@latest add toast)
+[ ] Test error handling (disconnect backend, see errors)
+Checkpoint: Better UX with loading/error states
+
+---
+
+DAY 20 - Tuesday, Dec 3, 2024
+Time: 3.5 hours
+Tasks:
+[ ] Create components/Navbar.tsx (persistent navigation):
+[ ] Logo (Court Dominion)
+[ ] Navigation links (Dashboard, Players, Leagues)
+[ ] User menu (Clerk UserButton)
+[ ] Mobile responsive hamburger menu
+[ ] Test on mobile browser (Chrome DevTools)
+Checkpoint: Professional navbar complete
+
+---
+
+DAY 21 - Wednesday, Dec 4, 2024
+Time: 3 hours
+Tasks:
+[ ] Git commit Week 2 work:
+    git add .
+    git commit -m "Week 2 complete: dashboard home and player features"
+    git push origin main
+[ ] Full testing of all pages
+[ ] Fix any bugs
+[ ] Update task list for Week 3
+Checkpoint: Week 2 committed
+
+WEEK 2 COMPLETE ✅
+Total hours: 22.5 hours (avg 3.2 hours/day)
+
+================================================================================
+WEEK 3: CORE DASHBOARD - PART 2
+Dec 5-11, 2024
+================================================================================
+
+DAY 22 - Thursday, Dec 5, 2024
+Time: 4 hours
+Tasks:
+[ ] Create league creation wizard:
+[ ] Create app/dashboard/leagues/create/page.tsx
+[ ] Step 1: Basic info (name, platform)
+[ ] Step 2: Scoring type (Roto, H2H Categories, H2H Points)
+[ ] Step 3: Categories selection (checkboxes)
+[ ] Add "Next" and "Back" buttons
+[ ] Save state in React state or form library (react-hook-form)
+Checkpoint: Multi-step form structure done
+
+---
+
+DAY 23 - Friday, Dec 6, 2024
+Time: 4 hours
+Tasks:
+[ ] Continue league creation wizard:
+[ ] Step 4: Weekly targets (if Roto) or point values (if H2H Points)
+[ ] Step 5: Roster settings (size, games per week)
+[ ] Step 6: Review and confirm
+[ ] Submit to POST /leagues API
+[ ] Redirect to league detail page on success
+[ ] Show success toast
+Checkpoint: Can create league end-to-end
+
+---
+
+DAY 24 - Saturday, Dec 7, 2024
+Time: 4.5 hours
+Tasks:
+[ ] Create league detail page:
+[ ] Create app/dashboard/leagues/[id]/page.tsx
+[ ] Fetch league from GET /leagues/{id}
+[ ] Display league settings in organized sections:
+    - Basic info
+    - Scoring settings
+    - Categories
+    - Roster settings
+[ ] Add "Edit" button (links to edit page)
+[ ] Add tabs: Overview | Roster | Scores
+Checkpoint: League detail page showing data
+
+---
+
+DAY 25 - Sunday, Dec 8, 2024
+Time: 4.5 hours
+Tasks:
+[ ] Build roster management page:
+[ ] Create app/dashboard/leagues/[id]/roster/page.tsx
+[ ] Fetch roster from GET /leagues/{id}/roster
+[ ] Display players in cards/table
+[ ] Add "Add Player" button → opens search dialog
+[ ] In dialog: search players, click to add
+[ ] Call POST /leagues/{id}/roster
+[ ] Add "Remove" button on each player
+[ ] Call DELETE /leagues/{id}/roster/{player_id}
+Checkpoint: Add/remove players working
+
+---
+
+DAY 26 - Monday, Dec 9, 2024
+Time: 3.5 hours
+Tasks:
+[ ] Build league scoring view:
+[ ] Create app/dashboard/leagues/[id]/scores/page.tsx
+[ ] Fetch score from GET /leagues/{id}/score
+[ ] For Roto leagues:
+    - Show category results table
+    - Show gaps (red = behind, green = ahead)
+    - Show percentage complete
+[ ] For H2H Points:
+    - Show total fantasy points
+    - Show player breakdown
+Checkpoint: Scoring view complete
+
+---
+
+DAY 27 - Tuesday, Dec 10, 2024
+Time: 3 hours
+Tasks:
+[ ] Add gap analysis page (Roto only):
+[ ] Create app/dashboard/leagues/[id]/gaps/page.tsx
+[ ] Fetch from GET /leagues/{id}/gaps
+[ ] Show "Needs Help" categories (red cards)
+[ ] Show "Doing Well" categories (green cards)
+[ ] Show recommendations
+[ ] Add "Get Recommendations" button
+Checkpoint: Gap analysis showing
+
+---
+
+DAY 28 - Wednesday, Dec 11, 2024
+Time: 3 hours
+Tasks:
+[ ] Git commit Week 3:
+    git add .
+    git commit -m "Week 3 complete: league management and scoring"
+    git push origin main
+[ ] Test complete league workflow:
+    - Create league
+    - Add 5-10 players to roster
+    - View scores
+    - View gaps
+[ ] Fix any bugs
+Checkpoint: Week 3 committed, leagues fully functional
+
+WEEK 3 COMPLETE ✅
+Total hours: 26.5 hours (avg 3.8 hours/day)
+
+================================================================================
+WEEK 4: ADVANCED FEATURES
+Dec 12-18, 2024
+================================================================================
+
+DAY 29 - Thursday, Dec 12, 2024
+Time: 4 hours
+Tasks:
+[ ] Build trade analyzer page:
+[ ] Create app/dashboard/leagues/[id]/trade-analyzer/page.tsx
+[ ] Add two sections: "Giving" and "Receiving"
+[ ] Add player search for each section
+[ ] Select multiple players
+[ ] Add "Analyze Trade" button
+[ ] Call POST /leagues/{id}/analyze-trade
+[ ] Display results:
+    - Value change
+    - Category impacts (table)
+    - Trade rating (big badge)
+    - Recommendation (accept/decline)
+Checkpoint: Trade analyzer functional
+
+---
+
+DAY 30 - Friday, Dec 13, 2024
+Time: 4 hours
+Tasks:
+[ ] Build lineup optimizer page:
+[ ] Create app/dashboard/leagues/[id]/lineup/page.tsx
+[ ] Fetch from GET /leagues/{id}/optimize-lineup
+[ ] Display optimized lineup by position:
+    - PG, SG, SF, PF, C sections
+    - UTIL section
+    - Bench section
+[ ] Show lineup suggestions (swap recommendations)
+[ ] Add "Apply Suggestions" button (future feature)
+Checkpoint: Lineup optimizer showing
+
+---
+
+DAY 31 - Saturday, Dec 14, 2024
+Time: 4 hours
+Tasks:
+[ ] Build streaming optimizer page:
+[ ] Create app/dashboard/leagues/[id]/streaming/page.tsx
+[ ] Add three tabs:
+    - Streaming Candidates
+    - Hot Pickups
+    - Schedule Advantage
+[ ] Fetch from respective APIs:
+    GET /leagues/{id}/streaming-candidates
+    GET /leagues/{id}/hot-pickups
+    GET /leagues/{id}/schedule-advantage
+[ ] Display in cards with:
+    - Player name
+    - Games remaining
+    - Streaming value score
+    - "Add to Roster" button
+Checkpoint: Streaming tools complete
+
+---
+
+DAY 32 - Sunday, Dec 15, 2024
+Time: 4 hours
+Tasks:
+[ ] Build weekly tracking page:
+[ ] Create app/dashboard/leagues/[id]/history/page.tsx
+[ ] Add "Save Current Week" button
+[ ] Call POST /leagues/{id}/save-week
+[ ] Fetch history from GET /leagues/{id}/history
+[ ] Display timeline of weeks:
+    - Week number
+    - Date range
+    - Category totals
+[ ] Add charts (install: npm install recharts)
+[ ] Show line chart of category trends over time
+Checkpoint: Weekly tracking working
+
+---
+
+DAY 33 - Monday, Dec 16, 2024
+Time: 3.5 hours
+Tasks:
+[ ] Build player recommendations page:
+[ ] Create app/dashboard/leagues/[id]/recommendations/page.tsx
+[ ] Fetch from GET /leagues/{id}/recommendations
+[ ] Add filters:
+    - Focus categories (multi-select)
+    - Min value score
+[ ] Display recommendations in sortable table
+[ ] Add "Add to Roster" button for each player
+Checkpoint: Recommendations page done
+
+---
+
+DAY 34 - Tuesday, Dec 17, 2024
+Time: 3 hours
+Tasks:
+[ ] Build opponent analyzer (H2H leagues):
+[ ] Create app/dashboard/leagues/[id]/matchup/page.tsx
+[ ] Add opponent roster input:
+    - Search and select opponent's players
+[ ] Call POST /leagues/{id}/analyze-matchup
+[ ] Display results:
+    - Win/loss prediction
+    - Category breakdown
+    - Strategy recommendations
+[ ] Show probability gauge/chart
+Checkpoint: Matchup analyzer complete
+
+---
+
+DAY 35 - Wednesday, Dec 18, 2024
+Time: 3 hours
+Tasks:
+[ ] Git commit Week 4:
+    git add .
+    git commit -m "Week 4 complete: all advanced analytics features"
+    git push origin main
+[ ] Test all advanced features
+[ ] Fix bugs
+[ ] Improve UI consistency across all pages
+Checkpoint: Week 4 committed, all features built
+
+WEEK 4 COMPLETE ✅
+Total hours: 25.5 hours (avg 3.6 hours/day)
+
+================================================================================
+WEEK 5: MARKETING WEBSITE
+Dec 19-25, 2024 (CHRISTMAS WEEK - LIGHTER)
+================================================================================
+
+DAY 36 - Thursday, Dec 19, 2024
+Time: 2.5 hours
+Tasks:
+[ ] Create marketing pages structure:
+[ ] Create app/(marketing)/layout.tsx (different layout from dashboard)
+[ ] Create app/(marketing)/page.tsx (landing page)
+[ ] Add simple navbar (Logo, Features, Pricing, Sign In)
+[ ] Add footer (Links, Copyright, Social)
+Checkpoint: Marketing layout exists
+
+---
+
+DAY 37 - Friday, Dec 20, 2024
+Time: 3 hours
+Tasks:
+[ ] Build landing page hero section:
+[ ] Headline: "Fantasy Basketball Analytics - Free for 2024-25"
+[ ] Subheadline: "ML-powered projections, trade analysis, lineup optimization"
+[ ] CTA button: "Start Free" → /sign-up
+[ ] Hero image or screenshot
+[ ] Add simple animation (fade in on load)
+Checkpoint: Hero section looks good
+
+---
+
+DAY 38 - Saturday, Dec 21, 2024
+Time: 3 hours
+Tasks:
+[ ] Build landing page features section:
+[ ] Create 6 feature cards:
+    1. ML-Powered Projections
+    2. Trade Analyzer
+    3. Lineup Optimizer
+    4. Streaming Tools
+    5. Weekly Tracking
+    6. Opponent Analysis
+[ ] Each card: icon, title, description
+[ ] Add screenshots/mockups if you have them
+Checkpoint: Features section complete
+
+---
+
+DAY 39 - Sunday, Dec 22, 2024
+Time: 2 hours
+Tasks:
+[ ] Build pricing page:
+[ ] Create app/(marketing)/pricing/page.tsx
+[ ] Show pricing tiers:
+    - Free (2024-25 season): $0 - "Everything included"
+    - Pro (2025-26): $49/mo - "Advanced features"
+    - Enterprise (2025-26): $499/mo - "Custom solutions"
+[ ] Add "Starting September 2025" note
+[ ] Add FAQ: "Why free?" "What happens next season?"
+Checkpoint: Pricing page done
+
+---
+
+DAY 40 - Monday, Dec 23, 2024
+Time: 1.5 hours
+Tasks:
+[ ] Build features page:
+[ ] Create app/(marketing)/features/page.tsx
+[ ] Detailed descriptions of each feature
+[ ] Screenshots/demos for each
+[ ] "How it works" step-by-step
+Checkpoint: Features page complete
+
+---
+
+DAY 41 - Tuesday, Dec 24, 2024 (CHRISTMAS EVE)
+Time: 1 hour (light day)
+Tasks:
+[ ] Create Terms of Service:
+[ ] Use template from Termly.io or TermsFeed
+[ ] Create app/(marketing)/terms/page.tsx
+[ ] Copy/paste terms (customize for your product)
+Checkpoint: Terms page exists
+
+---
+
+DAY 42 - Wednesday, Dec 25, 2024 (CHRISTMAS DAY)
+Time: 0 hours
+Tasks:
+[ ] Take the day off! 🎄
+Checkpoint: Merry Christmas!
+
+WEEK 5 COMPLETE ✅
+Total hours: 13 hours (avg 1.9 hours/day)
+
+================================================================================
+WEEK 6: EMAIL & MONITORING
+Dec 26-Jan 1, 2025 (NEW YEAR'S WEEK - LIGHTER)
+================================================================================
+
+DAY 43 - Thursday, Dec 26, 2024
+Time: 2 hours
+Tasks:
+[ ] Setup Resend in your app:
+[ ] Create lib/email.ts utility
+[ ] Import Resend: npm install resend
+[ ] Add RESEND_API_KEY to .env.local
+[ ] Create sendWelcomeEmail() function
+[ ] Test by calling function manually
+Checkpoint: Email utility created
+
+---
+
+DAY 44 - Friday, Dec 27, 2024
+Time: 3 hours
+Tasks:
+[ ] Create email templates:
+[ ] Create emails/ folder
+[ ] Create emails/welcome.tsx (React Email component)
+[ ] Install: npm install @react-email/components
+[ ] Design welcome email:
+    - "Welcome to Court Dominion"
+    - Quick start guide
+    - Links to dashboard
+[ ] Test rendering: npm run email (if using React Email)
+Checkpoint: Welcome email template done
+
+---
+
+DAY 45 - Saturday, Dec 28, 2024
+Time: 2.5 hours
+Tasks:
+[ ] Setup Clerk webhooks to trigger emails:
+[ ] Create app/api/webhooks/clerk/route.ts
+[ ] Listen for user.created event
+[ ] Send welcome email when user signs up
+[ ] Deploy webhook endpoint temporarily to test
+[ ] Configure webhook in Clerk dashboard
+Checkpoint: Welcome emails sending on signup
+
+---
+
+DAY 46 - Sunday, Dec 29, 2024
+Time: 2 hours
+Tasks:
+[ ] Setup PostHog analytics:
+[ ] Install: npm install posthog-js
+[ ] Create lib/analytics.ts
+[ ] Initialize PostHog with your API key
+[ ] Add to app/layout.tsx
+[ ] Add tracking events on key pages:
+    - pageview
+    - league_created
+    - player_added
+    - trade_analyzed
+Checkpoint: Analytics tracking working
+
+---
+
+DAY 47 - Monday, Dec 30, 2024
+Time: 1.5 hours
+Tasks:
+[ ] Test analytics:
+[ ] Navigate through app
+[ ] Check PostHog dashboard for events
+[ ] Add custom events on button clicks
+[ ] Verify user properties are captured
+Checkpoint: Analytics validated
+
+---
+
+DAY 48 - Tuesday, Dec 31, 2024 (NEW YEAR'S EVE)
+Time: 1 hour (light day)
+Tasks:
+[ ] Create Privacy Policy:
+[ ] Use template from Termly.io
+[ ] Create app/(marketing)/privacy/page.tsx
+[ ] Mention cookies, PostHog, Clerk, Resend
+Checkpoint: Privacy policy exists
+
+---
+
+DAY 49 - Wednesday, Jan 1, 2025 (NEW YEAR'S DAY)
+Time: 0 hours
+Tasks:
+[ ] Take the day off! 🎉
+Checkpoint: Happy New Year!
+
+WEEK 6 COMPLETE ✅
+Total hours: 12 hours (avg 1.7 hours/day)
+
+================================================================================
+WEEK 7: DEPLOYMENT
+Jan 2-8, 2025
+================================================================================
+
+DAY 50 - Thursday, Jan 2, 2025
+Time: 3 hours
+Tasks:
+[ ] Buy domain name:
+[ ] Go to Namecheap, Google Domains, or Cloudflare
+[ ] Search for: courtdominion.com
+[ ] Purchase for 1 year (~$12)
+[ ] Add to Cloudflare (free):
+    - Change nameservers to Cloudflare
+    - Enable proxy (orange cloud)
+Checkpoint: Domain purchased and on Cloudflare
+
+---
+
+DAY 51 - Friday, Jan 3, 2025
+Time: 4 hours
+Tasks:
+[ ] Deploy backend to Railway:
+[ ] Go to railway.app dashboard
+[ ] Create new project
+[ ] "Deploy from GitHub repo"
+[ ] Select your court-dominion repo
+[ ] Configure build:
+    - Root directory: /backend
+    - Build command: pip install -r requirements.txt
+    - Start command: cd app && python dbb2_main.py
+[ ] Add environment variables:
+    DATABASE_URL (will be auto-created)
+[ ] Add PostgreSQL service to project
+[ ] Deploy!
+Checkpoint: Backend API live on Railway
+
+---
+
+DAY 52 - Saturday, Jan 4, 2025
+Time: 4 hours
+Tasks:
+[ ] Run database migrations on Railway:
+[ ] Open Railway PostgreSQL dashboard
+[ ] Get connection string
+[ ] Connect via TablePlus or psql
+[ ] Run: dbb2_database_schema.sql
+[ ] Run: dbb2_scoring_schema.sql
+[ ] Verify demo customers and API keys exist
+[ ] Test API: https://your-backend.railway.app/health
+Checkpoint: Railway database setup complete
+
+---
+
+DAY 53 - Sunday, Jan 5, 2025
+Time: 4 hours
+Tasks:
+[ ] Deploy frontend to Vercel:
+[ ] Go to vercel.com dashboard
+[ ] "New Project"
+[ ] Import from GitHub: court-dominion repo
+[ ] Configure:
+    - Root directory: /frontend
+    - Framework: Next.js
+    - Build command: npm run build
+[ ] Add environment variables:
+    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_live_...
+    CLERK_SECRET_KEY=sk_live_...
+    NEXT_PUBLIC_API_URL=https://your-backend.railway.app
+[ ] Deploy!
+Checkpoint: Frontend live on Vercel
+
+---
+
+DAY 54 - Monday, Jan 6, 2025
+Time: 3 hours
+Tasks:
+[ ] Configure custom domain on Vercel:
+[ ] In Vercel project settings → Domains
+[ ] Add: courtdominion.com and www.courtdominion.com
+[ ] Go to Cloudflare DNS settings
+[ ] Add CNAME records:
+    courtdominion.com → cname.vercel-dns.com
+    www.courtdominion.com → cname.vercel-dns.com
+[ ] Wait for DNS propagation (5-60 minutes)
+[ ] Visit https://courtdominion.com
+Checkpoint: Custom domain working with SSL
+
+---
+
+DAY 55 - Tuesday, Jan 7, 2025
+Time: 3 hours
+Tasks:
+[ ] Update Clerk to production mode:
+[ ] In Clerk dashboard, create production instance
+[ ] Update URLs: courtdominion.com
+[ ] Copy new production API keys
+[ ] Update Vercel environment variables
+[ ] Redeploy frontend
+[ ] Test sign up flow on production domain
+Checkpoint: Clerk production auth working
+
+---
+
+DAY 56 - Wednesday, Jan 8, 2025
+Time: 2.5 hours
+Tasks:
+[ ] Test production environment end-to-end:
+[ ] Sign up new account
+[ ] Create league
+[ ] Add players
+[ ] View scores
+[ ] Try all advanced features
+[ ] Test on mobile device
+[ ] Fix any issues found
+[ ] Git commit: "Week 7 complete: deployed to production"
+Checkpoint: Production fully functional
+
+WEEK 7 COMPLETE ✅
+Total hours: 23.5 hours (avg 3.4 hours/day)
+
+================================================================================
+WEEK 8: TESTING & BUG FIXES
+Jan 9 - -15, 2025
+DAY 57 - Thursday, Jan 9, 2025
+Time: 4 hours
+Tasks:
+[ ] Manual testing - Authentication flows:
+[ ] Test sign up with email (magic link)
+[ ] Test sign out
+[ ] Test sign in again
+[ ] Test "forgot password" (if implemented)
+[ ] Try signing up with same email (should fail gracefully)
+[ ] Test on different browsers:
+- Chrome ✓
+- Safari ✓
+- Firefox ✓
+- Edge ✓
+[ ] Document any bugs in GitHub Issues
+Checkpoint: Auth flows tested across browsers
+
+DAY 58 - Friday, Jan 10, 2025
+Time: 4 hours
+Tasks:
+[ ] Manual testing - League management:
+[ ] Create Roto league
+[ ] Create H2H Categories league
+[ ] Create H2H Points league
+[ ] Edit league settings
+[ ] Delete league
+[ ] Create league with all category presets
+[ ] Add 13 players to roster
+[ ] Remove players
+[ ] Try adding same player twice (should fail)
+[ ] Try exceeding roster size
+[ ] Document bugs
+Checkpoint: League management tested
+
+DAY 59 - Saturday, Jan 11, 2025
+Time: 4 hours
+Tasks:
+[ ] Manual testing - Advanced features:
+[ ] Test trade analyzer with 2-player trade
+[ ] Test trade analyzer with 5-player trade
+[ ] Test lineup optimizer
+[ ] Test streaming candidates (should show players)
+[ ] Test hot pickups
+[ ] Test schedule advantage
+[ ] Test weekly tracking (save week, view history)
+[ ] Test opponent analyzer
+[ ] Test player recommendations
+[ ] Document bugs
+Checkpoint: All features tested
+
+DAY 60 - Sunday, Jan 12, 2025
+Time: 4 hours
+Tasks:
+[ ] Mobile responsive testing:
+[ ] Open site on actual iPhone (or Android)
+[ ] Test all pages in portrait mode
+[ ] Test all pages in landscape mode
+[ ] Check:
+- Navbar collapses properly
+- Tables scroll horizontally
+- Buttons are tappable (not too small)
+- Forms work on mobile keyboard
+- Images don't overflow
+[ ] Use Chrome DevTools device emulation
+[ ] Fix any mobile layout issues
+Checkpoint: Mobile responsive verified
+
+DAY 61 - Monday, Jan 13, 2025
+Time: 3.5 hours
+Tasks:
+[ ] Performance testing and optimization:
+[ ] Run Lighthouse audit on all pages
+[ ] Check PageSpeed Insights: https://pagespeed.web.dev
+[ ] Optimize images (compress, use WebP)
+[ ] Add loading="lazy" to images
+[ ] Check bundle size: npm run build
+[ ] Add dynamic imports for heavy components
+[ ] Test page load speed on slow 3G (Chrome DevTools)
+[ ] Target: All pages load under 3 seconds
+Checkpoint: Performance optimized
+
+DAY 62 - Tuesday, Jan 14, 2025
+Time: 3.5 hours
+Tasks:
+[ ] Bug fixing day:
+[ ] Review all GitHub Issues created
+[ ] Prioritize: P0 (critical), P1 (high), P2 (medium), P3 (low)
+[ ] Fix all P0 bugs (blocking user flows)
+[ ] Fix P1 bugs (major features broken)
+[ ] Defer P2/P3 to post-launch
+[ ] Test fixes
+[ ] Deploy fixes to production
+Checkpoint: Critical bugs fixed
+
+DAY 63 - Wednesday, Jan 15, 2025
+Time: 3 hours
+Tasks:
+[ ] Final production testing:
+[ ] Test on production URL: https://courtdominion.com
+[ ] Create test account
+[ ] Complete entire user journey:
+1. Sign up
+2. Create league
+3. Add 10 players
+4. View scores
+5. Analyze trade
+6. Optimize lineup
+7. Check recommendations
+[ ] Verify no console errors
+[ ] Check Railway logs for backend errors
+[ ] Git commit: "Week 8 complete: testing and bug fixes"
+Checkpoint: Production stable and tested
+WEEK 8 COMPLETE ✅
+Total hours: 26 hours (avg 3.7 hours/day)
+================================================================================
+WEEK 9: POLISH & CONTENT
+Jan 16-22, 2025
+DAY 64 - Thursday, Jan 16, 2025
+Time: 3 hours
+Tasks:
+[ ] UI polish - Animations:
+[ ] Install framer-motion: npm install framer-motion
+[ ] Add page transitions (fade in on load)
+[ ] Add button hover effects
+[ ] Add card hover lift effects
+[ ] Add loading spinners (shadcn spinner component)
+[ ] Add skeleton loaders for data fetching
+[ ] Make UI feel "alive" and responsive
+Checkpoint: Animations added
+
+DAY 65 - Friday, Jan 17, 2025
+Time: 3.5 hours
+Tasks:
+[ ] UI polish - Help & onboarding:
+[ ] Install: npx shadcn-ui@latest add tooltip
+[ ] Add tooltips to all confusing UI elements:
+- "What is Roto?" tooltip
+- "What is streaming?" tooltip
+- Category abbreviations (PTS, REB, AST, etc.)
+[ ] Create first-time user tutorial:
+- Welcome modal on first login
+- "Create your first league" CTA
+- Guided tour (optional: use react-joyride)
+[ ] Add empty states with helpful messages everywhere
+Checkpoint: User-friendly tooltips and guidance
+
+DAY 66 - Saturday, Jan 18, 2025
+Time: 4 hours
+Tasks:
+[ ] Content creation - Blog posts:
+[ ] Create blog structure: app/(marketing)/blog/page.tsx
+[ ] Write 3 blog posts (markdown files or CMS):
+1. "Best Fantasy Basketball Projections for 2024-25 Season"
+- SEO keywords: fantasy basketball projections, NBA projections
+- 1000-1500 words
+- Compare your tool to ESPN/Yahoo
+2. "How to Win Your Fantasy Basketball League with Data"
+- SEO keywords: fantasy basketball tips, win fantasy league
+- 1000-1500 words
+- Mention your features (trade analyzer, streaming)
+3. "Complete Guide to Fantasy Basketball Trade Analysis"
+- SEO keywords: fantasy basketball trades, trade analyzer
+- 1500-2000 words
+- Deep dive on your trade analyzer feature
+[ ] Add meta tags for SEO
+Checkpoint: 3 blog posts published
+
+DAY 67 - Sunday, Jan 19, 2025
+Time: 4 hours
+Tasks:
+[ ] Content creation - Demo video:
+[ ] Record screen with Loom or OBS Studio
+[ ] Create 3-5 minute demo video showing:
+- Sign up process (30 seconds)
+- Creating a league (1 minute)
+- Adding players (30 seconds)
+- Viewing projections (30 seconds)
+- Using trade analyzer (1 minute)
+- Using lineup optimizer (1 minute)
+- Wrap up and CTA (30 seconds)
+[ ] Edit video (basic cuts, add text overlays)
+[ ] Upload to YouTube
+[ ] Embed on landing page
+Checkpoint: Demo video live
+
+DAY 68 - Monday, Jan 20, 2025
+Time: 3 hours
+Tasks:
+[ ] Setup Freshdesk (customer support):
+[ ] Create Freshdesk account: https://freshdesk.com
+[ ] Configure:
+- Support email: support@courtdominion.com
+- Add your domain
+- Create canned responses (common questions)
+[ ] Add Freshdesk widget to site (optional)
+[ ] Create help center articles:
+- How to create a league
+- How to add players
+- How to use trade analyzer
+- FAQ: Why is it free?
+[ ] Test by sending test ticket
+Checkpoint: Support system ready
+
+DAY 69 - Tuesday, Jan 21, 2025
+Time: 3 hours
+Tasks:
+[ ] SEO optimization:
+[ ] Add sitemap.xml (Next.js auto-generates)
+[ ] Add robots.txt:
+User-agent: *
+Allow: /
+Sitemap: https://courtdominion.com/sitemap.xml
+[ ] Update meta tags on all pages:
+- Title (unique per page)
+- Description (unique per page)
+- OG image (share preview)
+[ ] Add structured data (JSON-LD):
+- Organization schema
+- WebSite schema
+[ ] Submit sitemap to Google Search Console
+[ ] Submit to Bing Webmaster Tools
+Checkpoint: SEO optimized
+
+DAY 70 - Wednesday, Jan 22, 2025
+Time: 3 hours
+Tasks:
+[ ] Final polish:
+[ ] Review every page for typos
+[ ] Check all links work
+[ ] Verify all images load
+[ ] Test all CTAs lead to correct pages
+[ ] Update About page (if you have one)
+[ ] Add social media links (Twitter, Discord)
+[ ] Create social media accounts:
+- Twitter: @courtdominion
+- Instagram: @courtdominion (optional)
+- Discord server (optional)
+[ ] Git commit: "Week 9 complete: polish and content ready"
+Checkpoint: Product polished and beautiful
+WEEK 9 COMPLETE ✅
+Total hours: 23.5 hours (avg 3.4 hours/day)
+================================================================================
+WEEK 10: LAUNCH WEEK! 🚀
+Jan 23-27, 2025
+DAY 71 - Thursday, Jan 23, 2025
+Time: 3 hours
+Tasks:
+[ ] Pre-launch checklist:
+[ ] Verify production site is working: https://courtdominion.com
+[ ] Test sign up flow one more time
+[ ] Check Railway backend is healthy (no errors in logs)
+[ ] Verify email magic links are sending
+[ ] Check PostHog is tracking events
+[ ] Prepare launch announcement text:
+- Reddit post (500 words max)
+- Twitter thread (10 tweets)
+- Discord message
+[ ] Screenshot your best features for sharing
+[ ] Have demo account ready to show
+Checkpoint: Launch materials prepared
+
+DAY 72 - Friday, Jan 24, 2025
+Time: 4 hours
+Tasks:
+[ ] LAUNCH DAY 1 - Reddit:
+[ ] Post on r/fantasybball (1.2M members):
+Title: "[Tool] Free NBA Fantasy Basketball Analytics for 2024-25 Season"
+Content:
+- What it does (projections, trade analyzer, lineup optimizer)
+- Why it's free (beta, building user base)
+- Link to courtdominion.com
+- Screenshot of trade analyzer
+- Ask for feedback
+[ ] Monitor comments throughout the day
+[ ] Reply to every comment within 1 hour
+[ ] Answer questions
+[ ] Fix any bugs reported immediately
+[ ] Check PostHog for user activity
+Checkpoint: Reddit launch executed
+
+DAY 73 - Saturday, Jan 25, 2025
+Time: 3.5 hours
+Tasks:
+[ ] LAUNCH DAY 2 - Twitter/X:
+[ ] Post launch thread (10 tweets):
+Tweet 1: "🏀 Launching Court Dominion - Free fantasy basketball analytics for 2024-25"
+Tweet 2: "What you get: ML-powered projections for every NBA player"
+Tweet 3: "Trade analyzer - see if trades help or hurt you" + screenshot
+Tweet 4: "Lineup optimizer - maximize your weekly points" + screenshot
+Tweet 5: "Streaming optimizer - daily add/drop suggestions" + screenshot
+Tweet 6: "Why free? Building user base, monetizing next season"
+Tweet 7: "Built with FastAPI + Next.js + Railway + Vercel"
+Tweet 8: "Demo video: [YouTube link]"
+Tweet 9: "Try it free: courtdominion.com"
+Tweet 10: "Looking for beta users - DMs open for feedback!"
+[ ] Tag relevant accounts: @nba, @espnfantasy
+[ ] Use hashtags: #FantasyBasketball #NBA #SaaS
+[ ] Monitor replies and DMs
+Checkpoint: Twitter launch executed
+
+DAY 74 - Sunday, Jan 26, 2025
+Time: 3 hours
+Tasks:
+[ ] LAUNCH DAY 3 - Communities:
+[ ] Post in Discord servers:
+- Fantasy Basketball Discord servers (search on Disboard)
+- SaaS/startup Discords
+- Indie Hackers Discord
+[ ] Post on Indie Hackers: https://indiehackers.com
+- "Launched: Free fantasy basketball analytics"
+- Share your story
+- Ask for feedback
+[ ] Share in Facebook groups (if you use FB):
+- Fantasy Basketball groups
+[ ] Email your personal network:
+- Friends who play fantasy
+- Former colleagues
+- Anyone interested in sports analytics
+[ ] Monitor all channels for feedback
+Checkpoint: Community launch executed
+
+DAY 75 - Monday, Jan 27, 2025 (FINAL DAY)
+Time: 4 hours
+Tasks:
+[ ] LAUNCH DAY 4 - ProductHunt (optional but recommended):
+[ ] Submit to ProductHunt: https://producthunt.com/posts/new
+- Name: Court Dominion
+- Tagline: "Free fantasy basketball analytics powered by ML"
+- Description: Full product description
+- Gallery: 5-7 screenshots
+- First comment: Founder story + ask for support
+[ ] Ask friends to upvote (do NOT coordinate voting - against rules)
+[ ] Reply to every comment on PH
+[ ] Monitor dashboard metrics:
+- How many users signed up? (check Clerk dashboard)
+- How many leagues created? (check Railway DB)
+- Any errors? (check Railway logs)
+- Analytics data? (check PostHog)
+[ ] Celebrate launch! 🎉🍾
+[ ] Take screenshots of metrics for future reference
+[ ] Write launch retrospective blog post
+Checkpoint: LAUNCHED! 🚀
+
+LAUNCH WEEK SUMMARY - Monday, Jan 27, 2025 EOD
+Time: 2 hours
+Tasks:
+[ ] Calculate launch metrics:
+Total users signed up: ___
+Total leagues created: ___
+Total API requests: ___
+Reddit upvotes: ___
+Twitter impressions: ___
+ProductHunt upvotes: ___
+[ ] Document lessons learned:
+- What worked well?
+- What didn't work?
+- What would you do differently?
+[ ] Plan post-launch:
+- Bug fixes from user feedback
+- Feature requests to consider
+- Marketing plan for next 30 days
+[ ] Git commit: "Launch complete - Week 10"
+[ ] Backup entire project
+[ ] Celebrate properly! 🎊
+WEEK 10 COMPLETE ✅
+Total hours: 19.5 hours (avg 3.9 hours/day)
+================================================================================
+FINAL SUMMARY
+TOTAL DURATION: 74 days (Nov 14, 2024 → Jan 27, 2025)
+TOTAL HOURS: 230.5 hours
+AVERAGE: 3.1 hours per day
+COST BREAKDOWN:
+Weeks 0-6: $36 ($6/week × 6 weeks)
+Weeks 7-9: $33 ($11/week × 3 weeks) - Railway added
+Week 10: $30 - Freshdesk added
+TOTAL TO LAUNCH: $99
+POST-LAUNCH MONTHLY COST: $25
+WEEKS BREAKDOWN:
+Week 0: Desktop Setup - 15 hrs
+Week 1: Foundation - 23.5 hrs
+Week 2: Dashboard Part 1 - 22.5 hrs
+Week 3: Dashboard Part 2 - 26.5 hrs
+Week 4: Advanced Features - 25.5 hrs
+Week 5: Marketing Site - 13 hrs (light - Christmas)
+Week 6: Email & Monitoring - 12 hrs (light - New Year's)
+Week 7: Deployment - 23.5 hrs
+Week 8: Testing - 26 hrs
+Week 9: Polish & Content - 23.5 hrs
+Week 10: Launch! - 19.5 hrs
+TARGET OUTCOME:
+✅ Production-ready product at courtdominion.com
+✅ 50-100 beta users signed up
+✅ All features working and tested
+✅ Professional marketing site
+✅ Support system ready
+✅ Analytics tracking
+✅ Blog content for SEO
+✅ Ready to iterate based on feedback
+NEXT STEPS (Post-Launch):
+
+Monitor user feedback daily (Freshdesk tickets)
+Fix bugs as reported (prioritize P0/P1)
+Continue marketing (Reddit, Twitter, Discord weekly)
+Add features based on user requests
+Write more blog content (1-2 posts per week)
+Build community (Discord server, email newsletter)
+Prepare for monetization (Sept 2025)
+Track metrics weekly (user growth, engagement, retention)
+
+================================================================================
+CONGRATULATIONS! YOU'VE LAUNCHED! 🎉🏀🚀
+Your daily schedule is complete. Copy this entire file and refer to it daily.
+Track your progress by checking off [ ] boxes as you complete tasks.
+Remember:
+
+It's okay to take breaks
+Some days will take longer than estimated
+You have buffer time built in
+The goal is progress, not perfection
+You're building something real!
+
+Good luck! 🍀
+Need help on any specific day? Come back and ask:
+"Help with Day X tasks" and I'll give you detailed code/instructions.
+You've got this! 💪
+
+

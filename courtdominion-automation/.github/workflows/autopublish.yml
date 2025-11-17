@@ -1,0 +1,34 @@
+name: Daily Automation (OptionB-Final)
+on:
+  schedule:
+    - cron: '0 10 * * *'  # 5:00 AM EST
+  workflow_dispatch:
+
+jobs:
+  run-daily:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install deps
+        run: pip install pyyaml
+      - name: Run Claude runner (produces projections)
+        run: python courtdominion-automation/scripts/claude_runner.py
+      - name: Generate content
+        run: python courtdominion-automation/scripts/generator.py
+      - name: Run quality filters
+        run: python courtdominion-automation/scripts/quality_run.py
+      - name: Publish decision (pause_until, approval flag, filters)
+        run: python courtdominion-automation/scripts/publish_decision.py
+      - name: Generate human summary
+        run: python courtdominion-automation/scripts/summary_generator.py
+      - name: Commit outputs/logs
+        run: |
+          git config --global user.email "automation@courtdominion.com"
+          git config --global user.name "CourtDominion Automation"
+          git add courtdominion-automation/outputs/*
+          git commit -m "automation outputs - $(date -u)"
+          git push
