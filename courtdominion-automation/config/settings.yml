@@ -1,0 +1,12 @@
+approval_deadline: "05:30"   # user approval window end (HH:MM) EST
+auto_publish_time: "05:45"   # auto-publish time (HH:MM) EST
+generate_time: "05:00"       # generation time (HH:MM) EST
+publish_policy: "moderate-filter"
+pause_until: "2025-11-19"  # ISO date; do not publish until this date (inclusive)
+log_directory: "courtdominion-automation/outputs/logs"
+platforms:
+  - twitter
+  - reddit
+  - discord
+  - linkedin
+  - email

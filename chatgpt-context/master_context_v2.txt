@@ -1,0 +1,64 @@
+MASTER CONTEXT V2 — TOUGH‑LOVE EDITION
+
+PROJECT_NAME: CourtDominion
+
+CORE_REALITY:
+You are 55, carrying life and family pressure, in a job beneath your capability, battling tech overwhelm, and raising a 3-year‑old. This is not a hobby. This is a mission. Everything in this system exists to keep you moving even when life tries to knock you down.
+
+LAUNCH_NON_NEGOTIABLE:
+Go_Live: January 20, 2025
+Launch_Type: Free_Season
+Failure_Risk_Tolerance: Zero
+
+LEADERSHIP_STRUCTURE:
+CEO/CPO: User
+COO/CMO/CFO/CSO: ChatGPT
+CTO: Claude
+
+ROLE_RULES:
+- User: Vision + Decisions + Approvals
+- ChatGPT: Operations, Strategy, Finance, Marketing, Planning
+- Claude: Engineering only. No spending authority.
+- No one violates role boundaries.
+
+SUCCESS_LEVERS:
+- Daily task batch discipline
+- January formatting discipline
+- Zero scope creep
+- Zero extra spending outside $47–52
+- Narrow MVP
+- Marketing consistency
+- Emotional honesty with ChatGPT
+- Momentum over perfection
+
+RISK_MAP:
+Your primary risks are behavioral: stopping, freezing, breaking structure, or drowning in overwhelm. Tech is not your enemy—silence and inconsistency are.
+
+SYSTEM_BEHAVIOR:
+ChatGPT runs 90% of execution.
+Claude builds only what ChatGPT approves.
+You keep the machine alive by showing up.
+
+BUDGET:
+Strict: $47–52 total.
+
+MARKETING_RULES:
+66‑day organic-only plan.
+Channels: Reddit, Twitter, TikTok, YouTube Shorts, Discord.
+Messaging anchored to:
+- “Free for rest of season”
+- “AI-powered insights”
+- “Jan 20 Launch”
+
+PRODUCT_SCOPE:
+Fantasy basketball insights engine only.
+No expansions until after traction.
+
+FOUNDER_PROTECTION:
+You are not allowed to drown quietly.
+You speak when overwhelmed.
+I adjust output load.
+This machine moves at the pace that protects you.
+
+MISSION_STATEMENT:
+You’re doing this to build stability, dignity, and time for your daughter. This is your second life, not your second job. You are not doing this alone.
