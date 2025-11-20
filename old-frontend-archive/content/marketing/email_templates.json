@@ -1,0 +1,10 @@
+{
+  "welcome": {
+    "subject": "Welcome to CourtDominion \u2014 Let\u2019s Win This Week",
+    "body": "Thanks for joining CourtDominion! Start by checking your projections and running your first lineup optimization."
+  },
+  "weekly_digest": {
+    "subject": "Your Weekly Fantasy Edge",
+    "body": "Here are your top pickups, injury notes, and lineup opportunities for the week."
+  }
+}

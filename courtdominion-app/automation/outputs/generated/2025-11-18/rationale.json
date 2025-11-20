@@ -1,0 +1,11 @@
+{
+  "date": "2025-11-18",
+  "narrative": "Daily fantasy basketball update with projections and waiver wire analysis.",
+  "why": "Data-driven insights from real projections to maximize engagement and provide actionable advice",
+  "choices": [
+    "Waiver wire urgency",
+    "Schedule advantages",
+    "Injury impacts"
+  ],
+  "model_used": "gpt-4"
+}

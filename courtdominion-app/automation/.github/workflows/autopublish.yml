@@ -1,0 +1,50 @@
+name: Daily Automation (Production)
+on:
+  schedule:
+    - cron: '0 10 * * *'  # 5:00 AM EST (10:00 UTC)
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  run-daily:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip install pyyaml requests
+      
+      - name: Set environment variables
+        run: |
+          echo "BACKEND_URL=${{ secrets.BACKEND_URL }}" >> $GITHUB_ENV
+          echo "COURTDOMINION_API_KEY=${{ secrets.COURTDOMINION_API_KEY }}" >> $GITHUB_ENV
+          echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> $GITHUB_ENV
+          echo "OPENAI_MODEL=gpt-4" >> $GITHUB_ENV
+      
+      - name: Run Claude runner (get projections from backend)
+        run: python courtdominion-automation/scripts/claude_runner.py
+      
+      - name: Generate content (OpenAI)
+        run: python courtdominion-automation/scripts/generator.py
+      
+      - name: Run quality filters
+        run: python courtdominion-automation/scripts/quality_run.py
+      
+      - name: Publish decision (check filters, pause settings)
+        run: python courtdominion-automation/scripts/publish_decision.py
+      
+      - name: Generate human summary
+        run: python courtdominion-automation/scripts/summary_generator.py
+      
+      - name: Commit outputs/logs
+        run: |
+          git config --global user.email "automation@courtdominion.com"
+          git config --global user.name "CourtDominion Automation"
+          git add courtdominion-automation/outputs/
+          git diff --staged --quiet || git commit -m "automation: daily run $(date -u +%Y-%m-%d)"
+          git push

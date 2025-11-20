@@ -1,0 +1,3 @@
+# CourtDominion Automation Dependencies
+pyyaml>=6.0
+requests>=2.31.0
