@@ -1,51 +1,45 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -e
 
+RED="\033[0;31m"
 GREEN="\033[0;32m"
 YELLOW="\033[1;33m"
-RED="\033[0;31m"
-NC="\033[0m"
+BLUE="\033[0;34m"
+CYAN="\033[0;36m"
+RESET="\033[0m"
 
-echo -e "${GREEN}======[ COURTDOMINION GIT WORKFLOW: AUTO MERGE PR ]======${NC}"
+cd "$(git rev-parse --show-toplevel)"
 
-if ! command -v gh >/dev/null 2>&1; then
-  echo -e "${RED}ERROR: GitHub CLI (gh) is not installed.${NC}"
-  exit 1
+CURRENT_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+
+echo -e "${BLUE}=== COURTDOMINION GIT WORKFLOW: AUTO MERGE ===${RESET}"
+echo -e "${CYAN}Checking for open PRs associated with branch: ${YELLOW}$CURRENT_BRANCH${RESET}"
+
+PR_URL=$(gh pr list --head "$CURRENT_BRANCH" --json url --jq '.[0].url' || true)
+
+if [[ -z "$PR_URL" ]]; then
+    echo -e "${YELLOW}No PR found for branch ${CURRENT_BRANCH}. Nothing to merge.${RESET}"
+    exit 0
 fi
 
-cd "$(dirname "$0")/.." || exit 1
+echo -e "${CYAN}Found PR: ${GREEN}$PR_URL${RESET}"
 
-CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+echo -e "${CYAN}Attempting squash merge...${RESET}"
+if gh pr merge --squash --delete-branch "$PR_URL"; then
+    echo -e "${GREEN}PR successfully merged with squash!${RESET}"
 
-if [ "$CURRENT_BRANCH" = "main" ]; then
-  echo -e "${RED}[ERROR] You're on main — nothing to merge.${NC}"
-  exit 1
+    TAG="v$(date +%Y.%m.%d-%H%M)"
+    echo -e "${CYAN}Creating version tag: ${GREEN}$TAG${RESET}"
+
+    git fetch origin main
+    git checkout main
+    git pull
+
+    git tag "$TAG"
+    git push origin "$TAG"
+
+    echo -e "${GREEN}Tag $TAG pushed to origin.${RESET}"
+else
+    echo -e "${RED}Auto-merge failed or requires manual intervention. PR still exists.${RESET}"
+    exit 1
 fi
-
-echo -e "${YELLOW}>> Looking up PR for branch: $CURRENT_BRANCH${NC}"
-PR_JSON=$(gh pr list --head "$CURRENT_BRANCH" --state open --json number,url -q '.[0]')
-
-if [ -z "$PR_JSON" ] || [ "$PR_JSON" = "null" ]; then
-  echo -e "${RED}[ERROR] No open PR found for branch: $CURRENT_BRANCH${NC}"
-  exit 1
-fi
-
-PR_NUMBER=$(echo "$PR_JSON" | awk -F'"' '/number/ {print $4}')
-PR_URL=$(echo "$PR_JSON" | awk -F'"' '/url/ {print $4}')
-
-echo -e "${YELLOW}>> Found PR #${PR_NUMBER}: ${PR_URL}${NC}"
-
-# Attempt to merge with squash and delete remote branch
-echo -e "${YELLOW}>> Merging PR (#${PR_NUMBER}) with squash...${NC}"
-gh pr merge "$PR_NUMBER" --squash --delete-branch --admin
-
-echo -e "${GREEN}>> PR merged and remote branch deleted.${NC}"
-
-# Optionally delete local branch
-echo -e "${YELLOW}>> Deleting local branch: $CURRENT_BRANCH${NC}"
-git checkout main || true
-git pull --ff-only origin main || true
-git branch -D "$CURRENT_BRANCH" || true
-
-echo -e "${GREEN}>> Local branch deleted.${NC}"
-echo -e "${GREEN}===========================================================${NC}"

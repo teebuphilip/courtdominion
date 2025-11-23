@@ -1,28 +1,11 @@
-.PHONY: install branch sync commit pr merge tag workflow
+SHELL := /bin/bash
 
-install:
-	@echo "Making scripts executable..."
-	chmod +x scripts/*.sh
-	chmod +x wrapper.sh
-	@echo "Done."
+.PHONY: new-code auto-merge
 
-branch:
-	./scripts/create_branch.sh $(name)
+new-code:
+	@chmod +x scripts/new-code-ready-to-commit.sh
+	@scripts/new-code-ready-to-commit.sh
 
-sync:
-	./scripts/sync_with_main.sh
-
-commit:
-	./scripts/commit_and_push.sh "$(msg)"
-
-pr:
-	./scripts/create_pr.sh
-
-merge:
-	./scripts/auto_merge_pr.sh
-
-tag:
-	./scripts/tag_release.sh $(tag)
-
-workflow:
-	./wrapper.sh $(name) "$(msg)"
+auto-merge:
+	@chmod +x scripts/auto_merge_pr.sh
+	@scripts/auto_merge_pr.sh

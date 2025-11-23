@@ -1,0 +1,72 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    environment:
+      - POSTGRES_USER=courtdominion
+      - POSTGRES_PASSWORD=courtdominion123
+      - POSTGRES_DB=nba_fantasy
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - courtdominion
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U courtdominion -d nba_fantasy"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/app:/app/app
+      - ./shared-outputs:/data/outputs
+    environment:
+      - OUTPUT_DIR=/data/outputs
+      - DATABASE_URL=postgresql://courtdominion:courtdominion123@db:5432/nba_fantasy
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_NAME=nba_fantasy
+      - DB_USER=courtdominion
+      - DB_PASSWORD=courtdominion123
+    networks:
+      - courtdominion
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  automation:
+    build: ./automation
+    depends_on:
+      backend:
+        condition: service_healthy
+    volumes:
+      - ./automation/outputs:/app/automation/outputs
+      - ./shared-outputs:/app/shared-outputs
+    environment:
+      - BACKEND_URL=http://backend:8000
+      - COURTDOMINION_API_KEY=${COURTDOMINION_API_KEY}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OPENAI_MODEL=${OPENAI_MODEL:-gpt-4}
+    networks:
+      - courtdominion
+
+networks:
+  courtdominion:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  shared-outputs:

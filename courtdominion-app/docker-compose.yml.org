@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/app:/app/app
+      - ./shared-outputs:/data/outputs
+    environment:
+      - OUTPUT_DIR=/data/outputs
+    networks:
+      - courtdominion
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  automation:
+    build: ./automation
+    depends_on:
+      backend:
+        condition: service_healthy
+    volumes:
+      - ./automation/outputs:/app/automation/outputs
+      - ./shared-outputs:/app/shared-outputs
+    environment:
+      - BACKEND_URL=http://backend:8000
+      - COURTDOMINION_API_KEY=${COURTDOMINION_API_KEY}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OPENAI_MODEL=${OPENAI_MODEL:-gpt-4}
+    networks:
+      - courtdominion
+
+networks:
+  courtdominion:
+    driver: bridge
+
+volumes:
+  shared-outputs:
