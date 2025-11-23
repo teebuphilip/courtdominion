@@ -25,10 +25,16 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ./backend/app:/app/app
-      - ./shared-outputs:/data/outputs
+      # Mount new backend structure for local development
+      - ./backend:/app
+      # Shared data volume with automation (per Q8)
+      - shared-data:/data/outputs
     environment:
-      - OUTPUT_DIR=/data/outputs
+      # Required environment variables (per Backend Master Spec section 7)
+      - ENVIRONMENT=local
+      - BACKEND_URL=http://backend:8000
+      - DATA_DIR=/data/outputs
+      # Database variables (Phase 1 doesn't use DB, but keep for future)
       - DATABASE_URL=postgresql://courtdominion:courtdominion123@db:5432/nba_fantasy
       - DB_HOST=db
       - DB_PORT=5432
@@ -54,7 +60,8 @@ services:
         condition: service_healthy
     volumes:
       - ./automation/outputs:/app/automation/outputs
-      - ./shared-outputs:/app/shared-outputs
+      # Shared data volume with backend (per Q8)
+      - shared-data:/data/outputs
     environment:
       - BACKEND_URL=http://backend:8000
       - COURTDOMINION_API_KEY=${COURTDOMINION_API_KEY}
@@ -69,4 +76,4 @@ networks:
 
 volumes:
   postgres_data:
-  shared-outputs:
+  shared-data:
