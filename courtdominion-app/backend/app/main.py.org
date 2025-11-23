@@ -6,9 +6,6 @@ import subprocess, os, json, uuid, sys
 
 app = FastAPI(title="CourtDominion Backend (Hybrid)")
 
-# Get the directory where this file lives (for finding legacy scripts)
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-
 OUTPUT_DIR = os.getenv("OUTPUT_DIR", "/data/outputs")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
@@ -22,25 +19,14 @@ def health():
 
 @app.post("/v1/run_projections")
 def run_projections(req: ProjReq):
-    # Try to find simple_projections.py first (doesn't need database)
-    # Fallback to dbb2_main.py if simple version not found
-    
+    # find legacy runner script
     entry = None
-    
-    # Look for simple_projections.py first
-    simple_script = os.path.join(SCRIPT_DIR, "legacy", "simple_projections.py")
-    if os.path.exists(simple_script):
-        entry = simple_script
-    else:
-        # Fallback to dbb2_main.py
-        for root, dirs, files in os.walk(os.path.join(SCRIPT_DIR, "legacy")):
-            if "dbb2_main.py" in files:
-                entry = os.path.join(root, "dbb2_main.py")
-                break
-    
+    for root, dirs, files in os.walk(os.path.join(os.getcwd(), "legacy")):
+        if "dbb2_main.py" in files:
+            entry = os.path.join(root, "dbb2_main.py")
+            break
     if not entry:
-        raise HTTPException(status_code=500, detail="No projection runner found (looking for simple_projections.py or dbb2_main.py)")
-    
+        raise HTTPException(status_code=500, detail="Legacy runner dbb2_main.py not found")
     out_file = os.path.join(OUTPUT_DIR, f"projections_{uuid.uuid4().hex}.json")
     env = os.environ.copy()
     env["PROJECTIONS_OUTPUT"] = out_file

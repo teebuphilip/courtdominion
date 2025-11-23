@@ -11,6 +11,10 @@ COPY scripts /app/scripts
 COPY config /app/config
 COPY quality /app/quality
 
+# Copy the run script
+COPY run_automation.sh /app/run_automation.sh
+RUN chmod +x /app/run_automation.sh
+
 # Create outputs directory
 RUN mkdir -p /app/courtdominion-automation/outputs/generated
 RUN mkdir -p /app/courtdominion-automation/outputs/logs
@@ -18,5 +22,5 @@ RUN mkdir -p /app/courtdominion-automation/outputs/logs
 # Set working directory for scripts
 WORKDIR /app
 
-# Run automation workflow
-CMD ["sh", "-c", "python scripts/claude_runner.py && python scripts/generator.py"]
+# Run automation workflow using the shell script
+CMD ["/app/run_automation.sh"]

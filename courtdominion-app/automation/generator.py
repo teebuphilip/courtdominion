@@ -262,8 +262,6 @@ def main():
     logs_dir = Path('automation/outputs/logs')
     
     print(f"DEBUG: Platform logs directory: {logs_dir}")
-    print(f"DEBUG: Creating logs directory if needed...")
-    logs_dir.mkdir(parents=True, exist_ok=True)
     print(f"DEBUG: Logs directory exists: {logs_dir.exists()}")
     print()
     
@@ -300,26 +298,20 @@ def main():
             print(f"✓ {platform}: {len(content)} chars")
             
             # APPEND to platform log file
-            # Format: DATE - TIME - POST HEADLINE - PUBLISHED/NOTPUBLISHED
+            # Format: YYYY-MM-DD HH:MM:SS | Post headline | NOT PUBLISHED
             log_file = logs_dir / f"{platform}.log"
-            
-            # Get current date and time separately
-            now = datetime.datetime.now()
-            date_str = now.strftime('%Y-%m-%d')
-            time_str = now.strftime('%H:%M:%S')
+            timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
             
             # Extract a headline from the content (first 50 chars)
             headline = content.split('\n')[0][:50].strip()
             if not headline:
                 headline = f"{platform} content"
             
-            # Format: DATE - TIME - POST HEADLINE - NOT PUBLISHED
-            log_line = f"{date_str} - {time_str} - {headline} - NOT PUBLISHED\n"
+            log_line = f"{timestamp} | {headline} | NOT PUBLISHED\n"
             
             print(f"DEBUG: Appending to log: {log_file}")
             print(f"DEBUG: Log line: {log_line.strip()}")
             
-            # Create or append to log file
             with open(log_file, 'a') as f:
                 f.write(log_line)
             

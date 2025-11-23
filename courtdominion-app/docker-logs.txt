@@ -1,0 +1,208 @@
+ Container courtdominion-app-db-1  Running
+ Container courtdominion-app-backend-1  Recreate
+ Container courtdominion-app-backend-1  Recreated
+ Container courtdominion-app-automation-1  Recreate
+ Container courtdominion-app-automation-1  Recreated
+Attaching to courtdominion-app-automation-1, courtdominion-app-backend-1, courtdominion-app-db-1
+courtdominion-app-backend-1     | INFO:     Started server process [1]
+courtdominion-app-backend-1     | INFO:     Waiting for application startup.
+courtdominion-app-backend-1     | INFO:     Application startup complete.
+courtdominion-app-backend-1     | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+courtdominion-app-backend-1     | INFO:     127.0.0.1:33040 - "GET /health HTTP/1.1" 200 OK
+courtdominion-app-automation-1  | 
+courtdominion-app-automation-1  | Creating directory structure...
+courtdominion-app-automation-1  |   ✓ Created: automation/outputs/logs
+courtdominion-app-automation-1  |   ✓ Created: automation/outputs/generated
+courtdominion-app-automation-1  |   ✓ Created: automation/outputs/generated/2025-11-22
+courtdominion-app-automation-1  |   ✓ Initialized platform log files
+courtdominion-app-automation-1  | 
+courtdominion-app-automation-1  | ============================================================
+courtdominion-app-automation-1  | COURTDOMINION AUTOMATION WORKFLOW
+courtdominion-app-automation-1  | Started: 2025-11-22 15:53:37
+courtdominion-app-automation-1  | ============================================================
+courtdominion-app-automation-1  | 
+courtdominion-app-automation-1  | Paths for this run:
+courtdominion-app-automation-1  |   Log file:        automation/outputs/logs/run-auto.log.2025-11-22-15-53-37
+courtdominion-app-automation-1  |   Generated dir:   automation/outputs/generated/2025-11-22
+courtdominion-app-automation-1  |   Platform logs:   automation/outputs/logs/[platform].log
+courtdominion-app-automation-1  |   (Mounted to host at: ./automation/outputs/)
+courtdominion-app-automation-1  | 
+courtdominion-app-automation-1  | ============================================================
+courtdominion-app-automation-1  | STEP 1: FETCHING PROJECTIONS FROM BACKEND
+courtdominion-app-automation-1  | ============================================================
+courtdominion-app-automation-1  | 
+courtdominion-app-automation-1  | Script: scripts/claude_runner.py
+courtdominion-app-automation-1  | Purpose: Get NBA player projections for today
+courtdominion-app-automation-1  | Output: generated/2025-11-22/projections.json
+courtdominion-app-automation-1  | 
+courtdominion-app-backend-1     | INFO:     172.26.0.4:57028 - "POST /v1/run_projections HTTP/1.1" 200 OK
+courtdominion-app-automation-1  | 
+courtdominion-app-automation-1  | ============================================================
+courtdominion-app-automation-1  | CLAUDE RUNNER - 2025-11-22
+courtdominion-app-automation-1  | ============================================================
+courtdominion-app-automation-1  | 
+courtdominion-app-automation-1  | DEBUG: Current working directory: /app
+courtdominion-app-automation-1  | DEBUG: Output directory: automation/outputs/generated/2025-11-22
+courtdominion-app-automation-1  | DEBUG: Absolute output path: /app/automation/outputs/generated/2025-11-22
+courtdominion-app-automation-1  | DEBUG: Creating directory: automation/outputs/generated/2025-11-22
+courtdominion-app-automation-1  | DEBUG: Directory exists: True
+courtdominion-app-automation-1  | 
+courtdominion-app-automation-1  | Fetching projections from backend...
+courtdominion-app-automation-1  | ✓ Got projections successfully
+courtdominion-app-automation-1  |   Status: ok
+courtdominion-app-automation-1  |   Output: /data/outputs/projections_96f374741c954e27a81d707f87c2f788.json
+courtdominion-app-automation-1  | DEBUG: Saving projections to: automation/outputs/generated/2025-11-22/projections.json
+courtdominion-app-automation-1  | DEBUG: Absolute path: /app/automation/outputs/generated/2025-11-22/projections.json
+courtdominion-app-automation-1  | DEBUG: File exists after write: True
+courtdominion-app-automation-1  | DEBUG: File size: 5081 bytes
+courtdominion-app-automation-1  | 
+courtdominion-app-automation-1  | ✅ Projections saved: automation/outputs/generated/2025-11-22/projections.json
+courtdominion-app-automation-1  |    Status: success
+courtdominion-app-automation-1  | DEBUG: Saving injury feed to: automation/outputs/generated/2025-11-22/injury_feed.json
+courtdominion-app-automation-1  | DEBUG: Absolute path: /app/automation/outputs/generated/2025-11-22/injury_feed.json
+courtdominion-app-automation-1  | DEBUG: File exists after write: True
+courtdominion-app-automation-1  | DEBUG: File size: 68 bytes
+courtdominion-app-automation-1  | ✅ Injury feed saved
+courtdominion-app-automation-1  | 
+courtdominion-app-automation-1  | ============================================================
+courtdominion-app-automation-1  | CLAUDE RUNNER COMPLETE
+courtdominion-app-automation-1  | ============================================================
+courtdominion-app-automation-1  | 
+courtdominion-app-automation-1  | 
+courtdominion-app-automation-1  | ✅ STEP 1 SUCCESS: Projections fetched
+courtdominion-app-automation-1  | 
+courtdominion-app-automation-1  |    Created: automation/outputs/generated/2025-11-22/projections.json
+courtdominion-app-automation-1  |    Created: automation/outputs/generated/2025-11-22/injury_feed.json
+courtdominion-app-automation-1  | 
+courtdominion-app-automation-1  | ============================================================
+courtdominion-app-automation-1  | STEP 2: GENERATING CONTENT WITH OPENAI
+courtdominion-app-automation-1  | ============================================================
+courtdominion-app-automation-1  | 
+courtdominion-app-automation-1  | Script: scripts/generator.py
+courtdominion-app-automation-1  | Purpose: Create platform-specific marketing content
+courtdominion-app-automation-1  | Platforms: Twitter, Reddit, Discord, LinkedIn, Email
+courtdominion-app-automation-1  | Output: generated/2025-11-22/[platform]_draft.txt
+courtdominion-app-automation-1  | 
+courtdominion-app-backend-1     | INFO:     127.0.0.1:43762 - "GET /health HTTP/1.1" 200 OK
+courtdominion-app-backend-1     | INFO:     127.0.0.1:36246 - "GET /health HTTP/1.1" 200 OK
+courtdominion-app-backend-1     | INFO:     127.0.0.1:36342 - "GET /health HTTP/1.1" 200 OK
+courtdominion-app-backend-1     | INFO:     127.0.0.1:49422 - "GET /health HTTP/1.1" 200 OK
+courtdominion-app-backend-1     | INFO:     127.0.0.1:33060 - "GET /health HTTP/1.1" 200 OK
+courtdominion-app-automation-1  | 
+courtdominion-app-automation-1  | ============================================================
+courtdominion-app-automation-1  | CONTENT GENERATOR - 2025-11-22
+courtdominion-app-automation-1  | ============================================================
+courtdominion-app-automation-1  | 
+courtdominion-app-automation-1  | DEBUG: Current working directory: /app
+courtdominion-app-automation-1  | DEBUG: Output directory: automation/outputs/generated/2025-11-22
+courtdominion-app-automation-1  | DEBUG: Absolute output path: /app/automation/outputs/generated/2025-11-22
+courtdominion-app-automation-1  | DEBUG: Creating directory: automation/outputs/generated/2025-11-22
+courtdominion-app-automation-1  | DEBUG: Directory exists: True
+courtdominion-app-automation-1  | 
+courtdominion-app-automation-1  | DEBUG: Looking for projections at: automation/outputs/generated/2025-11-22/projections.json
+courtdominion-app-automation-1  | DEBUG: Absolute path: /app/automation/outputs/generated/2025-11-22/projections.json
+courtdominion-app-automation-1  | DEBUG: File exists: True
+courtdominion-app-automation-1  | DEBUG: File size: 5081 bytes
+courtdominion-app-automation-1  | DEBUG: Reading projections file...
+courtdominion-app-automation-1  | ✓ Loaded projections (status: success)
+courtdominion-app-automation-1  | 
+courtdominion-app-automation-1  | Generating narrative with OpenAI...
+courtdominion-app-automation-1  | ✓ Narrative: Don't miss out on today's fantasy basketball goldmine! LeBron James is projected to dominate with 24...
+courtdominion-app-automation-1  | 
+courtdominion-app-automation-1  | Generating twitter content...
+courtdominion-app-automation-1  | DEBUG: Saving twitter content to: automation/outputs/generated/2025-11-22/twitter_draft.txt
+courtdominion-app-automation-1  | DEBUG: Absolute path: /app/automation/outputs/generated/2025-11-22/twitter_draft.txt
+courtdominion-app-automation-1  | DEBUG: Content length: 901 chars
+courtdominion-app-automation-1  | DEBUG: File exists after write: True
+courtdominion-app-automation-1  | DEBUG: File size: 938 bytes
+courtdominion-app-automation-1  | ✓ twitter: 901 chars
+courtdominion-app-automation-1  | 
+courtdominion-app-automation-1  | Generating reddit content...
+courtdominion-app-automation-1  | DEBUG: Saving reddit content to: automation/outputs/generated/2025-11-22/reddit_draft.txt
+courtdominion-app-automation-1  | DEBUG: Absolute path: /app/automation/outputs/generated/2025-11-22/reddit_draft.txt
+courtdominion-app-automation-1  | DEBUG: Content length: 1973 chars
+courtdominion-app-automation-1  | DEBUG: File exists after write: True
+courtdominion-app-automation-1  | DEBUG: File size: 1993 bytes
+courtdominion-app-automation-1  | ✓ reddit: 1973 chars
+courtdominion-app-automation-1  | 
+courtdominion-app-automation-1  | Generating discord content...
+courtdominion-app-automation-1  | DEBUG: Saving discord content to: automation/outputs/generated/2025-11-22/discord_draft.txt
+courtdominion-app-automation-1  | DEBUG: Absolute path: /app/automation/outputs/generated/2025-11-22/discord_draft.txt
+courtdominion-app-automation-1  | DEBUG: Content length: 1105 chars
+courtdominion-app-automation-1  | DEBUG: File exists after write: True
+courtdominion-app-automation-1  | DEBUG: File size: 1117 bytes
+courtdominion-app-automation-1  | ✓ discord: 1105 chars
+courtdominion-app-automation-1  | 
+courtdominion-app-automation-1  | Generating linkedin content...
+courtdominion-app-automation-1  | DEBUG: Saving linkedin content to: automation/outputs/generated/2025-11-22/linkedin_draft.txt
+courtdominion-app-automation-1  | DEBUG: Absolute path: /app/automation/outputs/generated/2025-11-22/linkedin_draft.txt
+courtdominion-app-automation-1  | DEBUG: Content length: 1478 chars
+courtdominion-app-automation-1  | DEBUG: File exists after write: True
+courtdominion-app-automation-1  | DEBUG: File size: 1478 bytes
+courtdominion-app-automation-1  | ✓ linkedin: 1478 chars
+courtdominion-app-automation-1  | 
+courtdominion-app-automation-1  | Generating email content...
+courtdominion-app-automation-1  | DEBUG: Saving email content to: automation/outputs/generated/2025-11-22/email_draft.txt
+courtdominion-app-automation-1  | DEBUG: Absolute path: /app/automation/outputs/generated/2025-11-22/email_draft.txt
+courtdominion-app-automation-1  | DEBUG: Content length: 1884 chars
+courtdominion-app-automation-1  | DEBUG: File exists after write: True
+courtdominion-app-automation-1  | DEBUG: File size: 1886 bytes
+courtdominion-app-automation-1  | ✓ email: 1884 chars
+courtdominion-app-automation-1  | 
+courtdominion-app-automation-1  | DEBUG: Saving rationale to: automation/outputs/generated/2025-11-22/rationale.json
+courtdominion-app-automation-1  | DEBUG: File exists: True
+courtdominion-app-automation-1  | ✓ Rationale saved
+courtdominion-app-automation-1  | DEBUG: Saving manifest to: automation/outputs/generated/2025-11-22/manifest.json
+courtdominion-app-automation-1  | DEBUG: File exists: True
+courtdominion-app-automation-1  | ✓ Manifest saved
+courtdominion-app-automation-1  | 
+courtdominion-app-automation-1  | ============================================================
+courtdominion-app-automation-1  | CONTENT GENERATION COMPLETE
+courtdominion-app-automation-1  | Generated content for 5/5 platforms
+courtdominion-app-automation-1  | ============================================================
+courtdominion-app-automation-1  | 
+courtdominion-app-automation-1  | 
+courtdominion-app-automation-1  | ✅ STEP 2 SUCCESS: Content generated
+courtdominion-app-automation-1  | 
+courtdominion-app-automation-1  |    Generated content files:
+courtdominion-app-automation-1  |    ✓ automation/outputs/generated/2025-11-22/twitter_draft.txt (938 bytes)
+courtdominion-app-automation-1  |    ✓ automation/outputs/generated/2025-11-22/reddit_draft.txt (1993 bytes)
+courtdominion-app-automation-1  |    ✓ automation/outputs/generated/2025-11-22/discord_draft.txt (1117 bytes)
+courtdominion-app-automation-1  |    ✓ automation/outputs/generated/2025-11-22/linkedin_draft.txt (1478 bytes)
+courtdominion-app-automation-1  |    ✓ automation/outputs/generated/2025-11-22/email_draft.txt (1886 bytes)
+courtdominion-app-automation-1  |    ✓ automation/outputs/generated/2025-11-22/rationale.json
+courtdominion-app-automation-1  |    ✓ automation/outputs/generated/2025-11-22/manifest.json
+courtdominion-app-automation-1  | 
+courtdominion-app-automation-1  |    Review content quality in: automation/outputs/generated/2025-11-22/
+courtdominion-app-automation-1  |    If content sucks, blame ChatGPT and update prompts in generator.py
+courtdominion-app-automation-1  | 
+courtdominion-app-automation-1  | ============================================================
+courtdominion-app-automation-1  | ✅ AUTOMATION WORKFLOW COMPLETED SUCCESSFULLY
+courtdominion-app-automation-1  | Ended: 2025-11-22 15:54:32
+courtdominion-app-automation-1  | ============================================================
+courtdominion-app-automation-1  | 
+courtdominion-app-automation-1  | Summary:
+courtdominion-app-automation-1  |   ✓ Projections fetched
+courtdominion-app-automation-1  |   ✓ Content generated for 5 platforms
+courtdominion-app-automation-1  | 
+courtdominion-app-automation-1  | Files created:
+courtdominion-app-automation-1  |   Content:  automation/outputs/generated/2025-11-22/
+courtdominion-app-automation-1  |   Log:      automation/outputs/logs/run-auto.log.2025-11-22-15-53-37
+courtdominion-app-automation-1  | 
+courtdominion-app-automation-1  | Next steps:
+courtdominion-app-automation-1  |   1. Review generated content in: automation/outputs/generated/2025-11-22/
+courtdominion-app-automation-1  |   2. If content quality is bad, blame ChatGPT
+courtdominion-app-automation-1  |   3. Update prompts in scripts/generator.py if needed
+courtdominion-app-automation-1  |   4. When ready to publish, update platform log files:
+courtdominion-app-automation-1  |      - automation/outputs/logs/twitter.log
+courtdominion-app-automation-1  |      - automation/outputs/logs/reddit.log
+courtdominion-app-automation-1  |      - etc.
+courtdominion-app-automation-1  | 
+courtdominion-app-automation-1  | When stuff breaks:
+courtdominion-app-automation-1  |   - Check this log: automation/outputs/logs/run-auto.log.2025-11-22-15-53-37
+courtdominion-app-automation-1  |   - Check container logs: docker compose logs automation
+courtdominion-app-automation-1  |   - Run scripts manually to debug: docker compose run automation python scripts/[script].py
+courtdominion-app-automation-1  | 
+courtdominion-app-automation-1 exited with code 0
+courtdominion-app-backend-1     | INFO:     127.0.0.1:49614 - "GET /health HTTP/1.1" 200 OK
+courtdominion-app-backend-1     | INFO:     127.0.0.1:45906 - "GET /health HTTP/1.1" 200 OK
