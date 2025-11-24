@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Players Schema",
+  "description": "Schema for players.json output",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["player_id", "name", "team", "position", "status"],
+    "properties": {
+      "player_id": {
+        "type": "string",
+        "description": "Unique NBA player ID"
+      },
+      "name": {
+        "type": "string",
+        "description": "Player full name"
+      },
+      "team": {
+        "type": "string",
+        "description": "Current team abbreviation",
+        "maxLength": 3
+      },
+      "position": {
+        "type": "string",
+        "enum": ["PG", "SG", "SF", "PF", "C"],
+        "description": "Primary position"
+      },
+      "status": {
+        "type": "string",
+        "enum": ["active", "injured", "inactive"],
+        "description": "Player status"
+      }
+    }
+  }
+}

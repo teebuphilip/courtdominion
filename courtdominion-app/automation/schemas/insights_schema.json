@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Insights Schema",
+  "description": "Schema for insights.json output",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["player_id", "value_score", "risk_score", "opportunity_index", "notes"],
+    "properties": {
+      "player_id": {
+        "type": "string",
+        "description": "Unique NBA player ID"
+      },
+      "value_score": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 100,
+        "description": "Overall value rating"
+      },
+      "risk_score": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 100,
+        "description": "Risk assessment"
+      },
+      "opportunity_index": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 100,
+        "description": "Opportunity rating"
+      },
+      "notes": {
+        "type": "string",
+        "description": "Human-readable insight summary"
+      }
+    }
+  }
+}
