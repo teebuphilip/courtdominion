@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Injuries Schema",
+  "description": "Schema for injuries.json output",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["player_id", "name", "team", "status", "injury_type", "return_date"],
+    "properties": {
+      "player_id": {
+        "type": "string",
+        "description": "Unique NBA player ID"
+      },
+      "name": {
+        "type": "string",
+        "description": "Player full name"
+      },
+      "team": {
+        "type": "string",
+        "description": "Current team abbreviation"
+      },
+      "status": {
+        "type": "string",
+        "description": "Injury status (Out, Questionable, Doubtful, etc.)"
+      },
+      "injury_type": {
+        "type": "string",
+        "description": "Type of injury"
+      },
+      "return_date": {
+        "type": ["string", "null"],
+        "description": "Expected return date (ISO format) or null"
+      }
+    }
+  }
+}

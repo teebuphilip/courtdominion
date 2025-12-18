@@ -1,0 +1,45 @@
+# Environment variables
+.env
+
+# Python
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Generated outputs (optional - comment out if you want to track them)
+courtdominion-automation/outputs/generated/
+
+# Docker
+*.zip
+
+# Secrets
+secrets/
+*.key
+*.pem

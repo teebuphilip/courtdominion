@@ -1,0 +1,2390 @@
+[
+  {
+    "player_id": "1630173",
+    "injury_risk": 28,
+    "volatility": 49,
+    "minutes_risk": 9
+  },
+  {
+    "player_id": "203500",
+    "injury_risk": 29,
+    "volatility": 41,
+    "minutes_risk": 15
+  },
+  {
+    "player_id": "1628389",
+    "injury_risk": 22,
+    "volatility": 28,
+    "minutes_risk": 25
+  },
+  {
+    "player_id": "1630534",
+    "injury_risk": 22,
+    "volatility": 45,
+    "minutes_risk": 5
+  },
+  {
+    "player_id": "1630583",
+    "injury_risk": 22,
+    "volatility": 39,
+    "minutes_risk": 8
+  },
+  {
+    "player_id": "1629638",
+    "injury_risk": 20,
+    "volatility": 36,
+    "minutes_risk": 13
+  },
+  {
+    "player_id": "1628960",
+    "injury_risk": 20,
+    "volatility": 30,
+    "minutes_risk": 26
+  },
+  {
+    "player_id": "1628386",
+    "injury_risk": 23,
+    "volatility": 29,
+    "minutes_risk": 23
+  },
+  {
+    "player_id": "1630631",
+    "injury_risk": 34,
+    "volatility": 41,
+    "minutes_risk": 10
+  },
+  {
+    "player_id": "203937",
+    "injury_risk": 31,
+    "volatility": 53,
+    "minutes_risk": 17
+  },
+  {
+    "player_id": "203507",
+    "injury_risk": 29,
+    "volatility": 32,
+    "minutes_risk": 25
+  },
+  {
+    "player_id": "203648",
+    "injury_risk": 38,
+    "volatility": 60,
+    "minutes_risk": 19
+  },
+  {
+    "player_id": "1630175",
+    "injury_risk": 24,
+    "volatility": 29,
+    "minutes_risk": 4
+  },
+  {
+    "player_id": "1628384",
+    "injury_risk": 38,
+    "volatility": 59,
+    "minutes_risk": 39
+  },
+  {
+    "player_id": "1630166",
+    "injury_risk": 24,
+    "volatility": 19,
+    "minutes_risk": 26
+  },
+  {
+    "player_id": "1629028",
+    "injury_risk": 23,
+    "volatility": 44,
+    "minutes_risk": 29
+  },
+  {
+    "player_id": "1628963",
+    "injury_risk": 37,
+    "volatility": 75,
+    "minutes_risk": 3
+  },
+  {
+    "player_id": "1630163",
+    "injury_risk": 28,
+    "volatility": 57,
+    "minutes_risk": 28
+  },
+  {
+    "player_id": "1628366",
+    "injury_risk": 36,
+    "volatility": 53,
+    "minutes_risk": 33
+  },
+  {
+    "player_id": "1631094",
+    "injury_risk": 38,
+    "volatility": 52,
+    "minutes_risk": 24
+  },
+  {
+    "player_id": "1630217",
+    "injury_risk": 34,
+    "volatility": 36,
+    "minutes_risk": 20
+  },
+  {
+    "player_id": "1631230",
+    "injury_risk": 30,
+    "volatility": 80,
+    "minutes_risk": 8
+  },
+  {
+    "player_id": "203084",
+    "injury_risk": 37,
+    "volatility": 14,
+    "minutes_risk": 10
+  },
+  {
+    "player_id": "1630567",
+    "injury_risk": 28,
+    "volatility": 27,
+    "minutes_risk": 24
+  },
+  {
+    "player_id": "1629628",
+    "injury_risk": 37,
+    "volatility": 59,
+    "minutes_risk": 32
+  },
+  {
+    "player_id": "1629646",
+    "injury_risk": 24,
+    "volatility": 80,
+    "minutes_risk": 6
+  },
+  {
+    "player_id": "1642419",
+    "injury_risk": 39,
+    "volatility": 90,
+    "minutes_risk": 13
+  },
+  {
+    "player_id": "201587",
+    "injury_risk": 24,
+    "volatility": 50,
+    "minutes_risk": 12
+  },
+  {
+    "player_id": "203078",
+    "injury_risk": 35,
+    "volatility": 55,
+    "minutes_risk": 29
+  },
+  {
+    "player_id": "1630180",
+    "injury_risk": 25,
+    "volatility": 44,
+    "minutes_risk": 22
+  },
+  {
+    "player_id": "1629048",
+    "injury_risk": 27,
+    "volatility": 52,
+    "minutes_risk": 11
+  },
+  {
+    "player_id": "202687",
+    "injury_risk": 23,
+    "volatility": 80,
+    "minutes_risk": 15
+  },
+  {
+    "player_id": "1641710",
+    "injury_risk": 29,
+    "volatility": 63,
+    "minutes_risk": 5
+  },
+  {
+    "player_id": "203992",
+    "injury_risk": 29,
+    "volatility": 56,
+    "minutes_risk": 18
+  },
+  {
+    "player_id": "1641737",
+    "injury_risk": 36,
+    "volatility": 91,
+    "minutes_risk": 13
+  },
+  {
+    "player_id": "1626164",
+    "injury_risk": 25,
+    "volatility": 32,
+    "minutes_risk": 54
+  },
+  {
+    "player_id": "1628449",
+    "injury_risk": 28,
+    "volatility": 38,
+    "minutes_risk": 12
+  },
+  {
+    "player_id": "1628396",
+    "injury_risk": 32,
+    "volatility": 71,
+    "minutes_risk": 1
+  },
+  {
+    "player_id": "1631103",
+    "injury_risk": 34,
+    "volatility": 57,
+    "minutes_risk": 18
+  },
+  {
+    "player_id": "1631128",
+    "injury_risk": 35,
+    "volatility": 42,
+    "minutes_risk": 5
+  },
+  {
+    "player_id": "1628969",
+    "injury_risk": 34,
+    "volatility": 29,
+    "minutes_risk": 51
+  },
+  {
+    "player_id": "1628970",
+    "injury_risk": 35,
+    "volatility": 26,
+    "minutes_risk": 38
+  },
+  {
+    "player_id": "1628415",
+    "injury_risk": 22,
+    "volatility": 35,
+    "minutes_risk": 31
+  },
+  {
+    "player_id": "1628971",
+    "injury_risk": 20,
+    "volatility": 63,
+    "minutes_risk": 4
+  },
+  {
+    "player_id": "1627759",
+    "injury_risk": 25,
+    "volatility": 31,
+    "minutes_risk": 21
+  },
+  {
+    "player_id": "1641738",
+    "injury_risk": 26,
+    "volatility": 84,
+    "minutes_risk": 14
+  },
+  {
+    "player_id": "1628973",
+    "injury_risk": 22,
+    "volatility": 24,
+    "minutes_risk": 21
+  },
+  {
+    "player_id": "1628418",
+    "injury_risk": 39,
+    "volatility": 59,
+    "minutes_risk": 3
+  },
+  {
+    "player_id": "202710",
+    "injury_risk": 26,
+    "volatility": 58,
+    "minutes_risk": 12
+  },
+  {
+    "player_id": "1641824",
+    "injury_risk": 20,
+    "volatility": 82,
+    "minutes_risk": 19
+  },
+  {
+    "player_id": "1631288",
+    "injury_risk": 39,
+    "volatility": 88,
+    "minutes_risk": 5
+  },
+  {
+    "player_id": "203484",
+    "injury_risk": 27,
+    "volatility": 19,
+    "minutes_risk": 24
+  },
+  {
+    "player_id": "1641739",
+    "injury_risk": 28,
+    "volatility": 63,
+    "minutes_risk": 23
+  },
+  {
+    "player_id": "203991",
+    "injury_risk": 28,
+    "volatility": 31,
+    "minutes_risk": 14
+  },
+  {
+    "player_id": "1642267",
+    "injury_risk": 35,
+    "volatility": 82,
+    "minutes_risk": 0
+  },
+  {
+    "player_id": "1628975",
+    "injury_risk": 31,
+    "volatility": 36,
+    "minutes_risk": 18
+  },
+  {
+    "player_id": "1628976",
+    "injury_risk": 37,
+    "volatility": 37,
+    "minutes_risk": 10
+  },
+  {
+    "player_id": "1627936",
+    "injury_risk": 20,
+    "volatility": 42,
+    "minutes_risk": 18
+  },
+  {
+    "player_id": "1642264",
+    "injury_risk": 25,
+    "volatility": 85,
+    "minutes_risk": 5
+  },
+  {
+    "player_id": "1630658",
+    "injury_risk": 36,
+    "volatility": 93,
+    "minutes_risk": 3
+  },
+  {
+    "player_id": "1630577",
+    "injury_risk": 39,
+    "volatility": 52,
+    "minutes_risk": 9
+  },
+  {
+    "player_id": "1630551",
+    "injury_risk": 21,
+    "volatility": 82,
+    "minutes_risk": 11
+  },
+  {
+    "player_id": "1631108",
+    "injury_risk": 36,
+    "volatility": 42,
+    "minutes_risk": 4
+  },
+  {
+    "player_id": "1631321",
+    "injury_risk": 24,
+    "volatility": 90,
+    "minutes_risk": 17
+  },
+  {
+    "player_id": "1641740",
+    "injury_risk": 36,
+    "volatility": 94,
+    "minutes_risk": 14
+  },
+  {
+    "player_id": "1629634",
+    "injury_risk": 35,
+    "volatility": 42,
+    "minutes_risk": 17
+  },
+  {
+    "player_id": "203903",
+    "injury_risk": 23,
+    "volatility": 40,
+    "minutes_risk": 16
+  },
+  {
+    "player_id": "1629651",
+    "injury_risk": 25,
+    "volatility": 31,
+    "minutes_risk": 14
+  },
+  {
+    "player_id": "1642270",
+    "injury_risk": 30,
+    "volatility": 87,
+    "minutes_risk": 3
+  },
+  {
+    "player_id": "1641730",
+    "injury_risk": 39,
+    "volatility": 86,
+    "minutes_risk": 16
+  },
+  {
+    "player_id": "1629599",
+    "injury_risk": 25,
+    "volatility": 33,
+    "minutes_risk": 3
+  },
+  {
+    "player_id": "1642268",
+    "injury_risk": 27,
+    "volatility": 87,
+    "minutes_risk": 1
+  },
+  {
+    "player_id": "1628381",
+    "injury_risk": 24,
+    "volatility": 40,
+    "minutes_risk": 28
+  },
+  {
+    "player_id": "1628380",
+    "injury_risk": 30,
+    "volatility": 55,
+    "minutes_risk": 16
+  },
+  {
+    "player_id": "201144",
+    "injury_risk": 30,
+    "volatility": 39,
+    "minutes_risk": 16
+  },
+  {
+    "player_id": "1626192",
+    "injury_risk": 30,
+    "volatility": 41,
+    "minutes_risk": 0
+  },
+  {
+    "player_id": "1641731",
+    "injury_risk": 33,
+    "volatility": 74,
+    "minutes_risk": 26
+  },
+  {
+    "player_id": "1630595",
+    "injury_risk": 34,
+    "volatility": 48,
+    "minutes_risk": 32
+  },
+  {
+    "player_id": "201939",
+    "injury_risk": 32,
+    "volatility": 33,
+    "minutes_risk": 16
+  },
+  {
+    "player_id": "1630700",
+    "injury_risk": 35,
+    "volatility": 50,
+    "minutes_risk": 10
+  },
+  {
+    "player_id": "203076",
+    "injury_risk": 33,
+    "volatility": 59,
+    "minutes_risk": 15
+  },
+  {
+    "player_id": "201942",
+    "injury_risk": 35,
+    "volatility": 18,
+    "minutes_risk": 11
+  },
+  {
+    "player_id": "1628978",
+    "injury_risk": 26,
+    "volatility": 33,
+    "minutes_risk": 15
+  },
+  {
+    "player_id": "1631217",
+    "injury_risk": 22,
+    "volatility": 76,
+    "minutes_risk": 11
+  },
+  {
+    "player_id": "1641711",
+    "injury_risk": 33,
+    "volatility": 72,
+    "minutes_risk": 5
+  },
+  {
+    "player_id": "1631172",
+    "injury_risk": 30,
+    "volatility": 77,
+    "minutes_risk": 8
+  },
+  {
+    "player_id": "1642265",
+    "injury_risk": 37,
+    "volatility": 92,
+    "minutes_risk": 9
+  },
+  {
+    "player_id": "1629029",
+    "injury_risk": 28,
+    "volatility": 59,
+    "minutes_risk": 51
+  },
+  {
+    "player_id": "1629652",
+    "injury_risk": 27,
+    "volatility": 30,
+    "minutes_risk": 22
+  },
+  {
+    "player_id": "1630245",
+    "injury_risk": 39,
+    "volatility": 29,
+    "minutes_risk": 11
+  },
+  {
+    "player_id": "203083",
+    "injury_risk": 23,
+    "volatility": 33,
+    "minutes_risk": 4
+  },
+  {
+    "player_id": "1627739",
+    "injury_risk": 39,
+    "volatility": 55,
+    "minutes_risk": 12
+  },
+  {
+    "player_id": "1642346",
+    "injury_risk": 39,
+    "volatility": 86,
+    "minutes_risk": 0
+  },
+  {
+    "player_id": "201142",
+    "injury_risk": 28,
+    "volatility": 52,
+    "minutes_risk": 13
+  },
+  {
+    "player_id": "1631105",
+    "injury_risk": 23,
+    "volatility": 48,
+    "minutes_risk": 12
+  },
+  {
+    "player_id": "1631106",
+    "injury_risk": 24,
+    "volatility": 63,
+    "minutes_risk": 17
+  },
+  {
+    "player_id": "1641744",
+    "injury_risk": 32,
+    "volatility": 90,
+    "minutes_risk": 14
+  },
+  {
+    "player_id": "1630162",
+    "injury_risk": 22,
+    "volatility": 20,
+    "minutes_risk": 54
+  },
+  {
+    "player_id": "1642348",
+    "injury_risk": 30,
+    "volatility": 94,
+    "minutes_risk": 13
+  },
+  {
+    "player_id": "1631165",
+    "injury_risk": 24,
+    "volatility": 62,
+    "minutes_risk": 17
+  },
+  {
+    "player_id": "203954",
+    "injury_risk": 34,
+    "volatility": 55,
+    "minutes_risk": 36
+  },
+  {
+    "player_id": "1629234",
+    "injury_risk": 29,
+    "volatility": 50,
+    "minutes_risk": 7
+  },
+  {
+    "player_id": "1641787",
+    "injury_risk": 23,
+    "volatility": 94,
+    "minutes_risk": 5
+  },
+  {
+    "player_id": "203957",
+    "injury_risk": 26,
+    "volatility": 72,
+    "minutes_risk": 10
+  },
+  {
+    "player_id": "1642271",
+    "injury_risk": 21,
+    "volatility": 85,
+    "minutes_risk": 19
+  },
+  {
+    "player_id": "1627827",
+    "injury_risk": 32,
+    "volatility": 39,
+    "minutes_risk": 12
+  },
+  {
+    "player_id": "1631323",
+    "injury_risk": 25,
+    "volatility": 48,
+    "minutes_risk": 9
+  },
+  {
+    "player_id": "1628368",
+    "injury_risk": 27,
+    "volatility": 52,
+    "minutes_risk": 42
+  },
+  {
+    "player_id": "1642277",
+    "injury_risk": 21,
+    "volatility": 96,
+    "minutes_risk": 5
+  },
+  {
+    "player_id": "1629655",
+    "injury_risk": 27,
+    "volatility": 50,
+    "minutes_risk": 2
+  },
+  {
+    "player_id": "1629636",
+    "injury_risk": 36,
+    "volatility": 33,
+    "minutes_risk": 29
+  },
+  {
+    "player_id": "1630568",
+    "injury_risk": 22,
+    "volatility": 72,
+    "minutes_risk": 1
+  },
+  {
+    "player_id": "1641718",
+    "injury_risk": 22,
+    "volatility": 66,
+    "minutes_risk": 14
+  },
+  {
+    "player_id": "1642273",
+    "injury_risk": 32,
+    "volatility": 87,
+    "minutes_risk": 4
+  },
+  {
+    "player_id": "202331",
+    "injury_risk": 35,
+    "volatility": 52,
+    "minutes_risk": 3
+  },
+  {
+    "player_id": "1630581",
+    "injury_risk": 24,
+    "volatility": 27,
+    "minutes_risk": 15
+  },
+  {
+    "player_id": "1628983",
+    "injury_risk": 34,
+    "volatility": 28,
+    "minutes_risk": 37
+  },
+  {
+    "player_id": "1630264",
+    "injury_risk": 30,
+    "volatility": 52,
+    "minutes_risk": 9
+  },
+  {
+    "player_id": "1631221",
+    "injury_risk": 39,
+    "volatility": 89,
+    "minutes_risk": 1
+  },
+  {
+    "player_id": "203497",
+    "injury_risk": 33,
+    "volatility": 25,
+    "minutes_risk": 29
+  },
+  {
+    "player_id": "1630692",
+    "injury_risk": 28,
+    "volatility": 65,
+    "minutes_risk": 15
+  },
+  {
+    "player_id": "203932",
+    "injury_risk": 36,
+    "volatility": 33,
+    "minutes_risk": 10
+  },
+  {
+    "player_id": "201569",
+    "injury_risk": 25,
+    "volatility": 55,
+    "minutes_risk": 17
+  },
+  {
+    "player_id": "203924",
+    "injury_risk": 35,
+    "volatility": 45,
+    "minutes_risk": 26
+  },
+  {
+    "player_id": "1631260",
+    "injury_risk": 37,
+    "volatility": 59,
+    "minutes_risk": 11
+  },
+  {
+    "player_id": "203110",
+    "injury_risk": 22,
+    "volatility": 39,
+    "minutes_risk": 8
+  },
+  {
+    "player_id": "1630224",
+    "injury_risk": 35,
+    "volatility": 25,
+    "minutes_risk": 31
+  },
+  {
+    "player_id": "1629750",
+    "injury_risk": 23,
+    "volatility": 64,
+    "minutes_risk": 8
+  },
+  {
+    "player_id": "201145",
+    "injury_risk": 32,
+    "volatility": 42,
+    "minutes_risk": 4
+  },
+  {
+    "player_id": "1630182",
+    "injury_risk": 38,
+    "volatility": 41,
+    "minutes_risk": 15
+  },
+  {
+    "player_id": "1629656",
+    "injury_risk": 36,
+    "volatility": 49,
+    "minutes_risk": 19
+  },
+  {
+    "player_id": "1631243",
+    "injury_risk": 23,
+    "volatility": 94,
+    "minutes_risk": 6
+  },
+  {
+    "player_id": "1629060",
+    "injury_risk": 27,
+    "volatility": 43,
+    "minutes_risk": 27
+  },
+  {
+    "player_id": "1630169",
+    "injury_risk": 24,
+    "volatility": 27,
+    "minutes_risk": 22
+  },
+  {
+    "player_id": "203501",
+    "injury_risk": 22,
+    "volatility": 30,
+    "minutes_risk": 7
+  },
+  {
+    "player_id": "201935",
+    "injury_risk": 35,
+    "volatility": 29,
+    "minutes_risk": 22
+  },
+  {
+    "player_id": "1630702",
+    "injury_risk": 35,
+    "volatility": 57,
+    "minutes_risk": 3
+  },
+  {
+    "player_id": "203914",
+    "injury_risk": 35,
+    "volatility": 48,
+    "minutes_risk": 16
+  },
+  {
+    "player_id": "202699",
+    "injury_risk": 20,
+    "volatility": 26,
+    "minutes_risk": 26
+  },
+  {
+    "player_id": "1628404",
+    "injury_risk": 38,
+    "volatility": 33,
+    "minutes_risk": 20
+  },
+  {
+    "player_id": "1628392",
+    "injury_risk": 27,
+    "volatility": 27,
+    "minutes_risk": 19
+  },
+  {
+    "player_id": "1630573",
+    "injury_risk": 23,
+    "volatility": 33,
+    "minutes_risk": 14
+  },
+  {
+    "player_id": "1641722",
+    "injury_risk": 36,
+    "volatility": 71,
+    "minutes_risk": 2
+  },
+  {
+    "player_id": "1629637",
+    "injury_risk": 34,
+    "volatility": 38,
+    "minutes_risk": 5
+  },
+  {
+    "player_id": "1630703",
+    "injury_risk": 34,
+    "volatility": 76,
+    "minutes_risk": 7
+  },
+  {
+    "player_id": "1641707",
+    "injury_risk": 32,
+    "volatility": 96,
+    "minutes_risk": 0
+  },
+  {
+    "player_id": "1629639",
+    "injury_risk": 21,
+    "volatility": 40,
+    "minutes_risk": 29
+  },
+  {
+    "player_id": "1627741",
+    "injury_risk": 36,
+    "volatility": 34,
+    "minutes_risk": 0
+  },
+  {
+    "player_id": "1629312",
+    "injury_risk": 31,
+    "volatility": 51,
+    "minutes_risk": 16
+  },
+  {
+    "player_id": "1628988",
+    "injury_risk": 23,
+    "volatility": 32,
+    "minutes_risk": 11
+  },
+  {
+    "player_id": "201950",
+    "injury_risk": 29,
+    "volatility": 34,
+    "minutes_risk": 19
+  },
+  {
+    "player_id": "1641842",
+    "injury_risk": 21,
+    "volatility": 82,
+    "minutes_risk": 19
+  },
+  {
+    "player_id": "1631096",
+    "injury_risk": 31,
+    "volatility": 73,
+    "minutes_risk": 17
+  },
+  {
+    "player_id": "201143",
+    "injury_risk": 27,
+    "volatility": 36,
+    "minutes_risk": 5
+  },
+  {
+    "player_id": "1631216",
+    "injury_risk": 38,
+    "volatility": 62,
+    "minutes_risk": 14
+  },
+  {
+    "player_id": "1641724",
+    "injury_risk": 21,
+    "volatility": 86,
+    "minutes_risk": 12
+  },
+  {
+    "player_id": "1628989",
+    "injury_risk": 37,
+    "volatility": 50,
+    "minutes_risk": 3
+  },
+  {
+    "player_id": "1630643",
+    "injury_risk": 20,
+    "volatility": 78,
+    "minutes_risk": 16
+  },
+  {
+    "player_id": "1629631",
+    "injury_risk": 21,
+    "volatility": 53,
+    "minutes_risk": 18
+  },
+  {
+    "player_id": "1630538",
+    "injury_risk": 28,
+    "volatility": 84,
+    "minutes_risk": 3
+  },
+  {
+    "player_id": "1642345",
+    "injury_risk": 30,
+    "volatility": 88,
+    "minutes_risk": 15
+  },
+  {
+    "player_id": "204060",
+    "injury_risk": 20,
+    "volatility": 60,
+    "minutes_risk": 11
+  },
+  {
+    "player_id": "1627742",
+    "injury_risk": 38,
+    "volatility": 53,
+    "minutes_risk": 34
+  },
+  {
+    "player_id": "202681",
+    "injury_risk": 34,
+    "volatility": 49,
+    "minutes_risk": 26
+  },
+  {
+    "player_id": "1628371",
+    "injury_risk": 31,
+    "volatility": 57,
+    "minutes_risk": 15
+  },
+  {
+    "player_id": "1631093",
+    "injury_risk": 32,
+    "volatility": 58,
+    "minutes_risk": 15
+  },
+  {
+    "player_id": "1641713",
+    "injury_risk": 32,
+    "volatility": 88,
+    "minutes_risk": 2
+  },
+  {
+    "player_id": "1630543",
+    "injury_risk": 39,
+    "volatility": 59,
+    "minutes_risk": 9
+  },
+  {
+    "player_id": "1641748",
+    "injury_risk": 37,
+    "volatility": 73,
+    "minutes_risk": 6
+  },
+  {
+    "player_id": "1628991",
+    "injury_risk": 36,
+    "volatility": 26,
+    "minutes_risk": 15
+  },
+  {
+    "player_id": "1631218",
+    "injury_risk": 38,
+    "volatility": 71,
+    "minutes_risk": 15
+  },
+  {
+    "player_id": "2544",
+    "injury_risk": 25,
+    "volatility": 39,
+    "minutes_risk": 17
+  },
+  {
+    "player_id": "1631170",
+    "injury_risk": 32,
+    "volatility": 66,
+    "minutes_risk": 16
+  },
+  {
+    "player_id": "1641998",
+    "injury_risk": 29,
+    "volatility": 82,
+    "minutes_risk": 5
+  },
+  {
+    "player_id": "1629660",
+    "injury_risk": 36,
+    "volatility": 57,
+    "minutes_risk": 6
+  },
+  {
+    "player_id": "1630198",
+    "injury_risk": 28,
+    "volatility": 29,
+    "minutes_risk": 17
+  },
+  {
+    "player_id": "1642358",
+    "injury_risk": 21,
+    "volatility": 93,
+    "minutes_risk": 5
+  },
+  {
+    "player_id": "1629661",
+    "injury_risk": 24,
+    "volatility": 54,
+    "minutes_risk": 13
+  },
+  {
+    "player_id": "1630552",
+    "injury_risk": 32,
+    "volatility": 53,
+    "minutes_risk": 17
+  },
+  {
+    "player_id": "1629640",
+    "injury_risk": 26,
+    "volatility": 25,
+    "minutes_risk": 11
+  },
+  {
+    "player_id": "203999",
+    "injury_risk": 25,
+    "volatility": 23,
+    "minutes_risk": 34
+  },
+  {
+    "player_id": "1641732",
+    "injury_risk": 26,
+    "volatility": 81,
+    "minutes_risk": 19
+  },
+  {
+    "player_id": "1630529",
+    "injury_risk": 22,
+    "volatility": 40,
+    "minutes_risk": 24
+  },
+  {
+    "player_id": "1630200",
+    "injury_risk": 39,
+    "volatility": 59,
+    "minutes_risk": 17
+  },
+  {
+    "player_id": "1626145",
+    "injury_risk": 28,
+    "volatility": 21,
+    "minutes_risk": 8
+  },
+  {
+    "player_id": "1627884",
+    "injury_risk": 29,
+    "volatility": 33,
+    "minutes_risk": 17
+  },
+  {
+    "player_id": "201599",
+    "injury_risk": 30,
+    "volatility": 61,
+    "minutes_risk": 1
+  },
+  {
+    "player_id": "1631107",
+    "injury_risk": 24,
+    "volatility": 77,
+    "minutes_risk": 15
+  },
+  {
+    "player_id": "1630548",
+    "injury_risk": 37,
+    "volatility": 81,
+    "minutes_risk": 15
+  },
+  {
+    "player_id": "1628379",
+    "injury_risk": 23,
+    "volatility": 53,
+    "minutes_risk": 2
+  },
+  {
+    "player_id": "1631117",
+    "injury_risk": 26,
+    "volatility": 55,
+    "minutes_risk": 17
+  },
+  {
+    "player_id": "1630557",
+    "injury_risk": 25,
+    "volatility": 25,
+    "minutes_risk": 14
+  },
+  {
+    "player_id": "1628467",
+    "injury_risk": 36,
+    "volatility": 61,
+    "minutes_risk": 11
+  },
+  {
+    "player_id": "1642261",
+    "injury_risk": 39,
+    "volatility": 85,
+    "minutes_risk": 16
+  },
+  {
+    "player_id": "1642278",
+    "injury_risk": 28,
+    "volatility": 95,
+    "minutes_risk": 1
+  },
+  {
+    "player_id": "1631132",
+    "injury_risk": 23,
+    "volatility": 84,
+    "minutes_risk": 8
+  },
+  {
+    "player_id": "1629723",
+    "injury_risk": 31,
+    "volatility": 38,
+    "minutes_risk": 17
+  },
+  {
+    "player_id": "1628436",
+    "injury_risk": 28,
+    "volatility": 45,
+    "minutes_risk": 12
+  },
+  {
+    "player_id": "1630249",
+    "injury_risk": 28,
+    "volatility": 67,
+    "minutes_risk": 1
+  },
+  {
+    "player_id": "1630228",
+    "injury_risk": 28,
+    "volatility": 35,
+    "minutes_risk": 15
+  },
+  {
+    "player_id": "1628398",
+    "injury_risk": 36,
+    "volatility": 49,
+    "minutes_risk": 15
+  },
+  {
+    "player_id": "1631222",
+    "injury_risk": 28,
+    "volatility": 58,
+    "minutes_risk": 3
+  },
+  {
+    "player_id": "203897",
+    "injury_risk": 23,
+    "volatility": 57,
+    "minutes_risk": 21
+  },
+  {
+    "player_id": "1629111",
+    "injury_risk": 29,
+    "volatility": 43,
+    "minutes_risk": 14
+  },
+  {
+    "player_id": "1641796",
+    "injury_risk": 27,
+    "volatility": 90,
+    "minutes_risk": 15
+  },
+  {
+    "player_id": "1630639",
+    "injury_risk": 33,
+    "volatility": 84,
+    "minutes_risk": 0
+  },
+  {
+    "player_id": "1627747",
+    "injury_risk": 24,
+    "volatility": 51,
+    "minutes_risk": 10
+  },
+  {
+    "player_id": "202695",
+    "injury_risk": 25,
+    "volatility": 49,
+    "minutes_risk": 16
+  },
+  {
+    "player_id": "203081",
+    "injury_risk": 39,
+    "volatility": 32,
+    "minutes_risk": 26
+  },
+  {
+    "player_id": "1641726",
+    "injury_risk": 36,
+    "volatility": 85,
+    "minutes_risk": 3
+  },
+  {
+    "player_id": "1630587",
+    "injury_risk": 23,
+    "volatility": 82,
+    "minutes_risk": 16
+  },
+  {
+    "player_id": "1626172",
+    "injury_risk": 26,
+    "volatility": 21,
+    "minutes_risk": 19
+  },
+  {
+    "player_id": "201572",
+    "injury_risk": 24,
+    "volatility": 36,
+    "minutes_risk": 1
+  },
+  {
+    "player_id": "201567",
+    "injury_risk": 38,
+    "volatility": 62,
+    "minutes_risk": 5
+  },
+  {
+    "player_id": "200768",
+    "injury_risk": 39,
+    "volatility": 68,
+    "minutes_risk": 15
+  },
+  {
+    "player_id": "1630572",
+    "injury_risk": 20,
+    "volatility": 58,
+    "minutes_risk": 1
+  },
+  {
+    "player_id": "1629611",
+    "injury_risk": 27,
+    "volatility": 47,
+    "minutes_risk": 7
+  },
+  {
+    "player_id": "1630544",
+    "injury_risk": 22,
+    "volatility": 80,
+    "minutes_risk": 13
+  },
+  {
+    "player_id": "1628374",
+    "injury_risk": 34,
+    "volatility": 41,
+    "minutes_risk": 24
+  },
+  {
+    "player_id": "1630230",
+    "injury_risk": 32,
+    "volatility": 30,
+    "minutes_risk": 18
+  },
+  {
+    "player_id": "1628997",
+    "injury_risk": 29,
+    "volatility": 62,
+    "minutes_risk": 0
+  },
+  {
+    "player_id": "1628998",
+    "injury_risk": 39,
+    "volatility": 73,
+    "minutes_risk": 15
+  },
+  {
+    "player_id": "1631213",
+    "injury_risk": 24,
+    "volatility": 83,
+    "minutes_risk": 5
+  },
+  {
+    "player_id": "1631097",
+    "injury_risk": 26,
+    "volatility": 49,
+    "minutes_risk": 17
+  },
+  {
+    "player_id": "1631255",
+    "injury_risk": 36,
+    "volatility": 96,
+    "minutes_risk": 8
+  },
+  {
+    "player_id": "1630178",
+    "injury_risk": 31,
+    "volatility": 33,
+    "minutes_risk": 46
+  },
+  {
+    "player_id": "1630540",
+    "injury_risk": 25,
+    "volatility": 40,
+    "minutes_risk": 4
+  },
+  {
+    "player_id": "203468",
+    "injury_risk": 33,
+    "volatility": 33,
+    "minutes_risk": 27
+  },
+  {
+    "player_id": "204456",
+    "injury_risk": 25,
+    "volatility": 36,
+    "minutes_risk": 11
+  },
+  {
+    "player_id": "1630183",
+    "injury_risk": 27,
+    "volatility": 20,
+    "minutes_risk": 13
+  },
+  {
+    "player_id": "203926",
+    "injury_risk": 24,
+    "volatility": 63,
+    "minutes_risk": 10
+  },
+  {
+    "player_id": "1631121",
+    "injury_risk": 32,
+    "volatility": 75,
+    "minutes_risk": 18
+  },
+  {
+    "player_id": "1629162",
+    "injury_risk": 37,
+    "volatility": 68,
+    "minutes_risk": 5
+  },
+  {
+    "player_id": "1629001",
+    "injury_risk": 33,
+    "volatility": 57,
+    "minutes_risk": 22
+  },
+  {
+    "player_id": "1630241",
+    "injury_risk": 21,
+    "volatility": 69,
+    "minutes_risk": 5
+  },
+  {
+    "player_id": "203114",
+    "injury_risk": 27,
+    "volatility": 71,
+    "minutes_risk": 11
+  },
+  {
+    "player_id": "1641706",
+    "injury_risk": 30,
+    "volatility": 81,
+    "minutes_risk": 29
+  },
+  {
+    "player_id": "1641757",
+    "injury_risk": 22,
+    "volatility": 98,
+    "minutes_risk": 12
+  },
+  {
+    "player_id": "1631169",
+    "injury_risk": 32,
+    "volatility": 79,
+    "minutes_risk": 10
+  },
+  {
+    "player_id": "1642274",
+    "injury_risk": 26,
+    "volatility": 86,
+    "minutes_risk": 10
+  },
+  {
+    "player_id": "1642349",
+    "injury_risk": 34,
+    "volatility": 95,
+    "minutes_risk": 8
+  },
+  {
+    "player_id": "1630558",
+    "injury_risk": 22,
+    "volatility": 43,
+    "minutes_risk": 7
+  },
+  {
+    "player_id": "1628378",
+    "injury_risk": 37,
+    "volatility": 32,
+    "minutes_risk": 26
+  },
+  {
+    "player_id": "1630596",
+    "injury_risk": 31,
+    "volatility": 30,
+    "minutes_risk": 20
+  },
+  {
+    "player_id": "1642367",
+    "injury_risk": 35,
+    "volatility": 91,
+    "minutes_risk": 1
+  },
+  {
+    "player_id": "1628370",
+    "injury_risk": 24,
+    "volatility": 24,
+    "minutes_risk": 25
+  },
+  {
+    "player_id": "1630541",
+    "injury_risk": 21,
+    "volatility": 33,
+    "minutes_risk": 13
+  },
+  {
+    "player_id": "1631111",
+    "injury_risk": 23,
+    "volatility": 83,
+    "minutes_risk": 6
+  },
+  {
+    "player_id": "1629630",
+    "injury_risk": 25,
+    "volatility": 59,
+    "minutes_risk": 22
+  },
+  {
+    "player_id": "1628420",
+    "injury_risk": 36,
+    "volatility": 79,
+    "minutes_risk": 4
+  },
+  {
+    "player_id": "1630530",
+    "injury_risk": 22,
+    "volatility": 34,
+    "minutes_risk": 11
+  },
+  {
+    "player_id": "1627749",
+    "injury_risk": 28,
+    "volatility": 23,
+    "minutes_risk": 27
+  },
+  {
+    "player_id": "1627750",
+    "injury_risk": 32,
+    "volatility": 39,
+    "minutes_risk": 37
+  },
+  {
+    "player_id": "1631099",
+    "injury_risk": 27,
+    "volatility": 43,
+    "minutes_risk": 21
+  },
+  {
+    "player_id": "1631200",
+    "injury_risk": 32,
+    "volatility": 69,
+    "minutes_risk": 19
+  },
+  {
+    "player_id": "1629004",
+    "injury_risk": 35,
+    "volatility": 69,
+    "minutes_risk": 5
+  },
+  {
+    "player_id": "1626204",
+    "injury_risk": 24,
+    "volatility": 52,
+    "minutes_risk": 12
+  },
+  {
+    "player_id": "1629614",
+    "injury_risk": 36,
+    "volatility": 49,
+    "minutes_risk": 16
+  },
+  {
+    "player_id": "1627777",
+    "injury_risk": 30,
+    "volatility": 23,
+    "minutes_risk": 15
+  },
+  {
+    "player_id": "1630192",
+    "injury_risk": 31,
+    "volatility": 49,
+    "minutes_risk": 9
+  },
+  {
+    "player_id": "203994",
+    "injury_risk": 21,
+    "volatility": 55,
+    "minutes_risk": 12
+  },
+  {
+    "player_id": "1626220",
+    "injury_risk": 36,
+    "volatility": 40,
+    "minutes_risk": 4
+  },
+  {
+    "player_id": "1629006",
+    "injury_risk": 20,
+    "volatility": 67,
+    "minutes_risk": 8
+  },
+  {
+    "player_id": "1630168",
+    "injury_risk": 20,
+    "volatility": 33,
+    "minutes_risk": 18
+  },
+  {
+    "player_id": "1630171",
+    "injury_risk": 29,
+    "volatility": 32,
+    "minutes_risk": 1
+  },
+  {
+    "player_id": "203482",
+    "injury_risk": 33,
+    "volatility": 61,
+    "minutes_risk": 1
+  },
+  {
+    "player_id": "1626162",
+    "injury_risk": 24,
+    "volatility": 38,
+    "minutes_risk": 15
+  },
+  {
+    "player_id": "101108",
+    "injury_risk": 38,
+    "volatility": 33,
+    "minutes_risk": 8
+  },
+  {
+    "player_id": "1627780",
+    "injury_risk": 35,
+    "volatility": 67,
+    "minutes_risk": 7
+  },
+  {
+    "player_id": "1641763",
+    "injury_risk": 31,
+    "volatility": 72,
+    "minutes_risk": 16
+  },
+  {
+    "player_id": "1629618",
+    "injury_risk": 26,
+    "volatility": 88,
+    "minutes_risk": 6
+  },
+  {
+    "player_id": "1630590",
+    "injury_risk": 21,
+    "volatility": 82,
+    "minutes_risk": 17
+  },
+  {
+    "player_id": "203486",
+    "injury_risk": 21,
+    "volatility": 47,
+    "minutes_risk": 3
+  },
+  {
+    "player_id": "1641764",
+    "injury_risk": 24,
+    "volatility": 66,
+    "minutes_risk": 8
+  },
+  {
+    "player_id": "1627751",
+    "injury_risk": 35,
+    "volatility": 49,
+    "minutes_risk": 27
+  },
+  {
+    "player_id": "1629673",
+    "injury_risk": 30,
+    "volatility": 24,
+    "minutes_risk": 22
+  },
+  {
+    "player_id": "1641854",
+    "injury_risk": 29,
+    "volatility": 77,
+    "minutes_risk": 7
+  },
+  {
+    "player_id": "1629645",
+    "injury_risk": 29,
+    "volatility": 51,
+    "minutes_risk": 8
+  },
+  {
+    "player_id": "1629008",
+    "injury_risk": 22,
+    "volatility": 42,
+    "minutes_risk": 33
+  },
+  {
+    "player_id": "1626171",
+    "injury_risk": 32,
+    "volatility": 27,
+    "minutes_risk": 7
+  },
+  {
+    "player_id": "204001",
+    "injury_risk": 36,
+    "volatility": 49,
+    "minutes_risk": 16
+  },
+  {
+    "player_id": "1642366",
+    "injury_risk": 31,
+    "volatility": 92,
+    "minutes_risk": 14
+  },
+  {
+    "player_id": "203939",
+    "injury_risk": 33,
+    "volatility": 29,
+    "minutes_risk": 11
+  },
+  {
+    "player_id": "1626181",
+    "injury_risk": 27,
+    "volatility": 39,
+    "minutes_risk": 5
+  },
+  {
+    "player_id": "1627752",
+    "injury_risk": 38,
+    "volatility": 31,
+    "minutes_risk": 4
+  },
+  {
+    "player_id": "1630202",
+    "injury_risk": 32,
+    "volatility": 26,
+    "minutes_risk": 0
+  },
+  {
+    "player_id": "1641765",
+    "injury_risk": 31,
+    "volatility": 82,
+    "minutes_risk": 0
+  },
+  {
+    "player_id": "1629674",
+    "injury_risk": 33,
+    "volatility": 75,
+    "minutes_risk": 17
+  },
+  {
+    "player_id": "1630193",
+    "injury_risk": 25,
+    "volatility": 58,
+    "minutes_risk": 20
+  },
+  {
+    "player_id": "203944",
+    "injury_risk": 20,
+    "volatility": 31,
+    "minutes_risk": 38
+  },
+  {
+    "player_id": "1641871",
+    "injury_risk": 23,
+    "volatility": 74,
+    "minutes_risk": 7
+  },
+  {
+    "player_id": "1630559",
+    "injury_risk": 32,
+    "volatility": 27,
+    "minutes_risk": 29
+  },
+  {
+    "player_id": "1630194",
+    "injury_risk": 38,
+    "volatility": 41,
+    "minutes_risk": 17
+  },
+  {
+    "player_id": "1641810",
+    "injury_risk": 31,
+    "volatility": 98,
+    "minutes_risk": 18
+  },
+  {
+    "player_id": "1629675",
+    "injury_risk": 21,
+    "volatility": 19,
+    "minutes_risk": 10
+  },
+  {
+    "player_id": "1630208",
+    "injury_risk": 37,
+    "volatility": 54,
+    "minutes_risk": 16
+  },
+  {
+    "player_id": "1642258",
+    "injury_risk": 34,
+    "volatility": 85,
+    "minutes_risk": 5
+  },
+  {
+    "player_id": "1629130",
+    "injury_risk": 23,
+    "volatility": 32,
+    "minutes_risk": 6
+  },
+  {
+    "player_id": "1629011",
+    "injury_risk": 24,
+    "volatility": 57,
+    "minutes_risk": 17
+  },
+  {
+    "player_id": "1631115",
+    "injury_risk": 37,
+    "volatility": 77,
+    "minutes_risk": 11
+  },
+  {
+    "player_id": "1630526",
+    "injury_risk": 28,
+    "volatility": 52,
+    "minutes_risk": 10
+  },
+  {
+    "player_id": "1631157",
+    "injury_risk": 31,
+    "volatility": 81,
+    "minutes_risk": 10
+  },
+  {
+    "player_id": "1626179",
+    "injury_risk": 27,
+    "volatility": 42,
+    "minutes_risk": 28
+  },
+  {
+    "player_id": "1641712",
+    "injury_risk": 35,
+    "volatility": 81,
+    "minutes_risk": 17
+  },
+  {
+    "player_id": "1626156",
+    "injury_risk": 30,
+    "volatility": 52,
+    "minutes_risk": 15
+  },
+  {
+    "player_id": "1627734",
+    "injury_risk": 26,
+    "volatility": 26,
+    "minutes_risk": 23
+  },
+  {
+    "player_id": "1642275",
+    "injury_risk": 35,
+    "volatility": 91,
+    "minutes_risk": 1
+  },
+  {
+    "player_id": "1630611",
+    "injury_risk": 23,
+    "volatility": 84,
+    "minutes_risk": 17
+  },
+  {
+    "player_id": "1642259",
+    "injury_risk": 39,
+    "volatility": 89,
+    "minutes_risk": 18
+  },
+  {
+    "player_id": "1630578",
+    "injury_risk": 24,
+    "volatility": 26,
+    "minutes_risk": 27
+  },
+  {
+    "player_id": "1641729",
+    "injury_risk": 22,
+    "volatility": 77,
+    "minutes_risk": 7
+  },
+  {
+    "player_id": "1629012",
+    "injury_risk": 24,
+    "volatility": 50,
+    "minutes_risk": 18
+  },
+  {
+    "player_id": "1629013",
+    "injury_risk": 33,
+    "volatility": 50,
+    "minutes_risk": 9
+  },
+  {
+    "player_id": "1630549",
+    "injury_risk": 39,
+    "volatility": 52,
+    "minutes_risk": 4
+  },
+  {
+    "player_id": "1631101",
+    "injury_risk": 33,
+    "volatility": 54,
+    "minutes_risk": 22
+  },
+  {
+    "player_id": "1642347",
+    "injury_risk": 33,
+    "volatility": 83,
+    "minutes_risk": 2
+  },
+  {
+    "player_id": "1641767",
+    "injury_risk": 31,
+    "volatility": 72,
+    "minutes_risk": 1
+  },
+  {
+    "player_id": "1642263",
+    "injury_risk": 29,
+    "volatility": 91,
+    "minutes_risk": 5
+  },
+  {
+    "player_id": "1627783",
+    "injury_risk": 28,
+    "volatility": 39,
+    "minutes_risk": 24
+  },
+  {
+    "player_id": "1629014",
+    "injury_risk": 39,
+    "volatility": 39,
+    "minutes_risk": 34
+  },
+  {
+    "player_id": "1630579",
+    "injury_risk": 36,
+    "volatility": 63,
+    "minutes_risk": 6
+  },
+  {
+    "player_id": "203935",
+    "injury_risk": 30,
+    "volatility": 82,
+    "minutes_risk": 19
+  },
+  {
+    "player_id": "1630696",
+    "injury_risk": 29,
+    "volatility": 91,
+    "minutes_risk": 18
+  },
+  {
+    "player_id": "1630188",
+    "injury_risk": 24,
+    "volatility": 38,
+    "minutes_risk": 15
+  },
+  {
+    "player_id": "1631095",
+    "injury_risk": 21,
+    "volatility": 46,
+    "minutes_risk": 24
+  },
+  {
+    "player_id": "1641733",
+    "injury_risk": 24,
+    "volatility": 78,
+    "minutes_risk": 13
+  },
+  {
+    "player_id": "1631110",
+    "injury_risk": 26,
+    "volatility": 55,
+    "minutes_risk": 0
+  },
+  {
+    "player_id": "1642285",
+    "injury_risk": 28,
+    "volatility": 98,
+    "minutes_risk": 3
+  },
+  {
+    "player_id": "1630311",
+    "injury_risk": 31,
+    "volatility": 94,
+    "minutes_risk": 15
+  },
+  {
+    "player_id": "1630191",
+    "injury_risk": 31,
+    "volatility": 39,
+    "minutes_risk": 22
+  },
+  {
+    "player_id": "1631124",
+    "injury_risk": 24,
+    "volatility": 77,
+    "minutes_risk": 5
+  },
+  {
+    "player_id": "1629622",
+    "injury_risk": 31,
+    "volatility": 26,
+    "minutes_risk": 22
+  },
+  {
+    "player_id": "1630591",
+    "injury_risk": 38,
+    "volatility": 48,
+    "minutes_risk": 24
+  },
+  {
+    "player_id": "1630256",
+    "injury_risk": 28,
+    "volatility": 44,
+    "minutes_risk": 15
+  },
+  {
+    "player_id": "1628369",
+    "injury_risk": 29,
+    "volatility": 11,
+    "minutes_risk": 43
+  },
+  {
+    "player_id": "202066",
+    "injury_risk": 22,
+    "volatility": 72,
+    "minutes_risk": 14
+  },
+  {
+    "player_id": "1631207",
+    "injury_risk": 38,
+    "volatility": 60,
+    "minutes_risk": 16
+  },
+  {
+    "player_id": "1630560",
+    "injury_risk": 29,
+    "volatility": 50,
+    "minutes_risk": 19
+  },
+  {
+    "player_id": "1641708",
+    "injury_risk": 30,
+    "volatility": 69,
+    "minutes_risk": 10
+  },
+  {
+    "player_id": "1641709",
+    "injury_risk": 34,
+    "volatility": 71,
+    "minutes_risk": 9
+  },
+  {
+    "player_id": "202691",
+    "injury_risk": 29,
+    "volatility": 35,
+    "minutes_risk": 9
+  },
+  {
+    "player_id": "1629680",
+    "injury_risk": 22,
+    "volatility": 62,
+    "minutes_risk": 10
+  },
+  {
+    "player_id": "1630214",
+    "injury_risk": 31,
+    "volatility": 69,
+    "minutes_risk": 0
+  },
+  {
+    "player_id": "1630167",
+    "injury_risk": 31,
+    "volatility": 27,
+    "minutes_risk": 10
+  },
+  {
+    "player_id": "1626157",
+    "injury_risk": 29,
+    "volatility": 39,
+    "minutes_risk": 36
+  },
+  {
+    "player_id": "1629018",
+    "injury_risk": 33,
+    "volatility": 25,
+    "minutes_risk": 28
+  },
+  {
+    "player_id": "1626167",
+    "injury_risk": 25,
+    "volatility": 33,
+    "minutes_risk": 12
+  },
+  {
+    "player_id": "1641816",
+    "injury_risk": 38,
+    "volatility": 91,
+    "minutes_risk": 8
+  },
+  {
+    "player_id": "1642281",
+    "injury_risk": 34,
+    "volatility": 92,
+    "minutes_risk": 6
+  },
+  {
+    "player_id": "202685",
+    "injury_risk": 23,
+    "volatility": 36,
+    "minutes_risk": 0
+  },
+  {
+    "player_id": "1627832",
+    "injury_risk": 26,
+    "volatility": 23,
+    "minutes_risk": 23
+  },
+  {
+    "player_id": "1629020",
+    "injury_risk": 35,
+    "volatility": 60,
+    "minutes_risk": 7
+  },
+  {
+    "player_id": "1630170",
+    "injury_risk": 26,
+    "volatility": 37,
+    "minutes_risk": 33
+  },
+  {
+    "player_id": "1629216",
+    "injury_risk": 21,
+    "volatility": 47,
+    "minutes_risk": 10
+  },
+  {
+    "player_id": "1641774",
+    "injury_risk": 26,
+    "volatility": 93,
+    "minutes_risk": 6
+  },
+  {
+    "player_id": "202696",
+    "injury_risk": 21,
+    "volatility": 20,
+    "minutes_risk": 17
+  },
+  {
+    "player_id": "1629731",
+    "injury_risk": 24,
+    "volatility": 47,
+    "minutes_risk": 11
+  },
+  {
+    "player_id": "1630532",
+    "injury_risk": 37,
+    "volatility": 24,
+    "minutes_risk": 34
+  },
+  {
+    "player_id": "1629021",
+    "injury_risk": 26,
+    "volatility": 35,
+    "minutes_risk": 12
+  },
+  {
+    "player_id": "1631133",
+    "injury_risk": 28,
+    "volatility": 52,
+    "minutes_risk": 8
+  },
+  {
+    "player_id": "1641716",
+    "injury_risk": 37,
+    "volatility": 74,
+    "minutes_risk": 10
+  },
+  {
+    "player_id": "1641717",
+    "injury_risk": 33,
+    "volatility": 63,
+    "minutes_risk": 18
+  },
+  {
+    "player_id": "1630811",
+    "injury_risk": 30,
+    "volatility": 96,
+    "minutes_risk": 19
+  },
+  {
+    "player_id": "1641775",
+    "injury_risk": 36,
+    "volatility": 89,
+    "minutes_risk": 14
+  },
+  {
+    "player_id": "1642266",
+    "injury_risk": 22,
+    "volatility": 90,
+    "minutes_risk": 11
+  },
+  {
+    "player_id": "1642276",
+    "injury_risk": 38,
+    "volatility": 87,
+    "minutes_risk": 10
+  },
+  {
+    "player_id": "1629023",
+    "injury_risk": 29,
+    "volatility": 49,
+    "minutes_risk": 30
+  },
+  {
+    "player_id": "1630322",
+    "injury_risk": 37,
+    "volatility": 69,
+    "minutes_risk": 18
+  },
+  {
+    "player_id": "1630570",
+    "injury_risk": 25,
+    "volatility": 48,
+    "minutes_risk": 1
+  },
+  {
+    "player_id": "1631212",
+    "injury_risk": 30,
+    "volatility": 57,
+    "minutes_risk": 12
+  },
+  {
+    "player_id": "1642377",
+    "injury_risk": 28,
+    "volatility": 82,
+    "minutes_risk": 2
+  },
+  {
+    "player_id": "1641705",
+    "injury_risk": 22,
+    "volatility": 76,
+    "minutes_risk": 11
+  },
+  {
+    "player_id": "1631104",
+    "injury_risk": 31,
+    "volatility": 67,
+    "minutes_risk": 5
+  },
+  {
+    "player_id": "201566",
+    "injury_risk": 21,
+    "volatility": 39,
+    "minutes_risk": 18
+  },
+  {
+    "player_id": "1629632",
+    "injury_risk": 38,
+    "volatility": 29,
+    "minutes_risk": 27
+  },
+  {
+    "player_id": "1628401",
+    "injury_risk": 34,
+    "volatility": 20,
+    "minutes_risk": 25
+  },
+  {
+    "player_id": "1641715",
+    "injury_risk": 31,
+    "volatility": 79,
+    "minutes_risk": 1
+  },
+  {
+    "player_id": "1630598",
+    "injury_risk": 35,
+    "volatility": 31,
+    "minutes_risk": 7
+  },
+  {
+    "player_id": "203952",
+    "injury_risk": 22,
+    "volatility": 52,
+    "minutes_risk": 10
+  },
+  {
+    "player_id": "1630314",
+    "injury_risk": 28,
+    "volatility": 85,
+    "minutes_risk": 17
+  },
+  {
+    "player_id": "1642262",
+    "injury_risk": 23,
+    "volatility": 94,
+    "minutes_risk": 2
+  },
+  {
+    "player_id": "1629684",
+    "injury_risk": 37,
+    "volatility": 43,
+    "minutes_risk": 18
+  },
+  {
+    "player_id": "1631114",
+    "injury_risk": 26,
+    "volatility": 50,
+    "minutes_risk": 20
+  },
+  {
+    "player_id": "1631119",
+    "injury_risk": 33,
+    "volatility": 59,
+    "minutes_risk": 3
+  },
+  {
+    "player_id": "1629026",
+    "injury_risk": 33,
+    "volatility": 43,
+    "minutes_risk": 9
+  },
+  {
+    "player_id": "1631109",
+    "injury_risk": 24,
+    "volatility": 76,
+    "minutes_risk": 7
+  },
+  {
+    "player_id": "1630172",
+    "injury_risk": 35,
+    "volatility": 48,
+    "minutes_risk": 18
+  },
+  {
+    "player_id": "1630533",
+    "injury_risk": 38,
+    "volatility": 47,
+    "minutes_risk": 6
+  },
+  {
+    "player_id": "1629057",
+    "injury_risk": 22,
+    "volatility": 73,
+    "minutes_risk": 12
+  },
+  {
+    "player_id": "1631246",
+    "injury_risk": 38,
+    "volatility": 80,
+    "minutes_risk": 18
+  },
+  {
+    "player_id": "1629627",
+    "injury_risk": 27,
+    "volatility": 55,
+    "minutes_risk": 30
+  },
+  {
+    "player_id": "1630592",
+    "injury_risk": 32,
+    "volatility": 72,
+    "minutes_risk": 7
+  },
+  {
+    "player_id": "1630164",
+    "injury_risk": 27,
+    "volatility": 74,
+    "minutes_risk": 15
+  },
+  {
+    "player_id": "1627824",
+    "injury_risk": 35,
+    "volatility": 65,
+    "minutes_risk": 0
+  },
+  {
+    "player_id": "1629027",
+    "injury_risk": 28,
+    "volatility": 32,
+    "minutes_risk": 54
+  },
+  {
+    "player_id": "1627826",
+    "injury_risk": 37,
+    "volatility": 21,
+    "minutes_risk": 17
+  },
+  {
+    "player_id": "1641783",
+    "injury_risk": 27,
+    "volatility": 84,
+    "minutes_risk": 12
+  },
+  {
+    "player_id": "203967",
+    "injury_risk": 20,
+    "volatility": 67,
+    "minutes_risk": 6
+  }
+]

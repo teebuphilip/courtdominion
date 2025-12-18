@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Projections Schema",
+  "description": "Schema for projections.json output",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "player_id", "name", "team", "position",
+      "minutes", "usage_rate",
+      "points", "rebounds", "assists", "steals", "blocks", "turnovers",
+      "fg_pct", "three_pt_pct", "ft_pct",
+      "fgm", "fga", "tpm", "tpa", "ftm", "fta",
+      "fantasy_points", "ceiling", "floor", "consistency"
+    ],
+    "properties": {
+      "player_id": {"type": "string"},
+      "name": {"type": "string"},
+      "team": {"type": "string"},
+      "position": {"type": "string"},
+      "minutes": {"type": "number"},
+      "usage_rate": {"type": "number"},
+      "points": {"type": "number"},
+      "rebounds": {"type": "number"},
+      "assists": {"type": "number"},
+      "steals": {"type": "number"},
+      "blocks": {"type": "number"},
+      "turnovers": {"type": "number"},
+      "fg_pct": {"type": "number"},
+      "three_pt_pct": {"type": "number"},
+      "ft_pct": {"type": "number"},
+      "fgm": {"type": "number"},
+      "fga": {"type": "number"},
+      "tpm": {"type": "number"},
+      "tpa": {"type": "number"},
+      "ftm": {"type": "number"},
+      "fta": {"type": "number"},
+      "fantasy_points": {"type": "number"},
+      "ceiling": {"type": "number"},
+      "floor": {"type": "number"},
+      "consistency": {"type": "integer"}
+    }
+  }
+}

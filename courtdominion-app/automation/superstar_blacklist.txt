@@ -1,0 +1,25 @@
+# Superstar Blacklist
+# Players to EXCLUDE from content generation
+# These are obvious/boring picks everyone already knows about
+# Focus content on deep sleepers, waiver wire, streaming candidates
+
+Nikola Jokić
+Luka Dončić
+Giannis Antetokounmpo
+Victor Wembanyama
+LeBron James
+Stephen Curry
+Kevin Durant
+Anthony Davis
+Joel Embiid
+Shai Gilgeous-Alexander
+Jayson Tatum
+Damian Lillard
+Kawhi Leonard
+Jimmy Butler
+Kyrie Irving
+Donovan Mitchell
+Devin Booker
+Trae Young
+Anthony Edwards
+Tyrese Haliburton

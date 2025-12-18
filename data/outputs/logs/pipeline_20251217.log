@@ -1,0 +1,34 @@
+2025-12-17 19:32:07 | pipeline | INFO | 
+======================================================================
+2025-12-17 19:32:07 | pipeline | INFO |   COURTDOMINION AUTOMATION PIPELINE - REAL NBA DATA + CONTENT
+2025-12-17 19:32:07 | pipeline | INFO | ======================================================================
+2025-12-17 19:32:07 | pipeline | INFO | Data directory: /data/outputs
+2025-12-17 19:32:07 | pipeline | INFO | Started at: 2025-12-17T19:32:07.987137
+2025-12-17 19:32:08 | pipeline | INFO | Fetched 30 real injuries from ESPN
+2025-12-17 19:32:08 | pipeline | INFO | 
+======================================================================
+2025-12-17 19:32:08 | pipeline | INFO |   FETCHING REAL NBA PLAYERS
+2025-12-17 19:32:08 | pipeline | INFO | ======================================================================
+2025-12-17 19:32:08 | pipeline | INFO | Fetched 530 real NBA players from NBA.com
+2025-12-17 19:32:10 | pipeline | INFO | Generated 398 real projections (DBB2 engine)
+2025-12-17 19:32:10 | pipeline | INFO | Generated 398 risk assessments
+2025-12-17 19:32:10 | pipeline | INFO | Generated 398 insights
+2025-12-17 19:32:10 | pipeline | INFO | 
+======================================================================
+2025-12-17 19:32:10 | pipeline | INFO |   VALIDATING OUTPUTS
+2025-12-17 19:32:10 | pipeline | INFO | ======================================================================
+2025-12-17 19:32:11 | pipeline | INFO | All outputs valid
+2025-12-17 19:32:11 | pipeline | INFO | 
+======================================================================
+2025-12-17 19:32:11 | pipeline | INFO |   WRITING OUTPUTS
+2025-12-17 19:32:11 | pipeline | INFO | ======================================================================
+2025-12-17 19:32:11 | pipeline | INFO | All outputs written successfully
+2025-12-17 19:32:11 | pipeline | INFO | 
+======================================================================
+2025-12-17 19:32:11 | pipeline | INFO |   GENERATING CONTENT (OpenAI)
+2025-12-17 19:32:11 | pipeline | INFO | ======================================================================
+2025-12-17 19:33:52 | pipeline | INFO | Content generated successfully: /data/outputs/generated/2025-12-17
+2025-12-17 19:33:52 | pipeline | INFO | 
+======================================================================
+2025-12-17 19:33:52 | pipeline | INFO |   PIPELINE COMPLETED SUCCESSFULLY - REAL NBA DATA + CONTENT
+2025-12-17 19:33:52 | pipeline | INFO | ======================================================================

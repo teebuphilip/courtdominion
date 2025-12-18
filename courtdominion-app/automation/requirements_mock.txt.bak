@@ -1,0 +1,11 @@
+# CourtDominion Automation Requirements
+# Phase 1 dependencies
+
+# HTTP client
+requests>=2.31.0
+
+# JSON schema validation
+jsonschema>=4.19.0
+
+# Python 3.11+ only
+python-dateutil>=2.8.2

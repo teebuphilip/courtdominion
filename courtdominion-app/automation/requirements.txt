@@ -1,0 +1,18 @@
+# CourtDominion Automation Requirements
+# Phase 1 with REAL NBA DATA
+
+# HTTP client
+requests>=2.31.0
+
+# JSON schema validation
+jsonschema>=4.19.0
+
+# Date utilities
+python-dateutil>=2.8.2
+
+# NBA data API (for real player stats and projections)
+nba-api>=1.2.0
+
+# Data processing (required by dbb2 engine)
+pandas>=2.0.0
+numpy>=1.24.0

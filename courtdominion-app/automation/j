@@ -1,0 +1,9 @@
+cp ~/Downloads/pipeline_real.py pipeline.py
+cp ~/Downloads/projection_generator_real.py projection_generator.py
+cp ~/Downloads/ingest_injuries_real.py ingest_injuries.py
+cp ~/Downloads/requirements_real.txt requirements.txt
+
+# Add new modules
+cp ~/Downloads/dbb2_projections.py .
+cp ~/Downloads/fetch_real_players.py .
+cp ~/Downloads/fetch_real_injuries.py .

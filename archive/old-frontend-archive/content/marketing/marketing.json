@@ -1,0 +1,53 @@
+{
+  "hero": {
+    "title": "Dominate Your Fantasy League \u2014 Free AI-Powered Projections for the Rest of the Season",
+    "subtitle": "Daily player projections, lineup optimization, and waiver-wire insights tailored to your league \u2014 fast, accurate, and free for the season.",
+    "cta_primary": "Get Started Free",
+    "cta_secondary": "See Live Projections"
+  },
+  "features": {
+    "daily_projections": {
+      "title": "Daily NBA Projections",
+      "body": "Updated every morning so you can make data-driven decisions."
+    },
+    "lineup_optimizer": {
+      "title": "Lineup Optimizer",
+      "body": "Set the best lineup in seconds with personalized suggestions."
+    },
+    "waiver_wire": {
+      "title": "Waiver Wire Recommendations",
+      "body": "Never miss a breakout with curated waiver moves and reasons."
+    }
+  },
+  "social_proof": {
+    "stat_badge": "Join 1,000+ managers using CourtDominion",
+    "testimonials": [
+      {
+        "body": "This tool changed how I manage my team \u2014 incredibly accurate projections.",
+        "author": "Pilot User"
+      },
+      {
+        "body": "Fast, clean, and the optimizer is unreal.",
+        "author": "Beta Tester"
+      },
+      {
+        "body": "I won my matchup because of the waiver suggestions.",
+        "author": "Early User"
+      }
+    ]
+  },
+  "pricing": {
+    "free": {
+      "price": "$0",
+      "description": "Daily projections, lineup optimizer, basic waiver recommendations"
+    },
+    "pro": {
+      "price": "$4.99/mo",
+      "description": "Advanced analytics, trade analyzer, early access to new features (Coming Soon)"
+    }
+  },
+  "about": {
+    "story": "CourtDominion was created to give fantasy basketball managers clear, reliable insights without the noise. The platform focuses on accuracy, speed, and simplicity so players can make smarter decisions every day.",
+    "mission": "Deliver fast, data-driven projections and tools that help every fantasy manager improve their game."
+  }
+}

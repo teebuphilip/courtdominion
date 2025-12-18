@@ -1,0 +1,8 @@
+{
+  "pipeline_version": "1.0.0-real-data-content",
+  "data_source": "NBA.com + ESPN + DBB2 + OpenAI",
+  "success": true,
+  "timestamp": "2025-12-18T11:05:59.964012",
+  "data_dir": "/data/outputs",
+  "generated_at": "2025-12-18T11:05:59.964034"
+}

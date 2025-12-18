@@ -1,0 +1,102 @@
+2025-12-18 10:22:20 | pipeline | INFO | 
+======================================================================
+2025-12-18 10:22:20 | pipeline | INFO |   COURTDOMINION AUTOMATION PIPELINE - REAL NBA DATA + CONTENT
+2025-12-18 10:22:20 | pipeline | INFO | ======================================================================
+2025-12-18 10:22:20 | pipeline | INFO | Data directory: /data/outputs
+2025-12-18 10:22:20 | pipeline | INFO | Started at: 2025-12-18T10:22:20.385082
+2025-12-18 10:22:20 | pipeline | INFO | Fetched 30 real injuries from ESPN
+2025-12-18 10:22:20 | pipeline | INFO | 
+======================================================================
+2025-12-18 10:22:20 | pipeline | INFO |   FETCHING REAL NBA PLAYERS
+2025-12-18 10:22:20 | pipeline | INFO | ======================================================================
+2025-12-18 10:22:20 | pipeline | INFO | Fetched 530 real NBA players from NBA.com
+2025-12-18 10:22:23 | pipeline | INFO | Generated 398 real projections (DBB2 engine)
+2025-12-18 10:22:23 | pipeline | INFO | Generated 398 risk assessments
+2025-12-18 10:22:23 | pipeline | INFO | Generated 398 insights
+2025-12-18 10:22:23 | pipeline | INFO | 
+======================================================================
+2025-12-18 10:22:23 | pipeline | INFO |   VALIDATING OUTPUTS
+2025-12-18 10:22:23 | pipeline | INFO | ======================================================================
+2025-12-18 10:22:23 | pipeline | INFO | All outputs valid
+2025-12-18 10:22:23 | pipeline | INFO | 
+======================================================================
+2025-12-18 10:22:23 | pipeline | INFO |   WRITING OUTPUTS
+2025-12-18 10:22:23 | pipeline | INFO | ======================================================================
+2025-12-18 10:22:23 | pipeline | INFO | All outputs written successfully
+2025-12-18 10:22:23 | pipeline | INFO | 
+======================================================================
+2025-12-18 10:22:23 | pipeline | INFO |   GENERATING CONTENT (OpenAI)
+2025-12-18 10:22:23 | pipeline | INFO | ======================================================================
+2025-12-18 10:23:31 | pipeline | INFO | Content generated successfully: /data/outputs/generated/2025-12-18
+2025-12-18 10:23:31 | pipeline | INFO | 
+======================================================================
+2025-12-18 10:23:31 | pipeline | INFO |   PIPELINE COMPLETED SUCCESSFULLY - REAL NBA DATA + CONTENT
+2025-12-18 10:23:31 | pipeline | INFO | ======================================================================
+2025-12-18 10:49:47 | pipeline | INFO | 
+======================================================================
+2025-12-18 10:49:47 | pipeline | INFO |   COURTDOMINION AUTOMATION PIPELINE - REAL NBA DATA + CONTENT
+2025-12-18 10:49:47 | pipeline | INFO | ======================================================================
+2025-12-18 10:49:47 | pipeline | INFO | Data directory: /data/outputs
+2025-12-18 10:49:47 | pipeline | INFO | Started at: 2025-12-18T10:49:47.197213
+2025-12-18 10:49:47 | pipeline | INFO | Fetched 30 real injuries from ESPN
+2025-12-18 10:49:47 | pipeline | INFO | 
+======================================================================
+2025-12-18 10:49:47 | pipeline | INFO |   FETCHING REAL NBA PLAYERS
+2025-12-18 10:49:47 | pipeline | INFO | ======================================================================
+2025-12-18 10:49:47 | pipeline | INFO | Fetched 530 real NBA players from NBA.com
+2025-12-18 10:49:50 | pipeline | INFO | Generated 398 real projections (DBB2 engine)
+2025-12-18 10:49:50 | pipeline | INFO | Generated 398 risk assessments
+2025-12-18 10:49:50 | pipeline | INFO | Generated 398 insights
+2025-12-18 10:49:50 | pipeline | INFO | 
+======================================================================
+2025-12-18 10:49:50 | pipeline | INFO |   VALIDATING OUTPUTS
+2025-12-18 10:49:50 | pipeline | INFO | ======================================================================
+2025-12-18 10:49:50 | pipeline | INFO | All outputs valid
+2025-12-18 10:49:50 | pipeline | INFO | 
+======================================================================
+2025-12-18 10:49:50 | pipeline | INFO |   WRITING OUTPUTS
+2025-12-18 10:49:50 | pipeline | INFO | ======================================================================
+2025-12-18 10:49:50 | pipeline | INFO | All outputs written successfully
+2025-12-18 10:49:50 | pipeline | INFO | 
+======================================================================
+2025-12-18 10:49:50 | pipeline | INFO |   GENERATING CONTENT (OpenAI)
+2025-12-18 10:49:50 | pipeline | INFO | ======================================================================
+2025-12-18 10:50:46 | pipeline | INFO | Content generated successfully: /data/outputs/generated/2025-12-18
+2025-12-18 10:50:46 | pipeline | INFO | 
+======================================================================
+2025-12-18 10:50:46 | pipeline | INFO |   PIPELINE COMPLETED SUCCESSFULLY - REAL NBA DATA + CONTENT
+2025-12-18 10:50:46 | pipeline | INFO | ======================================================================
+2025-12-18 11:04:49 | pipeline | INFO | 
+======================================================================
+2025-12-18 11:04:49 | pipeline | INFO |   COURTDOMINION AUTOMATION PIPELINE - REAL NBA DATA + CONTENT
+2025-12-18 11:04:49 | pipeline | INFO | ======================================================================
+2025-12-18 11:04:49 | pipeline | INFO | Data directory: /data/outputs
+2025-12-18 11:04:49 | pipeline | INFO | Started at: 2025-12-18T11:04:49.850871
+2025-12-18 11:04:50 | pipeline | INFO | Fetched 30 real injuries from ESPN
+2025-12-18 11:04:50 | pipeline | INFO | 
+======================================================================
+2025-12-18 11:04:50 | pipeline | INFO |   FETCHING REAL NBA PLAYERS
+2025-12-18 11:04:50 | pipeline | INFO | ======================================================================
+2025-12-18 11:04:50 | pipeline | INFO | Fetched 530 real NBA players from NBA.com
+2025-12-18 11:04:53 | pipeline | INFO | Generated 398 real projections (DBB2 engine)
+2025-12-18 11:04:53 | pipeline | INFO | Generated 398 risk assessments
+2025-12-18 11:04:53 | pipeline | INFO | Generated 398 insights
+2025-12-18 11:04:53 | pipeline | INFO | 
+======================================================================
+2025-12-18 11:04:53 | pipeline | INFO |   VALIDATING OUTPUTS
+2025-12-18 11:04:53 | pipeline | INFO | ======================================================================
+2025-12-18 11:04:53 | pipeline | INFO | All outputs valid
+2025-12-18 11:04:53 | pipeline | INFO | 
+======================================================================
+2025-12-18 11:04:53 | pipeline | INFO |   WRITING OUTPUTS
+2025-12-18 11:04:53 | pipeline | INFO | ======================================================================
+2025-12-18 11:04:53 | pipeline | INFO | All outputs written successfully
+2025-12-18 11:04:53 | pipeline | INFO | 
+======================================================================
+2025-12-18 11:04:53 | pipeline | INFO |   GENERATING CONTENT (OpenAI)
+2025-12-18 11:04:53 | pipeline | INFO | ======================================================================
+2025-12-18 11:05:59 | pipeline | INFO | Content generated successfully: /data/outputs/generated/2025-12-18
+2025-12-18 11:05:59 | pipeline | INFO | 
+======================================================================
+2025-12-18 11:05:59 | pipeline | INFO |   PIPELINE COMPLETED SUCCESSFULLY - REAL NBA DATA + CONTENT
+2025-12-18 11:05:59 | pipeline | INFO | ======================================================================
