@@ -1,8 +1,17 @@
 import { RISK_LEVELS } from '../../utils/constants'
 import { getRiskLevel } from '../../utils/formatters'
 
-const RiskBadge = ({ riskData }) => {
-  const riskLevel = getRiskLevel(riskData)
+const RiskBadge = ({ riskData, risk }) => {
+  // Support both string risk prop and riskData object
+  let riskLevel
+  if (risk) {
+    // Direct string prop (for tests and simple usage)
+    riskLevel = risk.toUpperCase()
+  } else {
+    // Object with injury_risk property (for API data)
+    riskLevel = getRiskLevel(riskData)
+  }
+
   const riskConfig = RISK_LEVELS[riskLevel]
 
   return (
