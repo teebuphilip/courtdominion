@@ -50,8 +50,8 @@ def test_get_rookie_comparable(tmp_path):
     # Create temp CSV file
     csv_file = tmp_path / "rookie_comparables.csv"
     csv_file.write_text(
-        "rookie_name,comparable_player,similarity_score\\n"
-        "Cooper Flagg,Anthony Davis,0.84\\n"
+        "rookie_name,comparable_player,similarity_score\n"
+        "Cooper Flagg,Anthony Davis,0.84\n"
     )
 
     mock_cache = {
