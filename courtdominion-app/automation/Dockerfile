@@ -9,6 +9,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy ALL Python files (includes dbb2_projections, fetch_real_*, etc.)
 COPY *.py /app/
 
+# Copy shell scripts
+COPY *.sh /app/
+
 # Copy blacklist file for content generation
 COPY superstar_blacklist.txt /app/
 

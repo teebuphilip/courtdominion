@@ -13,6 +13,11 @@ echo ""
 # Run cache builder
 python3 build_cache.py
 
+# Run retry logic for failed players
+echo ""
+echo "🔄 Running 2nd pass retry for failed players..."
+python3 retry_failed_players.py
+
 echo ""
 echo "✅ Cache refresh complete!"
 echo ""
