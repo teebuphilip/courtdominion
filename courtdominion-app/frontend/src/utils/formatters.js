@@ -10,8 +10,16 @@ export const formatNumber = (num, decimals = 1) => {
  * Format percentage (0.583 -> 58.3%)
  */
 export const formatPercentage = (num, decimals = 1) => {
-  if (num === null || num === undefined) return '-'
+  if (num === null || num === undefined) return '0.0%'
   return `${(Number(num) * 100).toFixed(decimals)}%`
+}
+
+/**
+ * Format decimal (27.456 -> 27.5)
+ */
+export const formatDecimal = (num, decimals = 1) => {
+  if (num === null || num === undefined) return '0.0'
+  return Number(num).toFixed(decimals)
 }
 
 /**
