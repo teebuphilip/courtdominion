@@ -23,7 +23,7 @@ const PlayerCard = ({ player }) => {
         <div className="text-right">
           <div className="text-sm text-gray-400 mb-1">Projected FPTS</div>
           <div className="text-4xl font-bold text-primary-400">
-            {formatNumber(player.projection?.fantasy_points, 1)}
+            {formatNumber(player.fantasy_points || player.projection?.fantasy_points, 1)}
           </div>
         </div>
       </div>
