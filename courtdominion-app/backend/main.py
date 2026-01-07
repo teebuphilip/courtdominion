@@ -23,7 +23,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 # Import all routers
-from routers import health, players, projections, insights, content
+from routers import health, players, projections, insights, content, internal
 
 
 # Read environment variables (per Backend Master Spec section 7)
@@ -63,6 +63,7 @@ app.include_router(players.router)
 app.include_router(projections.router)
 app.include_router(insights.router)
 app.include_router(content.router)
+app.include_router(internal.router)
 
 
 # Root endpoint
@@ -82,6 +83,7 @@ def root():
             "projections": "/projections",
             "insights": "/insights",
             "content": "/api/content",
+            "internal_api": "/api/internal/baseline-projections (Requires X-API-Key)",
             "risk_metrics": "/risk-metrics",
             "lineup_suggestions": "/lineup-suggestions (POST)",
             "player_detail": "/player/{player_id}"
