@@ -1,0 +1,34 @@
+{
+  "hero": {
+    "title": "Dominate Your Fantasy Basketball League",
+    "subtitle": "Advanced NBA player projections powered by real data",
+    "cta": "Get Started"
+  },
+  "features": [
+    {
+      "title": "Real NBA Data",
+      "description": "Projections built from authentic NBA.com statistics and player performance data"
+    },
+    {
+      "title": "Advanced Analytics",
+      "description": "Comprehensive fantasy point projections with detailed stat breakdowns"
+    },
+    {
+      "title": "Daily Updates",
+      "description": "Fresh data pipeline ensures you have the most current player information"
+    },
+    {
+      "title": "Risk Assessment",
+      "description": "Injury history and games played tracking to inform your draft decisions"
+    }
+  ],
+  "about": {
+    "title": "Built for Serious Fantasy Players",
+    "description": "CourtDominion combines real NBA data with advanced projection algorithms to give you the edge in your fantasy basketball league. Our platform processes player statistics, injury data, and historical performance to deliver accurate, actionable insights."
+  },
+  "stats": {
+    "players": "398+",
+    "metrics": "10+",
+    "update_frequency": "Daily"
+  }
+}

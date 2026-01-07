@@ -22,6 +22,7 @@ COPY services /app/services
 COPY models /app/models
 COPY shared /app/shared
 COPY utils /app/utils
+COPY data /app/data
 
 # Create data directory
 RUN mkdir -p /data/outputs
