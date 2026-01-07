@@ -12,6 +12,9 @@ COPY *.py /app/
 # Copy blacklist file for content generation
 COPY superstar_blacklist.txt /app/
 
+# Copy rookie comparables CSV
+COPY rookie_comparables.csv /app/
+
 # Copy directories
 COPY utils /app/utils
 COPY schemas /app/schemas

@@ -8,6 +8,7 @@ Cache is built/refreshed by build_cache.py (separate process).
 """
 
 import json
+import csv
 from pathlib import Path
 from typing import Dict, Optional
 from datetime import datetime
@@ -15,6 +16,9 @@ from datetime import datetime
 
 # Cache file location
 CACHE_FILE = Path('/data/outputs/player_stats_cache.json')
+
+# Rookie comparables CSV location
+ROOKIE_COMPARABLES_FILE = Path(__file__).parent / 'rookie_comparables.csv'
 
 
 def load_cache() -> Dict:
@@ -43,6 +47,51 @@ def load_cache() -> Dict:
     except Exception as e:
         print(f"Error loading cache: {e}")
         return {}
+
+
+def find_player_id_by_name(player_name: str, cache: Dict) -> Optional[str]:
+    """
+    Find player ID by name in the cache.
+
+    Args:
+        player_name: Player's full name
+        cache: Pre-loaded cache dict
+
+    Returns:
+        Player ID (string) or None if not found
+    """
+    for player_id, stats in cache.items():
+        if stats.get('player_name', '').lower() == player_name.lower():
+            return player_id
+    return None
+
+
+def get_rookie_comparable(player_name: str, cache: Dict) -> Optional[str]:
+    """
+    Get comparable veteran player ID for a rookie.
+
+    Args:
+        player_name: Rookie's name
+        cache: Pre-loaded cache dict
+
+    Returns:
+        Comparable player ID (string) or None if no match
+    """
+    if not ROOKIE_COMPARABLES_FILE.exists():
+        return None
+
+    try:
+        with open(ROOKIE_COMPARABLES_FILE, 'r') as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                if row['rookie_name'].lower() == player_name.lower():
+                    comparable_name = row['comparable_player']
+                    # Find the comparable player's ID in cache
+                    return find_player_id_by_name(comparable_name, cache)
+    except Exception as e:
+        print(f"Error reading rookie comparables: {e}")
+
+    return None
 
 
 def get_age_factor(age: int) -> float:
@@ -134,24 +183,36 @@ def calculate_5year_average(player_id: str, cache: Dict = None) -> Optional[Dict
     return stats
 
 
-def calculate_current_season_projection(player_id: str, cache: Dict = None) -> Optional[Dict]:
+def calculate_current_season_projection(player_id: str, cache: Dict = None, player_name: str = None) -> Optional[Dict]:
     """
     Calculate current season projection with age adjustments.
     Uses CACHED stats instead of hitting NBA.com.
-    
+    For rookies without NBA data, uses comparable veteran projections.
+
     Args:
         player_id: NBA player ID (string)
         cache: Pre-loaded cache dict (optional)
-        
+        player_name: Player name (optional, used for rookie lookup)
+
     Returns:
         Dict with age-adjusted projection, or None if not in cache
     """
     if cache is None:
         cache = load_cache()
-    
+
     # Get baseline from cache
     baseline = cache.get(player_id)
-    
+
+    # If player not in cache and name provided, check for rookie comparable
+    if not baseline and player_name:
+        comparable_id = get_rookie_comparable(player_name, cache)
+        if comparable_id:
+            print(f"Using comparable for rookie {player_name}: {cache.get(comparable_id, {}).get('player_name', 'Unknown')}")
+            baseline = cache.get(comparable_id)
+            if baseline:
+                # Mark this as a rookie projection using comparable
+                player_id = comparable_id
+
     if not baseline:
         return None
     
