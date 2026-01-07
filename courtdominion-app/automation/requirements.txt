@@ -16,3 +16,6 @@ nba-api>=1.2.0
 # Data processing (required by dbb2 engine)
 pandas>=2.0.0
 numpy>=1.24.0
+
+# Testing
+pytest>=7.4.3
