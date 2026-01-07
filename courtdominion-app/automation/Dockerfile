@@ -21,6 +21,7 @@ COPY rookie_comparables.csv /app/
 # Copy directories
 COPY utils /app/utils
 COPY schemas /app/schemas
+COPY tests /app/tests
 
 # Set environment variables
 ENV DATA_DIR=/data/outputs
