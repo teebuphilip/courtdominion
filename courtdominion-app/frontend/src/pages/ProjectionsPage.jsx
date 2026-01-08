@@ -1,9 +1,10 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { useContent } from '../hooks/useContent'
 import { useProjections } from '../hooks/useProjections'
 import ProjectionsTable from '../components/projections/ProjectionsTable'
 import SearchBar from '../components/projections/SearchBar'
 import Pagination from '../components/projections/Pagination'
+import EmailCapture from '../components/home/EmailCapture'
 import { ITEMS_PER_PAGE, SORT_OPTIONS } from '../utils/constants'
 
 const ProjectionsPage = () => {
@@ -11,6 +12,13 @@ const ProjectionsPage = () => {
   const [currentPage, setCurrentPage] = useState(1)
   const [sortBy, setSortBy] = useState('fantasy_points')
   const [sortOrder, setSortOrder] = useState('desc')
+  const [hasAccess, setHasAccess] = useState(false)
+
+  // Check localStorage for email capture flag
+  useEffect(() => {
+    const captured = localStorage.getItem('cd_email_captured')
+    setHasAccess(captured === 'true')
+  }, [])
 
   const { data: content } = useContent()
   
@@ -54,6 +62,35 @@ const ProjectionsPage = () => {
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage)
     window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  const handleUnlock = () => {
+    setHasAccess(true)
+  }
+
+  // Show email gate if no access
+  if (!hasAccess) {
+    return (
+      <div className="min-h-screen bg-gray-900 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Header */}
+          <div className="mb-8 text-center">
+            <h1 className="text-4xl font-bold text-white mb-2">
+              {content?.projections_page?.title || 'Daily Projections'}
+            </h1>
+            <p className="text-xl text-gray-400 mb-4">
+              {content?.projections_page?.subtitle || '398 NBA players with risk-adjusted fantasy points'}
+            </p>
+            <p className="text-lg text-gray-300">
+              Enter your email below to unlock access
+            </p>
+          </div>
+
+          {/* Email gate */}
+          <EmailCapture onUnlock={handleUnlock} />
+        </div>
+      </div>
+    )
   }
 
   return (
