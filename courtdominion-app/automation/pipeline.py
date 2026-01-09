@@ -170,7 +170,7 @@ class AutomationPipeline:
         self.logger.section("FETCHING REAL NBA PLAYERS")
         
         try:
-            players = fetch_real_players(include_teams=False)
+            players = fetch_real_players(include_teams=True)
             self.logger.info(f"Fetched {len(players)} real NBA players from NBA.com")
             return players
         except Exception as e:

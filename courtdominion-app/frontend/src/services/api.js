@@ -3,8 +3,8 @@ import axios from 'axios'
 // Base URL from environment variable
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'
 
-// Mock data flag - set to true to use mock data instead of real API
-const USE_MOCK_DATA = true
+// Mock data flag - set to false to use real API (production mode)
+const USE_MOCK_DATA = false
 
 // Create axios instance
 const api = axios.create({
@@ -172,7 +172,7 @@ export const fetchProjections = async (params = {}) => {
       }), 500)
     )
   }
-  return api.get('/api/projections', { params })
+  return api.get('/projections', { params })
 }
 
 export const fetchPlayer = async (playerId) => {
@@ -221,7 +221,7 @@ export const fetchPlayer = async (playerId) => {
       setTimeout(() => resolve({ data: player }), 400)
     )
   }
-  return api.get(`/api/players/${playerId}`)
+  return api.get(`/player/${playerId}`)
 }
 
 export const fetchInsights = async (params = {}) => {
@@ -236,7 +236,7 @@ export const fetchInsights = async (params = {}) => {
       }), 400)
     )
   }
-  return api.get('/api/insights', { params })
+  return api.get('/insights', { params })
 }
 
 export const fetchRisk = async (playerId) => {
@@ -246,7 +246,7 @@ export const fetchRisk = async (playerId) => {
       setTimeout(() => resolve({ data: risk }), 300)
     )
   }
-  return api.get('/api/risk', { params: { player_id: playerId } })
+  return api.get('/risk-metrics', { params: { player_id: playerId } })
 }
 
 export const searchPlayers = async (query) => {

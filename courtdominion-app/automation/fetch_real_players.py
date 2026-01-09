@@ -65,7 +65,7 @@ class RealPlayerFetcher:
             all_players_endpoint = commonallplayers.CommonAllPlayers(
                 is_only_current_season=1,
                 league_id='00',
-                season='2024-25'
+                season='2025-26'
             )
             
             time.sleep(0.6)  # Rate limiting
