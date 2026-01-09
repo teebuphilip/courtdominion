@@ -36,16 +36,29 @@ class ProjectionGenerator:
         """
         self.logger.section("GENERATING REAL PROJECTIONS (DBB2 ENGINE)")
         
-        # Build injury lookup
-        injury_lookup = {}
+        # Build injury lookup by BOTH player_id AND name (ESPN doesn't provide NBA API IDs)
+        injury_lookup_by_id = {}
+        injury_lookup_by_name = {}
         if injuries:
-            injury_lookup = {injury["player_id"]: injury for injury in injuries}
+            for injury in injuries:
+                # Try player_id first (if available)
+                if injury.get("player_id"):
+                    injury_lookup_by_id[injury["player_id"]] = injury
+                # Always index by name as fallback
+                if injury.get("name"):
+                    # Normalize name (remove Jr., Sr., III, etc. for better matching)
+                    normalized_name = injury["name"].replace(" Jr.", "").replace(" Sr.", "").replace(" III", "").strip()
+                    injury_lookup_by_name[normalized_name.lower()] = injury
         
         projections = []
         
         for player in players:
             if player["status"] == "active":
-                projection = self._generate_player_projection(player, injury_lookup)
+                projection = self._generate_player_projection(
+                    player,
+                    injury_lookup_by_id,
+                    injury_lookup_by_name
+                )
                 if projection:  # Only add if projection succeeded
                     projections.append(projection)
         
@@ -55,19 +68,22 @@ class ProjectionGenerator:
     def _generate_player_projection(
         self,
         player: Dict,
-        injury_lookup: Dict
+        injury_lookup_by_id: Dict,
+        injury_lookup_by_name: Dict
     ) -> Dict:
         """
         Generate projection for single player using DBB2 engine.
-        
+
         Args:
             player: Player dict
-            injury_lookup: Dict mapping player_id to injury info
-            
+            injury_lookup_by_id: Dict mapping player_id to injury info
+            injury_lookup_by_name: Dict mapping player name to injury info
+
         Returns:
             Projection dict with real NBA data
         """
         player_id = player["player_id"]
+        player_name = player["name"]
         
         try:
             # Use YOUR dbb2 projection engine!
@@ -76,13 +92,27 @@ class ProjectionGenerator:
             if not dbb2_projection:
                 self.logger.warning(f"No projection data for {player['name']} ({player_id})")
                 return None
-            
-            # Check if player is injured
-            is_injured = player_id in injury_lookup
-            
-            # Apply injury modifier if needed
-            injury_modifier = 0.7 if is_injured else 1.0
-            
+
+            # Check for season-ending conditions
+            games_played = dbb2_projection.get('games_played', 0)
+
+            # EXCLUDE players who haven't played this season (injuries from before season started)
+            if games_played == 0:
+                self.logger.info(f"Excluding {player['name']} - 0 games played this season")
+                return None
+
+            # Check injury status and determine modifier
+            injury_modifier = self._calculate_injury_modifier(
+                player_id,
+                player_name,
+                injury_lookup_by_id,
+                injury_lookup_by_name
+            )
+
+            # Exclude if modifier is 0.0 (season-ending injury)
+            if injury_modifier == 0.0:
+                return None
+
             # Calculate fantasy points (standard scoring)
             fantasy_points = self._calculate_fantasy_points(
                 dbb2_projection['points_per_game'],
@@ -140,7 +170,66 @@ class ProjectionGenerator:
                 error=str(e)
             )
             return None
-    
+
+    def _calculate_injury_modifier(
+        self,
+        player_id: str,
+        player_name: str,
+        injury_lookup_by_id: Dict,
+        injury_lookup_by_name: Dict
+    ) -> float:
+        """
+        Calculate injury modifier based on injury status.
+
+        Args:
+            player_id: Player ID
+            player_name: Player name
+            injury_lookup_by_id: Dict mapping player_id to injury info
+            injury_lookup_by_name: Dict mapping name to injury info
+
+        Returns:
+            Modifier (0.0 = exclude, 0.9 = minor, 0.7 = moderate, 1.0 = healthy)
+        """
+        # Try to find injury by player_id first
+        injury = injury_lookup_by_id.get(player_id)
+
+        # If not found by ID, try by name
+        if not injury:
+            normalized_name = player_name.replace(" Jr.", "").replace(" Sr.", "").replace(" III", "").strip()
+            injury = injury_lookup_by_name.get(normalized_name.lower())
+
+        # If still not found, player is healthy
+        if not injury:
+            return 1.0
+        status = injury.get('status', '').lower()
+        injury_type = injury.get('injury_type', '').lower()
+        details = injury.get('details', '').lower()
+
+        # Season-ending injuries - EXCLUDE completely
+        season_ending_keywords = ['acl', 'out for season', 'season-ending', 'torn acl', 'achilles']
+        for keyword in season_ending_keywords:
+            if keyword in injury_type or keyword in details:
+                self.logger.info(f"Excluding {player_name} - Season-ending injury ({injury_type})")
+                return 0.0  # Will be filtered out
+
+        # "Out" indefinitely - Check if long-term
+        if 'out' in status:
+            # If Out + serious injury, exclude
+            serious_injuries = ['knee', 'back', 'foot', 'ankle']
+            if any(inj in injury_type for inj in serious_injuries):
+                self.logger.info(f"Excluding {player_name} - Out with {injury_type}")
+                return 0.0
+
+            # Generic "Out" - heavy discount (may return soon)
+            return 0.5
+
+        # Day-to-Day - minor discount
+        if 'day-to-day' in status or 'questionable' in status or 'probable' in status:
+            return 0.95
+
+        # Any other injury status - moderate discount
+        return 0.7
+
     def _calculate_fantasy_points(
         self,
         points: float,
