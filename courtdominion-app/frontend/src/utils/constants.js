@@ -21,7 +21,7 @@ export const RISK_LEVELS = {
 }
 
 // Pagination
-export const ITEMS_PER_PAGE = 50
+export const ITEMS_PER_PAGE = 300
 
 // Sort options for projections
 export const SORT_OPTIONS = [
