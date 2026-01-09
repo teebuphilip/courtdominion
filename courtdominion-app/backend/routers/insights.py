@@ -13,15 +13,25 @@ router = APIRouter(tags=["insights"])
 
 
 @router.get("/insights")
-def get_insights():
+def get_insights(category: str = "all"):
     """
-    Get all player insights.
-    
+    Get player insights filtered by category.
+
+    Args:
+        category: Filter category (all, high_value, sleepers, avoid)
+
     Returns:
         List of insight dictionaries from insights.json
         Returns [] if file missing (per Q4)
     """
-    return get_all_insights()
+    from services.insights_service import filter_insights_by_category
+
+    all_insights = get_all_insights()
+
+    if category == "all":
+        return all_insights
+
+    return filter_insights_by_category(all_insights, category)
 
 
 @router.get("/risk-metrics")

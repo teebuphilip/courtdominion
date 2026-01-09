@@ -10,9 +10,9 @@ const InsightsPage = () => {
 
   const categories = [
     { value: 'all', label: 'All Insights' },
-    { value: 'waiver_wire', label: 'Waiver Wire' },
+    { value: 'high_value', label: 'High Value' },
     { value: 'sleepers', label: 'Sleepers' },
-    { value: 'streaming', label: 'Streaming Options' },
+    { value: 'avoid', label: 'Avoid' },
   ]
 
   return (
