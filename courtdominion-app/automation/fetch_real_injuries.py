@@ -33,31 +33,46 @@ class ESPNInjuryFetcher:
             
             data = response.json()
             
-            # ESPN structure: {"injuries": [...], "season": {...}, ...}
-            injury_list = data.get('injuries', [])
-            
-            if not injury_list:
+            # ESPN structure: {"injuries": [team_data, ...], "season": {...}, ...}
+            # Each team_data has: {"id": "1", "displayName": "Team Name", "injuries": [...]}
+            teams_data = data.get('injuries', [])
+
+            if not teams_data:
                 self.logger.warning(f"No injuries in ESPN response. Keys: {list(data.keys())}")
                 return []
-            
-            self.logger.info(f"Processing {len(injury_list)} injury records from ESPN")
-            
+
             injuries = []
-            
-            for injury_data in injury_list:
-                # Extract athlete info
-                athlete = injury_data.get('athlete', {})
-                team_info = injury_data.get('team', {})
-                
-                injuries.append({
-                    "player_id": str(athlete.get('id', '')),
-                    "name": athlete.get('displayName', 'Unknown'),
-                    "team": team_info.get('abbreviation', 'UNK'),
-                    "status": injury_data.get('status', 'Unknown'),
-                    "injury_type": injury_data.get('type', 'Unknown'),
-                    "return_date": injury_data.get('date')  # ISO format or None
-                })
-            
+            total_injury_records = 0
+
+            # Iterate through each team's injury data
+            for team_data in teams_data:
+                team_name = team_data.get('displayName', 'Unknown Team')
+                team_injuries = team_data.get('injuries', [])
+                total_injury_records += len(team_injuries)
+
+                for injury_data in team_injuries:
+                    # Extract athlete info
+                    athlete = injury_data.get('athlete', {})
+
+                    # Extract injury details
+                    status = injury_data.get('status', 'Unknown')
+                    short_comment = injury_data.get('shortComment', '')
+                    long_comment = injury_data.get('longComment', '')
+
+                    # Parse injury type from comments (e.g., "ankle", "knee", "hamstring")
+                    injury_type = self._parse_injury_type(short_comment, long_comment)
+
+                    injuries.append({
+                        "player_id": str(athlete.get('id', '')) if athlete.get('id') else '',
+                        "name": athlete.get('displayName', 'Unknown'),
+                        "team": self._parse_team_abbrev(team_name),
+                        "status": status,
+                        "details": short_comment if short_comment else long_comment[:200],
+                        "injury_type": injury_type,
+                        "return_date": injury_data.get('date')  # ISO format or None
+                    })
+
+            self.logger.info(f"Processing {total_injury_records} injury records from ESPN")
             self.logger.info(f"Fetched {len(injuries)} current injuries from ESPN")
             
             return injuries
@@ -73,6 +88,78 @@ class ESPNInjuryFetcher:
         except Exception as e:
             self.logger.error(f"Unexpected error fetching injuries", error=str(e))
             return []
+
+    def _parse_injury_type(self, short_comment: str, long_comment: str) -> str:
+        """
+        Parse injury type from comments (ankle, knee, hamstring, etc.)
+
+        Args:
+            short_comment: Short injury description
+            long_comment: Long injury description
+
+        Returns:
+            Injury type string
+        """
+        combined = (short_comment + " " + long_comment).lower()
+
+        # Common injury types
+        injury_keywords = [
+            'ankle', 'knee', 'hamstring', 'calf', 'groin', 'back',
+            'shoulder', 'wrist', 'hand', 'finger', 'foot', 'achilles',
+            'quad', 'hip', 'elbow', 'concussion', 'illness', 'rest',
+            'personal', 'suspension', 'acl', 'mcl', 'meniscus'
+        ]
+
+        for keyword in injury_keywords:
+            if keyword in combined:
+                return keyword.capitalize()
+
+        return "Other"
+
+    def _parse_team_abbrev(self, team_name: str) -> str:
+        """
+        Convert team name to abbreviation.
+
+        Args:
+            team_name: Full team name (e.g., "Los Angeles Lakers")
+
+        Returns:
+            Team abbreviation (e.g., "LAL")
+        """
+        team_map = {
+            'Atlanta Hawks': 'ATL',
+            'Boston Celtics': 'BOS',
+            'Brooklyn Nets': 'BKN',
+            'Charlotte Hornets': 'CHA',
+            'Chicago Bulls': 'CHI',
+            'Cleveland Cavaliers': 'CLE',
+            'Dallas Mavericks': 'DAL',
+            'Denver Nuggets': 'DEN',
+            'Detroit Pistons': 'DET',
+            'Golden State Warriors': 'GSW',
+            'Houston Rockets': 'HOU',
+            'Indiana Pacers': 'IND',
+            'Los Angeles Clippers': 'LAC',
+            'Los Angeles Lakers': 'LAL',
+            'Memphis Grizzlies': 'MEM',
+            'Miami Heat': 'MIA',
+            'Milwaukee Bucks': 'MIL',
+            'Minnesota Timberwolves': 'MIN',
+            'New Orleans Pelicans': 'NOP',
+            'New York Knicks': 'NYK',
+            'Oklahoma City Thunder': 'OKC',
+            'Orlando Magic': 'ORL',
+            'Philadelphia 76ers': 'PHI',
+            'Phoenix Suns': 'PHX',
+            'Portland Trail Blazers': 'POR',
+            'Sacramento Kings': 'SAC',
+            'San Antonio Spurs': 'SAS',
+            'Toronto Raptors': 'TOR',
+            'Utah Jazz': 'UTA',
+            'Washington Wizards': 'WAS'
+        }
+
+        return team_map.get(team_name, 'UNK')
 
 
 def fetch_real_injuries() -> List[Dict]:
