@@ -16,20 +16,13 @@ const Hero = ({ content }) => {
             {content?.subheadline || 'Risk analysis, volatility metrics, and waiver wire intelligence'}
           </p>
 
-          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="mt-10 flex justify-center">
             <Link
               to="/projections"
               className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 transition-colors"
             >
               {content?.cta_primary || 'View Today\'s Projections'}
               <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-            
-            <Link
-              to="/insights"
-              className="inline-flex items-center justify-center px-8 py-3 border border-gray-600 text-base font-medium rounded-md text-gray-300 bg-gray-800 hover:bg-gray-700 transition-colors"
-            >
-              {content?.cta_secondary || 'Get Daily Insights'}
             </Link>
           </div>
         </div>
