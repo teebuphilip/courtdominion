@@ -206,29 +206,52 @@ class ProjectionGenerator:
         details = injury.get('details', '').lower()
 
         # Season-ending injuries - EXCLUDE completely
-        season_ending_keywords = ['acl', 'out for season', 'season-ending', 'torn acl', 'achilles']
+        season_ending_keywords = [
+            'acl', 'out for season', 'season-ending', 'torn acl', 'achilles',
+            'season-ending surgery', 'out for the season', 'rest of the season'
+        ]
         for keyword in season_ending_keywords:
             if keyword in injury_type or keyword in details:
                 self.logger.info(f"Excluding {player_name} - Season-ending injury ({injury_type})")
                 return 0.0  # Will be filtered out
 
-        # "Out" indefinitely - Check if long-term
+        # Parse timeframe from details for smarter modifiers
+
+        # 1. Indefinite / No timetable - Very long term
+        indefinite_keywords = ['indefinitely', 'no timetable', 'extended absence', 'multiple weeks', 'out several weeks']
+        if any(keyword in details for keyword in indefinite_keywords):
+            self.logger.info(f"Heavy discount for {player_name} - Long-term injury ({injury_type})")
+            return 0.50
+
+        # 2. Multi-week injuries (2-4 weeks)
+        multiweek_keywords = ['week', 'weeks', 're-evaluated', 'reevaluated', '2 weeks', '3 weeks', '4 weeks']
+        if any(keyword in details for keyword in multiweek_keywords):
+            return 0.75  # 25% discount for 2-4 week absence
+
+        # 3. Game-to-game decisions (specific game mentioned)
+        game_keywords = ['will not play', 'ruled out', 'out for', 'sidelined for']
+        game_days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'tonight', 'today']
+        if any(keyword in details for keyword in game_keywords) and any(day in details for day in game_days):
+            return 0.85  # 15% discount for game-to-game
+
+        # 4. Day-to-Day or Questionable
+        if 'day-to-day' in status or 'questionable' in status:
+            return 0.95  # 5% discount
+
+        # 5. Probable / Available soon
+        if 'probable' in status or 'available' in details or 'expected to play' in details:
+            return 0.98  # 2% discount
+
+        # 6. "Out" status with serious injury but no timeframe - exclude for safety
         if 'out' in status:
-            # If Out + serious injury, exclude
             serious_injuries = ['knee', 'back', 'foot', 'ankle']
             if any(inj in injury_type for inj in serious_injuries):
-                self.logger.info(f"Excluding {player_name} - Out with {injury_type}")
+                # If no timeframe mentioned, assume long-term and exclude
+                self.logger.info(f"Excluding {player_name} - Out with {injury_type}, no clear return timeline")
                 return 0.0
 
-            # Generic "Out" - heavy discount (may return soon)
-            return 0.5
-
-        # Day-to-Day - minor discount
-        if 'day-to-day' in status or 'questionable' in status or 'probable' in status:
-            return 0.95
-
-        # Any other injury status - moderate discount
-        return 0.7
+        # Default: moderate discount for unknown/other injuries
+        return 0.80
 
     def _calculate_fantasy_points(
         self,
