@@ -3,38 +3,49 @@ Projection generation module using REAL DBB2 ENGINE.
 
 Generates fantasy basketball projections for all active players using
 your dbb2 projection algorithms with real NBA data.
+
+FIX-001: Uses team-based remaining games (authoritative)
+FIX-002: Calculates games_remaining_projected per player
+FIX-003: Calculates three_pointers_made_projected (ROS total)
 """
 
 from typing import List, Dict
+from math import floor
 from utils import get_logger
 
 # Import your DBB2 projection engine
 from dbb2_projections import calculate_current_season_projection
+from fetch_real_players import fetch_team_games_played
 
 
 class ProjectionGenerator:
     """
     Generates fantasy basketball projections using real DBB2 engine.
-    
+
     Uses real NBA data from nba-api + your projection algorithms.
     """
-    
+
     def __init__(self):
         """Initialize projection generator"""
         self.logger = get_logger("projection_generator")
-    
+        self.team_games_played = {}  # FIX-001: Team games lookup
+
     def generate_projections(self, players: List[Dict], injuries: List[Dict] = None) -> List[Dict]:
         """
         Generate projections for all players using DBB2 engine.
-        
+
         Args:
             players: List of player dicts
             injuries: List of injury dicts (optional)
-            
+
         Returns:
             List of projection dicts with REAL NBA data
         """
         self.logger.section("GENERATING REAL PROJECTIONS (DBB2 ENGINE)")
+
+        # FIX-001: Fetch team games played for team_games_remaining calculation
+        self.team_games_played = fetch_team_games_played()
+        self.logger.info(f"Loaded standings for {len(self.team_games_played)} teams")
         
         # Build injury lookup by BOTH player_id AND name (ESPN doesn't provide NBA API IDs)
         injury_lookup_by_id = {}
@@ -126,12 +137,31 @@ class ProjectionGenerator:
             # Calculate ceiling/floor based on confidence
             confidence = dbb2_projection.get('confidence', 0.8)
             variance = (1.0 - confidence) * 0.3  # Max 30% variance
-            ceiling = fantasy_points * (1 + variance)
-            floor = fantasy_points * (1 - variance)
+            ceiling_value = fantasy_points * (1 + variance)
+            floor_value = fantasy_points * (1 - variance)
             
             # Determine consistency score (higher confidence = more consistent)
             consistency = int(confidence * 100)
-            
+
+            # FIX-001: Get team games remaining (authoritative source)
+            team = player["team"]
+            team_games_played = self.team_games_played.get(team, 40)  # Default to 40 if unknown
+            team_games_remaining = 82 - team_games_played
+
+            # FIX-002: Calculate projected games remaining for this player
+            # Factor 1: injury_modifier (current injury status)
+            # Factor 2: historical_availability (career games-per-season average)
+            historical_gp = dbb2_projection.get('games_played', 70)  # From cache: avg games/season
+            historical_availability = min(1.0, historical_gp / 82)  # Cap at 1.0
+
+            # Combined availability = injury impact × historical pattern
+            combined_availability = injury_modifier * historical_availability
+            games_remaining_projected = floor(team_games_remaining * combined_availability)
+
+            # FIX-003: Calculate rest-of-season 3PM total
+            tpm_per_game = dbb2_projection['three_pointers_made'] * injury_modifier
+            three_pointers_made_projected = floor(tpm_per_game * games_remaining_projected)
+
             # Build full projection (matching backend format)
             projection = {
                 "player_id": player_id,
@@ -156,11 +186,15 @@ class ProjectionGenerator:
                 "ftm": dbb2_projection['free_throws_made'] * injury_modifier,
                 "fta": dbb2_projection['free_throws_attempted'] * injury_modifier,
                 "fantasy_points": round(fantasy_points * injury_modifier, 1),
-                "ceiling": round(ceiling * injury_modifier, 1),
-                "floor": round(floor * injury_modifier, 1),
-                "consistency": consistency
+                "ceiling": round(ceiling_value * injury_modifier, 1),
+                "floor": round(floor_value * injury_modifier, 1),
+                "consistency": consistency,
+                # FIX-001, FIX-002, FIX-003: New fields
+                "team_games_remaining": team_games_remaining,
+                "games_remaining_projected": games_remaining_projected,
+                "three_pointers_made_projected": three_pointers_made_projected
             }
-            
+
             return projection
             
         except Exception as e:
