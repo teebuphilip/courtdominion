@@ -149,8 +149,14 @@ class ProjectionGenerator:
             team_games_remaining = 82 - team_games_played
 
             # FIX-002: Calculate projected games remaining for this player
-            # injury_modifier serves as the availability_factor
-            games_remaining_projected = floor(team_games_remaining * injury_modifier)
+            # Factor 1: injury_modifier (current injury status)
+            # Factor 2: historical_availability (career games-per-season average)
+            historical_gp = dbb2_projection.get('games_played', 70)  # From cache: avg games/season
+            historical_availability = min(1.0, historical_gp / 82)  # Cap at 1.0
+
+            # Combined availability = injury impact × historical pattern
+            combined_availability = injury_modifier * historical_availability
+            games_remaining_projected = floor(team_games_remaining * combined_availability)
 
             # FIX-003: Calculate rest-of-season 3PM total
             tpm_per_game = dbb2_projection['three_pointers_made'] * injury_modifier
