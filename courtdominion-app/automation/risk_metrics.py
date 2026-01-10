@@ -7,9 +7,9 @@ Risk Definition (LOCKED):
 Risk = likelihood the projection is materially wrong.
 
 Components:
-1. Availability Risk (50% weight) - Will they play the projected games?
-2. Role Risk (30% weight) - Will their minutes/role stay stable?
-3. Composition Risk (20% weight) - Is their value from volatile stats?
+1. Availability Risk (60% weight) - Will they play the projected games?
+2. Role Risk (25% weight) - Will their minutes/role stay stable? Includes injury history.
+3. Composition Risk (15% weight) - Is their value from volatile stats?
 
 Classification (POST-PROJECTION):
 - Low: total_risk < 0.25
@@ -99,11 +99,11 @@ class RiskMetricsGenerator:
         # Component 3: Stat Composition Risk (20% weight)
         composition_risk = self._calculate_composition_risk(projection)
 
-        # Aggregate risk
+        # Aggregate risk (weights updated per user feedback)
         total_risk = (
-            0.5 * availability_risk +
-            0.3 * role_risk +
-            0.2 * composition_risk
+            0.60 * availability_risk +
+            0.25 * role_risk +
+            0.15 * composition_risk
         )
 
         # Classify (POST-PROJECTION ONLY)
@@ -156,7 +156,8 @@ class RiskMetricsGenerator:
 
         Factors:
         - Low minutes = higher role uncertainty
-        - Injury history = role instability
+        - Current injury status = role instability
+        - Injury history = even when healthy, injury-prone players are risky
         - Consistency score = proxy for role stability
 
         Returns:
@@ -164,23 +165,23 @@ class RiskMetricsGenerator:
         """
         risk_score = 0.0
 
-        # Factor 1: Minutes-based role security (0-0.4)
+        # Factor 1: Minutes-based role security (0-0.35)
         # High-minute players have secure roles, low-minute players are volatile
         minutes = projection.get("minutes", 25)
         if minutes >= 32:
             minutes_risk = 0.05  # Starter, secure role
         elif minutes >= 28:
-            minutes_risk = 0.15  # Solid rotation player
+            minutes_risk = 0.12  # Solid rotation player
         elif minutes >= 22:
-            minutes_risk = 0.25  # Rotation player, some uncertainty
+            minutes_risk = 0.20  # Rotation player, some uncertainty
         elif minutes >= 15:
-            minutes_risk = 0.35  # Bench player, role at risk
+            minutes_risk = 0.28  # Bench player, role at risk
         else:
-            minutes_risk = 0.40  # Deep bench, highly volatile role
+            minutes_risk = 0.35  # Deep bench, highly volatile role
 
         risk_score += minutes_risk
 
-        # Factor 2: Current injury status (0-0.3)
+        # Factor 2: Current injury status (0-0.25)
         injury = None
         if player_name:
             injury = injury_lookup.get(player_name.lower())
@@ -190,18 +191,31 @@ class RiskMetricsGenerator:
         if injury:
             status = injury.get("status", "").lower()
             if "out" in status:
-                risk_score += 0.30  # Out = major role uncertainty when returning
+                risk_score += 0.25  # Out = major role uncertainty when returning
             elif "doubtful" in status:
-                risk_score += 0.25
+                risk_score += 0.20
             elif "questionable" in status:
-                risk_score += 0.15
+                risk_score += 0.12
             elif "probable" in status or "day-to-day" in status:
                 risk_score += 0.05
 
-        # Factor 3: Consistency as proxy for role stability (0-0.3)
+        # Factor 3: INJURY HISTORY (0-0.25) - NEW
+        # Even when currently healthy, historically injury-prone players are risky
+        # Use availability ratio as proxy for injury history
+        team_games_remaining = projection.get("team_games_remaining", 42)
+        games_remaining_projected = projection.get("games_remaining_projected", 42)
+
+        if team_games_remaining > 0:
+            historical_availability = games_remaining_projected / team_games_remaining
+            # Players who historically miss games get penalized
+            # E.g., Embiid plays ~65% of games = 0.35 * 0.25 = 0.0875 penalty
+            injury_history_risk = (1.0 - historical_availability) * 0.25
+            risk_score += injury_history_risk
+
+        # Factor 4: Consistency as proxy for role stability (0-0.15)
         # Low consistency = volatile production = potentially unstable role
         consistency = projection.get("consistency", 75)
-        consistency_risk = (100 - consistency) / 100 * 0.30
+        consistency_risk = (100 - consistency) / 100 * 0.15
 
         risk_score += consistency_risk
 
