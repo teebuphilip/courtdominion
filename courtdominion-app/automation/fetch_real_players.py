@@ -1,12 +1,27 @@
 """
-Fetch real NBA players from NBA.com API
+Fetch real NBA players and team standings from NBA.com API
 """
 
 from nba_api.stats.static import players as nba_players
-from nba_api.stats.endpoints import commonallplayers
+from nba_api.stats.endpoints import commonallplayers, leaguestandings
 import time
 from typing import List, Dict
 from utils import get_logger
+
+
+# Team abbreviation mapping (NBA API uses different formats)
+TEAM_ABBREV_MAP = {
+    'Atlanta Hawks': 'ATL', 'Boston Celtics': 'BOS', 'Brooklyn Nets': 'BKN',
+    'Charlotte Hornets': 'CHA', 'Chicago Bulls': 'CHI', 'Cleveland Cavaliers': 'CLE',
+    'Dallas Mavericks': 'DAL', 'Denver Nuggets': 'DEN', 'Detroit Pistons': 'DET',
+    'Golden State Warriors': 'GSW', 'Houston Rockets': 'HOU', 'Indiana Pacers': 'IND',
+    'Los Angeles Clippers': 'LAC', 'Los Angeles Lakers': 'LAL', 'Memphis Grizzlies': 'MEM',
+    'Miami Heat': 'MIA', 'Milwaukee Bucks': 'MIL', 'Minnesota Timberwolves': 'MIN',
+    'New Orleans Pelicans': 'NOP', 'New York Knicks': 'NYK', 'Oklahoma City Thunder': 'OKC',
+    'Orlando Magic': 'ORL', 'Philadelphia 76ers': 'PHI', 'Phoenix Suns': 'PHX',
+    'Portland Trail Blazers': 'POR', 'Sacramento Kings': 'SAC', 'San Antonio Spurs': 'SAS',
+    'Toronto Raptors': 'TOR', 'Utah Jazz': 'UTA', 'Washington Wizards': 'WAS'
+}
 
 
 class RealPlayerFetcher:
@@ -123,6 +138,50 @@ def fetch_real_players(include_teams: bool = False) -> List[Dict]:
         return fetcher.fetch_active_players()
 
 
+def fetch_team_games_played() -> Dict[str, int]:
+    """
+    Fetch games played for each NBA team from standings.
+
+    Returns:
+        Dict mapping team abbreviation -> games played
+        e.g., {'LAL': 35, 'BOS': 36, ...}
+    """
+    logger = get_logger("team_standings_fetcher")
+    logger.section("FETCHING TEAM STANDINGS")
+
+    try:
+        standings = leaguestandings.LeagueStandings(
+            season='2025-26',
+            league_id='00'
+        )
+
+        time.sleep(0.6)  # Rate limiting
+
+        df = standings.get_data_frames()[0]
+
+        team_games = {}
+        for _, row in df.iterrows():
+            # Get team name and calculate games played (wins + losses)
+            team_name = f"{row['TeamCity']} {row['TeamName']}"
+            games_played = int(row['WINS']) + int(row['LOSSES'])
+
+            # Map to abbreviation
+            abbrev = TEAM_ABBREV_MAP.get(team_name)
+            if abbrev:
+                team_games[abbrev] = games_played
+            else:
+                # Try to extract from TeamSlug or use first 3 letters
+                logger.warning(f"Unknown team: {team_name}")
+
+        logger.info(f"Fetched standings for {len(team_games)} teams")
+        return team_games
+
+    except Exception as e:
+        logger.error(f"Failed to fetch team standings: {e}")
+        # Return default (assume ~40 games played mid-season)
+        return {abbrev: 40 for abbrev in TEAM_ABBREV_MAP.values()}
+
+
 # For testing
 if __name__ == "__main__":
     players = fetch_real_players()
@@ -130,3 +189,10 @@ if __name__ == "__main__":
     print("\nFirst 5 players:")
     for p in players[:5]:
         print(f"  {p['name']} (ID: {p['player_id']})")
+
+    print("\n" + "="*50)
+    print("Testing team standings fetch...")
+    team_games = fetch_team_games_played()
+    print(f"Fetched {len(team_games)} teams")
+    for team, games in sorted(team_games.items())[:5]:
+        print(f"  {team}: {games} games played, {82 - games} remaining")
