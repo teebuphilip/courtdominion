@@ -137,8 +137,8 @@ class ProjectionGenerator:
             # Calculate ceiling/floor based on confidence
             confidence = dbb2_projection.get('confidence', 0.8)
             variance = (1.0 - confidence) * 0.3  # Max 30% variance
-            ceiling = fantasy_points * (1 + variance)
-            floor = fantasy_points * (1 - variance)
+            ceiling_value = fantasy_points * (1 + variance)
+            floor_value = fantasy_points * (1 - variance)
             
             # Determine consistency score (higher confidence = more consistent)
             consistency = int(confidence * 100)
@@ -180,8 +180,8 @@ class ProjectionGenerator:
                 "ftm": dbb2_projection['free_throws_made'] * injury_modifier,
                 "fta": dbb2_projection['free_throws_attempted'] * injury_modifier,
                 "fantasy_points": round(fantasy_points * injury_modifier, 1),
-                "ceiling": round(ceiling * injury_modifier, 1),
-                "floor": round(floor * injury_modifier, 1),
+                "ceiling": round(ceiling_value * injury_modifier, 1),
+                "floor": round(floor_value * injury_modifier, 1),
                 "consistency": consistency,
                 # FIX-001, FIX-002, FIX-003: New fields
                 "team_games_remaining": team_games_remaining,
