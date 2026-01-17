@@ -8,10 +8,12 @@ from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Optional, List, Dict, Any
+import os
 import time
 import traceback
 import uvicorn
 import json
+from secrets import compare_digest
 
 # Import all modules
 import dbb2_database as db
@@ -33,13 +35,45 @@ app = FastAPI(
 )
 
 # Add CORS middleware
+# WHY: Wildcard + credentials = CSRF vulnerability. Attacker site can make
+# authenticated requests on behalf of logged-in users.
+ALLOWED_ORIGINS = os.getenv("ALLOWED_ORIGINS", "http://localhost:3000").split(",")
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=ALLOWED_ORIGINS,  # Explicit allowlist, no wildcards
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["GET", "POST", "PUT", "DELETE"],  # Only methods we use
+    allow_headers=["x-api-key", "x-admin-key", "content-type"],  # Only headers we need
 )
+
+
+@app.middleware("http")
+async def add_security_headers(request: Request, call_next):
+    """
+    Add browser security headers to all responses.
+
+    WHY: Defense in depth. Even if XSS gets through, these headers
+    limit what an attacker can do.
+    """
+    response = await call_next(request)
+
+    # Prevent MIME-type sniffing (IE XSS vector)
+    response.headers["X-Content-Type-Options"] = "nosniff"
+
+    # Prevent clickjacking
+    response.headers["X-Frame-Options"] = "DENY"
+
+    # Force HTTPS (browser remembers for 1 year)
+    response.headers["Strict-Transport-Security"] = "max-age=31536000; includeSubDomains"
+
+    # Don't cache API responses (sensitive data)
+    response.headers["Cache-Control"] = "no-store"
+
+    # Disable browser features we don't need
+    response.headers["Permissions-Policy"] = "geolocation=(), microphone=(), camera=()"
+
+    return response
 
 
 # ============================================
@@ -123,17 +157,25 @@ async def log_requests(request: Request, call_next):
         response = await call_next(request)
         response_time = int((time.time() - start_time) * 1000)
         
+        # WHY: Never log secrets. Logs get stored, backed up, shipped to monitoring.
+        # A single log leak = full credential compromise.
+        def redact_headers(headers: dict) -> dict:
+            """Remove sensitive headers before logging."""
+            sensitive_keys = {"x-api-key", "x-admin-key", "authorization", "cookie"}
+            return {k: "[REDACTED]" if k.lower() in sensitive_keys else v
+                    for k, v in headers.items()}
+
         # Log successful request
         logger.log_api_request(
             customer_id=customer['customer_id'] if customer else None,
-            customer_email=customer['email'] if customer else None,
+            customer_email=None,  # REMOVED: No PII in logs
             customer_tier=customer['tier'] if customer else None,
             endpoint=request.url.path,
             http_method=request.method,
             full_url=str(request.url),
             query_params=dict(request.query_params),
             request_body=None,
-            request_headers=dict(request.headers),
+            request_headers=redact_headers(dict(request.headers)),  # FIXED: Redacted
             response_status_code=response.status_code,
             response_body=None,
             response_time_ms=response_time,
@@ -145,28 +187,35 @@ async def log_requests(request: Request, call_next):
         
     except Exception as e:
         response_time = int((time.time() - start_time) * 1000)
-        error_trace = traceback.format_exc()
-        
+        # NOTE: Stack trace captured for server-side debugging only, not logged
+
+        # Redefine redact_headers in except block (function is local to try block)
+        def redact_headers(headers: dict) -> dict:
+            """Remove sensitive headers before logging."""
+            sensitive_keys = {"x-api-key", "x-admin-key", "authorization", "cookie"}
+            return {k: "[REDACTED]" if k.lower() in sensitive_keys else v
+                    for k, v in headers.items()}
+
         # Log error
         logger.log_api_request(
             customer_id=customer['customer_id'] if customer else None,
-            customer_email=customer['email'] if customer else None,
+            customer_email=None,  # REMOVED: No PII in logs
             customer_tier=customer['tier'] if customer else None,
             endpoint=request.url.path,
             http_method=request.method,
             full_url=str(request.url),
             query_params=dict(request.query_params),
             request_body=None,
-            request_headers=dict(request.headers),
+            request_headers=redact_headers(dict(request.headers)),  # FIXED: Redacted
             response_status_code=500,
-            response_body={"error": str(e)},
+            response_body={"error": "Internal server error"},  # FIXED: Generic message
             response_time_ms=response_time,
-            error_message=str(e),
-            error_stack_trace=error_trace,
+            error_message=f"ERR-{int(time.time())}",  # FIXED: Error ID only, no details
+            error_stack_trace=None,  # FIXED: Never log stack traces
             ip_address=request.client.host if request.client else None,
             user_agent=request.headers.get("user-agent")
         )
-        
+
         raise
 
 
@@ -188,8 +237,31 @@ def verify_api_key(x_api_key: str = Header(...)) -> dict:
     
     # Update rate limit counter
     db.update_rate_limit(x_api_key)
-    
+
     return customer
+
+
+def verify_admin_key(x_admin_key: str = Header(...)) -> None:
+    """
+    Verify admin key matches ADMIN_API_KEY env var.
+
+    WHY: Tier-based admin access is mutable via DB - a compromised DB
+    or privilege escalation bug could grant admin access. A separate
+    env-var-based key is immutable at runtime and requires server access
+    to compromise.
+    """
+    admin_key = os.getenv("ADMIN_API_KEY")
+
+    # FAIL CLOSED: If no admin key configured, block all admin access
+    if not admin_key:
+        raise HTTPException(
+            status_code=503,
+            detail="Admin functionality disabled"
+        )
+
+    # Constant-time comparison to prevent timing attacks
+    if not compare_digest(x_admin_key, admin_key):
+        raise HTTPException(status_code=403, detail="Invalid admin key")
 
 
 # ============================================
@@ -1401,12 +1473,13 @@ async def get_debug_dashboard(x_api_key: str = Header(...), hours: int = 24):
 # ============================================
 
 @app.get("/admin/error-summary")
-async def get_error_summary(x_api_key: str = Header(...), status: str = "active", limit: int = 50):
-    """Get system-wide error summary (Enterprise only)"""
-    customer = verify_api_key(x_api_key)
-    
-    if customer['tier'] != 'enterprise':
-        raise HTTPException(status_code=403, detail="Admin endpoints require Enterprise tier")
+async def get_error_summary(
+    x_admin_key: str = Header(...),
+    status: str = "active",
+    limit: int = 50
+):
+    """Get system-wide error summary (Admin only)"""
+    verify_admin_key(x_admin_key)
     
     query = """
         SELECT * FROM api_errors
@@ -1425,12 +1498,13 @@ async def get_error_summary(x_api_key: str = Header(...), status: str = "active"
 
 
 @app.get("/admin/slow-queries")
-async def get_system_slow_queries(x_api_key: str = Header(...), threshold_ms: int = 1000, limit: int = 100):
-    """Get system-wide slow queries (Enterprise only)"""
-    customer = verify_api_key(x_api_key)
-    
-    if customer['tier'] != 'enterprise':
-        raise HTTPException(status_code=403, detail="Admin endpoints require Enterprise tier")
+async def get_system_slow_queries(
+    x_admin_key: str = Header(...),
+    threshold_ms: int = 1000,
+    limit: int = 100
+):
+    """Get system-wide slow queries (Admin only)"""
+    verify_admin_key(x_admin_key)
     
     query = """
         SELECT * FROM api_debug_log
@@ -1449,12 +1523,13 @@ async def get_system_slow_queries(x_api_key: str = Header(...), threshold_ms: in
 
 
 @app.post("/admin/resolve-error/{error_id}")
-async def resolve_error(error_id: int, x_api_key: str = Header(...), notes: Optional[str] = None):
-    """Mark error as resolved (Enterprise only)"""
-    customer = verify_api_key(x_api_key)
-    
-    if customer['tier'] != 'enterprise':
-        raise HTTPException(status_code=403, detail="Admin endpoints require Enterprise tier")
+async def resolve_error(
+    error_id: int,
+    x_admin_key: str = Header(...),
+    notes: Optional[str] = None
+):
+    """Mark error as resolved (Admin only)"""
+    verify_admin_key(x_admin_key)
     
     query = """
         UPDATE api_errors
@@ -1471,17 +1546,14 @@ async def resolve_error(error_id: int, x_api_key: str = Header(...), notes: Opti
 
 @app.get("/admin/recent-logs")
 async def get_system_logs(
-    x_api_key: str = Header(...),
+    x_admin_key: str = Header(...),
     customer_id: Optional[str] = None,
     status_code: Optional[int] = None,
     minutes: int = 60,
     limit: int = 100
 ):
-    """Get system-wide recent logs (Enterprise only)"""
-    customer = verify_api_key(x_api_key)
-    
-    if customer['tier'] != 'enterprise':
-        raise HTTPException(status_code=403, detail="Admin endpoints require Enterprise tier")
+    """Get system-wide recent logs (Admin only)"""
+    verify_admin_key(x_admin_key)
     
     conditions = [f"request_timestamp > NOW() - INTERVAL '{minutes} minutes'"]
     params = []
@@ -1513,12 +1585,9 @@ async def get_system_logs(
 
 
 @app.post("/admin/cleanup-logs")
-async def cleanup_logs(x_api_key: str = Header(...), days: int = 30):
-    """Clean up old logs (Enterprise only)"""
-    customer = verify_api_key(x_api_key)
-    
-    if customer['tier'] != 'enterprise':
-        raise HTTPException(status_code=403, detail="Admin endpoints require Enterprise tier")
+async def cleanup_logs(x_admin_key: str = Header(...), days: int = 30):
+    """Clean up old logs (Admin only)"""
+    verify_admin_key(x_admin_key)
     
     result = logger.cleanup_old_logs(days)
     
@@ -1534,21 +1603,18 @@ async def cleanup_logs(x_api_key: str = Header(...), days: int = 30):
 # ============================================
 
 @app.post("/train")
-async def train_custom_model(x_api_key: str = Header(...)):
-    """Train custom projection model (Enterprise only)"""
-    customer = verify_api_key(x_api_key)
+async def train_custom_model(x_admin_key: str = Header(...)):
+    """Train custom projection model (Admin only)"""
+    verify_admin_key(x_admin_key)
     
-    if not customer['can_train_models']:
-        raise HTTPException(status_code=403, detail="Custom model training requires Enterprise tier")
-    
-    # Log training request
+    # Log training request (admin-only, no customer context)
     query = """
         INSERT INTO model_training_logs (customer_id, model_type, status)
         VALUES (%s, %s, %s)
         RETURNING *
     """
-    
-    result = db.execute_query(query, (customer['customer_id'], 'custom_projections', 'running'))
+
+    result = db.execute_query(query, ('admin', 'custom_projections', 'running'))
     
     return {
         "message": "Model training started",

@@ -7,5 +7,5 @@ services:
     volumes:
       - ./app:/app/app
       - ./outputs:/data/outputs
-    environment:
-      - OUTPUT_DIR=/data/outputs
+    env_file:
+      - .env
