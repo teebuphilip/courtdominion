@@ -19,7 +19,7 @@ Architecture:
 """
 
 import os
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 
 # Import all routers
@@ -49,13 +49,46 @@ app = FastAPI(
 )
 
 # Add CORS middleware for frontend access
+# WHY: Wildcard + credentials = CSRF vulnerability. Attacker site can make
+# authenticated requests on behalf of logged-in users.
+ALLOWED_ORIGINS = os.getenv("ALLOWED_ORIGINS", "http://localhost:3000").split(",")
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Configure appropriately for production
+    allow_origins=ALLOWED_ORIGINS,  # Explicit allowlist, no wildcards
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["GET", "POST", "PUT", "DELETE"],  # Only methods we use
+    allow_headers=["x-api-key", "x-admin-key", "content-type"],  # Only headers we need
 )
+
+
+@app.middleware("http")
+async def add_security_headers(request: Request, call_next):
+    """
+    Add browser security headers to all responses.
+
+    WHY: Defense in depth. Even if XSS gets through, these headers
+    limit what an attacker can do.
+    """
+    response = await call_next(request)
+
+    # Prevent MIME-type sniffing (IE XSS vector)
+    response.headers["X-Content-Type-Options"] = "nosniff"
+
+    # Prevent clickjacking
+    response.headers["X-Frame-Options"] = "DENY"
+
+    # Force HTTPS (browser remembers for 1 year)
+    response.headers["Strict-Transport-Security"] = "max-age=31536000; includeSubDomains"
+
+    # Don't cache API responses (sensitive data)
+    response.headers["Cache-Control"] = "no-store"
+
+    # Disable browser features we don't need
+    response.headers["Permissions-Policy"] = "geolocation=(), microphone=(), camera=()"
+
+    return response
+
 
 # Include all routers
 app.include_router(health.router)
