@@ -1,10 +1,35 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from datetime import datetime
 from typing import Optional
 import subprocess, os, json, uuid, sys
 
+# -----------------------------------------------------------------------------
+# CORS CONFIGURATION - Production Safety
+# -----------------------------------------------------------------------------
+# In production, ALLOWED_ORIGINS env var MUST be set (comma-separated list).
+# In development, empty origins list allows local testing without env config.
+# This prevents accidental deployment with permissive localhost defaults.
+# -----------------------------------------------------------------------------
+ENVIRONMENT = os.getenv("ENVIRONMENT", "development")
+
+raw_origins = os.getenv("ALLOWED_ORIGINS")
+ALLOWED_ORIGINS = raw_origins.split(",") if raw_origins else []
+
+if ENVIRONMENT == "production" and not ALLOWED_ORIGINS:
+    raise RuntimeError("ALLOWED_ORIGINS must be set in production")
+
 app = FastAPI(title="CourtDominion Backend (Hybrid)")
+
+# Apply CORS middleware with explicit origin list (no wildcards, no defaults)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=ALLOWED_ORIGINS,
+    allow_credentials=True,
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allow_headers=["*"],
+)
 
 # Get the directory where this file lives (for finding legacy scripts)
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
