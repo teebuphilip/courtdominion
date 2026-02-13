@@ -37,3 +37,24 @@ def all_csv_paths(raw_data_dir):
     if not paths:
         pytest.skip("No raw data CSVs found")
     return paths
+
+
+@pytest.fixture(scope="session")
+def age_profiles_overall():
+    """Load the overall age profiles dict."""
+    from static_data.profiles.age_profiles_overall import AGE_PROFILES_OVERALL
+    return AGE_PROFILES_OVERALL
+
+
+@pytest.fixture(scope="session")
+def age_profiles_pre_modern():
+    """Load pre-modern era profiles."""
+    from static_data.profiles.age_profiles_pre_modern import AGE_PROFILES_PRE_MODERN
+    return AGE_PROFILES_PRE_MODERN
+
+
+@pytest.fixture(scope="session")
+def age_profiles_modern():
+    """Load modern era profiles."""
+    from static_data.profiles.age_profiles_modern import AGE_PROFILES_MODERN
+    return AGE_PROFILES_MODERN
