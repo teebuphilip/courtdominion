@@ -65,3 +65,10 @@ def usage_profiles():
     """Load usage rate + minutes distribution profiles."""
     from static_data.usage.usage_profiles import USAGE_PROFILES
     return USAGE_PROFILES
+
+
+@pytest.fixture(scope="session")
+def schedule_effects():
+    """Load B2B decline + rest boost schedule effects."""
+    from static_data.calendars.schedule_effects import SCHEDULE_EFFECTS
+    return SCHEDULE_EFFECTS
