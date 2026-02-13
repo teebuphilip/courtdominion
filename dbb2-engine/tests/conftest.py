@@ -72,3 +72,10 @@ def schedule_effects():
     """Load B2B decline + rest boost schedule effects."""
     from static_data.calendars.schedule_effects import SCHEDULE_EFFECTS
     return SCHEDULE_EFFECTS
+
+
+@pytest.fixture(scope="session")
+def city_effects():
+    """Load hot spot hangover + altitude recovery city effects."""
+    from static_data.calendars.city_effects import CITY_EFFECTS
+    return CITY_EFFECTS
