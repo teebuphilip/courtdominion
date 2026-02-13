@@ -58,3 +58,10 @@ def age_profiles_modern():
     """Load modern era profiles."""
     from static_data.profiles.age_profiles_modern import AGE_PROFILES_MODERN
     return AGE_PROFILES_MODERN
+
+
+@pytest.fixture(scope="session")
+def usage_profiles():
+    """Load usage rate + minutes distribution profiles."""
+    from static_data.usage.usage_profiles import USAGE_PROFILES
+    return USAGE_PROFILES
