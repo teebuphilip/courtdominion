@@ -79,3 +79,17 @@ def city_effects():
     """Load hot spot hangover + altitude recovery city effects."""
     from static_data.calendars.city_effects import CITY_EFFECTS
     return CITY_EFFECTS
+
+
+@pytest.fixture(scope="session")
+def durability_profiles():
+    """Load durability (games played) profiles."""
+    from static_data.durability.durability_profiles import DURABILITY_PROFILES
+    return DURABILITY_PROFILES
+
+
+@pytest.fixture(scope="session")
+def position_scarcity():
+    """Load position scarcity multipliers."""
+    from static_data.pricing.position_scarcity import POSITION_SCARCITY
+    return POSITION_SCARCITY
