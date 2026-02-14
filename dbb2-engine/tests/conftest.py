@@ -107,3 +107,17 @@ def matchup_adjustments():
     """Load matchup adjustment multipliers."""
     from static_data.matchups.matchup_adjustments import MATCHUP_ADJUSTMENTS
     return MATCHUP_ADJUSTMENTS
+
+
+@pytest.fixture(scope="session")
+def zscore_baselines():
+    """Load z-score baselines (league-wide mean/stddev per position)."""
+    from static_data.pricing.zscore_baselines import ZSCORE_BASELINES
+    return ZSCORE_BASELINES
+
+
+@pytest.fixture(scope="session")
+def sgp_weights():
+    """Load SGP category weights and positional bonuses."""
+    from static_data.pricing.sgp_weights import SGP_WEIGHTS
+    return SGP_WEIGHTS
