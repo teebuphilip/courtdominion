@@ -15,6 +15,7 @@ from typing import Dict, List
 from engine.baseline import PlayerContext
 from engine.projections import SeasonProjection
 from engine.pricing import AuctionValue
+from engine.position_map import map_position_to_cd
 from engine import lookup
 
 
@@ -52,7 +53,7 @@ def export_all(
     files["players.json"] = str(players_path)
 
     # 2. projections.json
-    proj_json = _build_projections_json(sorted_projections)
+    proj_json = _build_projections_json(sorted_projections, context_map)
     proj_path = out_path / "projections.json"
     _write_json(proj_path, proj_json)
     files["projections.json"] = str(proj_path)
@@ -78,30 +79,38 @@ def _write_json(path: Path, data: list) -> None:
 
 
 def _build_players_json(contexts: List[PlayerContext]) -> List[dict]:
-    """Build players.json entries."""
+    """Build players.json entries. Positions mapped to CD 5-position enum."""
     return [
         {
             "player_id": ctx.player_id,
             "name": ctx.player_name,
             "team": ctx.team,
-            "position": ctx.raw_position,
+            "position": map_position_to_cd(ctx.raw_position),
             "status": ctx.status,
         }
         for ctx in contexts
     ]
 
 
-def _build_projections_json(projections: List[SeasonProjection]) -> List[dict]:
+def _build_projections_json(
+    projections: List[SeasonProjection], context_map: Dict[str, PlayerContext] = None
+) -> List[dict]:
     """
     Build projections.json entries.
     Note: three_pm → tpm, three_pa → tpa for CD contract.
+    Positions mapped to CD 5-position enum using raw_position from context.
     """
+    def _get_cd_position(p):
+        if context_map and p.player_id in context_map:
+            return map_position_to_cd(context_map[p.player_id].raw_position)
+        return map_position_to_cd(p.position)
+
     return [
         {
             "player_id": p.player_id,
             "name": p.player_name,
             "team": p.team,
-            "position": p.position,
+            "position": _get_cd_position(p),
             "minutes": round(p.minutes, 1),
             "usage_rate": round(p.usage_rate, 1),
             "points": round(p.points, 1),
