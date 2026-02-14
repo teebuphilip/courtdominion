@@ -2,6 +2,7 @@
 Tests for src/result_checker.py — box score grading and payout calculation.
 
 Tests grade_bet, calculate_payout, grade_all_bets, and season slug derivation.
+Covers both sportsbook (OVER/UNDER) and Kalshi (YES/NO) grading.
 NBA API integration is NOT tested here (requires live network).
 """
 
@@ -27,6 +28,7 @@ def _make_bet(**overrides):
         "player_name": "LeBron James",
         "prop_type": "points",
         "direction": "OVER",
+        "source": "sportsbook",
         "dbb2_projection": 25.5,
         "sportsbook_line": 24.5,
         "edge_pct": 23.8,
@@ -35,6 +37,28 @@ def _make_bet(**overrides):
         "over_odds": -115,
         "under_odds": -105,
         "decimal_odds": 1.870,
+    }
+    defaults.update(overrides)
+    return defaults
+
+
+def _make_kalshi_bet(**overrides):
+    """Build a test Kalshi bet dict."""
+    defaults = {
+        "player_name": "LeBron James",
+        "prop_type": "points",
+        "direction": "YES",
+        "source": "kalshi",
+        "dbb2_projection": 27.2,
+        "line": 25.0,
+        "kalshi_price": 0.55,
+        "dbb2_implied_prob": 70.0,
+        "kalshi_implied_prob": 55.0,
+        "edge_pct": 15.0,
+        "confidence": 0.78,
+        "units": 1.5,
+        "ticker": "NBA-TEST",
+        "volume": 1000,
     }
     defaults.update(overrides)
     return defaults
@@ -245,3 +269,108 @@ class TestSeasonSlug:
 
     def test_february_2026(self):
         assert get_season_slug("2026-02-14") == "2025-26"
+
+
+class TestKalshiGradeBet:
+    """grade_bet: Kalshi YES/NO grading with >= threshold."""
+
+    def test_yes_wins_above_line(self):
+        bet = _make_kalshi_bet(direction="YES", line=25.0)
+        assert grade_bet(bet, 27) == "WIN"
+
+    def test_yes_wins_at_line(self):
+        """WHY: Kalshi '25+ points' means >= 25, so exact match = WIN for YES."""
+        bet = _make_kalshi_bet(direction="YES", line=25.0)
+        assert grade_bet(bet, 25) == "WIN"
+
+    def test_yes_loses_below_line(self):
+        bet = _make_kalshi_bet(direction="YES", line=25.0)
+        assert grade_bet(bet, 24) == "LOSS"
+
+    def test_no_wins_below_line(self):
+        bet = _make_kalshi_bet(direction="NO", line=25.0)
+        assert grade_bet(bet, 20) == "WIN"
+
+    def test_no_loses_at_line(self):
+        """WHY: At line, YES wins → NO loses (>= threshold)."""
+        bet = _make_kalshi_bet(direction="NO", line=25.0)
+        assert grade_bet(bet, 25) == "LOSS"
+
+    def test_no_loses_above_line(self):
+        bet = _make_kalshi_bet(direction="NO", line=25.0)
+        assert grade_bet(bet, 30) == "LOSS"
+
+    def test_dnp_returns_no_action(self):
+        bet = _make_kalshi_bet()
+        assert grade_bet(bet, None) == "NO_ACTION"
+
+
+class TestKalshiCalculatePayout:
+    """calculate_payout: Kalshi binary payout math."""
+
+    def test_yes_win_payout(self):
+        """Buy YES at $0.55 → win = stake * (1-0.55)/0.55."""
+        bet = _make_kalshi_bet(units=1.0, kalshi_price=0.55)
+        payout = calculate_payout(bet, "WIN", unit_value=50.0)
+        # stake=50, profit = 50 * 0.45/0.55 = 40.91
+        assert payout == pytest.approx(40.91, abs=0.01)
+
+    def test_yes_loss_payout(self):
+        bet = _make_kalshi_bet(units=1.0, kalshi_price=0.55)
+        payout = calculate_payout(bet, "LOSS", unit_value=50.0)
+        assert payout == -50.0
+
+    def test_no_win_payout(self):
+        """Buy NO at $0.40 → win = stake * (1-0.40)/0.40."""
+        bet = _make_kalshi_bet(direction="NO", units=2.0, kalshi_price=0.40)
+        payout = calculate_payout(bet, "WIN", unit_value=50.0)
+        # stake=100, profit = 100 * 0.60/0.40 = 150.0
+        assert payout == 150.0
+
+    def test_push_zero(self):
+        bet = _make_kalshi_bet()
+        payout = calculate_payout(bet, "PUSH", unit_value=50.0)
+        assert payout == 0.0
+
+    def test_cheap_yes_big_payout(self):
+        """Buy YES at $0.20 → high payout ratio on win."""
+        bet = _make_kalshi_bet(units=1.0, kalshi_price=0.20)
+        payout = calculate_payout(bet, "WIN", unit_value=50.0)
+        # stake=50, profit = 50 * 0.80/0.20 = 200.0
+        assert payout == 200.0
+
+
+class TestKalshiGradeAllBets:
+    """grade_all_bets: mixed sportsbook + Kalshi grading."""
+
+    def test_mixed_slip_grades_both(self):
+        bets = [
+            _make_bet(player_name="LeBron James", prop_type="points",
+                      direction="OVER", sportsbook_line=24.5),
+            _make_kalshi_bet(player_name="LeBron James", prop_type="rebounds",
+                             direction="YES", line=7.0),
+        ]
+        slip = _make_bet_slip(bets)
+        results = grade_all_bets(slip, _sample_box_scores(), unit_value=50.0)
+        assert results["total_bets"] == 2
+        # PTS: 27 > 24.5 → WIN, REB: 8 >= 7 → YES WIN
+        assert results["wins"] == 2
+
+    def test_kalshi_bet_has_source_field(self):
+        bets = [
+            _make_kalshi_bet(player_name="LeBron James", prop_type="points",
+                             direction="YES", line=25.0),
+        ]
+        slip = _make_bet_slip(bets)
+        results = grade_all_bets(slip, _sample_box_scores(), unit_value=50.0)
+        assert results["bets"][0]["source"] == "kalshi"
+
+    def test_kalshi_no_bet_wins_below_line(self):
+        bets = [
+            _make_kalshi_bet(player_name="Giannis Antetokounmpo", prop_type="threes",
+                             direction="NO", line=1.0),
+        ]
+        slip = _make_bet_slip(bets)
+        results = grade_all_bets(slip, _sample_box_scores(), unit_value=50.0)
+        # Giannis FG3M=0 < 1.0 → NO wins
+        assert results["wins"] == 1

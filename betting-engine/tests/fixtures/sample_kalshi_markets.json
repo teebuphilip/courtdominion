@@ -1,0 +1,46 @@
+{
+  "LeBron James": {
+    "points": {
+      "line": 25.0,
+      "yes_price": 0.55,
+      "no_price": 0.45,
+      "ticker": "NBA-LEBRON-PTS25-20260214",
+      "volume": 1250,
+      "open_interest": 800
+    },
+    "rebounds": {
+      "line": 8.0,
+      "yes_price": 0.40,
+      "no_price": 0.60,
+      "ticker": "NBA-LEBRON-REB8-20260214",
+      "volume": 430,
+      "open_interest": 290
+    },
+    "assists": {
+      "line": 7.0,
+      "yes_price": 0.62,
+      "no_price": 0.38,
+      "ticker": "NBA-LEBRON-AST7-20260214",
+      "volume": 580,
+      "open_interest": 410
+    }
+  },
+  "Giannis Antetokounmpo": {
+    "points": {
+      "line": 29.0,
+      "yes_price": 0.60,
+      "no_price": 0.40,
+      "ticker": "NBA-GIANNIS-PTS29-20260214",
+      "volume": 980,
+      "open_interest": 650
+    },
+    "threes": {
+      "line": 1.0,
+      "yes_price": 0.35,
+      "no_price": 0.65,
+      "ticker": "NBA-GIANNIS-3PT1-20260214",
+      "volume": 200,
+      "open_interest": 120
+    }
+  }
+}

@@ -1,7 +1,11 @@
 .env
+config/kalshi_private_key.pem
 data/odds/
 data/line_movement/
 data/projections/
+data/kalshi/markets/
+data/kalshi/odds/
+data/kalshi/ev_results_*.json
 data/ev_results_*.json
 data/sized_bets_*.json
 logs/
@@ -11,6 +15,9 @@ __pycache__/
 
 # Track for paper-trading history
 !data/bet_slips/
+!data/kalshi/bet_slips/
 !data/results/
+!data/bets/
 !data/ledger.json
 !data/ledger_history.md
+!reports/
