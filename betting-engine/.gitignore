@@ -1,0 +1,16 @@
+.env
+data/odds/
+data/line_movement/
+data/projections/
+data/ev_results_*.json
+data/sized_bets_*.json
+logs/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Track for paper-trading history
+!data/bet_slips/
+!data/results/
+!data/ledger.json
+!data/ledger_history.md

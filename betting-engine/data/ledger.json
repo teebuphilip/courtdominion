@@ -1,0 +1,16 @@
+{
+  "created_at": "2026-02-14T13:23:01.941014+00:00",
+  "starting_bankroll": 5000.0,
+  "current_bankroll": 5000.0,
+  "unit_value": 50.0,
+  "total_bets": 0,
+  "wins": 0,
+  "losses": 0,
+  "pushes": 0,
+  "no_action": 0,
+  "total_wagered": 0.0,
+  "total_pnl": 0.0,
+  "roi_pct": 0.0,
+  "win_rate_pct": 0.0,
+  "daily_log": []
+}

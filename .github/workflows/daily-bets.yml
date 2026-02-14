@@ -1,0 +1,92 @@
+name: Daily Bets
+
+on:
+  schedule:
+    # 4pm ET = 21:00 UTC (EST) / 20:00 UTC (EDT)
+    - cron: '0 21 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-bets:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: betting-engine
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Check for NBA games today
+        id: check-games
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: |
+          python -c "
+          import requests, os, sys
+          key = os.environ.get('ODDS_API_KEY', '')
+          if not key:
+              print('No API key, skipping game check')
+              sys.exit(0)
+          r = requests.get(
+              'https://api.the-odds-api.com/v4/sports/basketball_nba/odds',
+              params={'apiKey': key, 'regions': 'us', 'markets': 'h2h'},
+              timeout=15
+          )
+          games = r.json() if r.status_code == 200 else []
+          if not games:
+              print('No NBA games today')
+              with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+                  f.write('has_games=false\n')
+          else:
+              print(f'{len(games)} NBA games today')
+              with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+                  f.write('has_games=true\n')
+          "
+
+      - name: Load projections from file
+        if: steps.check-games.outputs.has_games != 'false'
+        run: |
+          python src/odds_ingestion.py --from-file ../dbb2-engine/output/betting_contract.json
+
+      - name: Fetch live odds
+        if: steps.check-games.outputs.has_games != 'false'
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: |
+          python src/odds_ingestion.py --fetch-odds
+
+      - name: Calculate EV
+        if: steps.check-games.outputs.has_games != 'false'
+        run: python src/ev_calculator.py
+
+      - name: Size bets (Kelly)
+        if: steps.check-games.outputs.has_games != 'false'
+        run: python src/kelly_sizer.py --use-ledger
+
+      - name: Generate bet slip
+        if: steps.check-games.outputs.has_games != 'false'
+        run: python src/bet_slip.py
+
+      - name: Commit bet slip
+        if: steps.check-games.outputs.has_games != 'false'
+        run: |
+          cd ..
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          DATE=$(date +%Y-%m-%d)
+          git add betting-engine/data/bet_slips/ || true
+          git diff --cached --quiet && echo "No new bet slip to commit" && exit 0
+          git commit -m "bets: ${DATE} daily bet slip"
+          git push

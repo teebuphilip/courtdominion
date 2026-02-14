@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  betting-engine:
+    build: .
+    container_name: dbb2-betting-engine
+    volumes:
+      # Mount data dir so flat files persist outside container
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./config:/app/config
+    environment:
+      - ODDS_API_KEY=${ODDS_API_KEY}
+      - DBB2_API_URL=${DBB2_API_URL:-http://host.docker.internal:8000}
+    network_mode: host

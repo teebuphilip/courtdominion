@@ -1,14 +1,16 @@
 # DBB2 Engine — runtime projection and pricing logic
 #
 # Public API:
-#   project_all_season() -> (contexts, projections, auction_values)
-#   export_json()        -> {filename: filepath}
+#   project_all_season()       -> (contexts, projections, auction_values)
+#   export_json()              -> {filename: filepath}
+#   export_betting_contract()  -> filepath
 
 from engine.baseline import PlayerContext, build_player_contexts_from_csv
 from engine.projections import SeasonProjection, project_season
 from engine.game_day import GameDayProjection, project_game_day
 from engine.pricing import AuctionValue, price_auction
 from engine.export import export_all
+from engine.export_betting import export_betting_contract as _export_betting
 
 from typing import Dict, List
 
@@ -66,3 +68,14 @@ def export_json(
     for name, path in files.items():
         print(f"  Written: {path}")
     return files
+
+
+def export_betting(
+    contexts: List[PlayerContext],
+    projections: List[SeasonProjection],
+    output_dir: str = "output",
+) -> str:
+    """Write betting_contract.json for the betting engine pipeline."""
+    path = _export_betting(contexts, projections, output_dir)
+    print(f"  Written: {path}")
+    return path

@@ -1,0 +1,71 @@
+name: Daily Grading
+
+on:
+  schedule:
+    # 11am ET = 16:00 UTC (EST) / 15:00 UTC (EDT)
+    - cron: '0 16 * * *'
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Date to grade (YYYY-MM-DD). Defaults to yesterday.'
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  grade-bets:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: betting-engine
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Determine date to grade
+        id: date
+        run: |
+          if [ -n "${{ github.event.inputs.date }}" ]; then
+            echo "grade_date=${{ github.event.inputs.date }}" >> $GITHUB_OUTPUT
+          else
+            echo "grade_date=$(date -d 'yesterday' +%Y-%m-%d 2>/dev/null || date -v-1d +%Y-%m-%d)" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Check for bet slip
+        id: check-slip
+        run: |
+          DATE="${{ steps.date.outputs.grade_date }}"
+          if [ -f "data/bet_slips/${DATE}.json" ]; then
+            echo "has_slip=true" >> $GITHUB_OUTPUT
+            echo "Found bet slip for ${DATE}"
+          else
+            echo "has_slip=false" >> $GITHUB_OUTPUT
+            echo "No bet slip for ${DATE}, skipping"
+          fi
+
+      - name: Grade bets
+        if: steps.check-slip.outputs.has_slip == 'true'
+        run: |
+          python src/result_checker.py --date ${{ steps.date.outputs.grade_date }}
+
+      - name: Commit results and ledger
+        if: steps.check-slip.outputs.has_slip == 'true'
+        run: |
+          cd ..
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          DATE="${{ steps.date.outputs.grade_date }}"
+          git add betting-engine/data/results/ betting-engine/data/ledger.json betting-engine/data/ledger_history.md || true
+          git diff --cached --quiet && echo "No grading changes to commit" && exit 0
+          git commit -m "results: ${DATE} grading + ledger update"
+          git push

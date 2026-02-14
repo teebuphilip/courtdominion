@@ -1,0 +1,22 @@
+{
+  "LeBron James": {
+    "points":   { "line": 24.5, "over_odds": -115, "under_odds": -105, "bookmaker": "draftkings" },
+    "rebounds": { "line": 8.5,  "over_odds": -110, "under_odds": -110, "bookmaker": "draftkings" },
+    "assists":  { "line": 7.5,  "over_odds": -120, "under_odds": 100,  "bookmaker": "fanduel" },
+    "threes":   { "line": 2.5,  "over_odds": 110,  "under_odds": -130, "bookmaker": "draftkings" },
+    "steals":   { "line": 1.5,  "over_odds": -105, "under_odds": -115, "bookmaker": "betmgm" },
+    "blocks":   { "line": 0.5,  "over_odds": -140, "under_odds": 120,  "bookmaker": "betmgm" }
+  },
+  "Stephen Curry": {
+    "points":   { "line": 27.5, "over_odds": -110, "under_odds": -110, "bookmaker": "draftkings" },
+    "rebounds": { "line": 5.5,  "over_odds": -110, "under_odds": -110, "bookmaker": "fanduel" },
+    "assists":  { "line": 6.5,  "over_odds": -115, "under_odds": -105, "bookmaker": "draftkings" },
+    "threes":   { "line": 4.5,  "over_odds": -105, "under_odds": -115, "bookmaker": "draftkings" }
+  },
+  "Giannis Antetokounmpo": {
+    "points":   { "line": 29.5, "over_odds": -110, "under_odds": -110, "bookmaker": "fanduel" },
+    "rebounds": { "line": 11.5, "over_odds": -110, "under_odds": -110, "bookmaker": "draftkings" },
+    "assists":  { "line": 6.5,  "over_odds": 100,  "under_odds": -120, "bookmaker": "betmgm" },
+    "blocks":   { "line": 1.5,  "over_odds": -130, "under_odds": 110,  "bookmaker": "fanduel" }
+  }
+}
