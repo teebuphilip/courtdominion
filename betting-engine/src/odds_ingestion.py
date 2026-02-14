@@ -217,6 +217,16 @@ def normalize_odds(raw: dict) -> dict:
     return result
 
 
+def run(dry_run: bool = False, from_file: str = None) -> None:
+    """
+    Run both ingestion steps: fetch projections + fetch odds.
+
+    WHY: bet_placer.py imports this as a single pipeline step.
+    """
+    fetch_projections(dry_run=dry_run, from_file=from_file)
+    fetch_odds(dry_run=dry_run)
+
+
 def _load_projections_from_file(from_file: str, output_path: str) -> None:
     """Load projections from a committed betting_contract.json file."""
     if not Path(from_file).exists():
