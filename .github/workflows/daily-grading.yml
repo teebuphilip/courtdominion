@@ -45,12 +45,14 @@ jobs:
         id: check-slip
         run: |
           DATE="${{ steps.date.outputs.grade_date }}"
-          if [ -f "data/bet_slips/${DATE}.json" ]; then
+          SB_SLIP="data/bet_slips/${DATE}.json"
+          K_SLIP="data/kalshi/bet_slips/${DATE}_kalshi.json"
+          if [ -f "$SB_SLIP" ] || [ -f "$K_SLIP" ]; then
             echo "has_slip=true" >> $GITHUB_OUTPUT
-            echo "Found bet slip for ${DATE}"
+            echo "Found bet slip(s) for ${DATE}"
           else
             echo "has_slip=false" >> $GITHUB_OUTPUT
-            echo "No bet slip for ${DATE}, skipping"
+            echo "No bet slips for ${DATE}, skipping"
           fi
 
       - name: Grade bets
@@ -58,14 +60,14 @@ jobs:
         run: |
           python src/result_checker.py --date ${{ steps.date.outputs.grade_date }}
 
-      - name: Commit results and ledger
+      - name: Commit results, ledger, CSV, and season summary
         if: steps.check-slip.outputs.has_slip == 'true'
         run: |
           cd ..
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           DATE="${{ steps.date.outputs.grade_date }}"
-          git add betting-engine/data/results/ betting-engine/data/ledger.json betting-engine/data/ledger_history.md || true
+          git add betting-engine/data/results/ betting-engine/data/ledger.json betting-engine/data/ledger_history.md betting-engine/data/bets/ betting-engine/reports/ || true
           git diff --cached --quiet && echo "No grading changes to commit" && exit 0
-          git commit -m "results: ${DATE} grading + ledger update"
+          git commit -m "results: ${DATE} grading + ledger + CSV + season summary"
           git push

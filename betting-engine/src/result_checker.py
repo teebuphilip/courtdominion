@@ -4,6 +4,8 @@ Result Checker — fetch NBA box scores and grade yesterday's bets.
 Fetches actual stats from the NBA Stats API (same endpoint as data collection),
 compares each bet against actual results, calculates payouts, and writes
 a daily results file to data/results/{date}.json.
+
+Supports both sportsbook (OVER/UNDER) and Kalshi (YES/NO) bets.
 """
 
 import argparse
@@ -14,9 +16,10 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from src import load_json, write_json, get_timestamp, logger
+from src import load_json, load_settings, write_json, write_file, get_timestamp, logger
 from src.kelly_sizer import american_to_decimal, get_american_odds
 from src.ledger import load_ledger, update_ledger, save_ledger, generate_ledger_markdown
+from src.csv_tracker import update_graded_bets
 
 # NBA Stats API config (same pattern as DBB2 data collection)
 NBA_API_URL = "https://stats.nba.com/stats/leaguegamelog"
@@ -133,44 +136,68 @@ def grade_bet(bet: dict, actual_stat) -> str:
     Grade a single bet against the actual stat value.
 
     Returns: "WIN", "LOSS", "PUSH", or "NO_ACTION"
+
+    Sportsbook: OVER wins if actual > line, UNDER wins if actual < line, equal = PUSH
+    Kalshi:     YES wins if actual >= line (25+ means >= 25), NO wins if actual < line
     """
     if actual_stat is None:
         return "NO_ACTION"
 
-    line = bet["sportsbook_line"]
+    source = bet.get("source", "sportsbook")
     direction = bet["direction"]
 
-    if actual_stat > line:
-        return "WIN" if direction == "OVER" else "LOSS"
-    elif actual_stat < line:
-        return "WIN" if direction == "UNDER" else "LOSS"
+    if source == "kalshi":
+        # WHY: Kalshi "25+ points" means >= 25 (inclusive threshold)
+        line = bet.get("line", bet.get("sportsbook_line"))
+        if actual_stat >= line:
+            return "WIN" if direction == "YES" else "LOSS"
+        else:
+            return "WIN" if direction == "NO" else "LOSS"
     else:
-        return "PUSH"
+        line = bet["sportsbook_line"]
+        if actual_stat > line:
+            return "WIN" if direction == "OVER" else "LOSS"
+        elif actual_stat < line:
+            return "WIN" if direction == "UNDER" else "LOSS"
+        else:
+            return "PUSH"
 
 
 def calculate_payout(bet: dict, outcome: str, unit_value: float) -> float:
     """
     Calculate dollar profit/loss for a graded bet.
 
-    WIN:  stake * (decimal_odds - 1)
-    LOSS: -stake
+    Sportsbook: WIN = stake * (decimal_odds - 1), LOSS = -stake
+    Kalshi:     WIN = stake * (1 - price) / price, LOSS = -stake
     PUSH / NO_ACTION: $0
     """
     if outcome in ("PUSH", "NO_ACTION"):
         return 0.0
 
     stake = bet["units"] * unit_value
-    odds = get_american_odds(bet)
+    source = bet.get("source", "sportsbook")
 
-    if odds is None:
-        decimal_odds = bet.get("decimal_odds", 1.91)
+    if source == "kalshi":
+        # WHY: Kalshi binary payout — buy at price, receive $1 on win
+        # Win profit = stake * (1 - price) / price
+        price = bet.get("kalshi_price", 0.50)
+        if outcome == "WIN":
+            if price <= 0:
+                return 0.0
+            return round(stake * (1 - price) / price, 2)
+        else:
+            return round(-stake, 2)
     else:
-        decimal_odds = american_to_decimal(odds)
+        odds = get_american_odds(bet)
+        if odds is None:
+            decimal_odds = bet.get("decimal_odds", 1.91)
+        else:
+            decimal_odds = american_to_decimal(odds)
 
-    if outcome == "WIN":
-        return round(stake * (decimal_odds - 1), 2)
-    else:
-        return round(-stake, 2)
+        if outcome == "WIN":
+            return round(stake * (decimal_odds - 1), 2)
+        else:
+            return round(-stake, 2)
 
 
 def grade_all_bets(bet_slip: dict, box_scores: dict, unit_value: float) -> dict:
@@ -217,11 +244,13 @@ def grade_all_bets(bet_slip: dict, box_scores: dict, unit_value: float) -> dict:
         else:
             no_action += 1
 
+        line = bet.get("sportsbook_line", bet.get("line"))
         graded.append({
             "player_name": player_name,
             "prop_type": prop_type,
             "direction": bet["direction"],
-            "sportsbook_line": bet["sportsbook_line"],
+            "source": bet.get("source", "sportsbook"),
+            "sportsbook_line": line,
             "dbb2_projection": bet.get("dbb2_projection"),
             "actual_stat": actual_stat,
             "outcome": outcome,
@@ -246,25 +275,40 @@ def run(date: str = None, dry_run: bool = False) -> dict:
     """
     Main grading pipeline.
 
-    1. Load yesterday's bet slip
+    1. Load yesterday's bet slip (sportsbook + Kalshi)
     2. Fetch box scores from NBA Stats API
     3. Grade each bet
     4. Write results file
-    5. Update ledger
+    5. Update ledger + master CSV
+    6. Generate season summary
     """
     if date is None:
         yesterday = datetime.now() - timedelta(days=1)
         date = yesterday.strftime("%Y-%m-%d")
 
+    # WHY: Load both sportsbook and Kalshi slips, merge into one bet list
     slip_path = f"data/bet_slips/{date}.json"
+    kalshi_slip_path = f"data/kalshi/bet_slips/{date}_kalshi.json"
     results_path = f"data/results/{date}.json"
 
-    if not Path(slip_path).exists():
-        logger.info(f"No bet slip for {date}, nothing to grade")
+    all_bets = []
+
+    if Path(slip_path).exists():
+        bet_slip = load_json(slip_path)
+        all_bets.extend(bet_slip.get("bets", []))
+        logger.info(f"Loaded sportsbook bet slip: {date} — {len(bet_slip.get('bets', []))} bets")
+
+    if Path(kalshi_slip_path).exists():
+        kalshi_slip = load_json(kalshi_slip_path)
+        all_bets.extend(kalshi_slip.get("bets", []))
+        logger.info(f"Loaded Kalshi bet slip: {date} — {len(kalshi_slip.get('bets', []))} bets")
+
+    if not all_bets:
+        logger.info(f"No bet slips for {date}, nothing to grade")
         return {}
 
-    bet_slip = load_json(slip_path)
-    logger.info(f"Loaded bet slip: {date} — {bet_slip['total_bets']} bets")
+    # Build a combined slip for grade_all_bets
+    combined_slip = {"date": date, "bets": all_bets}
 
     # Fetch box scores
     if dry_run:
@@ -283,7 +327,7 @@ def run(date: str = None, dry_run: bool = False) -> dict:
     unit_value = ledger["current_bankroll"] / 100
 
     # Grade bets
-    results = grade_all_bets(bet_slip, box_scores, unit_value)
+    results = grade_all_bets(combined_slip, box_scores, unit_value)
 
     # Write results file
     write_json(results_path, results)
@@ -292,14 +336,20 @@ def run(date: str = None, dry_run: bool = False) -> dict:
         f"P&L: ${results['daily_pnl']:+.2f}"
     )
 
-    # Update ledger
+    # Update ledger + CSV
     if not dry_run:
         ledger = update_ledger(ledger, results)
         save_ledger(ledger)
 
         md = generate_ledger_markdown(ledger)
-        from src import write_file
         write_file("data/ledger_history.md", md)
+
+        # Update master CSV with graded results
+        csv_updated = update_graded_bets(date, results.get("bets", []))
+        logger.info(f"Updated {csv_updated} rows in master CSV")
+
+        # Generate season summary
+        generate_season_summary(ledger)
 
         logger.info(
             f"Ledger updated: bankroll ${ledger['current_bankroll']:.2f}, "
@@ -307,6 +357,69 @@ def run(date: str = None, dry_run: bool = False) -> dict:
         )
 
     return results
+
+
+def generate_season_summary(ledger: dict) -> None:
+    """
+    Generate season summary markdown with source breakdown.
+
+    Writes to reports/season_summary.md.
+    """
+    import csv as csv_mod
+    from src.csv_tracker import CSV_PATH
+
+    # Count by source from master CSV
+    sb_stats = {"bets": 0, "wins": 0, "losses": 0, "pnl": 0.0}
+    k_stats = {"bets": 0, "wins": 0, "losses": 0, "pnl": 0.0}
+
+    if Path(CSV_PATH).exists():
+        with open(CSV_PATH, newline="") as f:
+            reader = csv_mod.DictReader(f)
+            for row in reader:
+                source = row.get("source", "sportsbook")
+                status = row.get("status", "")
+                pnl = float(row.get("pnl", 0) or 0)
+
+                bucket = k_stats if source == "kalshi" else sb_stats
+                bucket["bets"] += 1
+                if status == "WIN":
+                    bucket["wins"] += 1
+                elif status == "LOSS":
+                    bucket["losses"] += 1
+                bucket["pnl"] += pnl
+
+    total_resolved = ledger["wins"] + ledger["losses"]
+    record = f"{ledger['wins']}W-{ledger['losses']}L-{ledger['pushes']}P"
+    pnl_sign = "+" if ledger["total_pnl"] >= 0 else ""
+
+    lines = [
+        "# DBB2 Season Summary",
+        "",
+        f"**Season Start:** {ledger.get('created_at', 'N/A')[:10]}",
+        f"**Starting Bankroll:** ${ledger['starting_bankroll']:,.2f}",
+        f"**Current Bankroll:** ${ledger['current_bankroll']:,.2f}",
+        f"**Total P&L:** {pnl_sign}${ledger['total_pnl']:,.2f}",
+        f"**Record:** {record} ({ledger['win_rate_pct']}% win rate)",
+        f"**ROI:** {ledger['roi_pct']}%",
+        "",
+        "## Source Breakdown",
+        "",
+        "| Source | Bets | Wins | Losses | P&L |",
+        "|--------|------|------|--------|-----|",
+    ]
+
+    for label, stats in [("Sportsbook", sb_stats), ("Kalshi", k_stats)]:
+        p = stats["pnl"]
+        pnl_str = f"+${p:.2f}" if p >= 0 else f"-${abs(p):.2f}"
+        lines.append(
+            f"| {label} | {stats['bets']} | {stats['wins']} | {stats['losses']} | {pnl_str} |"
+        )
+
+    lines += ["", f"*Updated: {get_timestamp()[:10]}*", ""]
+
+    output_path = "reports/season_summary.md"
+    write_file(output_path, "\n".join(lines))
+    logger.info(f"Season summary saved: {output_path}")
 
 
 if __name__ == "__main__":

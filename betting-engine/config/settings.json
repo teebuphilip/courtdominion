@@ -40,5 +40,31 @@
     "terminal": true,
     "json": true,
     "markdown": true
+  },
+  "kalshi": {
+    "base_url": "https://trading-api.kalshi.com/trade-api/v2",
+    "demo_url": "https://demo-api.kalshi.co/trade-api/v2",
+    "use_demo": false,
+    "api_key_id": "REPLACE_WITH_YOUR_KEY_ID",
+    "private_key_path": "config/kalshi_private_key.pem",
+    "nba_series_tag": "NBA",
+    "prop_types": ["points", "rebounds", "assists", "threes"],
+    "max_contracts_per_bet": 100,
+    "min_edge_pct": 5.0,
+    "min_yes_price": 0.10,
+    "max_yes_price": 0.90,
+    "rate_limit_delay_seconds": 0.5,
+    "min_volume": 100,
+    "low_volume_warning": 500
+  },
+  "bankroll": {
+    "daily_limit": 5000,
+    "unit_size": 100,
+    "min_bet_dollars": 50,
+    "starting_season_date": "2026-02-14",
+    "season_end_date": "2026-06-30"
+  },
+  "schedule": {
+    "nba_schedule_path": "data/nba_schedule_2026.json"
   }
 }

@@ -55,38 +55,23 @@ jobs:
                   f.write('has_games=true\n')
           "
 
-      - name: Load projections from file
-        if: steps.check-games.outputs.has_games != 'false'
-        run: |
-          python src/odds_ingestion.py --from-file ../dbb2-engine/output/betting_contract.json
-
-      - name: Fetch live odds
+      - name: Run bet placer (sportsbook + Kalshi)
         if: steps.check-games.outputs.has_games != 'false'
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          KALSHI_API_KEY_ID: ${{ secrets.KALSHI_API_KEY_ID }}
+          KALSHI_PRIVATE_KEY: ${{ secrets.KALSHI_PRIVATE_KEY }}
         run: |
-          python src/odds_ingestion.py --fetch-odds
+          python src/bet_placer.py
 
-      - name: Calculate EV
-        if: steps.check-games.outputs.has_games != 'false'
-        run: python src/ev_calculator.py
-
-      - name: Size bets (Kelly)
-        if: steps.check-games.outputs.has_games != 'false'
-        run: python src/kelly_sizer.py --use-ledger
-
-      - name: Generate bet slip
-        if: steps.check-games.outputs.has_games != 'false'
-        run: python src/bet_slip.py
-
-      - name: Commit bet slip
+      - name: Commit bet slips and master CSV
         if: steps.check-games.outputs.has_games != 'false'
         run: |
           cd ..
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           DATE=$(date +%Y-%m-%d)
-          git add betting-engine/data/bet_slips/ || true
+          git add betting-engine/data/bet_slips/ betting-engine/data/bets/ betting-engine/data/kalshi/bet_slips/ || true
           git diff --cached --quiet && echo "No new bet slip to commit" && exit 0
-          git commit -m "bets: ${DATE} daily bet slip"
+          git commit -m "bets: ${DATE} daily bet slip (sportsbook + Kalshi)"
           git push
