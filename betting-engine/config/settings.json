@@ -1,0 +1,44 @@
+{
+  "odds_api": {
+    "base_url": "https://api.the-odds-api.com/v4",
+    "api_key": "REPLACE_WITH_YOUR_KEY",
+    "sport": "basketball_nba",
+    "regions": ["us"],
+    "markets": ["player_points", "player_rebounds", "player_assists", "player_threes", "player_steals", "player_blocks"],
+    "bookmakers": ["draftkings", "fanduel", "betmgm"]
+  },
+  "dbb2_api": {
+    "base_url": "http://localhost:8000",
+    "projections_endpoint": "/projections/today",
+    "timeout_seconds": 30
+  },
+  "ev_thresholds": {
+    "min_edge_pct": 5.0,
+    "min_confidence": 0.60,
+    "max_bets_per_day": 10
+  },
+  "kelly": {
+    "fraction": 0.25,
+    "max_units": 3.0,
+    "min_units": 0.5,
+    "bankroll": 5000
+  },
+  "props": {
+    "points": "player_points",
+    "rebounds": "player_rebounds",
+    "assists": "player_assists",
+    "threes": "player_threes",
+    "steals": "player_steals",
+    "blocks": "player_blocks"
+  },
+  "excluded": {
+    "skip_b2b": true,
+    "skip_death_spots": true,
+    "skip_blowout_sensitivity": true
+  },
+  "output": {
+    "terminal": true,
+    "json": true,
+    "markdown": true
+  }
+}

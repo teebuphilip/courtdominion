@@ -1,0 +1,44 @@
+{
+  "203999": {
+    "name": "LeBron James",
+    "team": "LAL",
+    "position": "SF",
+    "is_b2b": false,
+    "props": {
+      "points":   { "projection": 25.5, "std_dev": 4.2, "confidence": 0.78 },
+      "rebounds": { "projection": 7.8,  "std_dev": 2.1, "confidence": 0.72 },
+      "assists":  { "projection": 8.1,  "std_dev": 2.4, "confidence": 0.70 },
+      "threes":   { "projection": 1.8,  "std_dev": 0.9, "confidence": 0.65 },
+      "steals":   { "projection": 1.3,  "std_dev": 0.6, "confidence": 0.60 },
+      "blocks":   { "projection": 0.9,  "std_dev": 0.5, "confidence": 0.55 }
+    }
+  },
+  "201566": {
+    "name": "Stephen Curry",
+    "team": "GSW",
+    "position": "PG",
+    "is_b2b": true,
+    "props": {
+      "points":   { "projection": 28.2, "std_dev": 5.1, "confidence": 0.80 },
+      "rebounds": { "projection": 5.5,  "std_dev": 1.8, "confidence": 0.68 },
+      "assists":  { "projection": 6.2,  "std_dev": 2.0, "confidence": 0.72 },
+      "threes":   { "projection": 4.8,  "std_dev": 1.5, "confidence": 0.75 },
+      "steals":   { "projection": 1.0,  "std_dev": 0.7, "confidence": 0.55 },
+      "blocks":   { "projection": 0.4,  "std_dev": 0.3, "confidence": 0.50 }
+    }
+  },
+  "203507": {
+    "name": "Giannis Antetokounmpo",
+    "team": "MIL",
+    "position": "PF",
+    "is_b2b": false,
+    "props": {
+      "points":   { "projection": 31.0, "std_dev": 5.8, "confidence": 0.82 },
+      "rebounds": { "projection": 11.5, "std_dev": 2.5, "confidence": 0.76 },
+      "assists":  { "projection": 5.8,  "std_dev": 2.2, "confidence": 0.68 },
+      "threes":   { "projection": 0.8,  "std_dev": 0.6, "confidence": 0.45 },
+      "steals":   { "projection": 1.1,  "std_dev": 0.8, "confidence": 0.52 },
+      "blocks":   { "projection": 1.4,  "std_dev": 0.9, "confidence": 0.58 }
+    }
+  }
+}
