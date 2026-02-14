@@ -93,3 +93,17 @@ def position_scarcity():
     """Load position scarcity multipliers."""
     from static_data.pricing.position_scarcity import POSITION_SCARCITY
     return POSITION_SCARCITY
+
+
+@pytest.fixture(scope="session")
+def ceiling_profiles():
+    """Load ceiling game (blowup probability) profiles."""
+    from static_data.profiles.ceiling_profiles import CEILING_PROFILES
+    return CEILING_PROFILES
+
+
+@pytest.fixture(scope="session")
+def matchup_adjustments():
+    """Load matchup adjustment multipliers."""
+    from static_data.matchups.matchup_adjustments import MATCHUP_ADJUSTMENTS
+    return MATCHUP_ADJUSTMENTS
