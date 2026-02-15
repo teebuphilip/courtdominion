@@ -1,9 +1,9 @@
-name: Daily Bets
+name: Daily Bets (RETIRED — replaced by nightly-pipeline.yml)
 
 on:
-  schedule:
-    # 4pm ET = 21:00 UTC (EST) / 20:00 UTC (EDT)
-    - cron: '0 21 * * *'
+  # RETIRED: Bet placement now handled by nightly-pipeline.yml
+  # which also runs data collection and the projection engine.
+  # Keeping workflow_dispatch for emergency fallback only.
   workflow_dispatch:
 
 permissions:
