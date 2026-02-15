@@ -1,0 +1,11 @@
+{
+  "LeBron James": {
+    "points": {"line": 25.5, "over_odds": -110, "under_odds": -110, "bookmaker": "draftkings"},
+    "rebounds": {"line": 8.5, "over_odds": -115, "under_odds": -105, "bookmaker": "draftkings"},
+    "assists": {"line": 8.5, "over_odds": -110, "under_odds": -110, "bookmaker": "fanduel"}
+  },
+  "Stephen Curry": {
+    "points": {"line": 27.5, "over_odds": -105, "under_odds": -115, "bookmaker": "draftkings"},
+    "threes": {"line": 5.5, "over_odds": -110, "under_odds": -110, "bookmaker": "betmgm"}
+  }
+}

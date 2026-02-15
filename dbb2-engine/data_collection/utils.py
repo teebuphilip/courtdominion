@@ -132,6 +132,34 @@ TEAM_CITIES = {
     "SEA": {"city": "Seattle", "hot_spot": 0, "altitude": False},  # Supersonics pre-2008
 }
 
+# --------------------------------------------------------------------------
+# Team → Timezone Mapping (UTC offsets, standard time)
+# --------------------------------------------------------------------------
+
+TEAM_TIMEZONES = {
+    # Eastern (-5)
+    "BOS": -5, "BKN": -5, "NYK": -5, "PHI": -5, "TOR": -5,
+    "CLE": -5, "DET": -5, "IND": -5, "MIL": -5,
+    "ATL": -5, "CHA": -5, "MIA": -5, "ORL": -5, "WAS": -5,
+    "NJN": -5, "CHH": -5,  # Historical
+    # Central (-6)
+    "CHI": -6, "MEM": -6, "MIN": -6,
+    "NOP": -6, "NOH": -6, "NOK": -6,  # Historical
+    "OKC": -6, "SAS": -6, "DAL": -6, "HOU": -6,
+    # Mountain (-7)
+    "DEN": -7, "UTA": -7, "UTH": -7, "PHX": -7, "PHO": -7,
+    # Pacific (-8)
+    "LAL": -8, "LAC": -8, "GSW": -8, "SAC": -8, "POR": -8,
+    "SEA": -8, "VAN": -8,  # Historical
+}
+
+
+def timezone_jump(team1: str, team2: str) -> int:
+    """Absolute timezone difference in hours between two team cities."""
+    tz1 = TEAM_TIMEZONES.get(team1, -5)
+    tz2 = TEAM_TIMEZONES.get(team2, -5)
+    return abs(tz1 - tz2)
+
 
 def is_hot_spot(team_abbrev: str) -> int:
     """Return hot spot tier (0=none, 1=tier1, 2=tier2) for a team."""

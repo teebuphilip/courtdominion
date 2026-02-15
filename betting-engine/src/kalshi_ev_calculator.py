@@ -180,6 +180,9 @@ def run(dry_run: bool = False) -> list:
         if settings["excluded"].get("skip_b2b") and projection.get("is_b2b", False):
             continue
 
+        if settings["excluded"].get("skip_death_spots") and projection.get("is_death_spot", False):
+            continue
+
         for prop_type, kalshi_data in player_kalshi.items():
             result = calculate_kalshi_ev(
                 player_name, projection, prop_type, kalshi_data, settings

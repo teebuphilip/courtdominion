@@ -104,7 +104,7 @@ def build_auth_headers(method: str, path: str, auth: dict) -> dict:
     }
 
 
-def fetch_nba_markets(dry_run: bool = False) -> list:
+def fetch_nba_markets(dry_run: bool = False, force: bool = False) -> list:
     """
     Fetch today's NBA player prop markets from Kalshi.
 
@@ -116,7 +116,7 @@ def fetch_nba_markets(dry_run: bool = False) -> list:
     today = get_today_date()
     output_path = f"data/kalshi/markets/{today}.json"
 
-    if Path(output_path).exists():
+    if not force and Path(output_path).exists():
         file_age = get_file_age_hours(output_path)
         if file_age < 2:
             logger.info("Kalshi markets fetched recently, skipping")
@@ -289,9 +289,9 @@ def _create_dry_run_markets(output_path: str) -> None:
         logger.warning("[DRY RUN] No fixture found, wrote empty markets")
 
 
-def run(dry_run: bool = False) -> dict:
+def run(dry_run: bool = False, force: bool = False) -> dict:
     """Main Kalshi ingestion pipeline."""
-    raw_markets = fetch_nba_markets(dry_run=dry_run)
+    raw_markets = fetch_nba_markets(dry_run=dry_run, force=force)
 
     if isinstance(raw_markets, dict):
         # WHY: Dry-run fixture is already normalized

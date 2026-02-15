@@ -19,7 +19,7 @@ from static_data.profiles import (
     AGE_PROFILES_PRE_MODERN,
     CEILING_PROFILES,
 )
-from static_data.calendars import SCHEDULE_EFFECTS, CITY_EFFECTS
+from static_data.calendars import SCHEDULE_EFFECTS, CITY_EFFECTS, DEATH_SPOT_EFFECTS
 from static_data.durability import DURABILITY_PROFILES
 from static_data.usage import USAGE_PROFILES
 from static_data.pricing import POSITION_SCARCITY, ZSCORE_BASELINES, SGP_WEIGHTS
@@ -198,6 +198,15 @@ def lookup_city_effect(
 ) -> Optional[dict]:
     """Look up city effect with bracket-keyed fallback."""
     return _fallback_bracket_keyed(CITY_EFFECTS, age_bracket, pos, role)
+
+
+def lookup_death_spot_effect(
+    age_bracket: str,
+    pos: str,
+    role: str,
+) -> Optional[dict]:
+    """Look up death spot compound effect with bracket-keyed fallback."""
+    return _fallback_bracket_keyed(DEATH_SPOT_EFFECTS, age_bracket, pos, role)
 
 
 def lookup_matchup(

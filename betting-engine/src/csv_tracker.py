@@ -20,7 +20,7 @@ CSV_HEADERS = [
     "bet_id", "date", "source", "player_name", "team", "prop_type", "direction",
     "dbb2_projection", "sportsbook_line", "edge_pct", "confidence", "units",
     "dollar_amount", "odds_or_price", "dbb2_implied_prob", "market_implied_prob",
-    "actual_result", "status", "pnl", "notes",
+    "actual_result", "status", "pnl", "closing_line", "clv", "notes",
 ]
 
 
@@ -118,6 +118,8 @@ def append_bets(bets: list, date: str = None) -> int:
                 "actual_result": "",
                 "status": "PENDING",
                 "pnl": "",
+                "closing_line": "",
+                "clv": "",
                 "notes": ",".join(notes_parts),
             }
             writer.writerow(row)
@@ -161,7 +163,7 @@ def update_graded_bets(date: str, graded_results: list) -> int:
 
     # Rewrite CSV
     with open(CSV_PATH, "w", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=CSV_HEADERS)
+        writer = csv.DictWriter(f, fieldnames=CSV_HEADERS, restval="", extrasaction="ignore")
         writer.writeheader()
         writer.writerows(all_rows)
 

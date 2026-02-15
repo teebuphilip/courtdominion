@@ -49,6 +49,11 @@ def run(dry_run: bool = False) -> list:
             logger.info(f"Skipping {player_name} - back-to-back")
             continue
 
+        # WHY: Skip death spot players if configured — compound fatigue
+        if settings["excluded"].get("skip_death_spots") and projection.get("is_death_spot", False):
+            logger.info(f"Skipping {player_name} - death spot ({projection.get('death_spot_type', 'unknown')})")
+            continue
+
         for prop_type, odds_data in player_odds.items():
             result = calculate_ev(player_name, projection, prop_type, odds_data)
             if result is not None:

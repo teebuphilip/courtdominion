@@ -1,0 +1,9 @@
+{
+  "Lebron James": {
+    "points": {"line": 25.0, "yes_price": 0.63, "no_price": 0.38, "ticker": "NBA-PTS-LBJ-25", "volume": 500, "open_interest": 200},
+    "rebounds": {"line": 8.0, "yes_price": 0.58, "no_price": 0.43, "ticker": "NBA-REB-LBJ-8", "volume": 300, "open_interest": 120}
+  },
+  "Stephen Curry": {
+    "points": {"line": 27.0, "yes_price": 0.52, "no_price": 0.49, "ticker": "NBA-PTS-SC-27", "volume": 450, "open_interest": 180}
+  }
+}

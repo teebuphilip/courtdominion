@@ -66,5 +66,12 @@
   },
   "schedule": {
     "nba_schedule_path": "data/nba_schedule_2026.json"
+  },
+  "clv": {
+    "fetch_closing_sportsbook": true,
+    "fetch_closing_kalshi": true,
+    "closing_window_minutes_before_tipoff": 10,
+    "min_bets_for_avg_clv": 20,
+    "positive_clv_threshold": 0.0
   }
 }
