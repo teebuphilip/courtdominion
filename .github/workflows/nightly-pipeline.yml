@@ -71,14 +71,23 @@ jobs:
 
       - name: Collect current season data
         if: github.event.inputs.skip_collection != 'true'
+        continue-on-error: true
         run: |
           SEASON="${{ steps.season.outputs.season }}"
           echo "Collecting season: ${SEASON}"
           cd dbb2-engine
-          python data_collection/collect_nba_season.py \
-            --season "$SEASON" \
-            --output raw_data/
-          echo "Collection complete"
+
+          # NBA Stats API sometimes blocks cloud IPs — retry up to 3 times
+          for attempt in 1 2 3; do
+            echo "Attempt ${attempt}/3..."
+            python data_collection/collect_nba_season.py \
+              --season "$SEASON" \
+              --output raw_data/ && break
+            echo "Attempt ${attempt} failed, waiting 30s..."
+            sleep 30
+          done
+
+          echo "raw_data/ contents after collection:"
           ls -lh raw_data/
 
       # ---------------------------------------------------------------
