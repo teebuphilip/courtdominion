@@ -10,6 +10,10 @@ import os
 from datetime import datetime, timezone
 from pathlib import Path
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 # Configure logging once at import
 logging.basicConfig(
     level=logging.INFO,
