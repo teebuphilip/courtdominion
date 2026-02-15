@@ -55,6 +55,15 @@ jobs:
             echo "No bet slips for ${DATE}, skipping"
           fi
 
+      - name: Fetch closing lines (CLV)
+        if: steps.check-slip.outputs.has_slip == 'true'
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          KALSHI_API_KEY_ID: ${{ secrets.KALSHI_API_KEY_ID }}
+          KALSHI_PRIVATE_KEY: ${{ secrets.KALSHI_PRIVATE_KEY }}
+        run: |
+          python src/clv_fetcher.py --date ${{ steps.date.outputs.grade_date }}
+
       - name: Grade bets
         if: steps.check-slip.outputs.has_slip == 'true'
         run: |

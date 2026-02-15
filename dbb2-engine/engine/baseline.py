@@ -10,6 +10,7 @@ Season weights: most_recent=0.50, prior=0.30, two_prior=0.20
 """
 
 from dataclasses import dataclass, field
+from datetime import date
 from typing import Dict, List, Optional
 
 import numpy as np
@@ -84,12 +85,17 @@ def build_player_contexts_from_csv(
     4. For each player: compute weighted baseline, determine metadata
     5. Return sorted by player_name
     """
-    # Determine year range: most recent data is 2024-25 (start year 2024)
-    # Load the most recent `seasons_to_load` seasons
-    end_year = 2024
-    start_year = end_year - seasons_to_load + 1
+    # Determine most recent season start year from current date.
+    # NBA season starts in October: Oct-Dec = current year, Jan-Sep = previous year.
+    today = date.today()
+    desired_end_year = today.year if today.month >= 10 else today.year - 1
+    start_year = desired_end_year - seasons_to_load + 1
 
-    df = load_seasons_range(start_year, end_year)
+    df = load_seasons_range(start_year, desired_end_year)
+
+    # Use the actual most recent season found in loaded data, in case
+    # the current season CSV hasn't been collected yet.
+    end_year = int(df["season_start_year"].max())
 
     # Standard cleanup
     df = df.dropna(subset=["position_group"])

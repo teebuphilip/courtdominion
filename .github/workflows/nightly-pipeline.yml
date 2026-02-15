@@ -1,0 +1,173 @@
+name: Nightly Pipeline
+
+on:
+  schedule:
+    # 2pm ET = 19:00 UTC (EST) / 18:00 UTC (EDT)
+    # Runs ~5 hours before earliest NBA tip-offs (7pm ET)
+    - cron: '0 19 * * *'
+  workflow_dispatch:
+    inputs:
+      season:
+        description: 'Season to collect (e.g. 2024-25). Defaults to current.'
+        required: false
+      skip_collection:
+        description: 'Skip NBA data collection (use committed data only)'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  collect-project-bet:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dbb2-engine dependencies
+        run: pip install -r dbb2-engine/requirements.txt
+
+      - name: Install betting-engine dependencies
+        run: pip install -r betting-engine/requirements.txt
+
+      # ---------------------------------------------------------------
+      # DATA COLLECTION
+      # ---------------------------------------------------------------
+
+      - name: Determine current NBA season
+        id: season
+        run: |
+          if [ -n "${{ github.event.inputs.season }}" ]; then
+            echo "season=${{ github.event.inputs.season }}" >> $GITHUB_OUTPUT
+          else
+            # NBA season starts in October
+            MONTH=$(date +%-m)
+            YEAR=$(date +%Y)
+            if [ "$MONTH" -ge 10 ]; then
+              START=$YEAR
+              END=$(( YEAR + 1 ))
+            else
+              START=$(( YEAR - 1 ))
+              END=$YEAR
+            fi
+            SHORT_END=$(printf '%02d' $(( END % 100 )))
+            echo "season=${START}-${SHORT_END}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Prepare raw_data directory
+        run: |
+          mkdir -p dbb2-engine/raw_data
+          cp dbb2-engine/data_collection/historical/*.csv dbb2-engine/raw_data/
+          echo "Copied historical CSVs to raw_data/"
+          ls -lh dbb2-engine/raw_data/
+
+      - name: Collect current season data
+        if: github.event.inputs.skip_collection != 'true'
+        run: |
+          SEASON="${{ steps.season.outputs.season }}"
+          echo "Collecting season: ${SEASON}"
+          cd dbb2-engine
+          python data_collection/collect_nba_season.py \
+            --season "$SEASON" \
+            --output raw_data/
+          echo "Collection complete"
+          ls -lh raw_data/
+
+      # ---------------------------------------------------------------
+      # ENGINE
+      # ---------------------------------------------------------------
+
+      - name: Run DBB2 projection engine
+        run: |
+          cd dbb2-engine
+          python run_engine.py --game-day
+          echo "Engine output:"
+          ls -lh output/
+
+      # ---------------------------------------------------------------
+      # BETTING
+      # ---------------------------------------------------------------
+
+      - name: Copy projections to betting engine
+        id: projections
+        run: |
+          DATE=$(date +%Y-%m-%d)
+          echo "date=${DATE}" >> $GITHUB_OUTPUT
+          mkdir -p betting-engine/data/projections
+          cp dbb2-engine/output/betting_contract.json \
+            betting-engine/data/projections/${DATE}.json
+          echo "Copied betting_contract.json -> data/projections/${DATE}.json"
+
+      - name: Check for NBA games today
+        id: check-games
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: |
+          if [ -z "$ODDS_API_KEY" ]; then
+            echo "No ODDS_API_KEY set — assuming games today (fail open)"
+            echo "has_games=true" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          python -c "
+          import requests, os, sys
+          key = os.environ['ODDS_API_KEY']
+          r = requests.get(
+              'https://api.the-odds-api.com/v4/sports/basketball_nba/odds',
+              params={'apiKey': key, 'regions': 'us', 'markets': 'h2h'},
+              timeout=15
+          )
+          games = r.json() if r.status_code == 200 else []
+          if not games:
+              print('No NBA games today')
+              with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+                  f.write('has_games=false\n')
+          else:
+              print(f'{len(games)} NBA games today')
+              with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+                  f.write('has_games=true\n')
+          "
+
+      - name: Run bet placer
+        if: steps.check-games.outputs.has_games != 'false'
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          KALSHI_API_KEY_ID: ${{ secrets.KALSHI_API_KEY_ID }}
+          KALSHI_PRIVATE_KEY: ${{ secrets.KALSHI_PRIVATE_KEY }}
+        working-directory: betting-engine
+        run: |
+          DATE="${{ steps.projections.outputs.date }}"
+          PROJ_FILE="data/projections/${DATE}.json"
+          if [ ! -f "$PROJ_FILE" ]; then
+            echo "No projection file found at ${PROJ_FILE}, skipping"
+            exit 0
+          fi
+          python src/bet_placer.py --from-file "$PROJ_FILE"
+
+      # ---------------------------------------------------------------
+      # COMMIT
+      # ---------------------------------------------------------------
+
+      - name: Commit projections and bet slips
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          DATE="${{ steps.projections.outputs.date }}"
+
+          # Stage engine output + betting engine data
+          git add dbb2-engine/output/ || true
+          git add betting-engine/data/projections/ || true
+          git add betting-engine/data/bet_slips/ || true
+          git add betting-engine/data/bets/ || true
+          git add betting-engine/data/kalshi/bet_slips/ || true
+
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+          git commit -m "pipeline: ${DATE} projections + bets"
+          git push

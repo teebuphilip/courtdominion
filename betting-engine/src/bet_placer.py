@@ -34,7 +34,7 @@ def has_nba_games_today(date: str = None) -> bool:
     return date in game_dates
 
 
-def run_sportsbook_pipeline(dry_run: bool = False) -> list:
+def run_sportsbook_pipeline(dry_run: bool = False, from_file: str = None) -> list:
     """
     Run the sportsbook pipeline: projections → odds → EV → Kelly.
 
@@ -46,7 +46,7 @@ def run_sportsbook_pipeline(dry_run: bool = False) -> list:
 
     logger.info("=== Sportsbook Pipeline ===")
 
-    run_ingestion(dry_run=dry_run)
+    run_ingestion(dry_run=dry_run, from_file=from_file)
 
     ev_results = run_ev(dry_run=dry_run)
     if not ev_results:
@@ -123,7 +123,7 @@ def allocate_daily_budget(bets: list, settings: dict) -> list:
     return allocated
 
 
-def run(dry_run: bool = False, date: str = None) -> None:
+def run(dry_run: bool = False, date: str = None, from_file: str = None) -> None:
     """
     Main bet placer pipeline.
 
@@ -150,7 +150,7 @@ def run(dry_run: bool = False, date: str = None) -> None:
         return
 
     # Step 3: Run both pipelines
-    sportsbook_bets = run_sportsbook_pipeline(dry_run=dry_run)
+    sportsbook_bets = run_sportsbook_pipeline(dry_run=dry_run, from_file=from_file)
     kalshi_bets = run_kalshi_pipeline(dry_run=dry_run)
 
     all_bets = sportsbook_bets + kalshi_bets
@@ -187,5 +187,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="DBB2 Bet Placer — Daily Orchestrator")
     parser.add_argument("--dry-run", action="store_true", help="Use fixture data")
     parser.add_argument("--date", type=str, default=None, help="Override date (YYYY-MM-DD)")
+    parser.add_argument("--from-file", type=str, default=None,
+                        help="Load projections from file instead of DBB2 API")
     args = parser.parse_args()
-    run(dry_run=args.dry_run, date=args.date)
+    run(dry_run=args.dry_run, date=args.date, from_file=args.from_file)
