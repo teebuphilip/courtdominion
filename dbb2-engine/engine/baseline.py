@@ -63,6 +63,8 @@ class PlayerContext:
     location: str = "HOME"
     is_post_hot_spot: bool = False
     is_post_altitude: bool = False
+    is_death_spot: bool = False
+    death_spot_type: str = ""
 
     @property
     def status(self) -> str:

@@ -368,9 +368,10 @@ def generate_season_summary(ledger: dict) -> None:
     import csv as csv_mod
     from src.csv_tracker import CSV_PATH
 
-    # Count by source from master CSV
+    # Count by source from master CSV + collect CLV data
     sb_stats = {"bets": 0, "wins": 0, "losses": 0, "pnl": 0.0}
     k_stats = {"bets": 0, "wins": 0, "losses": 0, "pnl": 0.0}
+    clv_data = {"sportsbook": [], "kalshi": []}
 
     if Path(CSV_PATH).exists():
         with open(CSV_PATH, newline="") as f:
@@ -387,6 +388,14 @@ def generate_season_summary(ledger: dict) -> None:
                 elif status == "LOSS":
                     bucket["losses"] += 1
                 bucket["pnl"] += pnl
+
+                # Collect CLV values for graded bets
+                clv_val = row.get("clv", "")
+                if clv_val not in ("", None):
+                    try:
+                        clv_data[source].append(float(clv_val))
+                    except (ValueError, KeyError):
+                        pass
 
     total_resolved = ledger["wins"] + ledger["losses"]
     record = f"{ledger['wins']}W-{ledger['losses']}L-{ledger['pushes']}P"
@@ -414,6 +423,43 @@ def generate_season_summary(ledger: dict) -> None:
         lines.append(
             f"| {label} | {stats['bets']} | {stats['wins']} | {stats['losses']} | {pnl_str} |"
         )
+
+    # CLV section
+    settings = load_settings()
+    min_clv_bets = settings.get("clv", {}).get("min_bets_for_avg_clv", 20)
+    clv_threshold = settings.get("clv", {}).get("positive_clv_threshold", 0.0)
+    all_clv = clv_data["sportsbook"] + clv_data["kalshi"]
+
+    if len(all_clv) >= min_clv_bets:
+        avg_clv = sum(all_clv) / len(all_clv)
+        positive_count = sum(1 for c in all_clv if c > clv_threshold)
+        positive_pct = positive_count / len(all_clv) * 100
+
+        sb_clv = clv_data["sportsbook"]
+        kal_clv = clv_data["kalshi"]
+        sb_avg = f"{sum(sb_clv)/len(sb_clv):+.2f}" if sb_clv else "N/A"
+        kal_avg = f"{sum(kal_clv)/len(kal_clv):+.4f}" if kal_clv else "N/A"
+
+        lines += [
+            "",
+            "## Model Quality - Closing Line Value",
+            "",
+            "| Metric | Sportsbook | Kalshi | Combined |",
+            "|--------|-----------|--------|----------|",
+            f"| Avg CLV | {sb_avg} | {kal_avg} | {avg_clv:+.3f} |",
+            f"| Positive CLV % | - | - | {positive_pct:.1f}% |",
+            f"| Bets Tracked | {len(sb_clv)} | {len(kal_clv)} | {len(all_clv)} |",
+            "",
+            "> Positive CLV % = % of bets where closing line moved in model's direction",
+            "> Combined avg CLV > 0 = model consistently finds mispriced lines",
+        ]
+    elif all_clv:
+        lines += [
+            "",
+            "## Model Quality - Closing Line Value",
+            "",
+            f"*Insufficient data ({len(all_clv)} of {min_clv_bets} bets needed)*",
+        ]
 
     lines += ["", f"*Updated: {get_timestamp()[:10]}*", ""]
 

@@ -12,7 +12,7 @@ Usage:
 import argparse
 import sys
 
-from engine import project_all_season, export_json, export_betting
+from engine import project_all_season, project_all_game_day, export_json, export_betting
 
 
 def main():
@@ -40,6 +40,11 @@ def main():
         action="store_true",
         help="Skip betting_contract.json export",
     )
+    parser.add_argument(
+        "--game-day",
+        action="store_true",
+        help="Apply game-day adjustments to betting contract projections",
+    )
     args = parser.parse_args()
 
     # 1. Project
@@ -51,14 +56,24 @@ def main():
     files = export_json(contexts, projections, auction_values, args.output_dir)
 
     # 3. Export betting contract
+    game_day_projections = None
     if not args.no_betting:
-        export_betting(contexts, projections, args.output_dir)
+        if args.game_day:
+            print("\nApplying game-day adjustments...")
+            game_day_projections = project_all_game_day(contexts, projections)
+            print(f"  Adjusted {len(game_day_projections)} players")
+        export_betting(contexts, projections, game_day_projections, args.output_dir)
 
     # 4. Summary
     print(f"\n=== Summary ===")
     print(f"  Players projected: {len(projections)}")
     print(f"  Output directory:  {args.output_dir}/")
-    print(f"  Files written:     {len(files)} CD JSON" + (" + betting_contract.json" if not args.no_betting else ""))
+    betting_label = ""
+    if not args.no_betting:
+        betting_label = " + betting_contract.json"
+        if args.game_day:
+            betting_label += " (game-day adjusted)"
+    print(f"  Files written:     {len(files)} CD JSON{betting_label}")
 
     # 5. Validate
     if args.validate:

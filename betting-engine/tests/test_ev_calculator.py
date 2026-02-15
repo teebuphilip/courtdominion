@@ -160,3 +160,25 @@ class TestResultStructure:
         ]
         for field in required:
             assert field in result, f"Missing field: {field}"
+
+
+# --- TEST 7: Death spot filtering ---
+
+class TestDeathSpotFiltering:
+    def test_death_spot_projection_has_flag(self):
+        """Projection with is_death_spot=True should be filterable."""
+        proj = _make_projection(is_death_spot=True, death_spot_type="party_b2b")
+        assert proj["is_death_spot"] is True
+        assert proj["death_spot_type"] == "party_b2b"
+
+    def test_game_day_adjusted_projection_used(self):
+        """When projection has game-day adjusted values, EV uses them."""
+        proj = _make_projection()
+        # Simulate game-day adjusted projection (lower than season)
+        proj["props"]["points"]["projection"] = 21.7
+        odds = _make_odds(line=24.5)
+        result = calculate_ev("Test Player", proj, "points", odds)
+
+        assert result is not None
+        assert result["dbb2_projection"] == 21.7
+        assert result["direction"] == "UNDER"

@@ -66,6 +66,7 @@ class GameDayProjection:
     # Adjustment breakdown (for transparency)
     schedule_multiplier: float = 1.0
     city_multiplier: float = 1.0
+    death_spot_multiplier: float = 1.0
     matchup_multiplier: float = 1.0
     compound_multiplier: float = 1.0
 
@@ -87,17 +88,18 @@ def project_game_day(
     """
     sched_mult = _get_schedule_multiplier(ctx)
     city_mult = _get_city_multiplier(ctx)
+    death_spot_mult = _get_death_spot_multiplier(ctx)
     matchup_data = _get_matchup_multipliers(ctx)
 
     # Overall fantasy_pts_multiplier from matchup data
     matchup_overall = matchup_data.get("fantasy_pts_multiplier", 1.0)
 
     # Compound clamp for the overall multiplier
-    compound = max(COMPOUND_MIN, min(COMPOUND_MAX, sched_mult * city_mult * matchup_overall))
+    compound = max(COMPOUND_MIN, min(COMPOUND_MAX, sched_mult * city_mult * death_spot_mult * matchup_overall))
 
     # Build adjusted stats
     stats = {
-        "minutes_played": season_proj.minutes * max(COMPOUND_MIN, min(COMPOUND_MAX, sched_mult * city_mult)),
+        "minutes_played": season_proj.minutes * max(COMPOUND_MIN, min(COMPOUND_MAX, sched_mult * city_mult * death_spot_mult)),
         "points": season_proj.points,
         "rebounds": season_proj.rebounds,
         "assists": season_proj.assists,
@@ -115,14 +117,14 @@ def project_game_day(
     # Apply per-stat matchup multipliers where available
     for stat, mult_key in MATCHUP_STAT_MAP.items():
         stat_mult = matchup_data.get(mult_key, 1.0)
-        # Combine with schedule + city for a per-stat compound
-        per_stat_compound = max(COMPOUND_MIN, min(COMPOUND_MAX, sched_mult * city_mult * stat_mult))
+        # Combine with schedule + city + death spot for a per-stat compound
+        per_stat_compound = max(COMPOUND_MIN, min(COMPOUND_MAX, sched_mult * city_mult * death_spot_mult * stat_mult))
         stats[stat] = stats[stat] * per_stat_compound
 
     # Apply schedule+city to non-matchup scoring stats
     for stat in ("turnovers", "fgm", "fga", "three_pa", "ftm", "fta"):
         if stat not in MATCHUP_STAT_MAP:
-            sc_compound = max(COMPOUND_MIN, min(COMPOUND_MAX, sched_mult * city_mult))
+            sc_compound = max(COMPOUND_MIN, min(COMPOUND_MAX, sched_mult * city_mult * death_spot_mult))
             stats[stat] = stats[stat] * sc_compound
 
     # Recalculate fantasy points from adjusted stats
@@ -157,6 +159,7 @@ def project_game_day(
         floor=max(0.0, floor),
         schedule_multiplier=sched_mult,
         city_multiplier=city_mult,
+        death_spot_multiplier=death_spot_mult,
         matchup_multiplier=matchup_overall,
         compound_multiplier=compound,
     )
@@ -206,6 +209,38 @@ def _get_city_multiplier(ctx: PlayerContext) -> float:
         return 1.0
 
     return 1.0
+
+
+_DEATH_SPOT_TYPE_TO_FIELD = {
+    "party_b2b": "party_b2b_residual",
+    "altitude_b2b": "altitude_b2b_residual",
+    "cross_country_b2b": "cross_country_b2b_dropoff",
+    "party_to_altitude": "party_to_altitude_dropoff",
+    "compound": "compound_worst_dropoff",
+}
+
+
+def _get_death_spot_multiplier(ctx: PlayerContext) -> float:
+    """
+    Death spot compound residual effect.
+
+    Returns the RESIDUAL penalty beyond what schedule + city effects
+    already capture, or the FULL penalty for unique patterns (cross-country,
+    party-to-altitude) that no existing feature covers.
+    """
+    if not ctx.is_death_spot:
+        return 1.0
+
+    effect = lookup.lookup_death_spot_effect(ctx.age_bracket, ctx.position, ctx.role)
+    if effect is None:
+        return 1.0
+
+    field = _DEATH_SPOT_TYPE_TO_FIELD.get(ctx.death_spot_type)
+    if field is None:
+        return 1.0
+
+    val = effect.get(field)
+    return val if val is not None else 1.0
 
 
 def _get_matchup_multipliers(ctx: PlayerContext) -> Dict[str, float]:

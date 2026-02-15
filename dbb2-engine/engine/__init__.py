@@ -73,9 +73,10 @@ def export_json(
 def export_betting(
     contexts: List[PlayerContext],
     projections: List[SeasonProjection],
+    game_day_projections=None,
     output_dir: str = "output",
 ) -> str:
     """Write betting_contract.json for the betting engine pipeline."""
-    path = _export_betting(contexts, projections, output_dir)
+    path = _export_betting(contexts, projections, game_day_projections, output_dir)
     print(f"  Written: {path}")
     return path
