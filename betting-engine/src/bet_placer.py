@@ -72,7 +72,11 @@ def run_kalshi_pipeline(dry_run: bool = False) -> list:
 
     logger.info("=== Kalshi Pipeline ===")
 
-    run_kalshi_ingestion(dry_run=dry_run)
+    try:
+        run_kalshi_ingestion(dry_run=dry_run)
+    except Exception as e:
+        logger.warning(f"Kalshi ingestion failed (skipping): {e}")
+        return []
 
     kalshi_bets = run_kalshi_ev(dry_run=dry_run)
     if not kalshi_bets:
