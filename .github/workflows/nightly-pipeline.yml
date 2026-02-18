@@ -38,6 +38,15 @@ jobs:
       - name: Install betting-engine dependencies
         run: pip install -r betting-engine/requirements.txt
 
+      - name: Create required directories
+        run: |
+          mkdir -p betting-engine/logs
+          mkdir -p betting-engine/data/projections
+          mkdir -p betting-engine/data/bet_slips
+          mkdir -p betting-engine/data/bets
+          mkdir -p betting-engine/data/kalshi/bet_slips
+          mkdir -p dbb2-engine/raw_data
+
       # ---------------------------------------------------------------
       # DATA COLLECTION
       # ---------------------------------------------------------------
