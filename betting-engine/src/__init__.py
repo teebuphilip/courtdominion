@@ -14,13 +14,17 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+# Ensure log directory exists regardless of caller working directory.
+LOG_DIR = Path(__file__).resolve().parent.parent / "logs"
+LOG_DIR.mkdir(parents=True, exist_ok=True)
+
 # Configure logging once at import
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
     handlers=[
         logging.StreamHandler(),
-        logging.FileHandler("logs/betting_engine.log", mode="a"),
+        logging.FileHandler(LOG_DIR / "betting_engine.log", mode="a"),
     ],
 )
 logger = logging.getLogger("betting_engine")
