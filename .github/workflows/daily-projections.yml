@@ -1,0 +1,82 @@
+name: Daily DBB2 Projections
+
+on:
+  schedule:
+    # Run hourly; gate inside workflow so execution occurs only at 4:00 AM America/New_York.
+    - cron: '0 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-dbb2-projections
+  cancel-in-progress: false
+
+jobs:
+  generate-and-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Gate scheduled runs to 4:00 AM New York time
+        id: gate
+        run: |
+          if [ "${{ github.event_name }}" != "schedule" ]; then
+            echo "run_now=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          NY_HOUR=$(TZ=America/New_York date +%H)
+          if [ "$NY_HOUR" = "04" ]; then
+            echo "run_now=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run_now=false" >> "$GITHUB_OUTPUT"
+            echo "Skipping scheduled run: current America/New_York hour is $NY_HOUR"
+          fi
+
+      - name: Set up Python
+        if: steps.gate.outputs.run_now == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install DBB2 engine dependencies
+        if: steps.gate.outputs.run_now == 'true'
+        run: pip install -r dbb2-engine/requirements.txt
+
+      - name: Run projection engine
+        if: steps.gate.outputs.run_now == 'true'
+        run: |
+          python dbb2-engine/run_engine.py --game-day --validate --output-dir dbb2-engine/output
+
+      - name: Copy betting contract to betting-engine daily projections
+        if: steps.gate.outputs.run_now == 'true'
+        run: |
+          DATE=$(TZ=America/New_York date +%Y-%m-%d)
+          mkdir -p betting-engine/data/projections
+          cp dbb2-engine/output/betting_contract.json betting-engine/data/projections/${DATE}.json
+          echo "DATE=${DATE}" >> "$GITHUB_ENV"
+
+      - name: Commit and push updated outputs
+        if: steps.gate.outputs.run_now == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add dbb2-engine/output/players.json
+          git add dbb2-engine/output/projections.json
+          git add dbb2-engine/output/risk.json
+          git add dbb2-engine/output/insights.json
+          git add dbb2-engine/output/betting_contract.json
+          git add betting-engine/data/projections/${DATE}.json
+
+          if git diff --cached --quiet; then
+            echo "No projection changes to commit"
+            exit 0
+          fi
+
+          git commit -m "projections: ${DATE} daily dbb2 refresh"
+          git push

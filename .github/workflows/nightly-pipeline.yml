@@ -1,10 +1,6 @@
-name: Nightly Pipeline
+name: Nightly Pipeline (Legacy Manual)
 
 on:
-  schedule:
-    # 2pm ET = 19:00 UTC (EST) / 18:00 UTC (EDT)
-    # Runs ~5 hours before earliest NBA tip-offs (7pm ET)
-    - cron: '0 19 * * *'
   workflow_dispatch:
     inputs:
       season:
@@ -47,17 +43,12 @@ jobs:
           mkdir -p betting-engine/data/kalshi/bet_slips
           mkdir -p dbb2-engine/raw_data
 
-      # ---------------------------------------------------------------
-      # DATA COLLECTION
-      # ---------------------------------------------------------------
-
       - name: Determine current NBA season
         id: season
         run: |
           if [ -n "${{ github.event.inputs.season }}" ]; then
             echo "season=${{ github.event.inputs.season }}" >> $GITHUB_OUTPUT
           else
-            # NBA season starts in October
             MONTH=$(date +%-m)
             YEAR=$(date +%Y)
             if [ "$MONTH" -ge 10 ]; then
@@ -86,7 +77,6 @@ jobs:
           echo "Collecting season: ${SEASON}"
           cd dbb2-engine
 
-          # NBA Stats API sometimes blocks cloud IPs — retry up to 3 times
           for attempt in 1 2 3; do
             echo "Attempt ${attempt}/3..."
             python data_collection/collect_nba_season.py \
@@ -99,20 +89,12 @@ jobs:
           echo "raw_data/ contents after collection:"
           ls -lh raw_data/
 
-      # ---------------------------------------------------------------
-      # ENGINE
-      # ---------------------------------------------------------------
-
       - name: Run DBB2 projection engine
         run: |
           cd dbb2-engine
           python run_engine.py --game-day
           echo "Engine output:"
           ls -lh output/
-
-      # ---------------------------------------------------------------
-      # BETTING
-      # ---------------------------------------------------------------
 
       - name: Copy projections to betting engine
         id: projections
@@ -169,17 +151,12 @@ jobs:
           fi
           python src/bet_placer.py --from-file "$PROJ_FILE"
 
-      # ---------------------------------------------------------------
-      # COMMIT
-      # ---------------------------------------------------------------
-
       - name: Commit projections and bet slips
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           DATE="${{ steps.projections.outputs.date }}"
 
-          # Stage engine output + betting engine data
           git add dbb2-engine/output/ || true
           git add betting-engine/data/projections/ || true
           git add betting-engine/data/bet_slips/ || true
