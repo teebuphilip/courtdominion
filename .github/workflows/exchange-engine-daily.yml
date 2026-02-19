@@ -1,0 +1,78 @@
+name: Exchange Engine Daily
+
+on:
+  schedule:
+    - cron: "30 9 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  exchange-bets:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: exchange-engine
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Create required directories
+        run: |
+          mkdir -p logs
+          mkdir -p data/projections
+          mkdir -p data/exchange_odds/novig
+          mkdir -p data/exchange_odds/prophetx
+          mkdir -p data/ev_results
+          mkdir -p data/sized_bets
+          mkdir -p data/bet_slips
+          mkdir -p data/orders
+
+      - name: Check DBB2 API URL
+        id: check-dbb2
+        env:
+          DBB2_API_URL: ${{ secrets.DBB2_API_URL }}
+        run: |
+          if [ -z "$DBB2_API_URL" ]; then
+            echo "DBB2_API_URL secret not set, skipping exchange run"
+            echo "can_run=false" >> $GITHUB_OUTPUT
+          else
+            echo "can_run=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Run exchange engine
+        if: steps.check-dbb2.outputs.can_run == 'true'
+        env:
+          DBB2_API_URL: ${{ secrets.DBB2_API_URL }}
+          NOVIG_ODDS_URL: ${{ secrets.NOVIG_ODDS_URL }}
+          PROPHETX_ODDS_URL: ${{ secrets.PROPHETX_ODDS_URL }}
+        run: |
+          python -m src.bet_placer
+
+      - name: Commit exchange outputs
+        if: steps.check-dbb2.outputs.can_run == 'true'
+        run: |
+          cd ..
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          DATE=$(date +%Y-%m-%d)
+          git add exchange-engine/data/projections/ || true
+          git add exchange-engine/data/exchange_odds/ || true
+          git add exchange-engine/data/ev_results/ || true
+          git add exchange-engine/data/sized_bets/ || true
+          git add exchange-engine/data/bet_slips/ || true
+          git add exchange-engine/data/orders/ || true
+          git add exchange-engine/data/ledger.json || true
+          git diff --cached --quiet && echo "No exchange changes to commit" && exit 0
+          git commit -m "exchange: ${DATE} daily run outputs"
+          git push

@@ -1,0 +1,27 @@
+{
+  "dbb2_api": {
+    "base_url": "http://localhost:8000",
+    "projections_endpoint": "/projections/today",
+    "timeout_seconds": 30
+  },
+  "ev_thresholds": {
+    "take_edge_pct": 4.0,
+    "make_edge_pct": 2.0,
+    "min_confidence": 0.60,
+    "min_available_size": 25,
+    "max_bets_per_day": 10
+  },
+  "kelly": {
+    "fraction": 0.25,
+    "max_units": 3.0,
+    "min_units": 0.5,
+    "bankroll": 5000
+  },
+  "exchange": {
+    "mode": "MAKE_AND_TAKE",
+    "time_in_force_seconds": 600,
+    "price_shade_pct": 0.02,
+    "fee_bps": 0,
+    "include_sources": ["novig", "prophetx"]
+  }
+}
