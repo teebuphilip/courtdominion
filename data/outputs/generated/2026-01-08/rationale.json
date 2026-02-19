@@ -1,0 +1,13 @@
+{
+  "date": "2026-01-08",
+  "narrative": "Don't snooze on today's deep sleepers! Domantas Sabonis, Ja Morant, and LaMelo Ball are set to outperform their draft positions, with projections topping 40+ FP. And if you're seeking high-upside value plays, turn your attention to KJ Simpson, Alex Sarr, and Cam Spencer. These overlooked gems are primed for breakout performances, boasting ceilings up to 33.3 FP. Whether you're hunting for waiver wire targets or streaming candidates, these players could be game-changers in your fantasy lineup. Act now before your competitors catch on!",
+  "why": "Data-driven insights from real NBA projections focusing on waiver wire and streaming opportunities",
+  "choices": [
+    "Waiver wire urgency",
+    "Deep sleepers",
+    "Streaming candidates"
+  ],
+  "model_used": "gpt-4",
+  "projections_count": 409,
+  "superstar_filtering": "Enabled - focuses on actionable picks"
+}
