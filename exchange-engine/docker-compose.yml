@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  exchange-engine:
+    build: .
+    container_name: dbb2-exchange-engine
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./config:/app/config
+    environment:
+      - DBB2_API_URL=${DBB2_API_URL:-http://host.docker.internal:8000}
+      - NOVIG_ODDS_URL=${NOVIG_ODDS_URL:-}
+      - PROPHETX_ODDS_URL=${PROPHETX_ODDS_URL:-}

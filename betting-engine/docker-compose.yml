@@ -11,4 +11,5 @@ services:
     environment:
       - ODDS_API_KEY=${ODDS_API_KEY}
       - DBB2_API_URL=${DBB2_API_URL:-http://host.docker.internal:8000}
-    network_mode: host
+      - KALSHI_API_KEY_ID=${KALSHI_API_KEY_ID:-}
+      - KALSHI_PRIVATE_KEY=${KALSHI_PRIVATE_KEY:-}
