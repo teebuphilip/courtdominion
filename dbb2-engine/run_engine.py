@@ -45,6 +45,11 @@ def main():
         action="store_true",
         help="Apply game-day adjustments to betting contract projections",
     )
+    parser.add_argument(
+        "--no-live-data",
+        action="store_true",
+        help="Disable live standings/injury enrichment for projections.json fields",
+    )
     args = parser.parse_args()
 
     # 1. Project
@@ -53,7 +58,13 @@ def main():
 
     # 2. Export CD JSON
     print()
-    files = export_json(contexts, projections, auction_values, args.output_dir)
+    files = export_json(
+        contexts,
+        projections,
+        auction_values,
+        args.output_dir,
+        include_live_data=not args.no_live_data,
+    )
 
     # 3. Export betting contract
     game_day_projections = None

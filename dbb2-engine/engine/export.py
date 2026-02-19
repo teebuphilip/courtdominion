@@ -10,13 +10,14 @@ Output contract:
 
 import json
 from pathlib import Path
-from typing import Dict, List
+from typing import Dict, List, Optional
 
 from engine.baseline import PlayerContext
 from engine.projections import SeasonProjection
 from engine.pricing import AuctionValue
 from engine.position_map import map_position_to_cd
 from engine import lookup
+from engine.live_data import compute_remaining_games_fields
 
 
 def export_all(
@@ -24,6 +25,7 @@ def export_all(
     projections: List[SeasonProjection],
     auction_values: List[AuctionValue],
     output_dir: str = "output",
+    live_context: Optional[Dict] = None,
 ) -> Dict[str, str]:
     """
     Write all 4 JSON files. Returns dict of {filename: filepath}.
@@ -53,7 +55,7 @@ def export_all(
     files["players.json"] = str(players_path)
 
     # 2. projections.json
-    proj_json = _build_projections_json(sorted_projections, context_map)
+    proj_json = _build_projections_json(sorted_projections, context_map, live_context)
     proj_path = out_path / "projections.json"
     _write_json(proj_path, proj_json)
     files["projections.json"] = str(proj_path)
@@ -93,7 +95,9 @@ def _build_players_json(contexts: List[PlayerContext]) -> List[dict]:
 
 
 def _build_projections_json(
-    projections: List[SeasonProjection], context_map: Dict[str, PlayerContext] = None
+    projections: List[SeasonProjection],
+    context_map: Dict[str, PlayerContext] = None,
+    live_context: Optional[Dict] = None,
 ) -> List[dict]:
     """
     Build projections.json entries.
@@ -105,8 +109,9 @@ def _build_projections_json(
             return map_position_to_cd(context_map[p.player_id].raw_position)
         return map_position_to_cd(p.position)
 
-    return [
-        {
+    entries = []
+    for p in projections:
+        entry = {
             "player_id": p.player_id,
             "name": p.player_name,
             "team": p.team,
@@ -133,8 +138,22 @@ def _build_projections_json(
             "floor": round(p.floor, 1),
             "consistency": _clamp_int(p.consistency, 0, 100),
         }
-        for p in projections
-    ]
+
+        if live_context is not None:
+            entry.update(
+                compute_remaining_games_fields(
+                    player_id=p.player_id,
+                    player_name=p.player_name,
+                    team=p.team,
+                    projected_games=p.projected_games,
+                    tpm_per_game=p.three_pm,
+                    live_ctx=live_context,
+                )
+            )
+
+        entries.append(entry)
+
+    return entries
 
 
 def _build_risk_data(

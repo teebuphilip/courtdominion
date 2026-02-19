@@ -11,6 +11,7 @@ from engine.game_day import GameDayProjection, project_game_day
 from engine.pricing import AuctionValue, price_auction
 from engine.export import export_all
 from engine.export_betting import export_betting_contract as _export_betting
+from engine.live_data import load_live_context
 
 from typing import Dict, List
 
@@ -61,10 +62,21 @@ def export_json(
     projections: List[SeasonProjection],
     auction_values: List[AuctionValue],
     output_dir: str = "output",
+    include_live_data: bool = False,
 ) -> Dict[str, str]:
     """Write the 4 CD JSON files."""
     print(f"Exporting JSON to {output_dir}/...")
-    files = export_all(contexts, projections, auction_values, output_dir)
+    live_context = None
+    if include_live_data:
+        print("Loading live standings/injury context...")
+        live_context = load_live_context()
+    files = export_all(
+        contexts,
+        projections,
+        auction_values,
+        output_dir,
+        live_context=live_context,
+    )
     for name, path in files.items():
         print(f"  Written: {path}")
     return files

@@ -10,7 +10,6 @@ Season weights: most_recent=0.50, prior=0.30, two_prior=0.20
 """
 
 from dataclasses import dataclass, field
-from datetime import date
 from typing import Dict, List, Optional
 
 import numpy as np
@@ -24,6 +23,7 @@ from data_collection.utils import (
     normalize_position,
     calculate_fantasy_points,
 )
+from engine.season import get_current_nba_season_start_year
 
 
 # Weights for up to 3 seasons (most recent first)
@@ -85,10 +85,8 @@ def build_player_contexts_from_csv(
     4. For each player: compute weighted baseline, determine metadata
     5. Return sorted by player_name
     """
-    # Determine most recent season start year from current date.
-    # NBA season starts in October: Oct-Dec = current year, Jan-Sep = previous year.
-    today = date.today()
-    desired_end_year = today.year if today.month >= 10 else today.year - 1
+    # Resolve active NBA season dynamically (no hardcoded year).
+    desired_end_year = get_current_nba_season_start_year()
     start_year = desired_end_year - seasons_to_load + 1
 
     df = load_seasons_range(start_year, desired_end_year)
