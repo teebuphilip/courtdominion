@@ -47,6 +47,11 @@ jobs:
         if: steps.gate.outputs.run_now == 'true'
         run: pip install -r dbb2-engine/requirements.txt
 
+      - name: Refresh current NBA season data from NBA.com
+        if: steps.gate.outputs.run_now == 'true'
+        run: |
+          python dbb2-engine/data_collection/update_current_season.py --output-dir dbb2-engine/raw_data
+
       - name: Run projection engine
         if: steps.gate.outputs.run_now == 'true'
         run: |
@@ -71,6 +76,15 @@ jobs:
           git add dbb2-engine/output/risk.json
           git add dbb2-engine/output/insights.json
           git add dbb2-engine/output/betting_contract.json
+          CURRENT_YEAR=$(TZ=America/New_York date +%Y)
+          CURRENT_MONTH=$(TZ=America/New_York date +%m)
+          if [ "$CURRENT_MONTH" -ge 10 ]; then
+            SEASON_START="$CURRENT_YEAR"
+          else
+            SEASON_START=$((CURRENT_YEAR - 1))
+          fi
+          NEXT_TWO_DIGIT=$(printf "%02d" $(((SEASON_START + 1) % 100)))
+          git add dbb2-engine/raw_data/games_${SEASON_START}_${NEXT_TWO_DIGIT}.csv || true
           git add betting-engine/data/projections/${DATE}.json
 
           if git diff --cached --quiet; then
