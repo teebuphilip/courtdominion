@@ -2177,11 +2177,11 @@
     "injury_risk": 17,
     "volatility": 31,
     "minutes_risk": 50,
-    "availability_risk": 0.333,
-    "role_risk": 0.25,
+    "availability_risk": 1.0,
+    "role_risk": 0.666,
     "composition_risk": 0.353,
-    "total_risk": 0.315,
-    "risk_level": "Medium"
+    "total_risk": 0.82,
+    "risk_level": "High"
   },
   {
     "player_id": "1628960",

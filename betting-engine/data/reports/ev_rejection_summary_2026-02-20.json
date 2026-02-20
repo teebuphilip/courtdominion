@@ -1,12 +1,12 @@
 {
   "date": "2026-02-20",
-  "qualified_count": 3,
-  "evaluated_count": 256,
-  "rejected_count": 276,
+  "qualified_count": 4,
+  "evaluated_count": 455,
+  "rejected_count": 505,
   "reason_counts": {
-    "no_projection_match": 23,
-    "below_confidence_threshold": 238,
-    "below_edge_threshold": 15
+    "no_projection_match": 54,
+    "below_confidence_threshold": 414,
+    "below_edge_threshold": 37
   },
   "thresholds": {
     "min_edge_pct": 5.0,

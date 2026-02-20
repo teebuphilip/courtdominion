@@ -3686,8 +3686,8 @@
     "floor": 14.0,
     "consistency": 69,
     "team_games_remaining": 42,
-    "games_remaining_projected": 28,
-    "three_pointers_made_projected": 41
+    "games_remaining_projected": 0,
+    "three_pointers_made_projected": 0
   },
   {
     "player_id": "203994",
