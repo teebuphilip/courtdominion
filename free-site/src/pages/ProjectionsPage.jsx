@@ -1,5 +1,4 @@
 import { useState, useMemo, useEffect } from 'react'
-import { useContent } from '../hooks/useContent'
 import { useProjections } from '../hooks/useProjections'
 import ProjectionsTable from '../components/projections/ProjectionsTable'
 import SearchBar from '../components/projections/SearchBar'
@@ -20,8 +19,6 @@ const ProjectionsPage = () => {
     setHasAccess(captured === 'true')
   }, [])
 
-  const { data: content } = useContent()
-  
   // Fetch projections with current params
   const offset = (currentPage - 1) * ITEMS_PER_PAGE
   const { data: projectionsData, isLoading } = useProjections({
@@ -76,10 +73,10 @@ const ProjectionsPage = () => {
           {/* Header */}
           <div className="mb-8 text-center">
             <h1 className="text-4xl font-bold text-white mb-2">
-              {content?.projections_page?.title || 'Daily Projections'}
+              Daily Projections
             </h1>
             <p className="text-xl text-gray-400 mb-4">
-              {content?.projections_page?.subtitle || '398 NBA players with risk-adjusted fantasy points'}
+              398 NBA players with risk-adjusted fantasy points
             </p>
             <p className="text-lg text-gray-300">
               Enter your email below to unlock access
@@ -99,10 +96,10 @@ const ProjectionsPage = () => {
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-white mb-2">
-            {content?.projections_page?.title || 'Daily Projections'}
+            Daily Projections
           </h1>
           <p className="text-xl text-gray-400">
-            {content?.projections_page?.subtitle || '398 NBA players with risk-adjusted fantasy points'}
+            398 NBA players with risk-adjusted fantasy points
           </p>
         </div>
 

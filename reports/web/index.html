@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CourtDominion - Historical Bet Runs</title>
+  <style>
+    :root {
+      --bg:#111827;           /* gray-900 */
+      --bg2:#0b1220;
+      --panel:#1f2937;        /* gray-800 */
+      --line:#374151;         /* gray-700 */
+      --ink:#f3f4f6;          /* gray-100 */
+      --muted:#9ca3af;        /* gray-400 */
+      --primary:#3b82f6;      /* blue-500 */
+      --secondary:#f97316;    /* orange-500 */
+      --good:#22c55e;
+      --bad:#ef4444;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; padding: 0;
+      font-family: "Avenir Next","Segoe UI",system-ui,sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1000px 420px at 95% -10%, rgba(59,130,246,.16), transparent 60%),
+        radial-gradient(900px 380px at -8% 0%, rgba(249,115,22,.11), transparent 58%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      min-height: 100vh;
+    }
+    .wrap { max-width: 1320px; margin: 24px auto 42px; padding: 0 16px; }
+    .hero { background: linear-gradient(180deg, rgba(31,41,55,.96), rgba(17,24,39,.96)); border:1px solid var(--line); border-radius:18px; padding:20px; }
+    h1 { margin:0 0 8px; font-size:30px; letter-spacing:.2px; }
+    h2 { margin:0 0 8px; font-size:22px; }
+    .sub { color:var(--muted); font-size:14px; }
+    .links { display:flex; gap:10px; margin-top:12px; flex-wrap:wrap; }
+    .links a {
+      color:var(--ink); text-decoration:none; font-size:13px; padding:7px 12px;
+      border:1px solid var(--line); border-radius:999px; background:rgba(55,65,81,.35);
+    }
+    .links a:hover { border-color:var(--primary); box-shadow:0 0 0 1px rgba(59,130,246,.25) inset; }
+    .grid { display:grid; grid-template-columns: repeat(4,minmax(170px,1fr)); gap:12px; margin-top:14px; }
+    .kpi { background:rgba(17,24,39,.72); border:1px solid var(--line); border-radius:13px; padding:11px 12px; }
+    .kpi .label { font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.08em; }
+    .kpi .val { font-size:24px; font-weight:700; margin-top:4px; }
+    .section { margin-top:16px; background: rgba(31,41,55,.92); border:1px solid var(--line); border-radius:14px; padding:14px; }
+    .row { display:flex; justify-content:space-between; gap:10px; align-items:center; margin-bottom:10px; }
+    .pill { font-size:12px; border:1px solid var(--line); border-radius:999px; padding:4px 9px; color:var(--muted); }
+    .pill.blue { color:#bfdbfe; border-color:rgba(59,130,246,.45); }
+    .pill.orange { color:#fed7aa; border-color:rgba(249,115,22,.45); }
+    .table-wrap { overflow:auto; border:1px solid var(--line); border-radius:12px; }
+    table { width:100%; border-collapse: collapse; font-size:13px; }
+    th,td { white-space:nowrap; text-align:left; padding:9px 10px; border-bottom:1px solid rgba(55,65,81,.5); }
+    thead th { background:#111827; position:sticky; top:0; z-index:1; }
+    tbody tr:hover { background: rgba(59,130,246,.08); }
+    .track { font-size:11px; padding:2px 8px; border-radius:999px; border:1px solid; display:inline-block; }
+    .track.baseline { border-color:rgba(59,130,246,.5); color:#bfdbfe; }
+    .track.enhanced { border-color:rgba(249,115,22,.5); color:#fed7aa; }
+    .foot { margin-top:12px; color:var(--muted); font-size:12px; }
+    @media (max-width: 900px) { .grid { grid-template-columns:repeat(2,minmax(140px,1fr)); } }
+    </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <h1>Historical Bet Runs</h1>
+      <div class="sub">Built from betting + exchange history. Today's date (2026-02-20) is excluded.</div>
+      <div class="links">
+        <a href="./index.html">Historical</a>
+        <a href="./today.html">Today's Bets</a>
+      </div>
+      <div class="grid">
+        <div class="kpi"><div class="label">All Bets</div><div class="val">0</div></div>
+        <div class="kpi"><div class="label">Baseline Bets</div><div class="val">0</div></div>
+        <div class="kpi"><div class="label">Enhanced Bets</div><div class="val">0</div></div>
+        <div class="kpi"><div class="label">All Units</div><div class="val">0</div></div>
+        <div class="kpi"><div class="label">Baseline P/L</div><div class="val">+0.00</div></div>
+        <div class="kpi"><div class="label">Enhanced P/L</div><div class="val">+0.00</div></div>
+        <div class="kpi"><div class="label">Baseline Units</div><div class="val">0</div></div>
+        <div class="kpi"><div class="label">Enhanced Units</div><div class="val">0</div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="row">
+        <h2>All Historical Bets</h2>
+        <div>
+          <span class="pill blue">Baseline</span>
+          <span class="pill orange">Enhanced</span>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Date</th><th>Engine</th><th>Track</th><th>Player</th><th>Prop</th><th>Dir</th><th>Proj</th><th>Line</th><th>Edge%</th><th>Conf</th><th>Units</th><th>Source</th><th>Exec</th><th>Status</th><th>P/L</th></tr></thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+      </div>
+      <div class="foot">Generated at 2026-02-20T12:42:07.630337 UTC.</div>
+    </section>
+  </div>
+</body>
+</html>

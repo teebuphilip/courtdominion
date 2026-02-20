@@ -1,12 +1,10 @@
 import { useState } from 'react'
 import { useInsights } from '../hooks/useInsights'
-import { useContent } from '../hooks/useContent'
 import InsightCard from '../components/insights/InsightCard'
 
 const InsightsPage = () => {
   const [category, setCategory] = useState('all')
   const { data: insightsData, isLoading } = useInsights({ category })
-  const { data: content } = useContent()
 
   const categories = [
     { value: 'all', label: 'All Insights' },
@@ -21,10 +19,10 @@ const InsightsPage = () => {
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-white mb-2">
-            {content?.insights_page?.title || 'Waiver Wire Insights'}
+            Waiver Wire Insights
           </h1>
           <p className="text-xl text-gray-400">
-            {content?.insights_page?.subtitle || 'Deep sleepers and value plays for your league'}
+            Deep sleepers and value plays for your league
           </p>
         </div>
 
