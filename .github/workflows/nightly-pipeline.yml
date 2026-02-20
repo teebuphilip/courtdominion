@@ -41,6 +41,10 @@ jobs:
           mkdir -p betting-engine/data/bet_slips
           mkdir -p betting-engine/data/bets
           mkdir -p betting-engine/data/kalshi/bet_slips
+          mkdir -p betting-engine/data/polymarket/markets
+          mkdir -p betting-engine/data/polymarket/odds
+          mkdir -p betting-engine/data/polymarket/bet_slips
+          mkdir -p betting-engine/data/polymarket/fake_positions
           mkdir -p dbb2-engine/raw_data
 
       - name: Determine current NBA season
@@ -153,6 +157,10 @@ jobs:
             exit 0
           fi
           python src/bet_placer.py --from-file "$PROJ_FILE"
+          echo "Generating Polymarket demo/fake bets (read-only)..."
+          python src/polymarket_ingestion.py --fetch-markets || true
+          python src/polymarket_ev_calculator.py || true
+          python src/bet_slip.py --source polymarket-demo || true
 
       - name: Commit projections and bet slips
         run: |
@@ -167,6 +175,7 @@ jobs:
           git add betting-engine/data/bet_slips_enhanced/ || true
           git add betting-engine/data/bets/ || true
           git add betting-engine/data/kalshi/bet_slips/ || true
+          git add betting-engine/data/polymarket/ || true
           git add betting-engine/data/reports/ || true
 
           git diff --cached --quiet && echo "No changes to commit" && exit 0
