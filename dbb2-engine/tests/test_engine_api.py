@@ -8,8 +8,10 @@ Integration test hits the real pipeline via TestClient.
 import math
 
 import pytest
+from fastapi.testclient import TestClient
 
 from engine.api import (
+    app,
     _get_std_dev,
     _get_confidence,
     _build_player_response,
@@ -18,6 +20,7 @@ from engine.api import (
 )
 from engine.baseline import PlayerContext
 from engine.projections import SeasonProjection
+from engine.pricing import AuctionValue
 
 
 def _make_context(**overrides):
@@ -217,3 +220,109 @@ class TestStatMapping:
     def test_six_stats(self):
         assert len(STAT_MAP) == 6
         assert len(VARIANCE_KEY_MAP) == 6
+
+
+def _mock_pipeline():
+    ctx1 = _make_context(player_id="P1", player_name="Alpha Guard", team="AAA", raw_position="G", age=26)
+    ctx2 = _make_context(player_id="P2", player_name="Beta Big", team="BBB", raw_position="C", age=30)
+    proj1 = _make_projection(
+        player_id="P1",
+        player_name="Alpha Guard",
+        team="AAA",
+        position="G",
+        points=24.0,
+        rebounds=5.0,
+        assists=7.0,
+        steals=1.8,
+        blocks=0.4,
+        turnovers=3.0,
+        consistency=78,
+    )
+    proj2 = _make_projection(
+        player_id="P2",
+        player_name="Beta Big",
+        team="BBB",
+        position="C",
+        points=18.0,
+        rebounds=11.0,
+        assists=3.0,
+        steals=0.8,
+        blocks=1.7,
+        turnovers=2.1,
+        consistency=68,
+    )
+    av1 = AuctionValue(player_id="P1", player_name="Alpha Guard", position="G", dollar_value=34)
+    av2 = AuctionValue(player_id="P2", player_name="Beta Big", position="C", dollar_value=28)
+    return [ctx1, ctx2], [proj1, proj2], [av1, av2]
+
+
+class TestApiEndpoints:
+    def test_projections_today(self, monkeypatch):
+        monkeypatch.setattr("engine.api._load_pipeline", _mock_pipeline)
+        client = TestClient(app)
+        res = client.get("/projections/today")
+        assert res.status_code == 200
+        body = res.json()
+        assert "players" in body
+        assert len(body["players"]) == 2
+
+    def test_internal_baseline_requires_configured_key(self, monkeypatch):
+        monkeypatch.setattr("engine.api._load_pipeline", _mock_pipeline)
+        monkeypatch.delenv("INTERNAL_API_KEY", raising=False)
+        client = TestClient(app)
+        res = client.get("/api/internal/baseline-projections", headers={"x-api-key": "x"})
+        assert res.status_code == 503
+
+    def test_internal_baseline_rejects_invalid_key(self, monkeypatch):
+        monkeypatch.setattr("engine.api._load_pipeline", _mock_pipeline)
+        monkeypatch.setenv("INTERNAL_API_KEY", "secret")
+        client = TestClient(app)
+        res = client.get("/api/internal/baseline-projections", headers={"x-api-key": "wrong"})
+        assert res.status_code == 401
+
+    def test_internal_baseline_success(self, monkeypatch):
+        monkeypatch.setattr("engine.api._load_pipeline", _mock_pipeline)
+        monkeypatch.setenv("INTERNAL_API_KEY", "secret")
+        client = TestClient(app)
+        res = client.get("/api/internal/baseline-projections", headers={"x-api-key": "secret"})
+        assert res.status_code == 200
+        body = res.json()
+        assert body["count"] == 2
+        assert body["players"][0]["player_id"] in {"P1", "P2"}
+        assert "fantasy_points" in body["players"][0]
+
+    def test_lineup_optimize(self, monkeypatch):
+        monkeypatch.setattr("engine.api._load_pipeline", _mock_pipeline)
+        client = TestClient(app)
+        res = client.post("/tools/lineup/optimize", json={"player_ids": ["P1", "P2"], "roster_size": 8})
+        assert res.status_code == 200
+        body = res.json()
+        assert "lineup" in body
+        assert len(body["lineup"]) == 2
+        assert body["projected_total_fantasy_points"] > 0
+
+    def test_streaming_candidates(self, monkeypatch):
+        monkeypatch.setattr("engine.api._load_pipeline", _mock_pipeline)
+        client = TestClient(app)
+        res = client.get("/tools/streaming-candidates?limit=1")
+        assert res.status_code == 200
+        body = res.json()
+        assert body["count"] == 1
+        assert len(body["candidates"]) == 1
+        assert "stream_score" in body["candidates"][0]
+
+    def test_trade_analyze(self, monkeypatch):
+        monkeypatch.setattr("engine.api._load_pipeline", _mock_pipeline)
+        client = TestClient(app)
+        res = client.post(
+            "/tools/trade/analyze",
+            json={
+                "give_player_ids": ["P2"],
+                "receive_player_ids": ["P1"],
+            },
+        )
+        assert res.status_code == 200
+        body = res.json()
+        assert "summary" in body
+        assert body["summary"]["delta_fantasy_points"] != 0
+        assert body["summary"]["verdict"] in {"accept", "decline"}
