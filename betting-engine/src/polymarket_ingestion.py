@@ -103,8 +103,22 @@ def fetch_nba_markets(settings: dict, force: bool = False) -> list:
         logger.warning("Gamma response shape unexpected; defaulting to empty list")
         markets = []
 
-    prop_markets = [m for m in markets if is_player_prop(m)]
-    logger.info(f"Polymarket: {len(markets)} NBA markets, {len(prop_markets)} player props")
+    candidate_markets = [m for m in markets if is_player_prop(m)]
+    prop_markets = []
+    for m in candidate_markets:
+        q = str(
+            m.get("question")
+            or m.get("title")
+            or m.get("slug")
+            or ""
+        ).strip()
+        if parse_market_question(q):
+            prop_markets.append(m)
+
+    logger.info(
+        f"Polymarket: {len(markets)} NBA markets, "
+        f"{len(candidate_markets)} keyword candidates, {len(prop_markets)} parseable player props"
+    )
     if not prop_markets and markets:
         sample = [str(m.get("question", "")).strip() for m in markets[:8]]
         logger.warning(f"Polymarket sample questions (first 8): {sample}")
