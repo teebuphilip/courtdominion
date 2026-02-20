@@ -1,11 +1,11 @@
 {
   "summary": {
     "date": "2026-02-20",
-    "baseline_count": 4,
+    "baseline_count": 3,
     "enhanced_count": 0,
-    "dropped_count": 4,
+    "dropped_count": 3,
     "size_changed_count": 0,
-    "baseline_units": 2.0,
+    "baseline_units": 1.5,
     "enhanced_units": 0,
     "mode": "observe"
   },
@@ -21,7 +21,7 @@
       "std_dev": 4.91,
       "confidence": 0.52,
       "over_odds": 1.96,
-      "under_odds": 1.85,
+      "under_odds": 1.87,
       "bookmaker": "fanduel",
       "units": 0.5,
       "decimal_odds": 1.02,
@@ -46,25 +46,6 @@
       "decimal_odds": 1.02,
       "kelly_raw": -15.9452,
       "kelly_fractional": -3.9863,
-      "source": "sportsbook"
-    },
-    {
-      "player_name": "Zion Williamson",
-      "prop_type": "points",
-      "direction": "UNDER",
-      "dbb2_projection": 22.3,
-      "sportsbook_line": 23.5,
-      "raw_edge": -1.2,
-      "edge_pct": 16.7,
-      "std_dev": 7.19,
-      "confidence": 0.5,
-      "over_odds": 2.1,
-      "under_odds": 1.85,
-      "bookmaker": "fanduel",
-      "units": 0.5,
-      "decimal_odds": 1.018,
-      "kelly_raw": -21.93,
-      "kelly_fractional": -5.4825,
       "source": "sportsbook"
     },
     {
