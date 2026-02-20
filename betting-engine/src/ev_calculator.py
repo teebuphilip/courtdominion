@@ -9,6 +9,7 @@ Only surfaces bets where abs(edge_pct) >= min_edge_pct.
 
 import argparse
 import sys
+from collections import Counter
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
@@ -34,42 +35,153 @@ def run(dry_run: bool = False) -> list:
     projections = load_json(proj_path)
     odds = load_json(odds_path)
     output_path = f"data/ev_results_{today}.json"
+    rejects_path = f"data/ev_rejections_{today}.json"
+    reject_summary_path = f"data/ev_rejection_summary_{today}.json"
 
     ev_results = []
+    rejections = []
+    min_edge = settings["ev_thresholds"]["min_edge_pct"]
+    min_conf = settings["ev_thresholds"]["min_confidence"]
+
+    def add_rejection(
+        player_name: str,
+        prop_type: str,
+        reason: str,
+        detail: str = "",
+        *,
+        sportsbook_line=None,
+        dbb2_projection=None,
+        edge_pct=None,
+        confidence=None,
+    ) -> None:
+        rejections.append(
+            {
+                "player_name": player_name,
+                "prop_type": prop_type,
+                "reason": reason,
+                "detail": detail,
+                "sportsbook_line": sportsbook_line,
+                "dbb2_projection": dbb2_projection,
+                "edge_pct": edge_pct,
+                "confidence": confidence,
+            }
+        )
 
     for player_name, player_odds in odds.items():
         projection = find_projection_by_name(projections, player_name)
 
         if projection is None:
             logger.warning(f"No DBB2 projection found for {player_name}, skipping")
+            for prop_type, odds_data in player_odds.items():
+                add_rejection(
+                    player_name,
+                    prop_type,
+                    "no_projection_match",
+                    "No DBB2 projection found for player name",
+                    sportsbook_line=odds_data.get("line"),
+                )
             continue
 
         # WHY: Skip B2B players if configured — their projections are less reliable
         if settings["excluded"].get("skip_b2b") and projection.get("is_b2b", False):
             logger.info(f"Skipping {player_name} - back-to-back")
+            for prop_type, odds_data in player_odds.items():
+                add_rejection(
+                    player_name,
+                    prop_type,
+                    "excluded_back_to_back",
+                    "Player excluded by skip_b2b rule",
+                    sportsbook_line=odds_data.get("line"),
+                    dbb2_projection=(projection.get("props", {}).get(prop_type, {}) or {}).get("projection"),
+                    confidence=(projection.get("props", {}).get(prop_type, {}) or {}).get("confidence"),
+                )
             continue
 
         # WHY: Skip death spot players if configured — compound fatigue
         if settings["excluded"].get("skip_death_spots") and projection.get("is_death_spot", False):
             logger.info(f"Skipping {player_name} - death spot ({projection.get('death_spot_type', 'unknown')})")
+            for prop_type, odds_data in player_odds.items():
+                add_rejection(
+                    player_name,
+                    prop_type,
+                    "excluded_death_spot",
+                    f"Player excluded by death spot rule ({projection.get('death_spot_type', 'unknown')})",
+                    sportsbook_line=odds_data.get("line"),
+                    dbb2_projection=(projection.get("props", {}).get(prop_type, {}) or {}).get("projection"),
+                    confidence=(projection.get("props", {}).get(prop_type, {}) or {}).get("confidence"),
+                )
             continue
 
         for prop_type, odds_data in player_odds.items():
-            result = calculate_ev(player_name, projection, prop_type, odds_data)
-            if result is not None:
-                ev_results.append(result)
+            result, reason, detail = calculate_ev_with_reason(
+                player_name, projection, prop_type, odds_data
+            )
+            if result is None:
+                add_rejection(
+                    player_name,
+                    prop_type,
+                    reason or "unknown_reject_reason",
+                    detail=detail or "",
+                    sportsbook_line=odds_data.get("line"),
+                    dbb2_projection=(projection.get("props", {}).get(prop_type, {}) or {}).get("projection"),
+                    confidence=(projection.get("props", {}).get(prop_type, {}) or {}).get("confidence"),
+                )
+                continue
+            ev_results.append(result)
 
     # WHY: Sort by abs edge descending - best bets first
     ev_results.sort(key=lambda x: abs(x["edge_pct"]), reverse=True)
 
     # Filter to only bets above threshold
-    min_edge = settings["ev_thresholds"]["min_edge_pct"]
-    min_conf = settings["ev_thresholds"]["min_confidence"]
-    qualified = [r for r in ev_results if abs(r["edge_pct"]) >= min_edge]
-    qualified = [r for r in qualified if r["confidence"] >= min_conf]
+    qualified = []
+    for r in ev_results:
+        if abs(r["edge_pct"]) < min_edge:
+            add_rejection(
+                r["player_name"],
+                r["prop_type"],
+                "below_edge_threshold",
+                f"edge_pct {r['edge_pct']} < min_edge_pct {min_edge}",
+                sportsbook_line=r.get("sportsbook_line"),
+                dbb2_projection=r.get("dbb2_projection"),
+                edge_pct=r.get("edge_pct"),
+                confidence=r.get("confidence"),
+            )
+            continue
+        if r["confidence"] < min_conf:
+            add_rejection(
+                r["player_name"],
+                r["prop_type"],
+                "below_confidence_threshold",
+                f"confidence {r['confidence']} < min_confidence {min_conf}",
+                sportsbook_line=r.get("sportsbook_line"),
+                dbb2_projection=r.get("dbb2_projection"),
+                edge_pct=r.get("edge_pct"),
+                confidence=r.get("confidence"),
+            )
+            continue
+        qualified.append(r)
+
+    reject_counts = dict(Counter(r["reason"] for r in rejections))
 
     write_json(output_path, qualified)
+    write_json(rejects_path, rejections)
+    write_json(
+        reject_summary_path,
+        {
+            "date": today,
+            "qualified_count": len(qualified),
+            "evaluated_count": len(ev_results),
+            "rejected_count": len(rejections),
+            "reason_counts": reject_counts,
+            "thresholds": {
+                "min_edge_pct": min_edge,
+                "min_confidence": min_conf,
+            },
+        },
+    )
     logger.info(f"Found {len(qualified)} +EV spots from {len(ev_results)} total props evaluated")
+    if reject_counts:
+        logger.info(f"EV reject reason counts: {reject_counts}")
     return qualified
 
 
@@ -84,24 +196,37 @@ def calculate_ev(
 
     Returns None if data is insufficient.
     """
+    result, _, _ = calculate_ev_with_reason(player_name, projection, prop_type, odds_data)
+    return result
+
+
+def calculate_ev_with_reason(
+    player_name: str,
+    projection: dict,
+    prop_type: str,
+    odds_data: dict,
+):
+    """Calculate EV and return (result, reason, detail) for reject auditing."""
     props = projection.get("props", {})
     prop_data = props.get(prop_type)
 
     if prop_data is None:
-        return None
+        return None, "missing_projection_prop", "Projection missing requested prop type"
 
     dbb2_proj = prop_data.get("projection")
     std_dev = prop_data.get("std_dev")
     confidence = prop_data.get("confidence", 0.5)
     sportsbook_line = odds_data.get("line")
 
-    if dbb2_proj is None or sportsbook_line is None:
-        return None
+    if dbb2_proj is None:
+        return None, "missing_projection_value", "Projection value is null"
+    if sportsbook_line is None:
+        return None, "missing_sportsbook_line", "Sportsbook line is null"
 
     # WHY: If std_dev is zero or null, cannot calculate edge
     if std_dev is None or std_dev == 0:
         logger.warning(f"No std_dev for {player_name} {prop_type}, skipping")
-        return None
+        return None, "missing_std_dev", "Projection std_dev is null or zero"
 
     # WHY: Edge is measured in standard deviations
     # Positive = projection above line = lean OVER
@@ -124,7 +249,7 @@ def calculate_ev(
         "over_odds": odds_data.get("over_odds"),
         "under_odds": odds_data.get("under_odds"),
         "bookmaker": odds_data.get("bookmaker", "unknown"),
-    }
+    }, None, None
 
 
 def find_projection_by_name(projections: dict, player_name: str) -> dict:
