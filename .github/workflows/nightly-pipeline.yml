@@ -11,6 +11,11 @@ on:
         required: false
         type: boolean
         default: false
+      force_recompute:
+        description: 'Force re-run bet placement for today (clear today rows/artifacts first)'
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -151,6 +156,25 @@ jobs:
         working-directory: betting-engine
         run: |
           DATE="${{ steps.projections.outputs.date }}"
+          if [ "${{ github.event.inputs.force_recompute }}" = "true" ]; then
+            echo "force_recompute=true: clearing existing ${DATE} bet rows/artifacts"
+            if [ -f data/bets/master_bets.csv ]; then
+              awk -F, -v d="$DATE" 'NR==1 || $2!=d' data/bets/master_bets.csv > data/bets/master_bets.csv.tmp
+              mv data/bets/master_bets.csv.tmp data/bets/master_bets.csv
+            fi
+            if [ -f data/bets/master_bets_enhanced.csv ]; then
+              awk -F, -v d="$DATE" 'NR==1 || $2!=d' data/bets/master_bets_enhanced.csv > data/bets/master_bets_enhanced.csv.tmp
+              mv data/bets/master_bets_enhanced.csv.tmp data/bets/master_bets_enhanced.csv
+            fi
+            rm -f "data/bet_slips/${DATE}.json" "data/bet_slips/${DATE}.md"
+            rm -f "data/bet_slips_enhanced/${DATE}.json"
+            rm -f "data/kalshi/bet_slips/${DATE}_kalshi.json"
+            if [ -f data/private/master_bets_conf60.csv ]; then
+              awk -F, -v d="$DATE" 'NR==1 || $2!=d' data/private/master_bets_conf60.csv > data/private/master_bets_conf60.csv.tmp
+              mv data/private/master_bets_conf60.csv.tmp data/private/master_bets_conf60.csv
+            fi
+            rm -f "data/private/bet_slips/${DATE}_conf60.json"
+          fi
           PROJ_FILE="data/projections/${DATE}.json"
           if [ ! -f "$PROJ_FILE" ]; then
             echo "No projection file found at ${PROJ_FILE}, skipping"
