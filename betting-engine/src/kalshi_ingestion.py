@@ -146,7 +146,11 @@ def fetch_nba_markets(dry_run: bool = False, force: bool = False) -> list:
         raise
 
     if response.status_code == 401:
-        raise RuntimeError("Kalshi auth failed — check API key and private key")
+        detail = response.text[:300]
+        raise RuntimeError(
+            f"Kalshi auth failed (401) — check API key/private key/environment match. "
+            f"Response: {detail}"
+        )
     if response.status_code != 200:
         raise RuntimeError(f"Kalshi events fetch failed: {response.status_code}")
 
