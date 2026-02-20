@@ -14,8 +14,14 @@
   },
   "ev_thresholds": {
     "min_edge_pct": 5.0,
-    "min_confidence": 0.60,
+    "min_confidence": 0.50,
     "max_bets_per_day": 10
+  },
+  "private_parallel_confidence": {
+    "enabled": true,
+    "min_confidence": 0.60,
+    "csv_path": "data/private/master_bets_conf60.csv",
+    "bet_slip_path_pattern": "data/private/bet_slips/{date}_conf60.json"
   },
   "kelly": {
     "fraction": 0.25,

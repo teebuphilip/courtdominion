@@ -8,6 +8,7 @@ This is the entry point for GitHub Actions CI.
 """
 
 import argparse
+import copy
 import sys
 from pathlib import Path
 
@@ -128,6 +129,61 @@ def allocate_daily_budget(bets: list, settings: dict) -> list:
     return allocated
 
 
+def run_private_confidence_parallel(all_bets: list, settings: dict, date: str) -> None:
+    """
+    Build a private shadow stream at a stricter confidence threshold.
+
+    WHY: Keep a second line for private review without affecting public outputs.
+    """
+    cfg = settings.get("private_parallel_confidence", {})
+    if not cfg.get("enabled", False):
+        return
+
+    strict_threshold = float(cfg.get("min_confidence", 0.60))
+    strict_candidates = [
+        copy.deepcopy(bet)
+        for bet in all_bets
+        if float(bet.get("confidence", 0.0)) >= strict_threshold
+    ]
+    if not strict_candidates:
+        logger.info(
+            f"Private confidence stream ({strict_threshold:.2f}) found no qualifying bets"
+        )
+        return
+
+    strict_allocated = allocate_daily_budget(strict_candidates, settings)
+    if not strict_allocated:
+        logger.info(
+            f"Private confidence stream ({strict_threshold:.2f}) had no bets after budget allocation"
+        )
+        return
+
+    csv_path = cfg.get("csv_path", "data/private/master_bets_conf60.csv")
+    append_bets(strict_allocated, date=date, csv_path=csv_path)
+
+    slip_pattern = cfg.get(
+        "bet_slip_path_pattern",
+        "data/private/bet_slips/{date}_conf60.json",
+    )
+    slip_path = slip_pattern.format(date=date)
+    write_json(
+        slip_path,
+        {
+            "date": date,
+            "generated_at": get_timestamp(),
+            "stream": "private_confidence_parallel",
+            "min_confidence": strict_threshold,
+            "total_bets": len(strict_allocated),
+            "total_units": sum(float(b.get("units", 0.0)) for b in strict_allocated),
+            "bets": strict_allocated,
+        },
+    )
+    logger.info(
+        f"Private confidence stream: {len(strict_allocated)} bets at confidence >= {strict_threshold:.2f} "
+        f"(csv={csv_path}, slip={slip_path})"
+    )
+
+
 def run(dry_run: bool = False, date: str = None, from_file: str = None) -> None:
     """
     Main bet placer pipeline.
@@ -162,6 +218,9 @@ def run(dry_run: bool = False, date: str = None, from_file: str = None) -> None:
     if not all_bets:
         logger.info("No bets from either pipeline — nothing to place")
         return
+
+    # Private shadow stream with stricter confidence threshold.
+    run_private_confidence_parallel(all_bets=all_bets, settings=settings, date=date)
 
     # Step 4: Apply daily budget cap
     allocated = allocate_daily_budget(all_bets, settings)
