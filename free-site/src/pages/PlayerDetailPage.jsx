@@ -1,7 +1,6 @@
 import { useParams, Link } from 'react-router-dom'
 import { ArrowLeft } from 'lucide-react'
 import { usePlayer } from '../hooks/usePlayer'
-import { useContent } from '../hooks/useContent'
 import PlayerCard from '../components/player/PlayerCard'
 import StatRow from '../components/player/StatRow'
 import RiskIndicator from '../components/player/RiskIndicator'
@@ -10,7 +9,6 @@ import { formatNumber, formatPercentage } from '../utils/formatters'
 const PlayerDetailPage = () => {
   const { playerId } = useParams()
   const { data: player, isLoading, error } = usePlayer(playerId)
-  const { data: content } = useContent()
 
   if (isLoading) {
     return (
@@ -60,7 +58,7 @@ const PlayerDetailPage = () => {
           {/* Season Statistics */}
           <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
             <h3 className="text-xl font-bold text-white mb-4">
-              {content?.player_detail?.stats_title || 'Season Averages'}
+              Season Averages
             </h3>
             
             <div className="space-y-0">

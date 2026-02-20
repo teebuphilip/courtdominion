@@ -145,6 +145,107 @@ export const fetchContent = async () => {
   return api.get('/api/content')
 }
 
+const statNum = (value, fallback = 0) => {
+  const n = Number(value)
+  return Number.isFinite(n) ? n : fallback
+}
+
+const toFantasyPoints = (p) => {
+  const points = statNum(p.pts)
+  const rebounds = statNum(p.reb)
+  const assists = statNum(p.ast)
+  const steals = statNum(p.stl)
+  const blocks = statNum(p.blk)
+  const turnovers = 0
+
+  return Number(
+    (
+      points * 1.0 +
+      rebounds * 1.2 +
+      assists * 1.5 +
+      steals * 3.0 +
+      blocks * 3.0 -
+      turnovers
+    ).toFixed(1)
+  )
+}
+
+const avgConfidence = (p) => {
+  const confs = [
+    statNum(p.pts_conf, 0.4),
+    statNum(p.reb_conf, 0.4),
+    statNum(p.ast_conf, 0.4),
+    statNum(p.fg3m_conf, 0.4),
+    statNum(p.stl_conf, 0.4),
+    statNum(p.blk_conf, 0.4),
+  ]
+  return confs.reduce((sum, c) => sum + c, 0) / confs.length
+}
+
+const confidenceToRiskLabel = (conf) => {
+  if (conf >= 0.75) return 'low'
+  if (conf >= 0.6) return 'medium'
+  return 'high'
+}
+
+const mapTodayProjectionPlayer = (p) => ({
+  player_id: String(p.id),
+  name: p.name,
+  team: p.team,
+  position: p.position,
+  fantasy_points: toFantasyPoints(p),
+  minutes: 0,
+  points: statNum(p.pts),
+  rebounds: statNum(p.reb),
+  assists: statNum(p.ast),
+  steals: statNum(p.stl),
+  blocks: statNum(p.blk),
+  turnovers: 0,
+  fg_pct: 0,
+  ft_pct: 0,
+  three_pointers: statNum(p.fg3m),
+  confidence: Number(avgConfidence(p).toFixed(2)),
+})
+
+const toPlayerRisk = (mappedProjection, rawProjection) => {
+  const conf = avgConfidence(rawProjection)
+  const fpStd = Math.sqrt(
+    Math.max(
+      0,
+      statNum(rawProjection.pts_std) ** 2 +
+      (1.2 * statNum(rawProjection.reb_std)) ** 2 +
+      (1.5 * statNum(rawProjection.ast_std)) ** 2 +
+      (3.0 * statNum(rawProjection.stl_std)) ** 2 +
+      (3.0 * statNum(rawProjection.blk_std)) ** 2
+    )
+  )
+  const floor = Math.max(0, Number((mappedProjection.fantasy_points - fpStd).toFixed(1)))
+  const ceiling = Number((mappedProjection.fantasy_points + fpStd).toFixed(1))
+  const volatility = mappedProjection.fantasy_points > 0
+    ? Number((fpStd / mappedProjection.fantasy_points).toFixed(2))
+    : 0.4
+  const consistency = Math.round(conf * 100)
+
+  return {
+    injury_risk: confidenceToRiskLabel(conf),
+    consistency,
+    ceiling,
+    floor,
+    volatility,
+    recommendation:
+      consistency >= 75
+        ? 'Stable profile for tonight.'
+        : consistency >= 60
+          ? 'Playable, but expect moderate variance.'
+          : 'High variance profile; size exposure carefully.',
+  }
+}
+
+const fetchTodayProjectionsRaw = async () => {
+  const response = await api.get('/projections/today')
+  return Array.isArray(response?.data?.players) ? response.data.players : []
+}
+
 export const fetchProjections = async (params = {}) => {
   if (USE_MOCK_DATA) {
     const { limit = 100, offset = 0, sort_by = 'fantasy_points', order = 'desc' } = params
@@ -172,7 +273,33 @@ export const fetchProjections = async (params = {}) => {
       }), 500)
     )
   }
-  return api.get('/projections', { params })
+
+  const { limit = 100, offset = 0, sort_by = 'fantasy_points', order = 'desc' } = params
+  const rawPlayers = await fetchTodayProjectionsRaw()
+  const projections = rawPlayers.map(mapTodayProjectionPlayer)
+
+  projections.sort((a, b) => {
+    const aVal = a[sort_by] ?? 0
+    const bVal = b[sort_by] ?? 0
+
+    if (typeof aVal === 'string' || typeof bVal === 'string') {
+      return order === 'desc'
+        ? String(bVal).localeCompare(String(aVal))
+        : String(aVal).localeCompare(String(bVal))
+    }
+    return order === 'desc' ? bVal - aVal : aVal - bVal
+  })
+
+  const paginated = projections.slice(offset, offset + limit)
+  return {
+    data: {
+      projections: paginated,
+      total: projections.length,
+      limit,
+      offset,
+      last_updated: new Date().toISOString(),
+    }
+  }
 }
 
 export const fetchPlayer = async (playerId) => {
@@ -221,7 +348,48 @@ export const fetchPlayer = async (playerId) => {
       setTimeout(() => resolve({ data: player }), 400)
     )
   }
-  return api.get(`/player/${playerId}`)
+
+  const rawPlayers = await fetchTodayProjectionsRaw()
+  const raw = rawPlayers.find((p) => String(p.id) === String(playerId))
+
+  if (!raw) {
+    const error = new Error('Player not found')
+    error.status = 404
+    throw error
+  }
+
+  const mapped = mapTodayProjectionPlayer(raw)
+  const risk = toPlayerRisk(mapped, raw)
+
+  return {
+    data: {
+      id: mapped.player_id,
+      name: mapped.name,
+      team: mapped.team,
+      position: mapped.position,
+      status: 'active',
+      fantasy_points: mapped.fantasy_points,
+      projection: {
+        fantasy_points: mapped.fantasy_points,
+        minutes: mapped.minutes,
+        points: mapped.points,
+        rebounds: mapped.rebounds,
+        assists: mapped.assists,
+        steals: mapped.steals,
+        blocks: mapped.blocks,
+        turnovers: mapped.turnovers,
+        fg_pct: mapped.fg_pct,
+        ft_pct: mapped.ft_pct,
+        three_pointers: mapped.three_pointers,
+      },
+      insight: {
+        value_score: Number((Math.min(10, Math.max(1, mapped.fantasy_points / 6))).toFixed(1)),
+        recommendation: risk.recommendation,
+        trending: 'stable',
+      },
+      risk,
+    }
+  }
 }
 
 export const fetchInsights = async (params = {}) => {
@@ -236,7 +404,51 @@ export const fetchInsights = async (params = {}) => {
       }), 400)
     )
   }
-  return api.get('/insights', { params })
+
+  const category = params.category || 'all'
+  const rawPlayers = await fetchTodayProjectionsRaw()
+
+  const insights = rawPlayers
+    .map((raw) => {
+      const mapped = mapTodayProjectionPlayer(raw)
+      const conf = avgConfidence(raw)
+      const valueScore = Number((Math.min(10, Math.max(1, mapped.fantasy_points / 6))).toFixed(1))
+      const riskLabel = confidenceToRiskLabel(conf)
+
+      return {
+        player_id: mapped.player_id,
+        name: mapped.name,
+        team: mapped.team,
+        position: mapped.position,
+        value_score: valueScore,
+        recommendation:
+          category === 'avoid' || riskLabel === 'high'
+            ? 'Avoid unless you need upside'
+            : valueScore >= 8
+              ? 'Strong add'
+              : 'Consider stream',
+        reasoning: `Projection ${mapped.fantasy_points} FPTS with ${Math.round(conf * 100)}% confidence.`,
+        trending: conf >= 0.75 ? 'up' : conf < 0.6 ? 'down' : 'stable',
+        ownership_estimate: `${Math.round(Math.min(95, Math.max(5, valueScore * 10)))}%`,
+      }
+    })
+    .sort((a, b) => b.value_score - a.value_score)
+
+  const filtered = insights.filter((item) => {
+    if (category === 'all') return true
+    if (category === 'high_value') return item.value_score >= 8
+    if (category === 'sleepers') return item.value_score >= 6.5 && item.value_score < 8
+    if (category === 'avoid') return item.trending === 'down'
+    return true
+  })
+
+  return {
+    data: {
+      insights: filtered.slice(0, 30),
+      count: filtered.length,
+      category,
+    }
+  }
 }
 
 export const fetchRisk = async (playerId) => {
@@ -246,7 +458,17 @@ export const fetchRisk = async (playerId) => {
       setTimeout(() => resolve({ data: risk }), 300)
     )
   }
-  return api.get('/risk-metrics', { params: { player_id: playerId } })
+
+  const rawPlayers = await fetchTodayProjectionsRaw()
+  const raw = rawPlayers.find((p) => String(p.id) === String(playerId))
+  if (!raw) {
+    const error = new Error('Player not found')
+    error.status = 404
+    throw error
+  }
+
+  const mapped = mapTodayProjectionPlayer(raw)
+  return { data: toPlayerRisk(mapped, raw) }
 }
 
 export const searchPlayers = async (query) => {
@@ -263,7 +485,28 @@ export const searchPlayers = async (query) => {
       }), 200)
     )
   }
-  return api.get('/api/search', { params: { q: query } })
+
+  const q = String(query || '').trim().toLowerCase()
+  if (!q) {
+    return { data: { players: [], count: 0 } }
+  }
+
+  const rawPlayers = await fetchTodayProjectionsRaw()
+  const players = rawPlayers
+    .map(mapTodayProjectionPlayer)
+    .filter((p) =>
+      p.name.toLowerCase().includes(q) ||
+      p.team.toLowerCase().includes(q) ||
+      p.position.toLowerCase().includes(q)
+    )
+    .slice(0, 20)
+
+  return {
+    data: {
+      players,
+      count: players.length,
+    }
+  }
 }
 
 export default api
