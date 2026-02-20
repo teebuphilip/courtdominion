@@ -14,7 +14,7 @@
     "prop_type": "points",
     "reason": "no_projection_match",
     "detail": "No DBB2 projection found for player name",
-    "sportsbook_line": 19.5,
+    "sportsbook_line": 18.5,
     "dbb2_projection": null,
     "edge_pct": null,
     "confidence": null
@@ -74,7 +74,7 @@
     "prop_type": "rebounds",
     "reason": "no_projection_match",
     "detail": "No DBB2 projection found for player name",
-    "sportsbook_line": 7.5,
+    "sportsbook_line": 6.5,
     "dbb2_projection": null,
     "edge_pct": null,
     "confidence": null
@@ -120,6 +120,36 @@
     "confidence": null
   },
   {
+    "player_name": "Taylor Hendricks",
+    "prop_type": "points",
+    "reason": "no_projection_match",
+    "detail": "No DBB2 projection found for player name",
+    "sportsbook_line": 10.5,
+    "dbb2_projection": null,
+    "edge_pct": null,
+    "confidence": null
+  },
+  {
+    "player_name": "Taylor Hendricks",
+    "prop_type": "rebounds",
+    "reason": "no_projection_match",
+    "detail": "No DBB2 projection found for player name",
+    "sportsbook_line": 5.5,
+    "dbb2_projection": null,
+    "edge_pct": null,
+    "confidence": null
+  },
+  {
+    "player_name": "Taylor Hendricks",
+    "prop_type": "threes",
+    "reason": "no_projection_match",
+    "detail": "No DBB2 projection found for player name",
+    "sportsbook_line": 1.5,
+    "dbb2_projection": null,
+    "edge_pct": null,
+    "confidence": null
+  },
+  {
     "player_name": "Ace Bailey",
     "prop_type": "points",
     "reason": "no_projection_match",
@@ -134,7 +164,7 @@
     "prop_type": "rebounds",
     "reason": "no_projection_match",
     "detail": "No DBB2 projection found for player name",
-    "sportsbook_line": 4.5,
+    "sportsbook_line": 5.5,
     "dbb2_projection": null,
     "edge_pct": null,
     "confidence": null
@@ -155,6 +185,16 @@
     "reason": "no_projection_match",
     "detail": "No DBB2 projection found for player name",
     "sportsbook_line": 2.5,
+    "dbb2_projection": null,
+    "edge_pct": null,
+    "confidence": null
+  },
+  {
+    "player_name": "Ace Bailey",
+    "prop_type": "steals",
+    "reason": "no_projection_match",
+    "detail": "No DBB2 projection found for player name",
+    "sportsbook_line": 0.5,
     "dbb2_projection": null,
     "edge_pct": null,
     "confidence": null
@@ -184,7 +224,7 @@
     "prop_type": "points",
     "reason": "no_projection_match",
     "detail": "No DBB2 projection found for player name",
-    "sportsbook_line": 11.5,
+    "sportsbook_line": 9.5,
     "dbb2_projection": null,
     "edge_pct": null,
     "confidence": null
@@ -210,11 +250,21 @@
     "confidence": null
   },
   {
+    "player_name": "Egor Demin",
+    "prop_type": "blocks",
+    "reason": "no_projection_match",
+    "detail": "No DBB2 projection found for player name",
+    "sportsbook_line": 0.5,
+    "dbb2_projection": null,
+    "edge_pct": null,
+    "confidence": null
+  },
+  {
     "player_name": "Nolan Traore",
     "prop_type": "assists",
     "reason": "no_projection_match",
     "detail": "No DBB2 projection found for player name",
-    "sportsbook_line": 4.5,
+    "sportsbook_line": 5.5,
     "dbb2_projection": null,
     "edge_pct": null,
     "confidence": null
@@ -224,7 +274,7 @@
     "prop_type": "points",
     "reason": "no_projection_match",
     "detail": "No DBB2 projection found for player name",
-    "sportsbook_line": 9.5,
+    "sportsbook_line": 11.5,
     "dbb2_projection": null,
     "edge_pct": null,
     "confidence": null
@@ -245,6 +295,56 @@
     "reason": "no_projection_match",
     "detail": "No DBB2 projection found for player name",
     "sportsbook_line": 1.5,
+    "dbb2_projection": null,
+    "edge_pct": null,
+    "confidence": null
+  },
+  {
+    "player_name": "Nolan Traore",
+    "prop_type": "blocks",
+    "reason": "no_projection_match",
+    "detail": "No DBB2 projection found for player name",
+    "sportsbook_line": 0.5,
+    "dbb2_projection": null,
+    "edge_pct": null,
+    "confidence": null
+  },
+  {
+    "player_name": "Danny Wolf",
+    "prop_type": "points",
+    "reason": "no_projection_match",
+    "detail": "No DBB2 projection found for player name",
+    "sportsbook_line": 10.5,
+    "dbb2_projection": null,
+    "edge_pct": null,
+    "confidence": null
+  },
+  {
+    "player_name": "Danny Wolf",
+    "prop_type": "rebounds",
+    "reason": "no_projection_match",
+    "detail": "No DBB2 projection found for player name",
+    "sportsbook_line": 5.5,
+    "dbb2_projection": null,
+    "edge_pct": null,
+    "confidence": null
+  },
+  {
+    "player_name": "Danny Wolf",
+    "prop_type": "threes",
+    "reason": "no_projection_match",
+    "detail": "No DBB2 projection found for player name",
+    "sportsbook_line": 1.5,
+    "dbb2_projection": null,
+    "edge_pct": null,
+    "confidence": null
+  },
+  {
+    "player_name": "Danny Wolf",
+    "prop_type": "assists",
+    "reason": "no_projection_match",
+    "detail": "No DBB2 projection found for player name",
+    "sportsbook_line": 2.5,
     "dbb2_projection": null,
     "edge_pct": null,
     "confidence": null
@@ -350,11 +450,121 @@
     "confidence": null
   },
   {
+    "player_name": "Bryce McGowens",
+    "prop_type": "blocks",
+    "reason": "missing_std_dev",
+    "detail": "Projection std_dev is null or zero",
+    "sportsbook_line": 0.5,
+    "dbb2_projection": 0.1,
+    "edge_pct": null,
+    "confidence": 0.69
+  },
+  {
+    "player_name": "Bryce McGowens",
+    "prop_type": "threes",
+    "reason": "missing_std_dev",
+    "detail": "Projection std_dev is null or zero",
+    "sportsbook_line": 1.5,
+    "dbb2_projection": 0.2,
+    "edge_pct": null,
+    "confidence": 0.69
+  },
+  {
+    "player_name": "Nikola Jokic",
+    "prop_type": "assists",
+    "reason": "no_projection_match",
+    "detail": "No DBB2 projection found for player name",
+    "sportsbook_line": 11.5,
+    "dbb2_projection": null,
+    "edge_pct": null,
+    "confidence": null
+  },
+  {
+    "player_name": "Nikola Jokic",
+    "prop_type": "blocks",
+    "reason": "no_projection_match",
+    "detail": "No DBB2 projection found for player name",
+    "sportsbook_line": 0.5,
+    "dbb2_projection": null,
+    "edge_pct": null,
+    "confidence": null
+  },
+  {
+    "player_name": "Nikola Jokic",
+    "prop_type": "points",
+    "reason": "no_projection_match",
+    "detail": "No DBB2 projection found for player name",
+    "sportsbook_line": 30.5,
+    "dbb2_projection": null,
+    "edge_pct": null,
+    "confidence": null
+  },
+  {
+    "player_name": "Nikola Jokic",
+    "prop_type": "rebounds",
+    "reason": "no_projection_match",
+    "detail": "No DBB2 projection found for player name",
+    "sportsbook_line": 11.5,
+    "dbb2_projection": null,
+    "edge_pct": null,
+    "confidence": null
+  },
+  {
+    "player_name": "Nikola Jokic",
+    "prop_type": "steals",
+    "reason": "no_projection_match",
+    "detail": "No DBB2 projection found for player name",
+    "sportsbook_line": 1.5,
+    "dbb2_projection": null,
+    "edge_pct": null,
+    "confidence": null
+  },
+  {
+    "player_name": "Nikola Jokic",
+    "prop_type": "threes",
+    "reason": "no_projection_match",
+    "detail": "No DBB2 projection found for player name",
+    "sportsbook_line": 1.5,
+    "dbb2_projection": null,
+    "edge_pct": null,
+    "confidence": null
+  },
+  {
+    "player_name": "Vit Krejci",
+    "prop_type": "points",
+    "reason": "no_projection_match",
+    "detail": "No DBB2 projection found for player name",
+    "sportsbook_line": 7.5,
+    "dbb2_projection": null,
+    "edge_pct": null,
+    "confidence": null
+  },
+  {
+    "player_name": "Vit Krejci",
+    "prop_type": "threes",
+    "reason": "no_projection_match",
+    "detail": "No DBB2 projection found for player name",
+    "sportsbook_line": 1.5,
+    "dbb2_projection": null,
+    "edge_pct": null,
+    "confidence": null
+  },
+  {
+    "player_name": "Vit Krejci",
+    "prop_type": "rebounds",
+    "reason": "no_projection_match",
+    "detail": "No DBB2 projection found for player name",
+    "sportsbook_line": 1.5,
+    "dbb2_projection": null,
+    "edge_pct": null,
+    "confidence": null
+  },
+  {
     "player_name": "Luka Doncic",
     "prop_type": "assists",
     "reason": "no_projection_match",
     "detail": "No DBB2 projection found for player name",
-    "sportsbook_line": 7.5,
+    "sportsbook_line": 8.5,
     "dbb2_projection": null,
     "edge_pct": null,
     "confidence": null
@@ -364,7 +574,7 @@
     "prop_type": "points",
     "reason": "no_projection_match",
     "detail": "No DBB2 projection found for player name",
-    "sportsbook_line": 27.5,
+    "sportsbook_line": 30.5,
     "dbb2_projection": null,
     "edge_pct": null,
     "confidence": null
@@ -410,14 +620,14 @@
     "confidence": null
   },
   {
-    "player_name": "Michael Porter Jr",
+    "player_name": "Bryce McGowens",
     "prop_type": "points",
     "reason": "below_confidence_threshold",
-    "detail": "confidence 0.4 < min_confidence 0.5",
-    "sportsbook_line": 21.5,
-    "dbb2_projection": 4.8,
-    "edge_pct": 495.5,
-    "confidence": 0.4
+    "detail": "confidence 0.43 < min_confidence 0.5",
+    "sportsbook_line": 9.5,
+    "dbb2_projection": 2.1,
+    "edge_pct": 483.7,
+    "confidence": 0.43
   },
   {
     "player_name": "Kobe Brown",
@@ -440,13 +650,33 @@
     "confidence": 0.4
   },
   {
-    "player_name": "Cam Spencer",
-    "prop_type": "assists",
+    "player_name": "Michael Porter Jr",
+    "prop_type": "points",
     "reason": "below_confidence_threshold",
     "detail": "confidence 0.4 < min_confidence 0.5",
-    "sportsbook_line": 8.5,
-    "dbb2_projection": 1.4,
-    "edge_pct": 383.8,
+    "sportsbook_line": 19.5,
+    "dbb2_projection": 4.8,
+    "edge_pct": 436.2,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Bryce McGowens",
+    "prop_type": "rebounds",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.43 < min_confidence 0.5",
+    "sportsbook_line": 2.5,
+    "dbb2_projection": 0.7,
+    "edge_pct": 409.1,
+    "confidence": 0.43
+  },
+  {
+    "player_name": "Robert Williams",
+    "prop_type": "blocks",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 1.5,
+    "dbb2_projection": 0.1,
+    "edge_pct": 388.9,
     "confidence": 0.4
   },
   {
@@ -480,14 +710,34 @@
     "confidence": 0.4
   },
   {
+    "player_name": "Cam Spencer",
+    "prop_type": "assists",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 7.5,
+    "dbb2_projection": 1.4,
+    "edge_pct": 329.7,
+    "confidence": 0.4
+  },
+  {
     "player_name": "Jarace Walker",
     "prop_type": "points",
     "reason": "below_confidence_threshold",
     "detail": "confidence 0.4 < min_confidence 0.5",
-    "sportsbook_line": 22.5,
+    "sportsbook_line": 21.5,
     "dbb2_projection": 6.2,
-    "edge_pct": 334.0,
+    "edge_pct": 313.5,
     "confidence": 0.4
+  },
+  {
+    "player_name": "Bryce McGowens",
+    "prop_type": "assists",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.43 < min_confidence 0.5",
+    "sportsbook_line": 1.5,
+    "dbb2_projection": 0.4,
+    "edge_pct": 289.5,
+    "confidence": 0.43
   },
   {
     "player_name": "Kobe Brown",
@@ -510,6 +760,26 @@
     "confidence": 0.4
   },
   {
+    "player_name": "Sion James",
+    "prop_type": "rebounds",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 3.5,
+    "dbb2_projection": 0.7,
+    "edge_pct": 266.7,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Jaime Jaquez Jr",
+    "prop_type": "points",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 13.5,
+    "dbb2_projection": 4.8,
+    "edge_pct": 258.2,
+    "confidence": 0.4
+  },
+  {
     "player_name": "G.G. Jackson",
     "prop_type": "threes",
     "reason": "below_confidence_threshold",
@@ -520,13 +790,23 @@
     "confidence": 0.4
   },
   {
-    "player_name": "Jay Huff",
+    "player_name": "Robert Williams",
     "prop_type": "rebounds",
     "reason": "below_confidence_threshold",
     "detail": "confidence 0.4 < min_confidence 0.5",
-    "sportsbook_line": 6.5,
-    "dbb2_projection": 2.0,
-    "edge_pct": 244.6,
+    "sportsbook_line": 5.5,
+    "dbb2_projection": 1.4,
+    "edge_pct": 239.8,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Jaime Jaquez Jr",
+    "prop_type": "assists",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 4.5,
+    "dbb2_projection": 1.5,
+    "edge_pct": 232.6,
     "confidence": 0.4
   },
   {
@@ -537,6 +817,16 @@
     "sportsbook_line": 17.5,
     "dbb2_projection": 4.7,
     "edge_pct": 230.6,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Tim Hardaway Jr",
+    "prop_type": "points",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 12.5,
+    "dbb2_projection": 4.8,
+    "edge_pct": 228.5,
     "confidence": 0.4
   },
   {
@@ -570,6 +860,26 @@
     "confidence": 0.4
   },
   {
+    "player_name": "Jay Huff",
+    "prop_type": "rebounds",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 5.5,
+    "dbb2_projection": 2.0,
+    "edge_pct": 190.2,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Jalen Johnson",
+    "prop_type": "assists",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 8.5,
+    "dbb2_projection": 4.1,
+    "edge_pct": 187.2,
+    "confidence": 0.4
+  },
+  {
     "player_name": "Ryan Rollins",
     "prop_type": "threes",
     "reason": "below_confidence_threshold",
@@ -590,13 +900,23 @@
     "confidence": 0.4
   },
   {
-    "player_name": "Michael Porter Jr",
-    "prop_type": "rebounds",
+    "player_name": "Nickeil Alexander-Walker",
+    "prop_type": "points",
     "reason": "below_confidence_threshold",
     "detail": "confidence 0.4 < min_confidence 0.5",
-    "sportsbook_line": 6.5,
-    "dbb2_projection": 2.5,
-    "edge_pct": 181.8,
+    "sportsbook_line": 18.5,
+    "dbb2_projection": 9.0,
+    "edge_pct": 177.6,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Jay Huff",
+    "prop_type": "points",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 14.5,
+    "dbb2_projection": 4.3,
+    "edge_pct": 172.6,
     "confidence": 0.4
   },
   {
@@ -660,6 +980,16 @@
     "confidence": 0.4
   },
   {
+    "player_name": "Brandon Williams",
+    "prop_type": "points",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 18.5,
+    "dbb2_projection": 5.5,
+    "edge_pct": 158.0,
+    "confidence": 0.4
+  },
+  {
     "player_name": "Jarace Walker",
     "prop_type": "assists",
     "reason": "below_confidence_threshold",
@@ -677,16 +1007,6 @@
     "sportsbook_line": 2.5,
     "dbb2_projection": 0.8,
     "edge_pct": 156.0,
-    "confidence": 0.4
-  },
-  {
-    "player_name": "Jay Huff",
-    "prop_type": "points",
-    "reason": "below_confidence_threshold",
-    "detail": "confidence 0.4 < min_confidence 0.5",
-    "sportsbook_line": 13.5,
-    "dbb2_projection": 4.3,
-    "edge_pct": 155.7,
     "confidence": 0.4
   },
   {
@@ -710,13 +1030,13 @@
     "confidence": 0.4
   },
   {
-    "player_name": "Jericho Sims",
-    "prop_type": "rebounds",
+    "player_name": "Jay Huff",
+    "prop_type": "threes",
     "reason": "below_confidence_threshold",
     "detail": "confidence 0.4 < min_confidence 0.5",
-    "sportsbook_line": 8.5,
-    "dbb2_projection": 3.7,
-    "edge_pct": 148.6,
+    "sportsbook_line": 2.5,
+    "dbb2_projection": 0.6,
+    "edge_pct": 147.3,
     "confidence": 0.4
   },
   {
@@ -780,13 +1100,13 @@
     "confidence": 0.4
   },
   {
-    "player_name": "Max Christie",
-    "prop_type": "points",
+    "player_name": "Michael Porter Jr",
+    "prop_type": "rebounds",
     "reason": "below_confidence_threshold",
     "detail": "confidence 0.4 < min_confidence 0.5",
-    "sportsbook_line": 15.5,
-    "dbb2_projection": 7.8,
-    "edge_pct": 137.5,
+    "sportsbook_line": 5.5,
+    "dbb2_projection": 2.5,
+    "edge_pct": 136.4,
     "confidence": 0.4
   },
   {
@@ -820,6 +1140,16 @@
     "confidence": 0.4
   },
   {
+    "player_name": "Jaylen Wells",
+    "prop_type": "points",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 17.5,
+    "dbb2_projection": 9.9,
+    "edge_pct": 134.8,
+    "confidence": 0.4
+  },
+  {
     "player_name": "A.J. Green",
     "prop_type": "blocks",
     "reason": "below_confidence_threshold",
@@ -827,6 +1157,16 @@
     "sportsbook_line": 0.5,
     "dbb2_projection": 0.1,
     "edge_pct": 133.3,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Davion Mitchell",
+    "prop_type": "assists",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 6.5,
+    "dbb2_projection": 3.5,
+    "edge_pct": 130.4,
     "confidence": 0.4
   },
   {
@@ -860,13 +1200,13 @@
     "confidence": 0.4
   },
   {
-    "player_name": "Ben Sheppard",
-    "prop_type": "threes",
+    "player_name": "Brandon Williams",
+    "prop_type": "rebounds",
     "reason": "below_confidence_threshold",
     "detail": "confidence 0.4 < min_confidence 0.5",
-    "sportsbook_line": 2.5,
-    "dbb2_projection": 1.0,
-    "edge_pct": 124.0,
+    "sportsbook_line": 3.5,
+    "dbb2_projection": 1.4,
+    "edge_pct": 122.8,
     "confidence": 0.4
   },
   {
@@ -890,13 +1230,13 @@
     "confidence": 0.4
   },
   {
-    "player_name": "Max Christie",
-    "prop_type": "threes",
+    "player_name": "Brandon Williams",
+    "prop_type": "assists",
     "reason": "below_confidence_threshold",
     "detail": "confidence 0.4 < min_confidence 0.5",
-    "sportsbook_line": 2.5,
-    "dbb2_projection": 1.1,
-    "edge_pct": 118.6,
+    "sportsbook_line": 4.5,
+    "dbb2_projection": 1.7,
+    "edge_pct": 120.7,
     "confidence": 0.4
   },
   {
@@ -910,13 +1250,13 @@
     "confidence": 0.4
   },
   {
-    "player_name": "Jaylen Wells",
-    "prop_type": "points",
+    "player_name": "Jericho Sims",
+    "prop_type": "rebounds",
     "reason": "below_confidence_threshold",
     "detail": "confidence 0.4 < min_confidence 0.5",
-    "sportsbook_line": 16.5,
-    "dbb2_projection": 9.9,
-    "edge_pct": 117.0,
+    "sportsbook_line": 7.5,
+    "dbb2_projection": 3.7,
+    "edge_pct": 117.6,
     "confidence": 0.4
   },
   {
@@ -937,16 +1277,6 @@
     "sportsbook_line": 3.5,
     "dbb2_projection": 6.5,
     "edge_pct": 115.4,
-    "confidence": 0.4
-  },
-  {
-    "player_name": "Kyle Anderson",
-    "prop_type": "points",
-    "reason": "below_confidence_threshold",
-    "detail": "confidence 0.4 < min_confidence 0.5",
-    "sportsbook_line": 11.5,
-    "dbb2_projection": 6.7,
-    "edge_pct": 115.1,
     "confidence": 0.4
   },
   {
@@ -1010,26 +1340,6 @@
     "confidence": 0.4
   },
   {
-    "player_name": "Naji Marshall",
-    "prop_type": "points",
-    "reason": "below_confidence_threshold",
-    "detail": "confidence 0.4 < min_confidence 0.5",
-    "sportsbook_line": 18.5,
-    "dbb2_projection": 10.0,
-    "edge_pct": 106.6,
-    "confidence": 0.4
-  },
-  {
-    "player_name": "Kawhi Leonard",
-    "prop_type": "points",
-    "reason": "below_confidence_threshold",
-    "detail": "confidence 0.48 < min_confidence 0.5",
-    "sportsbook_line": 27.5,
-    "dbb2_projection": 20.1,
-    "edge_pct": 106.3,
-    "confidence": 0.48
-  },
-  {
     "player_name": "Ben Sheppard",
     "prop_type": "points",
     "reason": "below_confidence_threshold",
@@ -1050,6 +1360,56 @@
     "confidence": 0.4
   },
   {
+    "player_name": "Pelle Larsson",
+    "prop_type": "rebounds",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 3.5,
+    "dbb2_projection": 1.6,
+    "edge_pct": 101.6,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Bam Adebayo",
+    "prop_type": "threes",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 1.5,
+    "dbb2_projection": 0.5,
+    "edge_pct": 100.0,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Jock Landale",
+    "prop_type": "points",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 8.5,
+    "dbb2_projection": 4.3,
+    "edge_pct": 100.0,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Brandon Williams",
+    "prop_type": "threes",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 1.5,
+    "dbb2_projection": 0.5,
+    "edge_pct": 99.0,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Onyeka Okongwu",
+    "prop_type": "threes",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 1.5,
+    "dbb2_projection": 0.6,
+    "edge_pct": 98.9,
+    "confidence": 0.4
+  },
+  {
     "player_name": "Herb Jones",
     "prop_type": "steals",
     "reason": "below_confidence_threshold",
@@ -1057,6 +1417,16 @@
     "sportsbook_line": 1.5,
     "dbb2_projection": 0.5,
     "edge_pct": 98.0,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Donovan Clingan",
+    "prop_type": "assists",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 2.5,
+    "dbb2_projection": 1.2,
+    "edge_pct": 97.7,
     "confidence": 0.4
   },
   {
@@ -1080,6 +1450,16 @@
     "confidence": 0.4
   },
   {
+    "player_name": "Tre Johnson",
+    "prop_type": "points",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 13.5,
+    "dbb2_projection": 7.9,
+    "edge_pct": 95.2,
+    "confidence": 0.4
+  },
+  {
     "player_name": "Herb Jones",
     "prop_type": "assists",
     "reason": "below_confidence_threshold",
@@ -1087,6 +1467,106 @@
     "sportsbook_line": 2.5,
     "dbb2_projection": 1.1,
     "edge_pct": 95.2,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Donovan Clingan",
+    "prop_type": "rebounds",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 11.5,
+    "dbb2_projection": 7.4,
+    "edge_pct": 94.5,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Deni Avdija",
+    "prop_type": "points",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 24.5,
+    "dbb2_projection": 16.7,
+    "edge_pct": 94.3,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Naji Marshall",
+    "prop_type": "points",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 17.5,
+    "dbb2_projection": 10.0,
+    "edge_pct": 94.1,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Nickeil Alexander-Walker",
+    "prop_type": "steals",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 1.5,
+    "dbb2_projection": 0.7,
+    "edge_pct": 93.0,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Donovan Clingan",
+    "prop_type": "points",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 11.5,
+    "dbb2_projection": 7.1,
+    "edge_pct": 92.1,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Kawhi Leonard",
+    "prop_type": "points",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.48 < min_confidence 0.5",
+    "sportsbook_line": 26.5,
+    "dbb2_projection": 20.1,
+    "edge_pct": 92.0,
+    "confidence": 0.48
+  },
+  {
+    "player_name": "Pelle Larsson",
+    "prop_type": "points",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 8.5,
+    "dbb2_projection": 4.3,
+    "edge_pct": 91.3,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Kyle Anderson",
+    "prop_type": "points",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 10.5,
+    "dbb2_projection": 6.7,
+    "edge_pct": 91.1,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Jaime Jaquez Jr",
+    "prop_type": "rebounds",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 4.5,
+    "dbb2_projection": 2.5,
+    "edge_pct": 90.9,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Pelle Larsson",
+    "prop_type": "blocks",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 0.5,
+    "dbb2_projection": 0.1,
+    "edge_pct": 90.9,
     "confidence": 0.4
   },
   {
@@ -1107,6 +1587,16 @@
     "sportsbook_line": 11.5,
     "dbb2_projection": 7.1,
     "edge_pct": 89.8,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Jock Landale",
+    "prop_type": "rebounds",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 5.5,
+    "dbb2_projection": 3.3,
+    "edge_pct": 88.7,
     "confidence": 0.4
   },
   {
@@ -1140,14 +1630,14 @@
     "confidence": 0.4
   },
   {
-    "player_name": "Deandre Ayton",
-    "prop_type": "points",
+    "player_name": "Toumani Camara",
+    "prop_type": "threes",
     "reason": "below_confidence_threshold",
-    "detail": "confidence 0.41 < min_confidence 0.5",
-    "sportsbook_line": 10.5,
-    "dbb2_projection": 15.7,
-    "edge_pct": 84.6,
-    "confidence": 0.41
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 2.5,
+    "dbb2_projection": 1.3,
+    "edge_pct": 84.5,
+    "confidence": 0.4
   },
   {
     "player_name": "Luguentz Dort",
@@ -1170,12 +1660,12 @@
     "confidence": 0.45
   },
   {
-    "player_name": "Day'Ron Sharpe",
-    "prop_type": "steals",
+    "player_name": "Deni Avdija",
+    "prop_type": "assists",
     "reason": "below_confidence_threshold",
     "detail": "confidence 0.4 < min_confidence 0.5",
-    "sportsbook_line": 1.5,
-    "dbb2_projection": 0.6,
+    "sportsbook_line": 5.5,
+    "dbb2_projection": 3.7,
     "edge_pct": 83.3,
     "confidence": 0.4
   },
@@ -1200,6 +1690,16 @@
     "confidence": 0.4
   },
   {
+    "player_name": "Pelle Larsson",
+    "prop_type": "assists",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 2.5,
+    "dbb2_projection": 1.3,
+    "edge_pct": 79.5,
+    "confidence": 0.4
+  },
+  {
     "player_name": "Kyle Filipowski",
     "prop_type": "rebounds",
     "reason": "below_confidence_threshold",
@@ -1210,13 +1710,13 @@
     "confidence": 0.4
   },
   {
-    "player_name": "Tre Johnson",
-    "prop_type": "points",
+    "player_name": "Kyle Anderson",
+    "prop_type": "steals",
     "reason": "below_confidence_threshold",
     "detail": "confidence 0.4 < min_confidence 0.5",
-    "sportsbook_line": 12.5,
-    "dbb2_projection": 7.9,
-    "edge_pct": 78.2,
+    "sportsbook_line": 1.5,
+    "dbb2_projection": 0.7,
+    "edge_pct": 78.4,
     "confidence": 0.4
   },
   {
@@ -1260,6 +1760,16 @@
     "confidence": 0.4
   },
   {
+    "player_name": "Noah Clowney",
+    "prop_type": "assists",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 1.5,
+    "dbb2_projection": 0.9,
+    "edge_pct": 76.9,
+    "confidence": 0.4
+  },
+  {
     "player_name": "Kyle Filipowski",
     "prop_type": "points",
     "reason": "below_confidence_threshold",
@@ -1267,6 +1777,16 @@
     "sportsbook_line": 14.5,
     "dbb2_projection": 9.3,
     "edge_pct": 76.1,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Norman Powell",
+    "prop_type": "blocks",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 0.5,
+    "dbb2_projection": 0.2,
+    "edge_pct": 75.0,
     "confidence": 0.4
   },
   {
@@ -1280,13 +1800,33 @@
     "confidence": 0.4
   },
   {
-    "player_name": "Naji Marshall",
+    "player_name": "Jalen Johnson",
+    "prop_type": "points",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.44 < min_confidence 0.5",
+    "sportsbook_line": 22.5,
+    "dbb2_projection": 17.9,
+    "edge_pct": 74.2,
+    "confidence": 0.44
+  },
+  {
+    "player_name": "Nickeil Alexander-Walker",
     "prop_type": "threes",
     "reason": "below_confidence_threshold",
     "detail": "confidence 0.4 < min_confidence 0.5",
-    "sportsbook_line": 1.5,
-    "dbb2_projection": 0.8,
-    "edge_pct": 74.5,
+    "sportsbook_line": 2.5,
+    "dbb2_projection": 1.5,
+    "edge_pct": 74.1,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Isaiah Joe",
+    "prop_type": "points",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 14.5,
+    "dbb2_projection": 9.3,
+    "edge_pct": 74.1,
     "confidence": 0.4
   },
   {
@@ -1320,6 +1860,16 @@
     "confidence": 0.4
   },
   {
+    "player_name": "Jamal Murray",
+    "prop_type": "assists",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.43 < min_confidence 0.5",
+    "sportsbook_line": 7.5,
+    "dbb2_projection": 6.0,
+    "edge_pct": 71.1,
+    "confidence": 0.43
+  },
+  {
     "player_name": "Daniel Gafford",
     "prop_type": "assists",
     "reason": "below_confidence_threshold",
@@ -1330,23 +1880,33 @@
     "confidence": 0.4
   },
   {
-    "player_name": "Deandre Ayton",
-    "prop_type": "blocks",
+    "player_name": "Anthony Edwards",
+    "prop_type": "assists",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.41 < min_confidence 0.5",
+    "sportsbook_line": 3.5,
+    "dbb2_projection": 5.0,
+    "edge_pct": 70.8,
+    "confidence": 0.41
+  },
+  {
+    "player_name": "Onyeka Okongwu",
+    "prop_type": "points",
     "reason": "below_confidence_threshold",
     "detail": "confidence 0.4 < min_confidence 0.5",
-    "sportsbook_line": 0.5,
-    "dbb2_projection": 1.2,
-    "edge_pct": 70.0,
+    "sportsbook_line": 15.5,
+    "dbb2_projection": 11.1,
+    "edge_pct": 70.6,
     "confidence": 0.4
   },
   {
-    "player_name": "Jay Huff",
-    "prop_type": "threes",
+    "player_name": "Cameron Johnson",
+    "prop_type": "rebounds",
     "reason": "below_confidence_threshold",
     "detail": "confidence 0.4 < min_confidence 0.5",
-    "sportsbook_line": 1.5,
-    "dbb2_projection": 0.6,
-    "edge_pct": 69.8,
+    "sportsbook_line": 3.5,
+    "dbb2_projection": 5.2,
+    "edge_pct": 70.5,
     "confidence": 0.4
   },
   {
@@ -1370,6 +1930,16 @@
     "confidence": 0.4
   },
   {
+    "player_name": "Dyson Daniels",
+    "prop_type": "rebounds",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 6.5,
+    "dbb2_projection": 4.8,
+    "edge_pct": 68.8,
+    "confidence": 0.4
+  },
+  {
     "player_name": "Ben Sheppard",
     "prop_type": "assists",
     "reason": "below_confidence_threshold",
@@ -1390,14 +1960,14 @@
     "confidence": 0.4
   },
   {
-    "player_name": "Austin Reaves",
-    "prop_type": "assists",
+    "player_name": "Deandre Ayton",
+    "prop_type": "points",
     "reason": "below_confidence_threshold",
-    "detail": "confidence 0.4 < min_confidence 0.5",
-    "sportsbook_line": 3.5,
-    "dbb2_projection": 5.6,
-    "edge_pct": 68.4,
-    "confidence": 0.4
+    "detail": "confidence 0.41 < min_confidence 0.5",
+    "sportsbook_line": 11.5,
+    "dbb2_projection": 15.7,
+    "edge_pct": 68.3,
+    "confidence": 0.41
   },
   {
     "player_name": "Rui Hachimura",
@@ -1440,6 +2010,26 @@
     "confidence": 0.4
   },
   {
+    "player_name": "Day'Ron Sharpe",
+    "prop_type": "points",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 10.5,
+    "dbb2_projection": 7.6,
+    "edge_pct": 67.1,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Julian Strawther",
+    "prop_type": "points",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 11.5,
+    "dbb2_projection": 7.8,
+    "edge_pct": 66.9,
+    "confidence": 0.4
+  },
+  {
     "player_name": "Jaylen Wells",
     "prop_type": "blocks",
     "reason": "below_confidence_threshold",
@@ -1450,8 +2040,38 @@
     "confidence": 0.4
   },
   {
+    "player_name": "Davion Mitchell",
+    "prop_type": "blocks",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 0.5,
+    "dbb2_projection": 0.2,
+    "edge_pct": 66.7,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Jock Landale",
+    "prop_type": "threes",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 0.5,
+    "dbb2_projection": 0.2,
+    "edge_pct": 66.7,
+    "confidence": 0.4
+  },
+  {
     "player_name": "Kevin Porter Jr.",
     "prop_type": "blocks",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 0.5,
+    "dbb2_projection": 0.2,
+    "edge_pct": 66.7,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Donovan Clingan",
+    "prop_type": "threes",
     "reason": "below_confidence_threshold",
     "detail": "confidence 0.4 < min_confidence 0.5",
     "sportsbook_line": 0.5,
@@ -1467,6 +2087,16 @@
     "sportsbook_line": 24.5,
     "dbb2_projection": 19.1,
     "edge_pct": 66.6,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Josh Green",
+    "prop_type": "points",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 4.5,
+    "dbb2_projection": 8.0,
+    "edge_pct": 66.5,
     "confidence": 0.4
   },
   {
@@ -1490,6 +2120,26 @@
     "confidence": 0.4
   },
   {
+    "player_name": "Tyler Herro",
+    "prop_type": "assists",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 3.5,
+    "dbb2_projection": 5.1,
+    "edge_pct": 65.3,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Day'Ron Sharpe",
+    "prop_type": "threes",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 0.5,
+    "dbb2_projection": 0.2,
+    "edge_pct": 65.2,
+    "confidence": 0.4
+  },
+  {
     "player_name": "Kyle Anderson",
     "prop_type": "rebounds",
     "reason": "below_confidence_threshold",
@@ -1508,6 +2158,16 @@
     "dbb2_projection": 3.4,
     "edge_pct": 63.6,
     "confidence": 0.4
+  },
+  {
+    "player_name": "Tyler Herro",
+    "prop_type": "points",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.46 < min_confidence 0.5",
+    "sportsbook_line": 16.5,
+    "dbb2_projection": 21.1,
+    "edge_pct": 63.5,
+    "confidence": 0.46
   },
   {
     "player_name": "LeBron James",
@@ -1530,6 +2190,36 @@
     "confidence": 0.4
   },
   {
+    "player_name": "Tyler Herro",
+    "prop_type": "threes",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 1.5,
+    "dbb2_projection": 2.7,
+    "edge_pct": 61.2,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Dyson Daniels",
+    "prop_type": "assists",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 5.5,
+    "dbb2_projection": 4.2,
+    "edge_pct": 61.0,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Tyler Herro",
+    "prop_type": "rebounds",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 3.5,
+    "dbb2_projection": 4.9,
+    "edge_pct": 60.9,
+    "confidence": 0.4
+  },
+  {
     "player_name": "Naji Marshall",
     "prop_type": "assists",
     "reason": "below_confidence_threshold",
@@ -1540,13 +2230,13 @@
     "confidence": 0.4
   },
   {
-    "player_name": "Isaiah Joe",
-    "prop_type": "points",
+    "player_name": "Julian Strawther",
+    "prop_type": "blocks",
     "reason": "below_confidence_threshold",
     "detail": "confidence 0.4 < min_confidence 0.5",
-    "sportsbook_line": 13.5,
-    "dbb2_projection": 9.3,
-    "edge_pct": 59.8,
+    "sportsbook_line": 0.5,
+    "dbb2_projection": 0.2,
+    "edge_pct": 60.0,
     "confidence": 0.4
   },
   {
@@ -1560,7 +2250,7 @@
     "confidence": 0.4
   },
   {
-    "player_name": "Isaiah Hartenstein",
+    "player_name": "Bam Adebayo",
     "prop_type": "blocks",
     "reason": "below_confidence_threshold",
     "detail": "confidence 0.4 < min_confidence 0.5",
@@ -1570,13 +2260,23 @@
     "confidence": 0.4
   },
   {
-    "player_name": "Isaiah Joe",
-    "prop_type": "rebounds",
+    "player_name": "Andrew Wiggins",
+    "prop_type": "steals",
     "reason": "below_confidence_threshold",
     "detail": "confidence 0.4 < min_confidence 0.5",
-    "sportsbook_line": 3.5,
-    "dbb2_projection": 2.5,
-    "edge_pct": 59.2,
+    "sportsbook_line": 1.5,
+    "dbb2_projection": 0.9,
+    "edge_pct": 59.4,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Isaiah Hartenstein",
+    "prop_type": "blocks",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 0.5,
+    "dbb2_projection": 1.1,
+    "edge_pct": 59.4,
     "confidence": 0.4
   },
   {
@@ -1600,6 +2300,16 @@
     "confidence": 0.4
   },
   {
+    "player_name": "Michael Porter Jr",
+    "prop_type": "blocks",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 0.5,
+    "dbb2_projection": 0.2,
+    "edge_pct": 57.7,
+    "confidence": 0.4
+  },
+  {
     "player_name": "Kyle Kuzma",
     "prop_type": "points",
     "reason": "below_confidence_threshold",
@@ -1610,6 +2320,26 @@
     "confidence": 0.44
   },
   {
+    "player_name": "Rudy Gobert",
+    "prop_type": "points",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 10.5,
+    "dbb2_projection": 13.8,
+    "edge_pct": 56.9,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Noah Clowney",
+    "prop_type": "points",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 11.5,
+    "dbb2_projection": 7.9,
+    "edge_pct": 56.9,
+    "confidence": 0.4
+  },
+  {
     "player_name": "Naz Reid",
     "prop_type": "assists",
     "reason": "below_confidence_threshold",
@@ -1617,6 +2347,16 @@
     "sportsbook_line": 2.5,
     "dbb2_projection": 1.7,
     "edge_pct": 56.7,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Josh Green",
+    "prop_type": "threes",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 0.5,
+    "dbb2_projection": 1.3,
+    "edge_pct": 55.9,
     "confidence": 0.4
   },
   {
@@ -1636,6 +2376,16 @@
     "detail": "confidence 0.4 < min_confidence 0.5",
     "sportsbook_line": 0.5,
     "dbb2_projection": 1.0,
+    "edge_pct": 55.6,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Corey Kispert",
+    "prop_type": "rebounds",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 2.5,
+    "dbb2_projection": 3.4,
     "edge_pct": 55.6,
     "confidence": 0.4
   },
@@ -1680,6 +2430,46 @@
     "confidence": 0.4
   },
   {
+    "player_name": "Dyson Daniels",
+    "prop_type": "threes",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 0.5,
+    "dbb2_projection": 1.0,
+    "edge_pct": 54.9,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "C.J. McCollum",
+    "prop_type": "assists",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 3.5,
+    "dbb2_projection": 4.6,
+    "edge_pct": 54.7,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Jrue Holiday",
+    "prop_type": "points",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 15.5,
+    "dbb2_projection": 12.5,
+    "edge_pct": 54.5,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Austin Reaves",
+    "prop_type": "points",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 22.5,
+    "dbb2_projection": 18.3,
+    "edge_pct": 54.2,
+    "confidence": 0.4
+  },
+  {
     "player_name": "Naji Marshall",
     "prop_type": "blocks",
     "reason": "below_confidence_threshold",
@@ -1707,6 +2497,26 @@
     "sportsbook_line": 0.5,
     "dbb2_projection": 1.1,
     "edge_pct": 53.1,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Bam Adebayo",
+    "prop_type": "assists",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 2.5,
+    "dbb2_projection": 3.8,
+    "edge_pct": 52.6,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Christian Braun",
+    "prop_type": "threes",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 0.5,
+    "dbb2_projection": 1.1,
+    "edge_pct": 52.6,
     "confidence": 0.4
   },
   {
@@ -1740,12 +2550,42 @@
     "confidence": 0.4
   },
   {
+    "player_name": "Jalen Johnson",
+    "prop_type": "blocks",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 0.5,
+    "dbb2_projection": 1.0,
+    "edge_pct": 50.5,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Tyler Herro",
+    "prop_type": "steals",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 0.5,
+    "dbb2_projection": 1.0,
+    "edge_pct": 50.5,
+    "confidence": 0.4
+  },
+  {
     "player_name": "Naz Reid",
     "prop_type": "threes",
     "reason": "below_confidence_threshold",
     "detail": "confidence 0.4 < min_confidence 0.5",
     "sportsbook_line": 2.5,
     "dbb2_projection": 1.7,
+    "edge_pct": 50.3,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Jamal Murray",
+    "prop_type": "points",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 24.5,
+    "dbb2_projection": 20.1,
     "edge_pct": 50.3,
     "confidence": 0.4
   },
@@ -1770,6 +2610,16 @@
     "confidence": 0.4
   },
   {
+    "player_name": "Onyeka Okongwu",
+    "prop_type": "assists",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 2.5,
+    "dbb2_projection": 1.7,
+    "edge_pct": 49.7,
+    "confidence": 0.4
+  },
+  {
     "player_name": "Lauri Markkanen",
     "prop_type": "assists",
     "reason": "below_confidence_threshold",
@@ -1780,12 +2630,32 @@
     "confidence": 0.4
   },
   {
+    "player_name": "Bam Adebayo",
+    "prop_type": "steals",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 0.5,
+    "dbb2_projection": 1.1,
+    "edge_pct": 49.6,
+    "confidence": 0.4
+  },
+  {
     "player_name": "Kenrich Williams",
     "prop_type": "threes",
     "reason": "below_confidence_threshold",
     "detail": "confidence 0.4 < min_confidence 0.5",
     "sportsbook_line": 0.5,
     "dbb2_projection": 1.0,
+    "edge_pct": 49.5,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Toumani Camara",
+    "prop_type": "rebounds",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 4.5,
+    "dbb2_projection": 5.9,
     "edge_pct": 49.5,
     "confidence": 0.4
   },
@@ -1840,13 +2710,23 @@
     "confidence": 0.4
   },
   {
-    "player_name": "Josh Green",
+    "player_name": "Corey Kispert",
     "prop_type": "points",
     "reason": "below_confidence_threshold",
     "detail": "confidence 0.4 < min_confidence 0.5",
-    "sportsbook_line": 5.5,
-    "dbb2_projection": 8.0,
-    "edge_pct": 47.5,
+    "sportsbook_line": 8.5,
+    "dbb2_projection": 11.3,
+    "edge_pct": 47.8,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Jrue Holiday",
+    "prop_type": "threes",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 2.5,
+    "dbb2_projection": 1.8,
+    "edge_pct": 47.6,
     "confidence": 0.4
   },
   {
@@ -1870,6 +2750,26 @@
     "confidence": 0.45
   },
   {
+    "player_name": "Nickeil Alexander-Walker",
+    "prop_type": "assists",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 3.5,
+    "dbb2_projection": 2.7,
+    "edge_pct": 46.5,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Jerami Grant",
+    "prop_type": "rebounds",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 3.5,
+    "dbb2_projection": 4.5,
+    "edge_pct": 46.5,
+    "confidence": 0.4
+  },
+  {
     "player_name": "Isaiah Joe",
     "prop_type": "assists",
     "reason": "below_confidence_threshold",
@@ -1877,6 +2777,36 @@
     "sportsbook_line": 2.5,
     "dbb2_projection": 1.8,
     "edge_pct": 46.4,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Cameron Johnson",
+    "prop_type": "points",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.44 < min_confidence 0.5",
+    "sportsbook_line": 13.5,
+    "dbb2_projection": 16.5,
+    "edge_pct": 46.4,
+    "confidence": 0.44
+  },
+  {
+    "player_name": "Jalen Johnson",
+    "prop_type": "rebounds",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 10.5,
+    "dbb2_projection": 8.8,
+    "edge_pct": 46.2,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Davion Mitchell",
+    "prop_type": "threes",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 1.5,
+    "dbb2_projection": 1.0,
+    "edge_pct": 45.9,
     "confidence": 0.4
   },
   {
@@ -1940,22 +2870,22 @@
     "confidence": 0.4
   },
   {
-    "player_name": "Day'Ron Sharpe",
-    "prop_type": "points",
-    "reason": "below_confidence_threshold",
-    "detail": "confidence 0.4 < min_confidence 0.5",
-    "sportsbook_line": 9.5,
-    "dbb2_projection": 7.6,
-    "edge_pct": 44.0,
-    "confidence": 0.4
-  },
-  {
     "player_name": "Kyle Filipowski",
     "prop_type": "assists",
     "reason": "below_confidence_threshold",
     "detail": "confidence 0.4 < min_confidence 0.5",
     "sportsbook_line": 2.5,
     "dbb2_projection": 1.8,
+    "edge_pct": 43.7,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Jrue Holiday",
+    "prop_type": "assists",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 5.5,
+    "dbb2_projection": 4.5,
     "edge_pct": 43.7,
     "confidence": 0.4
   },
@@ -1967,6 +2897,16 @@
     "sportsbook_line": 2.5,
     "dbb2_projection": 1.8,
     "edge_pct": 43.2,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Cameron Johnson",
+    "prop_type": "threes",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 1.5,
+    "dbb2_projection": 2.2,
+    "edge_pct": 42.7,
     "confidence": 0.4
   },
   {
@@ -2010,6 +2950,16 @@
     "confidence": 0.4
   },
   {
+    "player_name": "Ben Sheppard",
+    "prop_type": "threes",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 1.5,
+    "dbb2_projection": 1.0,
+    "edge_pct": 41.3,
+    "confidence": 0.4
+  },
+  {
     "player_name": "Brandon Miller",
     "prop_type": "threes",
     "reason": "below_confidence_threshold",
@@ -2020,13 +2970,13 @@
     "confidence": 0.4
   },
   {
-    "player_name": "Noah Clowney",
-    "prop_type": "points",
+    "player_name": "Day'Ron Sharpe",
+    "prop_type": "blocks",
     "reason": "below_confidence_threshold",
     "detail": "confidence 0.4 < min_confidence 0.5",
-    "sportsbook_line": 10.5,
-    "dbb2_projection": 7.9,
-    "edge_pct": 41.1,
+    "sportsbook_line": 0.5,
+    "dbb2_projection": 0.9,
+    "edge_pct": 40.8,
     "confidence": 0.4
   },
   {
@@ -2040,6 +2990,16 @@
     "confidence": 0.4
   },
   {
+    "player_name": "Nickeil Alexander-Walker",
+    "prop_type": "rebounds",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 3.5,
+    "dbb2_projection": 2.7,
+    "edge_pct": 40.4,
+    "confidence": 0.4
+  },
+  {
     "player_name": "Zion Williamson",
     "prop_type": "blocks",
     "reason": "below_confidence_threshold",
@@ -2050,22 +3010,12 @@
     "confidence": 0.4
   },
   {
-    "player_name": "Zion Williamson",
-    "prop_type": "assists",
-    "reason": "below_confidence_threshold",
-    "detail": "confidence 0.4 < min_confidence 0.5",
-    "sportsbook_line": 3.5,
-    "dbb2_projection": 4.6,
-    "edge_pct": 40.1,
-    "confidence": 0.4
-  },
-  {
-    "player_name": "Rudy Gobert",
+    "player_name": "Christian Braun",
     "prop_type": "points",
     "reason": "below_confidence_threshold",
     "detail": "confidence 0.4 < min_confidence 0.5",
     "sportsbook_line": 11.5,
-    "dbb2_projection": 13.8,
+    "dbb2_projection": 13.7,
     "edge_pct": 39.7,
     "confidence": 0.4
   },
@@ -2100,6 +3050,16 @@
     "confidence": 0.4
   },
   {
+    "player_name": "Onyeka Okongwu",
+    "prop_type": "blocks",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 0.5,
+    "dbb2_projection": 0.9,
+    "edge_pct": 39.2,
+    "confidence": 0.4
+  },
+  {
     "player_name": "Naji Marshall",
     "prop_type": "rebounds",
     "reason": "below_confidence_threshold",
@@ -2107,6 +3067,16 @@
     "sportsbook_line": 5.5,
     "dbb2_projection": 4.3,
     "edge_pct": 39.1,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Norman Powell",
+    "prop_type": "steals",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 1.5,
+    "dbb2_projection": 1.1,
+    "edge_pct": 38.8,
     "confidence": 0.4
   },
   {
@@ -2130,6 +3100,16 @@
     "confidence": 0.4
   },
   {
+    "player_name": "Jrue Holiday",
+    "prop_type": "steals",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 1.5,
+    "dbb2_projection": 1.1,
+    "edge_pct": 38.1,
+    "confidence": 0.4
+  },
+  {
     "player_name": "LeBron James",
     "prop_type": "points",
     "reason": "below_confidence_threshold",
@@ -2140,13 +3120,13 @@
     "confidence": 0.49
   },
   {
-    "player_name": "Max Christie",
-    "prop_type": "rebounds",
+    "player_name": "Terance Mann",
+    "prop_type": "points",
     "reason": "below_confidence_threshold",
     "detail": "confidence 0.4 < min_confidence 0.5",
-    "sportsbook_line": 3.5,
-    "dbb2_projection": 2.7,
-    "edge_pct": 37.7,
+    "sportsbook_line": 6.5,
+    "dbb2_projection": 8.4,
+    "edge_pct": 37.9,
     "confidence": 0.4
   },
   {
@@ -2157,6 +3137,16 @@
     "sportsbook_line": 0.5,
     "dbb2_projection": 0.3,
     "edge_pct": 37.0,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Alex Caruso",
+    "prop_type": "rebounds",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 2.5,
+    "dbb2_projection": 3.1,
+    "edge_pct": 36.6,
     "confidence": 0.4
   },
   {
@@ -2197,6 +3187,16 @@
     "sportsbook_line": 2.5,
     "dbb2_projection": 3.1,
     "edge_pct": 35.9,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Austin Reaves",
+    "prop_type": "assists",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 4.5,
+    "dbb2_projection": 5.6,
+    "edge_pct": 35.8,
     "confidence": 0.4
   },
   {
@@ -2270,6 +3270,16 @@
     "confidence": 0.4
   },
   {
+    "player_name": "Jerami Grant",
+    "prop_type": "threes",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 2.5,
+    "dbb2_projection": 1.9,
+    "edge_pct": 33.9,
+    "confidence": 0.4
+  },
+  {
     "player_name": "Kris Dunn",
     "prop_type": "blocks",
     "reason": "below_confidence_threshold",
@@ -2277,6 +3287,16 @@
     "sportsbook_line": 0.5,
     "dbb2_projection": 0.3,
     "edge_pct": 33.9,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Norman Powell",
+    "prop_type": "points",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 20.5,
+    "dbb2_projection": 17.7,
+    "edge_pct": 33.8,
     "confidence": 0.4
   },
   {
@@ -2320,6 +3340,26 @@
     "confidence": 0.4
   },
   {
+    "player_name": "Naji Marshall",
+    "prop_type": "threes",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 0.5,
+    "dbb2_projection": 0.8,
+    "edge_pct": 31.9,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Sion James",
+    "prop_type": "threes",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 0.5,
+    "dbb2_projection": 0.3,
+    "edge_pct": 31.7,
+    "confidence": 0.4
+  },
+  {
     "player_name": "Sam Merrill",
     "prop_type": "points",
     "reason": "below_confidence_threshold",
@@ -2327,6 +3367,16 @@
     "sportsbook_line": 9.5,
     "dbb2_projection": 7.9,
     "edge_pct": 31.7,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Jamal Murray",
+    "prop_type": "rebounds",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 3.5,
+    "dbb2_projection": 4.1,
+    "edge_pct": 31.6,
     "confidence": 0.4
   },
   {
@@ -2370,6 +3420,16 @@
     "confidence": 0.4
   },
   {
+    "player_name": "Bilal Coulibaly",
+    "prop_type": "points",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 10.5,
+    "dbb2_projection": 12.5,
+    "edge_pct": 30.4,
+    "confidence": 0.4
+  },
+  {
     "player_name": "Anthony Edwards",
     "prop_type": "steals",
     "reason": "below_confidence_threshold",
@@ -2390,6 +3450,56 @@
     "confidence": 0.4
   },
   {
+    "player_name": "Christian Braun",
+    "prop_type": "assists",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 2.5,
+    "dbb2_projection": 3.0,
+    "edge_pct": 29.1,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Julian Strawther",
+    "prop_type": "rebounds",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 2.5,
+    "dbb2_projection": 2.0,
+    "edge_pct": 28.9,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Kawhi Leonard",
+    "prop_type": "rebounds",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.44 < min_confidence 0.5",
+    "sportsbook_line": 5.5,
+    "dbb2_projection": 6.2,
+    "edge_pct": 28.8,
+    "confidence": 0.44
+  },
+  {
+    "player_name": "C.J. McCollum",
+    "prop_type": "rebounds",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 3.5,
+    "dbb2_projection": 4.0,
+    "edge_pct": 28.7,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Jalen Johnson",
+    "prop_type": "threes",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 1.5,
+    "dbb2_projection": 1.2,
+    "edge_pct": 28.6,
+    "confidence": 0.4
+  },
+  {
     "player_name": "Chet Holmgren",
     "prop_type": "assists",
     "reason": "below_confidence_threshold",
@@ -2400,13 +3510,13 @@
     "confidence": 0.4
   },
   {
-    "player_name": "Austin Reaves",
-    "prop_type": "points",
+    "player_name": "Jerami Grant",
+    "prop_type": "blocks",
     "reason": "below_confidence_threshold",
     "detail": "confidence 0.4 < min_confidence 0.5",
-    "sportsbook_line": 20.5,
-    "dbb2_projection": 18.3,
-    "edge_pct": 28.4,
+    "sportsbook_line": 0.5,
+    "dbb2_projection": 0.8,
+    "edge_pct": 28.6,
     "confidence": 0.4
   },
   {
@@ -2457,6 +3567,16 @@
     "sportsbook_line": 1.5,
     "dbb2_projection": 1.9,
     "edge_pct": 27.4,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Zaccharie Risacher",
+    "prop_type": "assists",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 1.5,
+    "dbb2_projection": 1.2,
+    "edge_pct": 27.3,
     "confidence": 0.4
   },
   {
@@ -2550,6 +3670,16 @@
     "confidence": 0.46
   },
   {
+    "player_name": "Cameron Johnson",
+    "prop_type": "assists",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 2.5,
+    "dbb2_projection": 3.0,
+    "edge_pct": 25.8,
+    "confidence": 0.4
+  },
+  {
     "player_name": "James Harden",
     "prop_type": "points",
     "reason": "below_confidence_threshold",
@@ -2558,6 +3688,16 @@
     "dbb2_projection": 18.5,
     "edge_pct": 25.4,
     "confidence": 0.42
+  },
+  {
+    "player_name": "Toumani Camara",
+    "prop_type": "steals",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 1.5,
+    "dbb2_projection": 1.2,
+    "edge_pct": 25.4,
+    "confidence": 0.4
   },
   {
     "player_name": "Noah Clowney",
@@ -2600,14 +3740,24 @@
     "confidence": 0.4
   },
   {
-    "player_name": "Isaiah Hartenstein",
-    "prop_type": "rebounds",
+    "player_name": "Toumani Camara",
+    "prop_type": "blocks",
     "reason": "below_confidence_threshold",
-    "detail": "confidence 0.45 < min_confidence 0.5",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 0.5,
+    "dbb2_projection": 0.7,
+    "edge_pct": 24.4,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Zaccharie Risacher",
+    "prop_type": "points",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
     "sportsbook_line": 9.5,
-    "dbb2_projection": 8.6,
+    "dbb2_projection": 11.3,
     "edge_pct": 24.3,
-    "confidence": 0.45
+    "confidence": 0.4
   },
   {
     "player_name": "Donte DiVincenzo",
@@ -2650,18 +3800,28 @@
     "confidence": 0.4
   },
   {
-    "player_name": "Anthony Edwards",
-    "prop_type": "assists",
+    "player_name": "Davion Mitchell",
+    "prop_type": "rebounds",
     "reason": "below_confidence_threshold",
-    "detail": "confidence 0.41 < min_confidence 0.5",
-    "sportsbook_line": 4.5,
-    "dbb2_projection": 5.0,
-    "edge_pct": 23.6,
-    "confidence": 0.41
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 2.5,
+    "dbb2_projection": 2.1,
+    "edge_pct": 23.7,
+    "confidence": 0.4
   },
   {
     "player_name": "Isaiah Collier",
     "prop_type": "threes",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 0.5,
+    "dbb2_projection": 0.7,
+    "edge_pct": 23.5,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Andrew Wiggins",
+    "prop_type": "blocks",
     "reason": "below_confidence_threshold",
     "detail": "confidence 0.4 < min_confidence 0.5",
     "sportsbook_line": 0.5,
@@ -2687,6 +3847,16 @@
     "sportsbook_line": 1.5,
     "dbb2_projection": 1.8,
     "edge_pct": 23.1,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Kel'el Ware",
+    "prop_type": "points",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 7.5,
+    "dbb2_projection": 8.9,
+    "edge_pct": 22.8,
     "confidence": 0.4
   },
   {
@@ -2730,6 +3900,36 @@
     "confidence": 0.4
   },
   {
+    "player_name": "Julian Strawther",
+    "prop_type": "threes",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 1.5,
+    "dbb2_projection": 1.2,
+    "edge_pct": 22.2,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Toumani Camara",
+    "prop_type": "assists",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 2.5,
+    "dbb2_projection": 2.2,
+    "edge_pct": 22.1,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Dyson Daniels",
+    "prop_type": "points",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 11.5,
+    "dbb2_projection": 12.7,
+    "edge_pct": 22.0,
+    "confidence": 0.4
+  },
+  {
     "player_name": "Kris Dunn",
     "prop_type": "points",
     "reason": "below_confidence_threshold",
@@ -2737,6 +3937,16 @@
     "sportsbook_line": 7.5,
     "dbb2_projection": 6.6,
     "edge_pct": 22.0,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Scoot Henderson",
+    "prop_type": "rebounds",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 2.5,
+    "dbb2_projection": 2.9,
+    "edge_pct": 21.7,
     "confidence": 0.4
   },
   {
@@ -2748,6 +3958,26 @@
     "dbb2_projection": 4.7,
     "edge_pct": 21.5,
     "confidence": 0.4
+  },
+  {
+    "player_name": "Caleb Martin",
+    "prop_type": "points",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 7.5,
+    "dbb2_projection": 8.6,
+    "edge_pct": 21.2,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "James Harden",
+    "prop_type": "assists",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.41 < min_confidence 0.5",
+    "sportsbook_line": 8.5,
+    "dbb2_projection": 7.8,
+    "edge_pct": 20.9,
+    "confidence": 0.41
   },
   {
     "player_name": "Luguentz Dort",
@@ -2830,6 +4060,16 @@
     "confidence": 0.4
   },
   {
+    "player_name": "Deni Avdija",
+    "prop_type": "rebounds",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 6.5,
+    "dbb2_projection": 7.2,
+    "edge_pct": 19.9,
+    "confidence": 0.4
+  },
+  {
     "player_name": "Cody Williams",
     "prop_type": "blocks",
     "reason": "below_confidence_threshold",
@@ -2870,6 +4110,16 @@
     "confidence": 0.4
   },
   {
+    "player_name": "Davion Mitchell",
+    "prop_type": "points",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 8.5,
+    "dbb2_projection": 7.6,
+    "edge_pct": 18.1,
+    "confidence": 0.4
+  },
+  {
     "player_name": "Donovan Mitchell",
     "prop_type": "blocks",
     "reason": "below_confidence_threshold",
@@ -2886,6 +4136,16 @@
     "detail": "confidence 0.4 < min_confidence 0.5",
     "sportsbook_line": 0.5,
     "dbb2_projection": 0.4,
+    "edge_pct": 17.2,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Jamal Murray",
+    "prop_type": "threes",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 2.5,
+    "dbb2_projection": 2.2,
     "edge_pct": 17.2,
     "confidence": 0.4
   },
@@ -2960,6 +4220,16 @@
     "confidence": 0.4
   },
   {
+    "player_name": "Jerami Grant",
+    "prop_type": "points",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 17.5,
+    "dbb2_projection": 16.3,
+    "edge_pct": 16.0,
+    "confidence": 0.4
+  },
+  {
     "player_name": "John Collins",
     "prop_type": "threes",
     "reason": "below_confidence_threshold",
@@ -2968,6 +4238,16 @@
     "dbb2_projection": 1.3,
     "edge_pct": 15.9,
     "confidence": 0.4
+  },
+  {
+    "player_name": "Bam Adebayo",
+    "prop_type": "rebounds",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.49 < min_confidence 0.5",
+    "sportsbook_line": 10.5,
+    "dbb2_projection": 10.0,
+    "edge_pct": 15.7,
+    "confidence": 0.49
   },
   {
     "player_name": "Dean Wade",
@@ -2990,16 +4270,6 @@
     "confidence": 0.4
   },
   {
-    "player_name": "Bilal Coulibaly",
-    "prop_type": "points",
-    "reason": "below_confidence_threshold",
-    "detail": "confidence 0.4 < min_confidence 0.5",
-    "sportsbook_line": 11.5,
-    "dbb2_projection": 12.5,
-    "edge_pct": 15.2,
-    "confidence": 0.4
-  },
-  {
     "player_name": "Noah Clowney",
     "prop_type": "blocks",
     "reason": "below_confidence_threshold",
@@ -3007,6 +4277,26 @@
     "sportsbook_line": 0.5,
     "dbb2_projection": 0.6,
     "edge_pct": 15.2,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Nickeil Alexander-Walker",
+    "prop_type": "blocks",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 0.5,
+    "dbb2_projection": 0.4,
+    "edge_pct": 14.9,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Christian Braun",
+    "prop_type": "blocks",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 0.5,
+    "dbb2_projection": 0.4,
+    "edge_pct": 14.7,
     "confidence": 0.4
   },
   {
@@ -3020,6 +4310,56 @@
     "confidence": 0.4
   },
   {
+    "player_name": "Norman Powell",
+    "prop_type": "rebounds",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 3.5,
+    "dbb2_projection": 3.2,
+    "edge_pct": 14.1,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Norman Powell",
+    "prop_type": "assists",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 2.5,
+    "dbb2_projection": 2.7,
+    "edge_pct": 13.9,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Jalen Johnson",
+    "prop_type": "steals",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 1.5,
+    "dbb2_projection": 1.3,
+    "edge_pct": 13.7,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "C.J. McCollum",
+    "prop_type": "threes",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 2.5,
+    "dbb2_projection": 2.8,
+    "edge_pct": 13.6,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Zaccharie Risacher",
+    "prop_type": "threes",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 1.5,
+    "dbb2_projection": 1.3,
+    "edge_pct": 13.4,
+    "confidence": 0.4
+  },
+  {
     "player_name": "Aaron Wiggins",
     "prop_type": "threes",
     "reason": "below_confidence_threshold",
@@ -3027,6 +4367,16 @@
     "sportsbook_line": 1.5,
     "dbb2_projection": 1.3,
     "edge_pct": 13.3,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Jaime Jaquez Jr",
+    "prop_type": "threes",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 0.5,
+    "dbb2_projection": 0.6,
+    "edge_pct": 13.2,
     "confidence": 0.4
   },
   {
@@ -3040,14 +4390,64 @@
     "confidence": 0.4
   },
   {
-    "player_name": "Kawhi Leonard",
+    "player_name": "Corey Kispert",
+    "prop_type": "threes",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 1.5,
+    "dbb2_projection": 1.7,
+    "edge_pct": 12.7,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Norman Powell",
+    "prop_type": "threes",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 2.5,
+    "dbb2_projection": 2.3,
+    "edge_pct": 12.5,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Deni Avdija",
+    "prop_type": "blocks",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 0.5,
+    "dbb2_projection": 0.6,
+    "edge_pct": 12.5,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Jerami Grant",
+    "prop_type": "assists",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 2.5,
+    "dbb2_projection": 2.7,
+    "edge_pct": 12.4,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Zaccharie Risacher",
     "prop_type": "rebounds",
     "reason": "below_confidence_threshold",
-    "detail": "confidence 0.44 < min_confidence 0.5",
-    "sportsbook_line": 6.5,
-    "dbb2_projection": 6.2,
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 3.5,
+    "dbb2_projection": 3.8,
     "edge_pct": 12.3,
-    "confidence": 0.44
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Josh Green",
+    "prop_type": "rebounds",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 2.5,
+    "dbb2_projection": 2.7,
+    "edge_pct": 12.2,
+    "confidence": 0.4
   },
   {
     "player_name": "Dean Wade",
@@ -3070,6 +4470,16 @@
     "confidence": 0.4
   },
   {
+    "player_name": "Bruce Brown",
+    "prop_type": "points",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 8.5,
+    "dbb2_projection": 9.2,
+    "edge_pct": 12.2,
+    "confidence": 0.4
+  },
+  {
     "player_name": "Anthony Edwards",
     "prop_type": "rebounds",
     "reason": "below_confidence_threshold",
@@ -3077,6 +4487,16 @@
     "sportsbook_line": 5.5,
     "dbb2_projection": 5.2,
     "edge_pct": 12.1,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Caleb Martin",
+    "prop_type": "rebounds",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 4.5,
+    "dbb2_projection": 4.2,
+    "edge_pct": 12.0,
     "confidence": 0.4
   },
   {
@@ -3100,6 +4520,16 @@
     "confidence": 0.4
   },
   {
+    "player_name": "Andrew Wiggins",
+    "prop_type": "rebounds",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 5.5,
+    "dbb2_projection": 5.2,
+    "edge_pct": 11.4,
+    "confidence": 0.4
+  },
+  {
     "player_name": "LaMelo Ball",
     "prop_type": "rebounds",
     "reason": "below_confidence_threshold",
@@ -3107,6 +4537,46 @@
     "sportsbook_line": 4.5,
     "dbb2_projection": 4.8,
     "edge_pct": 11.0,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Cam Spencer",
+    "prop_type": "steals",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 0.5,
+    "dbb2_projection": 0.4,
+    "edge_pct": 11.0,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Dyson Daniels",
+    "prop_type": "blocks",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 0.5,
+    "dbb2_projection": 0.6,
+    "edge_pct": 10.9,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Kel'el Ware",
+    "prop_type": "rebounds",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 6.5,
+    "dbb2_projection": 7.0,
+    "edge_pct": 10.9,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Onyeka Okongwu",
+    "prop_type": "rebounds",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 7.5,
+    "dbb2_projection": 7.1,
+    "edge_pct": 10.9,
     "confidence": 0.4
   },
   {
@@ -3130,6 +4600,16 @@
     "confidence": 0.42
   },
   {
+    "player_name": "Day'Ron Sharpe",
+    "prop_type": "steals",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 0.5,
+    "dbb2_projection": 0.6,
+    "edge_pct": 9.3,
+    "confidence": 0.4
+  },
+  {
     "player_name": "Donte DiVincenzo",
     "prop_type": "rebounds",
     "reason": "below_confidence_threshold",
@@ -3138,16 +4618,6 @@
     "dbb2_projection": 3.3,
     "edge_pct": 9.1,
     "confidence": 0.4
-  },
-  {
-    "player_name": "James Harden",
-    "prop_type": "assists",
-    "reason": "below_confidence_threshold",
-    "detail": "confidence 0.41 < min_confidence 0.5",
-    "sportsbook_line": 7.5,
-    "dbb2_projection": 7.8,
-    "edge_pct": 9.0,
-    "confidence": 0.41
   },
   {
     "player_name": "Donovan Mitchell",
@@ -3164,7 +4634,7 @@
     "prop_type": "points",
     "reason": "below_confidence_threshold",
     "detail": "confidence 0.4 < min_confidence 0.5",
-    "sportsbook_line": 11.5,
+    "sportsbook_line": 10.5,
     "dbb2_projection": 11.0,
     "edge_pct": 8.8,
     "confidence": 0.4
@@ -3207,6 +4677,16 @@
     "sportsbook_line": 1.5,
     "dbb2_projection": 1.4,
     "edge_pct": 7.8,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Deni Avdija",
+    "prop_type": "threes",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 1.5,
+    "dbb2_projection": 1.4,
+    "edge_pct": 7.7,
     "confidence": 0.4
   },
   {
@@ -3280,6 +4760,46 @@
     "confidence": 0.4
   },
   {
+    "player_name": "Scoot Henderson",
+    "prop_type": "threes",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 1.5,
+    "dbb2_projection": 1.4,
+    "edge_pct": 7.2,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Scoot Henderson",
+    "prop_type": "points",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 11.5,
+    "dbb2_projection": 12.0,
+    "edge_pct": 7.1,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "C.J. McCollum",
+    "prop_type": "points",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 18.5,
+    "dbb2_projection": 19.2,
+    "edge_pct": 6.8,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Andrew Wiggins",
+    "prop_type": "threes",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 1.5,
+    "dbb2_projection": 1.6,
+    "edge_pct": 6.8,
+    "confidence": 0.4
+  },
+  {
     "player_name": "Kyle Kuzma",
     "prop_type": "threes",
     "reason": "below_confidence_threshold",
@@ -3296,6 +4816,16 @@
     "detail": "confidence 0.4 < min_confidence 0.5",
     "sportsbook_line": 1.5,
     "dbb2_projection": 1.6,
+    "edge_pct": 6.6,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Andrew Wiggins",
+    "prop_type": "points",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 15.5,
+    "dbb2_projection": 16.0,
     "edge_pct": 6.6,
     "confidence": 0.4
   },
@@ -3327,6 +4857,16 @@
     "sportsbook_line": 2.5,
     "dbb2_projection": 2.4,
     "edge_pct": 5.9,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Toumani Camara",
+    "prop_type": "points",
+    "reason": "below_confidence_threshold",
+    "detail": "confidence 0.4 < min_confidence 0.5",
+    "sportsbook_line": 12.5,
+    "dbb2_projection": 12.2,
+    "edge_pct": 5.2,
     "confidence": 0.4
   },
   {
@@ -3370,6 +4910,36 @@
     "confidence": 0.4
   },
   {
+    "player_name": "Scoot Henderson",
+    "prop_type": "assists",
+    "reason": "below_edge_threshold",
+    "detail": "edge_pct 4.1 < min_edge_pct 5.0",
+    "sportsbook_line": 4.5,
+    "dbb2_projection": 4.4,
+    "edge_pct": 4.1,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Christian Braun",
+    "prop_type": "rebounds",
+    "reason": "below_edge_threshold",
+    "detail": "edge_pct 4.0 < min_edge_pct 5.0",
+    "sportsbook_line": 4.5,
+    "dbb2_projection": 4.4,
+    "edge_pct": 4.0,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Zion Williamson",
+    "prop_type": "assists",
+    "reason": "below_edge_threshold",
+    "detail": "edge_pct 3.6 < min_edge_pct 5.0",
+    "sportsbook_line": 4.5,
+    "dbb2_projection": 4.6,
+    "edge_pct": 3.6,
+    "confidence": 0.4
+  },
+  {
     "player_name": "Ayo Dosunmu",
     "prop_type": "points",
     "reason": "below_edge_threshold",
@@ -3388,6 +4958,26 @@
     "dbb2_projection": 6.4,
     "edge_pct": 3.1,
     "confidence": 0.4
+  },
+  {
+    "player_name": "Bam Adebayo",
+    "prop_type": "points",
+    "reason": "below_edge_threshold",
+    "detail": "edge_pct 2.8 < min_edge_pct 5.0",
+    "sportsbook_line": 18.5,
+    "dbb2_projection": 18.3,
+    "edge_pct": 2.8,
+    "confidence": 0.43
+  },
+  {
+    "player_name": "Isaiah Hartenstein",
+    "prop_type": "rebounds",
+    "reason": "below_edge_threshold",
+    "detail": "edge_pct 2.7 < min_edge_pct 5.0",
+    "sportsbook_line": 8.5,
+    "dbb2_projection": 8.6,
+    "edge_pct": 2.7,
+    "confidence": 0.45
   },
   {
     "player_name": "Jaden McDaniels",
@@ -3440,6 +5030,36 @@
     "confidence": 0.4
   },
   {
+    "player_name": "Zaccharie Risacher",
+    "prop_type": "blocks",
+    "reason": "below_edge_threshold",
+    "detail": "edge_pct 0.0 < min_edge_pct 5.0",
+    "sportsbook_line": 0.5,
+    "dbb2_projection": 0.5,
+    "edge_pct": 0.0,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Pelle Larsson",
+    "prop_type": "threes",
+    "reason": "below_edge_threshold",
+    "detail": "edge_pct 0.0 < min_edge_pct 5.0",
+    "sportsbook_line": 0.5,
+    "dbb2_projection": 0.5,
+    "edge_pct": 0.0,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Andrew Wiggins",
+    "prop_type": "assists",
+    "reason": "below_edge_threshold",
+    "detail": "edge_pct 0.0 < min_edge_pct 5.0",
+    "sportsbook_line": 2.5,
+    "dbb2_projection": 2.5,
+    "edge_pct": 0.0,
+    "confidence": 0.4
+  },
+  {
     "player_name": "Ayo Dosunmu",
     "prop_type": "threes",
     "reason": "below_edge_threshold",
@@ -3470,12 +5090,12 @@
     "confidence": 0.4
   },
   {
-    "player_name": "Noah Clowney",
-    "prop_type": "steals",
+    "player_name": "Isaiah Joe",
+    "prop_type": "rebounds",
     "reason": "below_edge_threshold",
     "detail": "edge_pct 0.0 < min_edge_pct 5.0",
-    "sportsbook_line": 0.5,
-    "dbb2_projection": 0.5,
+    "sportsbook_line": 2.5,
+    "dbb2_projection": 2.5,
     "edge_pct": 0.0,
     "confidence": 0.4
   },
@@ -3521,6 +5141,76 @@
   },
   {
     "player_name": "Jericho Sims",
+    "prop_type": "blocks",
+    "reason": "below_edge_threshold",
+    "detail": "edge_pct 0.0 < min_edge_pct 5.0",
+    "sportsbook_line": 0.5,
+    "dbb2_projection": 0.5,
+    "edge_pct": 0.0,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Jrue Holiday",
+    "prop_type": "rebounds",
+    "reason": "below_edge_threshold",
+    "detail": "edge_pct 0.0 < min_edge_pct 5.0",
+    "sportsbook_line": 4.5,
+    "dbb2_projection": 4.5,
+    "edge_pct": 0.0,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Jrue Holiday",
+    "prop_type": "blocks",
+    "reason": "below_edge_threshold",
+    "detail": "edge_pct 0.0 < min_edge_pct 5.0",
+    "sportsbook_line": 0.5,
+    "dbb2_projection": 0.5,
+    "edge_pct": 0.0,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Robert Williams",
+    "prop_type": "points",
+    "reason": "below_edge_threshold",
+    "detail": "edge_pct 0.0 < min_edge_pct 5.0",
+    "sportsbook_line": 5.5,
+    "dbb2_projection": 5.5,
+    "edge_pct": 0.0,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Donovan Clingan",
+    "prop_type": "blocks",
+    "reason": "below_edge_threshold",
+    "detail": "edge_pct 0.0 < min_edge_pct 5.0",
+    "sportsbook_line": 1.5,
+    "dbb2_projection": 1.5,
+    "edge_pct": 0.0,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Julian Strawther",
+    "prop_type": "assists",
+    "reason": "below_edge_threshold",
+    "detail": "edge_pct 0.0 < min_edge_pct 5.0",
+    "sportsbook_line": 1.5,
+    "dbb2_projection": 1.5,
+    "edge_pct": 0.0,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Jamal Murray",
+    "prop_type": "blocks",
+    "reason": "below_edge_threshold",
+    "detail": "edge_pct 0.0 < min_edge_pct 5.0",
+    "sportsbook_line": 0.5,
+    "dbb2_projection": 0.5,
+    "edge_pct": 0.0,
+    "confidence": 0.4
+  },
+  {
+    "player_name": "Cameron Johnson",
     "prop_type": "blocks",
     "reason": "below_edge_threshold",
     "detail": "edge_pct 0.0 < min_edge_pct 5.0",
