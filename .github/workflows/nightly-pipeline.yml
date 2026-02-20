@@ -182,7 +182,11 @@ jobs:
           fi
           python src/bet_placer.py --from-file "$PROJ_FILE"
           echo "Generating Polymarket demo/fake bets (read-only)..."
-          python src/polymarket_ingestion.py --fetch-markets || true
+          if [ "${{ github.event.inputs.force_recompute }}" = "true" ]; then
+            python src/polymarket_ingestion.py --fetch-markets --force || true
+          else
+            python src/polymarket_ingestion.py --fetch-markets || true
+          fi
           python src/polymarket_ev_calculator.py || true
           python src/bet_slip.py --source polymarket-demo || true
 
