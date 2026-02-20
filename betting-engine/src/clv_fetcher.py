@@ -70,30 +70,53 @@ def fetch_sportsbook_closing(settings: dict) -> dict:
     Returns: {(player_name_lower, prop_type): closing_line_float}
     """
     api = settings["odds_api"]
-    all_odds = {}
+    events_url = f"{api['base_url']}/sports/{api['sport']}/events"
+    events_params = {"apiKey": api["api_key"]}
 
-    for market in api["markets"]:
-        url = f"{api['base_url']}/sports/{api['sport']}/odds"
-        params = {
+    try:
+        events_response = requests.get(events_url, params=events_params, timeout=30)
+    except requests.RequestException as e:
+        logger.warning(f"CLV: Odds API events request failed: {e}")
+        return {}
+
+    if events_response.status_code != 200:
+        logger.warning(
+            f"CLV: Odds API events returned {events_response.status_code}: "
+            f"{events_response.text[:200]}"
+        )
+        return {}
+
+    events = events_response.json() or []
+    event_odds_payloads = []
+    for event in events:
+        event_id = event.get("id")
+        if not event_id:
+            continue
+
+        odds_url = f"{api['base_url']}/sports/{api['sport']}/events/{event_id}/odds"
+        odds_params = {
             "apiKey": api["api_key"],
             "regions": ",".join(api["regions"]),
-            "markets": market,
+            "markets": ",".join(api["markets"]),
             "bookmakers": ",".join(api["bookmakers"]),
         }
 
         try:
-            response = requests.get(url, params=params, timeout=30)
+            response = requests.get(odds_url, params=odds_params, timeout=30)
         except requests.RequestException as e:
-            logger.warning(f"CLV: Odds API request failed for {market}: {e}")
+            logger.warning(f"CLV: Odds API request failed for event {event_id}: {e}")
             continue
 
         if response.status_code != 200:
-            logger.warning(f"CLV: Odds API returned {response.status_code} for {market}")
+            logger.warning(
+                f"CLV: Odds API returned {response.status_code} for event {event_id}: "
+                f"{response.text[:200]}"
+            )
             continue
 
-        all_odds[market] = response.json()
+        event_odds_payloads.append(response.json())
 
-    normalized = normalize_odds(all_odds)
+    normalized = normalize_odds(event_odds_payloads)
 
     # Build lookup keyed by (player_name_lower, prop_type)
     result = {}

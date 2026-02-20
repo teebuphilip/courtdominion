@@ -133,38 +133,62 @@ def fetch_odds(dry_run: bool = False) -> None:
         return
 
     api = settings["odds_api"]
-    all_odds = {}
+    events_url = f"{api['base_url']}/sports/{api['sport']}/events"
+    events_params = {"apiKey": api["api_key"]}
 
-    for market in api["markets"]:
-        url = f"{api['base_url']}/sports/{api['sport']}/odds"
-        params = {
-            "apiKey": api["api_key"],
-            "regions": ",".join(api["regions"]),
-            "markets": market,
-            "bookmakers": ",".join(api["bookmakers"]),
-        }
+    try:
+        events_response = requests.get(events_url, params=events_params, timeout=30)
+    except requests.RequestException as e:
+        logger.warning(f"Odds API events request failed: {e}")
+        events_response = None
 
-        try:
-            response = requests.get(url, params=params, timeout=30)
-        except requests.RequestException as e:
-            logger.warning(f"Odds API request failed for {market}: {e}")
-            continue
+    event_odds_payloads = []
+    if events_response is None:
+        logger.warning("Skipping odds fetch: could not load event list")
+    elif events_response.status_code != 200:
+        logger.warning(
+            f"Odds API events returned {events_response.status_code}: "
+            f"{events_response.text[:200]}"
+        )
+    else:
+        events = events_response.json() or []
+        logger.info(f"Odds API returned {len(events)} NBA events")
 
-        if response.status_code != 200:
-            # WHY: Don't fail entire run if one market fails
-            logger.warning(f"Odds API returned {response.status_code} for {market}")
-            continue
+        for event in events:
+            event_id = event.get("id")
+            if not event_id:
+                continue
 
-        data = response.json()
-        all_odds[market] = data
-        logger.info(f"Fetched {market}: {len(data)} events")
+            odds_url = f"{api['base_url']}/sports/{api['sport']}/events/{event_id}/odds"
+            odds_params = {
+                "apiKey": api["api_key"],
+                "regions": ",".join(api["regions"]),
+                "markets": ",".join(api["markets"]),
+                "bookmakers": ",".join(api["bookmakers"]),
+            }
 
-    normalized = normalize_odds(all_odds)
+            try:
+                response = requests.get(odds_url, params=odds_params, timeout=30)
+            except requests.RequestException as e:
+                logger.warning(f"Odds API request failed for event {event_id}: {e}")
+                continue
+
+            if response.status_code != 200:
+                # WHY: Keep moving if one event fails.
+                logger.warning(
+                    f"Odds API returned {response.status_code} for event {event_id}: "
+                    f"{response.text[:200]}"
+                )
+                continue
+
+            event_odds_payloads.append(response.json())
+
+    normalized = normalize_odds(event_odds_payloads)
     write_json(output_path, normalized)
     logger.info(f"Saved odds for {len(normalized)} players to {output_path}")
 
 
-def normalize_odds(raw: dict) -> dict:
+def normalize_odds(raw) -> dict:
     """
     Normalize Odds API response to standard structure.
 
@@ -175,14 +199,26 @@ def normalize_odds(raw: dict) -> dict:
     """
     result = {}
 
-    for market, games in raw.items():
-        prop_type = MARKET_TO_PROP.get(market, market)
+    if isinstance(raw, dict):
+        market_game_pairs = list(raw.items())
+    else:
+        market_game_pairs = [(None, raw or [])]
 
-        for game in games:
+    for fallback_market, games in market_game_pairs:
+        for game in games or []:
             for bookmaker in game.get("bookmakers", []):
                 for mkt in bookmaker.get("markets", []):
+                    market_key = mkt.get("key") or fallback_market
+                    prop_type = MARKET_TO_PROP.get(market_key)
+                    if not prop_type:
+                        continue
+
                     for outcome in mkt.get("outcomes", []):
-                        player_name = outcome.get("description", "")
+                        player_name = (
+                            outcome.get("description")
+                            or outcome.get("participant")
+                            or ""
+                        )
                         if not player_name:
                             continue
 
