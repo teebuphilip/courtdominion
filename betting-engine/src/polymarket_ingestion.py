@@ -26,23 +26,43 @@ def log_disclaimer(settings: dict) -> None:
     print("=" * 70)
 
 
+def _market_text(market: dict) -> str:
+    """Build a normalized text blob across common Gamma market fields."""
+    parts = [
+        str(market.get("question", "")),
+        str(market.get("title", "")),
+        str(market.get("slug", "")),
+        str(market.get("description", "")),
+    ]
+    return " ".join(parts).lower()
+
+
 def is_player_prop(market: dict) -> bool:
     """
     WHY: Gamma returns mixed market types; only player props are relevant here.
     """
-    question = str(market.get("question", "")).lower()
+    question = _market_text(market)
     prop_keywords = [
         "points",
+        "point",
+        "pts",
         "rebounds",
+        "rebound",
+        "reb",
         "assists",
+        "assist",
+        "ast",
         "threes",
         "three-pointers",
-        "score",
-        "rebound",
-        "assist",
+        "3pt",
+        "3-pointer",
+        "3 pointers",
+        "pra",
+        "double double",
+        "triple double",
         "make",
     ]
-    game_keywords = ["win", "winner", "beat", "defeat", "spread", "over/under"]
+    game_keywords = ["moneyline", "spread", "first half", "first quarter", "to win game"]
     has_prop_keyword = any(kw in question for kw in prop_keywords)
     has_game_keyword = any(kw in question for kw in game_keywords)
     return has_prop_keyword and not has_game_keyword
@@ -85,6 +105,9 @@ def fetch_nba_markets(settings: dict, force: bool = False) -> list:
 
     prop_markets = [m for m in markets if is_player_prop(m)]
     logger.info(f"Polymarket: {len(markets)} NBA markets, {len(prop_markets)} player props")
+    if not prop_markets and markets:
+        sample = [str(m.get("question", "")).strip() for m in markets[:8]]
+        logger.warning(f"Polymarket sample questions (first 8): {sample}")
     write_json(str(output_path), prop_markets)
     return prop_markets
 
@@ -194,7 +217,12 @@ def normalize_polymarket_markets(settings: dict, raw_markets: list) -> dict:
 
     for market in raw_markets:
         market_id = str(market.get("id", "")).strip()
-        question = str(market.get("question", "")).strip()
+        question = str(
+            market.get("question")
+            or market.get("title")
+            or market.get("slug")
+            or ""
+        ).strip()
         if not market_id or not question:
             continue
 
