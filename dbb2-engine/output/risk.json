@@ -6207,10 +6207,10 @@
     "injury_risk": 17,
     "volatility": 32,
     "minutes_risk": 50,
-    "availability_risk": 0.429,
-    "role_risk": 0.455,
+    "availability_risk": 0.381,
+    "role_risk": 0.443,
     "composition_risk": 0.385,
-    "total_risk": 0.429,
+    "total_risk": 0.397,
     "risk_level": "Medium"
   },
   {
