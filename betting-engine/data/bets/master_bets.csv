@@ -1,4 +1,1 @@
 bet_id,date,source,player_name,team,prop_type,direction,dbb2_projection,sportsbook_line,edge_pct,confidence,units,dollar_amount,odds_or_price,dbb2_implied_prob,market_implied_prob,actual_result,status,pnl,closing_line,clv,notes
-97d43399,2026-02-20,sportsbook,Julius Randle,,points,UNDER,19.3,20.5,18.7,0.5,0.5,50.0,1.98,,,,PENDING,,,,
-7932c5ad,2026-02-20,sportsbook,Zion Williamson,,points,UNDER,22.3,23.5,16.7,0.5,0.5,50.0,1.94,,,,PENDING,,,,
-af7cd7e7,2026-02-20,sportsbook,Julius Randle,,rebounds,OVER,7.7,7.5,8.1,0.5,0.5,50.0,1.98,,,,PENDING,,,,
