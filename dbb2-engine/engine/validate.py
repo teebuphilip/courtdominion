@@ -163,6 +163,19 @@ def validate_cross_file_consistency(output_dir: str) -> Tuple[bool, List[str]]:
                     elif val < 0 or val > 100:
                         errors.append(f"{filename}[{i}].{field}: {val} out of range 0-100")
 
+    # Optional extended risk fields
+    risk = data.get("risk.json", [])
+    for i, item in enumerate(risk):
+        for field in ("availability_risk", "role_risk", "composition_risk", "total_risk"):
+            if field in item:
+                val = item[field]
+                if not isinstance(val, (int, float)):
+                    errors.append(f"risk.json[{i}].{field}: expected number, got {type(val).__name__}")
+                elif val < 0.0 or val > 1.0:
+                    errors.append(f"risk.json[{i}].{field}: {val} out of range 0.0-1.0")
+        if "risk_level" in item and item["risk_level"] not in ("Low", "Medium", "High"):
+            errors.append(f"risk.json[{i}].risk_level: invalid value '{item['risk_level']}'")
+
     # No negative stat projections
     stat_fields = [
         "minutes", "points", "rebounds", "assists", "steals", "blocks",

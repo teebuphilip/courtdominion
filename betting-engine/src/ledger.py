@@ -17,10 +17,11 @@ STARTING_BANKROLL = 5000.00
 UNIT_DIVISOR = 100
 
 
-def load_ledger() -> dict:
+def load_ledger(ledger_path: str = None) -> dict:
     """Load existing ledger or create fresh one with starting bankroll."""
-    if Path(LEDGER_PATH).exists():
-        return load_json(LEDGER_PATH)
+    ledger_path = ledger_path or LEDGER_PATH
+    if Path(ledger_path).exists():
+        return load_json(ledger_path)
 
     ledger = {
         "created_at": get_timestamp(),
@@ -38,25 +39,26 @@ def load_ledger() -> dict:
         "win_rate_pct": 0.0,
         "daily_log": [],
     }
-    save_ledger(ledger)
+    save_ledger(ledger, ledger_path=ledger_path)
     logger.info(f"Created new ledger with ${STARTING_BANKROLL} bankroll")
     return ledger
 
 
-def save_ledger(ledger: dict) -> None:
+def save_ledger(ledger: dict, ledger_path: str = None) -> None:
     """Write ledger to JSON."""
-    write_json(LEDGER_PATH, ledger)
+    ledger_path = ledger_path or LEDGER_PATH
+    write_json(ledger_path, ledger)
 
 
-def get_current_bankroll() -> float:
+def get_current_bankroll(ledger_path: str = None) -> float:
     """Read current bankroll for Kelly sizer."""
-    ledger = load_ledger()
+    ledger = load_ledger(ledger_path=ledger_path)
     return ledger["current_bankroll"]
 
 
-def get_current_unit_value() -> float:
+def get_current_unit_value(ledger_path: str = None) -> float:
     """Current unit value = bankroll / 100."""
-    return get_current_bankroll() / UNIT_DIVISOR
+    return get_current_bankroll(ledger_path=ledger_path) / UNIT_DIVISOR
 
 
 def update_ledger(ledger: dict, results: dict) -> dict:

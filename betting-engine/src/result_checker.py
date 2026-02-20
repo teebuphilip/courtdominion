@@ -356,6 +356,32 @@ def run(date: str = None, dry_run: bool = False) -> dict:
             f"ROI {ledger['roi_pct']}%"
         )
 
+        # Optional enhanced shadow grading/ledger path.
+        enhanced_slip_path = f"data/bet_slips_enhanced/{date}.json"
+        if Path(enhanced_slip_path).exists():
+            enhanced_slip = load_json(enhanced_slip_path)
+            enhanced_results = grade_all_bets(enhanced_slip, box_scores, unit_value)
+            write_json(f"data/results_enhanced/{date}.json", enhanced_results)
+
+            enhanced_ledger_path = "data/ledger_enhanced.json"
+            enhanced_history_path = "data/ledger_history_enhanced.md"
+            e_ledger = load_ledger(ledger_path=enhanced_ledger_path)
+            e_ledger = update_ledger(e_ledger, enhanced_results)
+            save_ledger(e_ledger, ledger_path=enhanced_ledger_path)
+            e_md = generate_ledger_markdown(e_ledger)
+            write_file(enhanced_history_path, e_md)
+
+            e_csv_updated = update_graded_bets(
+                date,
+                enhanced_results.get("bets", []),
+                csv_path="data/bets/master_bets_enhanced.csv",
+            )
+            logger.info(
+                f"Enhanced shadow graded: {enhanced_results['wins']}W-{enhanced_results['losses']}L-"
+                f"{enhanced_results['pushes']}P, P&L ${enhanced_results['daily_pnl']:+.2f}, "
+                f"CSV rows updated: {e_csv_updated}"
+            )
+
     return results
 
 

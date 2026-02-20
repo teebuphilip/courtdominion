@@ -24,26 +24,26 @@ CSV_HEADERS = [
 ]
 
 
-def ensure_csv_exists() -> None:
+def ensure_csv_exists(csv_path: str = CSV_PATH) -> None:
     """Create CSV with headers if it doesn't exist."""
-    p = Path(CSV_PATH)
+    p = Path(csv_path)
     if p.exists():
         return
     p.parent.mkdir(parents=True, exist_ok=True)
     with open(p, "w", newline="") as f:
         writer = csv.writer(f)
         writer.writerow(CSV_HEADERS)
-    logger.info(f"Created master CSV: {CSV_PATH}")
+    logger.info(f"Created master CSV: {csv_path}")
 
 
-def load_todays_bets(date: str = None) -> list:
+def load_todays_bets(date: str = None, csv_path: str = CSV_PATH) -> list:
     """Load all bets for a given date to check for duplicates."""
     if date is None:
         date = get_today_date()
-    if not Path(CSV_PATH).exists():
+    if not Path(csv_path).exists():
         return []
     rows = []
-    with open(CSV_PATH, newline="") as f:
+    with open(csv_path, newline="") as f:
         reader = csv.DictReader(f)
         for row in reader:
             if row.get("date") == date:
@@ -51,7 +51,7 @@ def load_todays_bets(date: str = None) -> list:
     return rows
 
 
-def append_bets(bets: list, date: str = None) -> int:
+def append_bets(bets: list, date: str = None, csv_path: str = CSV_PATH) -> int:
     """
     Append new bets to master CSV as PENDING rows.
 
@@ -62,10 +62,10 @@ def append_bets(bets: list, date: str = None) -> int:
     settings = load_settings()
     unit_size = settings.get("bankroll", {}).get("unit_size", 100)
 
-    ensure_csv_exists()
+    ensure_csv_exists(csv_path=csv_path)
 
     rows_written = 0
-    with open(CSV_PATH, "a", newline="") as f:
+    with open(csv_path, "a", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=CSV_HEADERS)
 
         for bet in bets:
@@ -125,17 +125,17 @@ def append_bets(bets: list, date: str = None) -> int:
             writer.writerow(row)
             rows_written += 1
 
-    logger.info(f"Appended {rows_written} bets to {CSV_PATH}")
+    logger.info(f"Appended {rows_written} bets to {csv_path}")
     return rows_written
 
 
-def update_graded_bets(date: str, graded_results: list) -> int:
+def update_graded_bets(date: str, graded_results: list, csv_path: str = CSV_PATH) -> int:
     """
     Update PENDING bets for a date with actual results and P&L.
 
     WHY: Full CSV rewrite preserving all history — only today's PENDING rows change.
     """
-    if not Path(CSV_PATH).exists():
+    if not Path(csv_path).exists():
         logger.warning("No CSV to update")
         return 0
 
@@ -148,7 +148,7 @@ def update_graded_bets(date: str, graded_results: list) -> int:
     all_rows = []
     updated = 0
 
-    with open(CSV_PATH, newline="") as f:
+    with open(csv_path, newline="") as f:
         reader = csv.DictReader(f)
         for row in reader:
             if row["date"] == date and row["status"] == "PENDING":
@@ -162,10 +162,10 @@ def update_graded_bets(date: str, graded_results: list) -> int:
             all_rows.append(row)
 
     # Rewrite CSV
-    with open(CSV_PATH, "w", newline="") as f:
+    with open(csv_path, "w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=CSV_HEADERS, restval="", extrasaction="ignore")
         writer.writeheader()
         writer.writerows(all_rows)
 
-    logger.info(f"Updated {updated} graded bets in {CSV_PATH}")
+    logger.info(f"Updated {updated} graded bets in {csv_path}")
     return updated

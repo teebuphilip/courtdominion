@@ -13,8 +13,9 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from src import load_settings, load_json, get_today_date, logger
+from src import load_settings, load_json, write_json, get_today_date, get_timestamp, logger
 from src.csv_tracker import load_todays_bets, append_bets
+from src.risk_overlay import load_risk_map, apply_enhanced_shadow, write_compare_report
 
 
 def has_nba_games_today(date: str = None) -> bool:
@@ -171,6 +172,42 @@ def run(dry_run: bool = False, date: str = None, from_file: str = None) -> None:
     # Step 5: Append to master CSV
     rows_written = append_bets(allocated, date=date)
     logger.info(f"Wrote {rows_written} bets to master CSV")
+
+    # Step 5b: Enhanced risk shadow path (A/B) — separate ledger/CSV/report.
+    risk_cfg = settings.get("risk_overlay", {})
+    risk_mode = risk_cfg.get("mode", "off")
+    if risk_mode in ("observe", "enforce"):
+        risk_map = load_risk_map(date, settings)
+        enhanced_bets, summary = apply_enhanced_shadow(
+            baseline_bets=allocated,
+            date=date,
+            settings=settings,
+            risk_map=risk_map,
+        )
+        append_bets(
+            enhanced_bets,
+            date=date,
+            csv_path="data/bets/master_bets_enhanced.csv",
+        )
+        write_json(
+            f"data/bet_slips_enhanced/{date}.json",
+            {
+                "date": date,
+                "generated_at": get_timestamp(),
+                "total_bets": len(enhanced_bets),
+                "total_units": sum(float(b.get("units", 0.0)) for b in enhanced_bets),
+                "bets": enhanced_bets,
+            },
+        )
+        write_compare_report(date, allocated, enhanced_bets, summary)
+        logger.info(
+            f"Enhanced shadow: {summary['enhanced_count']} bets "
+            f"({summary['baseline_count']} baseline, {summary['dropped_count']} dropped)"
+        )
+
+        # Optional enforce mode: use enhanced allocation for slip generation.
+        if risk_mode == "enforce":
+            allocated = enhanced_bets
 
     # Step 6: Generate bet slip
     from src.bet_slip import run as run_bet_slip
