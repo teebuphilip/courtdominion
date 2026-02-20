@@ -102,8 +102,11 @@ jobs:
           DATE=$(date +%Y-%m-%d)
           echo "date=${DATE}" >> $GITHUB_OUTPUT
           mkdir -p betting-engine/data/projections
+          mkdir -p betting-engine/data/risk
           cp dbb2-engine/output/betting_contract.json \
             betting-engine/data/projections/${DATE}.json
+          cp dbb2-engine/output/risk.json \
+            betting-engine/data/risk/${DATE}.json
           echo "Copied betting_contract.json -> data/projections/${DATE}.json"
 
       - name: Check for NBA games today
@@ -159,9 +162,12 @@ jobs:
 
           git add dbb2-engine/output/ || true
           git add betting-engine/data/projections/ || true
+          git add betting-engine/data/risk/ || true
           git add betting-engine/data/bet_slips/ || true
+          git add betting-engine/data/bet_slips_enhanced/ || true
           git add betting-engine/data/bets/ || true
           git add betting-engine/data/kalshi/bet_slips/ || true
+          git add betting-engine/data/reports/ || true
 
           git diff --cached --quiet && echo "No changes to commit" && exit 0
           git commit -m "pipeline: ${DATE} projections + bets"

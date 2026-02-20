@@ -28,6 +28,35 @@
         "minimum": 0,
         "maximum": 100,
         "description": "Minutes reduction risk score"
+      },
+      "availability_risk": {
+        "type": "number",
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "description": "Likelihood projection misses due to games availability"
+      },
+      "role_risk": {
+        "type": "number",
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "description": "Role/minutes instability risk"
+      },
+      "composition_risk": {
+        "type": "number",
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "description": "Stat composition volatility risk"
+      },
+      "total_risk": {
+        "type": "number",
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "description": "Weighted combined uncertainty risk"
+      },
+      "risk_level": {
+        "type": "string",
+        "enum": ["Low", "Medium", "High"],
+        "description": "Categorical uncertainty risk level"
       }
     }
   }

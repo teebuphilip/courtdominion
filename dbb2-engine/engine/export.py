@@ -17,7 +17,7 @@ from engine.projections import SeasonProjection
 from engine.pricing import AuctionValue
 from engine.position_map import map_position_to_cd
 from engine import lookup
-from engine.live_data import compute_remaining_games_fields
+from engine.live_data import compute_remaining_games_fields, normalize_name
 
 
 def export_all(
@@ -43,7 +43,7 @@ def export_all(
     sorted_projections = sorted(projections, key=lambda p: p.fantasy_points, reverse=True)
 
     # Build risk data for each player
-    risk_data = _build_risk_data(contexts, projections)
+    risk_data = _build_risk_data(contexts, projections, live_context)
     risk_map = {r["player_id"]: r for r in risk_data}
 
     files = {}
@@ -159,15 +159,26 @@ def _build_projections_json(
 def _build_risk_data(
     contexts: List[PlayerContext],
     projections: List[SeasonProjection],
+    live_context: Optional[Dict] = None,
 ) -> List[dict]:
     """
     Build risk.json entries.
 
-    injury_risk: 100 - (durability_score * 100)
-    volatility: 100 - consistency
-    minutes_risk: from minutes_volatility + role modifier
+    Backward-compatible fields:
+    - injury_risk: 100 - (durability_score * 100)
+    - volatility: 100 - consistency
+    - minutes_risk: from minutes_volatility + role modifier
+
+    Extended fields (legacy uncertainty model parity):
+    - availability_risk (0.0-1.0)
+    - role_risk (0.0-1.0)
+    - composition_risk (0.0-1.0)
+    - total_risk (0.0-1.0)
+    - risk_level (Low/Medium/High)
     """
     proj_map = {p.player_id: p for p in projections}
+    injury_by_id = (live_context or {}).get("injury_by_id", {})
+    injury_by_name = (live_context or {}).get("injury_by_name", {})
     risk_data = []
 
     for ctx in contexts:
@@ -197,11 +208,31 @@ def _build_risk_data(
         role_mod = {"Bench": 15, "Scrub": 20}.get(ctx.role, 0)
         minutes_risk = base_risk + role_mod
 
+        # Legacy uncertainty components
+        availability_risk = _calculate_availability_risk(ctx, proj, live_context)
+        role_risk = _calculate_role_risk(
+            ctx, proj, availability_risk, injury_by_id, injury_by_name
+        )
+        composition_risk = _calculate_composition_risk(proj)
+        total_risk = (
+            0.60 * availability_risk
+            + 0.25 * role_risk
+            + 0.15 * composition_risk
+        )
+        risk_level = _classify_risk_level(total_risk)
+
         risk_data.append({
             "player_id": ctx.player_id,
+            "name": ctx.player_name,
+            "team": ctx.team,
             "injury_risk": _clamp_int(injury_risk, 0, 100),
             "volatility": _clamp_int(volatility, 0, 100),
             "minutes_risk": _clamp_int(minutes_risk, 0, 100),
+            "availability_risk": round(_clamp_float(availability_risk, 0.0, 1.0), 3),
+            "role_risk": round(_clamp_float(role_risk, 0.0, 1.0), 3),
+            "composition_risk": round(_clamp_float(composition_risk, 0.0, 1.0), 3),
+            "total_risk": round(_clamp_float(total_risk, 0.0, 1.0), 3),
+            "risk_level": risk_level,
         })
 
     return risk_data
@@ -315,3 +346,119 @@ def _generate_note(
 def _clamp_int(value: int, lo: int, hi: int) -> int:
     """Clamp integer to [lo, hi]."""
     return max(lo, min(hi, value))
+
+
+def _clamp_float(value: float, lo: float, hi: float) -> float:
+    """Clamp float to [lo, hi]."""
+    return max(lo, min(hi, value))
+
+
+def _lookup_injury(
+    ctx: PlayerContext,
+    injury_by_id: Dict[str, dict],
+    injury_by_name: Dict[str, dict],
+) -> Optional[dict]:
+    by_id = injury_by_id.get(str(ctx.player_id))
+    if by_id:
+        return by_id
+    return injury_by_name.get(normalize_name(ctx.player_name))
+
+
+def _calculate_availability_risk(
+    ctx: PlayerContext,
+    proj: Optional[SeasonProjection],
+    live_context: Optional[Dict],
+) -> float:
+    if proj is None:
+        return 0.5
+
+    if live_context is not None:
+        ros = compute_remaining_games_fields(
+            player_id=ctx.player_id,
+            player_name=ctx.player_name,
+            team=ctx.team,
+            projected_games=proj.projected_games,
+            tpm_per_game=proj.three_pm,
+            live_ctx=live_context,
+        )
+        team_games_remaining = ros.get("team_games_remaining", 82)
+        games_remaining_projected = ros.get("games_remaining_projected", proj.projected_games)
+    else:
+        team_games_remaining = 82
+        games_remaining_projected = min(82, max(0, int(proj.projected_games)))
+
+    if team_games_remaining <= 0:
+        return 0.0
+    return 1.0 - (games_remaining_projected / float(team_games_remaining))
+
+
+def _calculate_role_risk(
+    ctx: PlayerContext,
+    proj: Optional[SeasonProjection],
+    availability_risk: float,
+    injury_by_id: Dict[str, dict],
+    injury_by_name: Dict[str, dict],
+) -> float:
+    risk_score = 0.0
+    minutes = proj.minutes if proj is not None else 25.0
+
+    if minutes >= 32:
+        risk_score += 0.05
+    elif minutes >= 28:
+        risk_score += 0.12
+    elif minutes >= 22:
+        risk_score += 0.20
+    elif minutes >= 15:
+        risk_score += 0.28
+    else:
+        risk_score += 0.35
+
+    injury = _lookup_injury(ctx, injury_by_id, injury_by_name)
+    if injury:
+        status = str(injury.get("status", "")).lower()
+        if "out" in status:
+            risk_score += 0.25
+        elif "doubtful" in status:
+            risk_score += 0.20
+        elif "questionable" in status:
+            risk_score += 0.12
+        elif "probable" in status or "day-to-day" in status:
+            risk_score += 0.05
+
+    risk_score += _clamp_float(availability_risk, 0.0, 1.0) * 0.25
+
+    consistency = proj.consistency if proj is not None else 75
+    risk_score += ((100 - consistency) / 100.0) * 0.15
+
+    return _clamp_float(risk_score, 0.0, 1.0)
+
+
+def _calculate_composition_risk(proj: Optional[SeasonProjection]) -> float:
+    if proj is None:
+        return 0.5
+
+    points_fp = max(0.0, proj.points * 1.0)
+    rebounds_fp = max(0.0, proj.rebounds * 1.2)
+    assists_fp = max(0.0, proj.assists * 1.5)
+    steals_fp = max(0.0, proj.steals * 3.0)
+    blocks_fp = max(0.0, proj.blocks * 3.0)
+    three_pm_fp = max(0.0, proj.three_pm * 1.0)
+
+    total_positive_fp = points_fp + rebounds_fp + assists_fp + steals_fp + blocks_fp
+    if total_positive_fp <= 0:
+        return 0.5
+
+    high_variance_fp = steals_fp + blocks_fp + (three_pm_fp * 2.0)
+    high_variance_ratio = high_variance_fp / total_positive_fp
+    dependency_ratio = max(
+        points_fp, rebounds_fp, assists_fp, steals_fp, blocks_fp
+    ) / total_positive_fp
+    return _clamp_float((high_variance_ratio * 0.6) + (dependency_ratio * 0.4), 0.0, 1.0)
+
+
+def _classify_risk_level(total_risk: float) -> str:
+    if total_risk < 0.25:
+        return "Low"
+    if total_risk <= 0.55:
+        return "Medium"
+    return "High"

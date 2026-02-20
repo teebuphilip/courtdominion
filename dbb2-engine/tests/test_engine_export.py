@@ -186,6 +186,25 @@ class TestRiskJson:
                         f"{field} = {entry[field]}"
                     )
 
+    def test_extended_uncertainty_fields_exist(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            export_all(
+                _make_contexts(), _make_projections(),
+                _make_auction_values(), tmpdir,
+            )
+            data = json.loads((Path(tmpdir) / "risk.json").read_text())
+            for entry in data:
+                assert "availability_risk" in entry
+                assert "role_risk" in entry
+                assert "composition_risk" in entry
+                assert "total_risk" in entry
+                assert "risk_level" in entry
+                assert 0.0 <= entry["availability_risk"] <= 1.0
+                assert 0.0 <= entry["role_risk"] <= 1.0
+                assert 0.0 <= entry["composition_risk"] <= 1.0
+                assert 0.0 <= entry["total_risk"] <= 1.0
+                assert entry["risk_level"] in {"Low", "Medium", "High"}
+
 
 class TestInsightsJson:
     """insights.json output validation."""
