@@ -37,6 +37,10 @@ def run(dry_run: bool = False) -> list:
     output_path = f"data/ev_results_{today}.json"
     rejects_path = f"data/ev_rejections_{today}.json"
     reject_summary_path = f"data/ev_rejection_summary_{today}.json"
+    reports_dir = Path("data/reports")
+    reports_dir.mkdir(parents=True, exist_ok=True)
+    reports_rejects_path = reports_dir / f"ev_rejections_{today}.json"
+    reports_summary_path = reports_dir / f"ev_rejection_summary_{today}.json"
 
     ev_results = []
     rejections = []
@@ -165,8 +169,23 @@ def run(dry_run: bool = False) -> list:
 
     write_json(output_path, qualified)
     write_json(rejects_path, rejections)
+    write_json(str(reports_rejects_path), rejections)
     write_json(
         reject_summary_path,
+        {
+            "date": today,
+            "qualified_count": len(qualified),
+            "evaluated_count": len(ev_results),
+            "rejected_count": len(rejections),
+            "reason_counts": reject_counts,
+            "thresholds": {
+                "min_edge_pct": min_edge,
+                "min_confidence": min_conf,
+            },
+        },
+    )
+    write_json(
+        str(reports_summary_path),
         {
             "date": today,
             "qualified_count": len(qualified),
