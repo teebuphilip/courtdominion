@@ -16,6 +16,11 @@ on:
         required: false
         type: boolean
         default: false
+      force_markets:
+        description: 'Run Polymarket demo generation even if no NBA games are detected'
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -181,6 +186,11 @@ jobs:
             exit 0
           fi
           python src/bet_placer.py --from-file "$PROJ_FILE"
+
+      - name: Run Polymarket demo generation
+        if: steps.check-games.outputs.has_games != 'false' || github.event.inputs.force_markets == 'true'
+        working-directory: betting-engine
+        run: |
           echo "Generating Polymarket demo/fake bets (read-only)..."
           if [ "${{ github.event.inputs.force_recompute }}" = "true" ]; then
             python src/polymarket_ingestion.py --fetch-markets --force || true
