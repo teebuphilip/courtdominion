@@ -68,7 +68,40 @@ def is_player_prop(market: dict) -> bool:
     return has_prop_keyword and not has_game_keyword
 
 
-def fetch_nba_markets(settings: dict, force: bool = False) -> list:
+def load_projection_player_names(today: str) -> set:
+    """
+    Build a set of projected NBA player names so we can hard-filter noisy tag results.
+    """
+    path = Path(f"data/projections/{today}.json")
+    if not path.exists():
+        return set()
+    try:
+        payload = load_json(str(path))
+    except Exception:
+        return set()
+
+    names = set()
+    if isinstance(payload, dict):
+        for _, row in payload.items():
+            if isinstance(row, dict):
+                name = str(row.get("name", "")).strip()
+                if name:
+                    names.add(name.lower())
+    return names
+
+
+def mentions_projected_player(market: dict, projected_names: set) -> bool:
+    """Return True when market text mentions a known projected player name."""
+    if not projected_names:
+        return True
+    text = _market_text(market)
+    for name in projected_names:
+        if name in text:
+            return True
+    return False
+
+
+def fetch_nba_markets(settings: dict, force: bool = False, projected_names: set = None) -> list:
     """
     WHY: Metadata discovery should happen from Gamma once and be cached.
     """
@@ -103,7 +136,10 @@ def fetch_nba_markets(settings: dict, force: bool = False) -> list:
         logger.warning("Gamma response shape unexpected; defaulting to empty list")
         markets = []
 
+    projected_names = projected_names or set()
     candidate_markets = [m for m in markets if is_player_prop(m)]
+    if projected_names:
+        candidate_markets = [m for m in candidate_markets if mentions_projected_player(m, projected_names)]
     prop_markets = []
     dropped_samples = []
     for m in candidate_markets:
@@ -310,9 +346,10 @@ def run(fetch_markets: bool = False, force: bool = False) -> dict:
         logger.info("No action selected. Use --fetch-markets")
         return {}
 
-    raw_markets = fetch_nba_markets(settings, force=force)
-    normalized = normalize_polymarket_markets(settings, raw_markets)
     today = get_today_date()
+    projected_names = load_projection_player_names(today)
+    raw_markets = fetch_nba_markets(settings, force=force, projected_names=projected_names)
+    normalized = normalize_polymarket_markets(settings, raw_markets)
     output_path = f"data/polymarket/odds/{today}.json"
     write_json(output_path, normalized)
 

@@ -1,6 +1,10 @@
 import pytest
 
-from src.polymarket_ingestion import parse_market_question, normalize_polymarket_markets
+from src.polymarket_ingestion import (
+    parse_market_question,
+    normalize_polymarket_markets,
+    mentions_projected_player,
+)
 from src.polymarket_ev_calculator import (
     calculate_implied_probability,
     calculate_polymarket_ev,
@@ -121,3 +125,9 @@ def test_legal_disclaimer(tmp_path, monkeypatch):
     payload = json.loads(Path(output_path).read_text())
     assert "DEMONSTRATION ONLY" in payload["legal_notice"]
     assert payload["demo_bets"][0]["demo_only"] is True
+
+
+def test_mentions_projected_player_filter():
+    market = {"question": "Will LeBron James score 25+ points vs Warriors?"}
+    assert mentions_projected_player(market, {"lebron james"})
+    assert not mentions_projected_player(market, {"nikola jokic"})
