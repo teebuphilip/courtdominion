@@ -5,6 +5,11 @@ on:
     # Run hourly; gate inside workflow so execution occurs only at 4:00 AM America/New_York.
     - cron: '0 * * * *'
   workflow_dispatch:
+    inputs:
+      refresh_nba:
+        description: 'Force refresh current season data from NBA.com'
+        required: false
+        default: 'false'
 
 permissions:
   contents: write
@@ -47,10 +52,45 @@ jobs:
         if: steps.gate.outputs.run_now == 'true'
         run: pip install -r dbb2-engine/requirements.txt
 
-      - name: Refresh current NBA season data from NBA.com
+      - name: Resolve active season CSV path
         if: steps.gate.outputs.run_now == 'true'
+        id: season_csv
+        run: |
+          CURRENT_YEAR=$(TZ=America/New_York date +%Y)
+          CURRENT_MONTH=$(TZ=America/New_York date +%m)
+          if [ "$CURRENT_MONTH" -ge 10 ]; then
+            SEASON_START="$CURRENT_YEAR"
+          else
+            SEASON_START=$((CURRENT_YEAR - 1))
+          fi
+          NEXT_TWO_DIGIT=$(printf "%02d" $(((SEASON_START + 1) % 100)))
+          CSV_PATH="dbb2-engine/raw_data/games_${SEASON_START}_${NEXT_TWO_DIGIT}.csv"
+
+          echo "season_start=$SEASON_START" >> "$GITHUB_OUTPUT"
+          echo "next_two_digit=$NEXT_TWO_DIGIT" >> "$GITHUB_OUTPUT"
+          echo "csv_path=$CSV_PATH" >> "$GITHUB_OUTPUT"
+
+          if [ -f "$CSV_PATH" ]; then
+            echo "csv_exists=true" >> "$GITHUB_OUTPUT"
+            echo "Using committed season data at $CSV_PATH"
+          else
+            echo "csv_exists=false" >> "$GITHUB_OUTPUT"
+            echo "Season CSV missing at $CSV_PATH; refresh will be attempted"
+          fi
+
+      - name: Refresh current NBA season data from NBA.com (optional/fallback)
+        if: steps.gate.outputs.run_now == 'true' && (steps.season_csv.outputs.csv_exists != 'true' || github.event.inputs.refresh_nba == 'true')
+        continue-on-error: true
         run: |
           python dbb2-engine/data_collection/update_current_season.py --output-dir dbb2-engine/raw_data
+
+      - name: Verify active season CSV exists
+        if: steps.gate.outputs.run_now == 'true'
+        run: |
+          if [ ! -f "${{ steps.season_csv.outputs.csv_path }}" ]; then
+            echo "Missing required season CSV: ${{ steps.season_csv.outputs.csv_path }}"
+            exit 1
+          fi
 
       - name: Run projection engine
         if: steps.gate.outputs.run_now == 'true'
