@@ -1,0 +1,16 @@
+[
+  {
+    "date": "2026-02-28",
+    "rase": 0.0,
+    "confidence": "red",
+    "bankroll_start": 5000.0,
+    "wager_amount": 0.0,
+    "payout_amount": 0.0,
+    "bankroll_end": 5000.0,
+    "auction_score_actual": 0.0,
+    "projection_score_actual": 0.0,
+    "created_at": "2026-02-20T15:09:08.569578",
+    "model_version": "v1.0",
+    "status": "init"
+  }
+]

@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage'
 import ProjectionsPage from './pages/ProjectionsPage'
 import HistoricalBetsPage from './pages/HistoricalBetsPage'
 import TodaysBetsPage from './pages/TodaysBetsPage'
+import PublicModelPage from './pages/PublicModelPage'
 import PlayerDetailPage from './pages/PlayerDetailPage'
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/projections" element={<ProjectionsPage />} />
+        <Route path="/public-model" element={<PublicModelPage />} />
         <Route path="/historical-bets" element={<HistoricalBetsPage />} />
         <Route path="/todays-bets" element={<TodaysBetsPage />} />
         <Route path="/player/:playerId" element={<PlayerDetailPage />} />

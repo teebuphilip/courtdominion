@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CourtDominion - Public DFS Bankroll Model</title>
+  <style>
+    :root {
+      --bg:#0f172a;
+      --bg2:#111827;
+      --panel:#1f2937;
+      --line:#374151;
+      --ink:#f3f4f6;
+      --muted:#9ca3af;
+      --green:#22c55e;
+      --yellow:#eab308;
+      --red:#ef4444;
+      --blue:#3b82f6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Avenir Next","Segoe UI",system-ui,sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 450px at 95% -10%, rgba(59,130,246,.18), transparent 55%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      min-height: 100vh;
+    }
+    .wrap { max-width: 1100px; margin: 22px auto 36px; padding: 0 14px; }
+    .hero { background: linear-gradient(180deg, rgba(31,41,55,.96), rgba(17,24,39,.96)); border:1px solid var(--line); border-radius:16px; padding:18px; }
+    h1 { margin:0 0 8px; font-size:30px; }
+    .sub { color: var(--muted); font-size:14px; }
+    .grid { display:grid; grid-template-columns: repeat(4,minmax(140px,1fr)); gap:10px; margin-top:14px; }
+    .kpi { background:rgba(17,24,39,.7); border:1px solid var(--line); border-radius:12px; padding:10px; }
+    .kpi .label { font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.08em; }
+    .kpi .val { font-size:24px; font-weight:700; margin-top:4px; }
+    .section { margin-top:14px; background:rgba(31,41,55,.92); border:1px solid var(--line); border-radius:14px; padding:14px; }
+    .rule { color:#cbd5e1; font-size:14px; margin:4px 0; }
+    table { width:100%; border-collapse: collapse; font-size:13px; }
+    th,td { padding:8px 9px; border-bottom:1px solid rgba(55,65,81,.45); text-align:left; white-space:nowrap; }
+    thead th { background:#111827; position:sticky; top:0; }
+    .chart { width:100%; overflow:auto; border:1px solid var(--line); border-radius:12px; background:#0b1220; }
+    .foot { margin-top:10px; color:var(--muted); font-size:12px; }
+    @media (max-width: 900px) { .grid { grid-template-columns:repeat(2,minmax(140px,1fr)); } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <h1>Public Bankroll Model (v1)</h1>
+      <div class="sub">Read-only deterministic simulation. No real-money execution. Updated nightly.</div>
+      <div class="grid">
+        <div class="kpi"><div class="label">Start</div><div class="val">$5,000.00</div></div>
+        <div class="kpi"><div class="label">Current</div><div class="val">$5,000.00</div></div>
+        <div class="kpi"><div class="label">ROI</div><div class="val">+0.00%</div></div>
+        <div class="kpi"><div class="label">Days Played</div><div class="val">0</div></div>
+        <div class="kpi"><div class="label">Green Days</div><div class="val">0</div></div>
+        <div class="kpi"><div class="label">Yellow Days</div><div class="val">0</div></div>
+        <div class="kpi"><div class="label">Red Days</div><div class="val">0</div></div>
+        <div class="kpi"><div class="label">Start Date</div><div class="val" style="font-size:17px">2026-02-28</div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 style="margin:0 0 8px">Locked Rules</h2>
+      <div class="rule">Green day wager: 5% of bankroll</div>
+      <div class="rule">Yellow day wager: 2% of bankroll</div>
+      <div class="rule">Red day wager: 0% (skip)</div>
+      <div class="rule">Payout model: if auction_actual &gt; projection_actual =&gt; 1.5x wager, else 0</div>
+    </section>
+
+    <section class="section">
+      <h2 style="margin:0 0 10px">Bankroll Curve</h2>
+      <div class="chart">
+        <svg viewBox="0 0 800 220" width="100%" height="240" preserveAspectRatio="xMidYMid meet">
+          <polyline fill="none" stroke="var(--blue)" stroke-width="2" points="24.0,196.0" />
+          <circle cx='24.0' cy='196.0' r='3' fill='#ef4444'><title>2026-02-28: $5000.00</title></circle>
+        </svg>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 style="margin:0 0 10px">History</h2>
+      <div style="overflow:auto; border:1px solid var(--line); border-radius:12px;">
+        <table>
+          <thead><tr><th>Date</th><th>Conf</th><th>Start</th><th>Wager</th><th>Payout</th><th>End</th><th>Auction</th><th>Projection</th></tr></thead>
+          <tbody>
+            <tr><td>2026-02-28</td><td>red</td><td>$5,000.00</td><td>$0.00</td><td>$0.00</td><td>$5,000.00</td><td>0.00</td><td>0.00</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="foot">Generated at 2026-02-20T15:09:08.639092 UTC.</div>
+    </section>
+  </div>
+</body>
+</html>
