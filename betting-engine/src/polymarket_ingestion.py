@@ -105,20 +105,26 @@ def fetch_nba_markets(settings: dict, force: bool = False) -> list:
 
     candidate_markets = [m for m in markets if is_player_prop(m)]
     prop_markets = []
+    dropped_samples = []
     for m in candidate_markets:
         q = str(
             m.get("question")
             or m.get("title")
             or m.get("slug")
+            or m.get("description")
             or ""
         ).strip()
         if parse_market_question(q):
             prop_markets.append(m)
+        elif len(dropped_samples) < 8:
+            dropped_samples.append(q)
 
     logger.info(
         f"Polymarket: {len(markets)} NBA markets, "
         f"{len(candidate_markets)} keyword candidates, {len(prop_markets)} parseable player props"
     )
+    if not prop_markets and dropped_samples:
+        logger.warning(f"Polymarket candidate questions not parseable (sample): {dropped_samples}")
     if not prop_markets and markets:
         sample = [str(m.get("question", "")).strip() for m in markets[:8]]
         logger.warning(f"Polymarket sample questions (first 8): {sample}")
@@ -181,36 +187,48 @@ def parse_market_question(question: str) -> dict:
     WHY: Questions are natural language; downstream EV needs structured fields.
     """
     q = str(question).strip()
+    if not q:
+        return None
+    q = q.replace("’", "'")
     q_lower = q.lower()
 
-    line_match = re.search(r"(\d+(?:\.\d+)?)\+", q_lower)
-    if not line_match:
-        return None
-    line = float(line_match.group(1))
-
-    if "three" in q_lower or "3-point" in q_lower or "threes" in q_lower:
+    if "three" in q_lower or "3-point" in q_lower or "threes" in q_lower or re.search(r"\b3pt\b", q_lower):
         prop_type = "threes"
-    elif "point" in q_lower or "score" in q_lower:
+    elif "point" in q_lower or "score" in q_lower or re.search(r"\bpts?\b", q_lower):
         prop_type = "points"
-    elif "rebound" in q_lower:
+    elif "rebound" in q_lower or re.search(r"\breb\b", q_lower):
         prop_type = "rebounds"
-    elif "assist" in q_lower:
+    elif "assist" in q_lower or re.search(r"\bast\b", q_lower):
         prop_type = "assists"
     else:
         return None
 
-    prefix = re.split(r"\d+(?:\.\d+)?\+", q, maxsplit=1)[0]
-    prefix = re.sub(r"\b(will|to|make|score|get|have)\b", " ", prefix, flags=re.IGNORECASE)
-    prefix = re.sub(r"[^A-Za-z\-\s]", " ", prefix)
-    tokens = [t for t in prefix.split() if t]
+    line_patterns = [
+        r"(\d+(?:\.\d+)?)\s*\+",
+        r"\b(?:over|under|o/u|ou|o|u)\s*(\d+(?:\.\d+)?)\b",
+        r"\b(\d+(?:\.\d+)?)\s*(?:or more|or fewer|or less)\b",
+    ]
+    line_match = None
+    for pat in line_patterns:
+        line_match = re.search(pat, q_lower)
+        if line_match:
+            break
+    if line_match is None:
+        return None
+    line = float(line_match.group(1))
 
-    if len(tokens) >= 3 and tokens[0].lower() == "will":
-        tokens = tokens[1:]
+    prefix = q[:line_match.start()]
+    prefix = re.sub(
+        r"\b(will|to|make|score|get|have|record|grab|hit|dish|tally|over|under|o/u|ou)\b",
+        " ",
+        prefix,
+        flags=re.IGNORECASE,
+    )
+    prefix = re.sub(r"[^A-Za-z\.'\-\s]", " ", prefix)
+    tokens = [t for t in prefix.split() if t]
     if len(tokens) < 2:
         return None
-
-    # WHY: Last two/three capitalizable words are the most stable heuristic for names.
-    player_name = " ".join(tokens[-3:] if len(tokens[-3:]) == 3 and len(tokens) >= 3 else tokens[-2:]).title()
+    player_name = " ".join(tokens[-3:] if len(tokens) >= 3 else tokens[-2:]).title()
 
     return {
         "player_name": player_name,
@@ -235,6 +253,7 @@ def normalize_polymarket_markets(settings: dict, raw_markets: list) -> dict:
             market.get("question")
             or market.get("title")
             or market.get("slug")
+            or market.get("description")
             or ""
         ).strip()
         if not market_id or not question:

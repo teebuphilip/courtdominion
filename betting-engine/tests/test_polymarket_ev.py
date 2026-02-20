@@ -22,6 +22,28 @@ def test_market_parsing():
     assert parsed[2]["prop_type"] == "rebounds"
 
 
+def test_market_parsing_alt_line_formats():
+    q1 = "Will Jayson Tatum over 27.5 points tonight?"
+    q2 = "Karl-Anthony Towns 10 or more rebounds vs Knicks?"
+    q3 = "Donovan Mitchell O/U 6.5 assists tonight?"
+
+    p1 = parse_market_question(q1)
+    p2 = parse_market_question(q2)
+    p3 = parse_market_question(q3)
+
+    assert p1["player_name"] == "Jayson Tatum"
+    assert p1["prop_type"] == "points"
+    assert p1["line"] == 27.5
+
+    assert p2["player_name"] == "Karl-Anthony Towns"
+    assert p2["prop_type"] == "rebounds"
+    assert p2["line"] == 10.0
+
+    assert p3["player_name"] == "Donovan Mitchell"
+    assert p3["prop_type"] == "assists"
+    assert p3["line"] == 6.5
+
+
 def test_probability_calculation():
     # Given projection=26, line=24.5, std_dev=3.0
     # P(X > 24.5) ~= 0.6915 under normal assumptions.
