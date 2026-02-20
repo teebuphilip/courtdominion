@@ -76,6 +76,42 @@ def load_exchange_slips(dir_path: Path, track: str, exclude_date: str) -> List[D
     return rows
 
 
+def load_polymarket_demo_slips(dir_path: Path, exclude_date: str) -> List[Dict]:
+    """Load Polymarket demo bet slips as display-only rows."""
+    if not dir_path.exists():
+        return []
+    rows: List[Dict] = []
+    for fp in sorted(dir_path.glob("*_polymarket_DEMO.json")):
+        try:
+            payload = json.loads(fp.read_text())
+        except Exception:
+            continue
+        date = str(payload.get("date", "")).strip()
+        if not date or date == exclude_date:
+            continue
+        for bet in payload.get("demo_bets", []):
+            rows.append(
+                {
+                    "date": date,
+                    "engine": "polymarket_demo",
+                    "track": "baseline",
+                    "player_name": bet.get("player", ""),
+                    "prop_type": bet.get("prop_type", ""),
+                    "direction": bet.get("bet_side", ""),
+                    "dbb2_projection": bet.get("dbb2_projection", ""),
+                    "sportsbook_line": bet.get("line", ""),
+                    "edge_pct": bet.get("edge_pct", ""),
+                    "confidence": bet.get("confidence", ""),
+                    "units": "0.0",
+                    "source": "polymarket-demo",
+                    "execution_type": "DEMO_ONLY",
+                    "status": "DEMO",
+                    "pnl": "",
+                }
+            )
+    return rows
+
+
 def parse_num(v, default=0.0):
     try:
         return float(v)
@@ -282,6 +318,7 @@ def render_today_sections(rows: List[Dict], today: str) -> str:
         [
             section("betting_sportsbook", "Sportsbook"),
             section("betting_kalshi", "Kalshi"),
+            section("polymarket_demo", "Polymarket (Demo)"),
             section("exchange", "Exchange"),
         ]
     )
@@ -301,7 +338,7 @@ def render_today_page(today_rows: List[Dict], today: str) -> str:
   <div class="wrap">
     <section class="hero">
       <h1>Today's Bets</h1>
-      <div class="sub">Date: {html.escape(today)} • Broken out by sportsbook, kalshi, and exchange.</div>
+      <div class="sub">Date: {html.escape(today)} • Broken out by sportsbook, kalshi, polymarket demo, and exchange.</div>
       <div class="links">
         <a href="./index.html">Historical</a>
         <a href="./today.html">Today's Bets</a>
@@ -328,6 +365,7 @@ def main() -> int:
     history_rows = []
     history_rows += load_betting_csv(ROOT / "betting-engine" / "data" / "bets" / "master_bets.csv", "baseline", exclude_date)
     history_rows += load_betting_csv(ROOT / "betting-engine" / "data" / "bets" / "master_bets_enhanced.csv", "enhanced", exclude_date)
+    history_rows += load_polymarket_demo_slips(ROOT / "betting-engine" / "data" / "polymarket" / "bet_slips", exclude_date)
     history_rows += load_exchange_slips(ROOT / "exchange-engine" / "data" / "bet_slips", "baseline", exclude_date)
     history_rows += load_exchange_slips(ROOT / "exchange-engine" / "data" / "bet_slips_enhanced", "enhanced", exclude_date)
 
@@ -381,6 +419,33 @@ def main() -> int:
                             "pnl": "",
                         }
                     )
+
+    polymarket_today_path = ROOT / "betting-engine" / "data" / "polymarket" / "bet_slips" / f"{today}_polymarket_DEMO.json"
+    if polymarket_today_path.exists():
+        try:
+            payload = json.loads(polymarket_today_path.read_text())
+        except Exception:
+            payload = {}
+        for bet in payload.get("demo_bets", []):
+            today_rows.append(
+                {
+                    "date": today,
+                    "engine": "polymarket_demo",
+                    "track": "baseline",
+                    "player_name": bet.get("player", ""),
+                    "prop_type": bet.get("prop_type", ""),
+                    "direction": bet.get("bet_side", ""),
+                    "dbb2_projection": bet.get("dbb2_projection", ""),
+                    "sportsbook_line": bet.get("line", ""),
+                    "edge_pct": bet.get("edge_pct", ""),
+                    "confidence": bet.get("confidence", ""),
+                    "units": "0.0",
+                    "source": "polymarket-demo",
+                    "execution_type": "DEMO_ONLY",
+                    "status": "DEMO",
+                    "pnl": "",
+                }
+            )
 
     history_page = render_history_page(history_rows, exclude_date)
     today_page = render_today_page(today_rows, today)

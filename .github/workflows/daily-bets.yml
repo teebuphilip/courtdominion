@@ -63,6 +63,10 @@ jobs:
           KALSHI_PRIVATE_KEY: ${{ secrets.KALSHI_PRIVATE_KEY }}
         run: |
           python src/bet_placer.py
+          echo "Generating Polymarket demo/fake bets (read-only)..."
+          python src/polymarket_ingestion.py --fetch-markets || true
+          python src/polymarket_ev_calculator.py || true
+          python src/bet_slip.py --source polymarket-demo || true
 
       - name: Commit bet slips and master CSV
         if: steps.check-games.outputs.has_games != 'false'
@@ -71,7 +75,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           DATE=$(date +%Y-%m-%d)
-          git add betting-engine/data/bet_slips/ betting-engine/data/bet_slips_enhanced/ betting-engine/data/bets/ betting-engine/data/kalshi/bet_slips/ betting-engine/data/reports/ || true
+          git add betting-engine/data/bet_slips/ betting-engine/data/bet_slips_enhanced/ betting-engine/data/bets/ betting-engine/data/kalshi/bet_slips/ betting-engine/data/polymarket/ betting-engine/data/reports/ || true
           git diff --cached --quiet && echo "No new bet slip to commit" && exit 0
-          git commit -m "bets: ${DATE} daily bet slip (sportsbook + Kalshi)"
+          git commit -m "bets: ${DATE} daily bet slip (sportsbook + Kalshi + Polymarket demo)"
           git push

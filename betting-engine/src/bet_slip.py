@@ -39,6 +39,11 @@ def run(dry_run: bool = False, source: str = None) -> None:
     settings = load_settings()
     today = get_today_date()
 
+    # WHY: Demo-only append path should never alter real JSON bet slip data.
+    if source == "polymarket-demo":
+        append_polymarket_demo_to_markdown(today, settings)
+        return
+
     sportsbook_bets = []
     kalshi_bets = []
 
@@ -264,15 +269,87 @@ def output_markdown(
         "- ⚡ = sharp money signal (sportsbook) | ⚠️ = low volume (Kalshi)",
     ]
 
-    write_file(output_path, "\n".join(lines))
+    markdown = "\n".join(lines)
+
+    # WHY: Keep demo comparison visible in the same daily report but isolated from real bets.
+    if settings.get("polymarket", {}).get("enabled", False):
+        markdown = append_polymarket_demo_section(markdown, today, settings)
+
+    write_file(output_path, markdown)
     logger.info(f"Markdown bet slip saved: {output_path}")
+
+
+def append_polymarket_demo_section(md_content: str, today: str, settings: dict) -> str:
+    """
+    Append Polymarket comparison table to markdown content.
+
+    WHY: Users need side-by-side context, but this must stay visibly legal/demo-only.
+    """
+    demo_path = Path(f"data/polymarket/bet_slips/{today}_polymarket_DEMO.json")
+    if not demo_path.exists():
+        return md_content
+
+    try:
+        demo_data = load_json(str(demo_path))
+    except Exception as e:
+        logger.warning(f"Could not load Polymarket demo slip: {e}")
+        return md_content
+
+    demo_bets = demo_data.get("demo_bets", [])
+    if not demo_bets:
+        return md_content
+
+    disclaimer = settings.get("polymarket", {}).get(
+        "legal_disclaimer",
+        "DEMONSTRATION ONLY - US PERSONS CANNOT LEGALLY TRADE ON POLYMARKET",
+    )
+
+    md_content += "\n\n---\n\n"
+    md_content += "## ⚠️ POLYMARKET COMPARISON (DEMONSTRATION ONLY)\n\n"
+    md_content += f"**LEGAL NOTICE:** {disclaimer}\n\n"
+    md_content += "| Player | Prop | Line | Side | Edge | DBB2 Prob | PM Prob |\n"
+    md_content += "|--------|------|------|------|------|-----------|---------|\n"
+
+    for bet in demo_bets[:10]:
+        md_content += (
+            f"| {bet.get('player', '')} "
+            f"| {bet.get('prop_type', '')} "
+            f"| {bet.get('line', '')} "
+            f"| {bet.get('bet_side', '')} "
+            f"| {bet.get('edge_pct', '')}% "
+            f"| {float(bet.get('dbb2_prob', 0)) * 100:.1f}% "
+            f"| {float(bet.get('polymarket_prob', 0)) * 100:.1f}% |\n"
+        )
+
+    md_content += "\n*These are hypothetical comparisons for educational purposes only.*\n"
+    return md_content
+
+
+def append_polymarket_demo_to_markdown(today: str, settings: dict) -> None:
+    """
+    Append demo section to existing daily markdown slip in-place.
+
+    WHY: run.sh calls this as a dedicated step after Polymarket EV generation.
+    """
+    slip_path = Path(f"data/bet_slips/{today}.md")
+    if not slip_path.exists():
+        logger.warning(f"No markdown bet slip found to append Polymarket demo: {slip_path}")
+        return
+
+    current = slip_path.read_text()
+    updated = append_polymarket_demo_section(current, today, settings)
+    if updated == current:
+        logger.info("No Polymarket demo section added (no demo bets found or already absent)")
+        return
+    write_file(str(slip_path), updated)
+    logger.info(f"Appended Polymarket demo section to {slip_path}")
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="DBB2 Bet Slip Generator")
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--source", type=str, default=None,
-                        choices=["sportsbook", "kalshi"],
+                        choices=["sportsbook", "kalshi", "polymarket-demo"],
                         help="Generate slip for one source only")
     args = parser.parse_args()
     run(dry_run=args.dry_run, source=args.source)
