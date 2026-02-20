@@ -84,3 +84,107 @@ jobs:
           git diff --cached --quiet && echo "No grading changes to commit" && exit 0
           git commit -m "results: ${DATE} grading + ledger + CSV + season summary"
           git push
+
+  build-historical-bet-page:
+    needs: grade-bets
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Pull latest branch changes
+        run: |
+          git fetch origin ${{ github.ref_name }}
+          git pull --ff-only origin ${{ github.ref_name }}
+
+      - name: Build fancy static bet pages
+        run: |
+          python scripts/generate_bet_pages.py
+
+      - name: Upload historical page artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: historical-bets-page
+          path: |
+            reports/web/index.html
+            reports/web/history_data.json
+
+  build-todays-bet-page:
+    needs: grade-bets
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Pull latest branch changes
+        run: |
+          git fetch origin ${{ github.ref_name }}
+          git pull --ff-only origin ${{ github.ref_name }}
+
+      - name: Build fancy static bet pages
+        run: |
+          python scripts/generate_bet_pages.py
+
+      - name: Upload today's page artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: todays-bets-page
+          path: |
+            reports/web/today.html
+            reports/web/today_data.json
+
+  sync-free-site-pages:
+    needs:
+      - build-historical-bet-page
+      - build-todays-bet-page
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Download historical page artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: historical-bets-page
+          path: reports/web
+
+      - name: Download today's page artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: todays-bets-page
+          path: reports/web
+
+      - name: Copy generated pages into free-site
+        run: |
+          mkdir -p free-site/public
+          cp reports/web/index.html free-site/public/historical-bets.html
+          cp reports/web/today.html free-site/public/todays-bets.html
+
+      - name: Commit generated bet pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add reports/web/ free-site/public/historical-bets.html free-site/public/todays-bets.html || true
+          git diff --cached --quiet && echo "No report page changes to commit" && exit 0
+          DATE=$(date +%Y-%m-%d)
+          git commit -m "reports: ${DATE} sync historical + today's bet pages to free-site"
+          git push
