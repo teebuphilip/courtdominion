@@ -23,5 +23,19 @@
     "price_shade_pct": 0.02,
     "fee_bps": 0,
     "include_sources": ["novig", "prophetx"]
+  },
+  "risk_overlay": {
+    "mode": "observe",
+    "alpha_confidence": 0.35,
+    "beta_units": 0.50,
+    "high_risk_edge_multiplier": 0.80,
+    "max_availability_risk": 0.85,
+    "daily_risk_path_pattern": "data/risk/{date}.json",
+    "fallback_risk_path": "../dbb2-engine/output/risk.json",
+    "fallback_weights": {
+      "injury_risk": 0.5,
+      "minutes_risk": 0.3,
+      "volatility": 0.2
+    }
   }
 }
