@@ -956,8 +956,8 @@
     "floor": 19.5,
     "consistency": 66,
     "team_games_remaining": 42,
-    "games_remaining_projected": 31,
-    "three_pointers_made_projected": 22
+    "games_remaining_projected": 24,
+    "three_pointers_made_projected": 17
   },
   {
     "player_id": "1627749",
@@ -1406,8 +1406,8 @@
     "floor": 19.1,
     "consistency": 70,
     "team_games_remaining": 42,
-    "games_remaining_projected": 0,
-    "three_pointers_made_projected": 0
+    "games_remaining_projected": 31,
+    "three_pointers_made_projected": 84
   },
   {
     "player_id": "204001",
@@ -5846,8 +5846,8 @@
     "floor": 6.0,
     "consistency": 67,
     "team_games_remaining": 42,
-    "games_remaining_projected": 33,
-    "three_pointers_made_projected": 44
+    "games_remaining_projected": 28,
+    "three_pointers_made_projected": 37
   },
   {
     "player_id": "1629057",
@@ -10856,7 +10856,7 @@
     "floor": 0.0,
     "consistency": 48,
     "team_games_remaining": 42,
-    "games_remaining_projected": 15,
+    "games_remaining_projected": 18,
     "three_pointers_made_projected": 1
   },
   {
@@ -13946,7 +13946,7 @@
     "floor": 0.0,
     "consistency": 43,
     "team_games_remaining": 42,
-    "games_remaining_projected": 7,
+    "games_remaining_projected": 8,
     "three_pointers_made_projected": 1
   },
   {
