@@ -167,17 +167,29 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           DATE="${{ steps.projections.outputs.date }}"
+          BRANCH="${GITHUB_REF_NAME}"
 
-          git add dbb2-engine/output/ || true
-          git add betting-engine/data/projections/ || true
-          git add betting-engine/data/risk/ || true
-          git add betting-engine/data/bet_slips/ || true
-          git add betting-engine/data/bet_slips_enhanced/ || true
-          git add betting-engine/data/bets/ || true
-          git add betting-engine/data/kalshi/bet_slips/ || true
-          git add betting-engine/data/polymarket/ || true
-          git add betting-engine/data/reports/ || true
+          [ -d dbb2-engine/output ] && git add -f dbb2-engine/output || true
+          [ -d betting-engine/data/projections ] && git add -f betting-engine/data/projections || true
+          [ -d betting-engine/data/risk ] && git add -f betting-engine/data/risk || true
+          [ -d betting-engine/data/bet_slips ] && git add -f betting-engine/data/bet_slips || true
+          [ -d betting-engine/data/bet_slips_enhanced ] && git add -f betting-engine/data/bet_slips_enhanced || true
+          [ -d betting-engine/data/bets ] && git add -f betting-engine/data/bets || true
+          [ -d betting-engine/data/kalshi/bet_slips ] && git add -f betting-engine/data/kalshi/bet_slips || true
+          [ -d betting-engine/data/polymarket ] && git add -f betting-engine/data/polymarket || true
+          [ -d betting-engine/data/reports ] && git add -f betting-engine/data/reports || true
 
           git diff --cached --quiet && echo "No changes to commit" && exit 0
           git commit -m "pipeline: ${DATE} projections + bets"
-          git push
+          git pull --rebase origin "$BRANCH"
+          for attempt in 1 2 3; do
+            if git push origin "HEAD:${BRANCH}"; then
+              exit 0
+            fi
+            if [ "$attempt" -eq 3 ]; then
+              echo "Push failed after 3 attempts"
+              exit 1
+            fi
+            sleep 2
+            git pull --rebase origin "$BRANCH"
+          done
