@@ -63,8 +63,10 @@ jobs:
           DATE=$(TZ=America/New_York date +%Y-%m-%d)
           mkdir -p betting-engine/data/projections
           mkdir -p betting-engine/data/risk
+          mkdir -p exchange-engine/data/risk
           cp dbb2-engine/output/betting_contract.json betting-engine/data/projections/${DATE}.json
           cp dbb2-engine/output/risk.json betting-engine/data/risk/${DATE}.json
+          cp dbb2-engine/output/risk.json exchange-engine/data/risk/${DATE}.json
           echo "DATE=${DATE}" >> "$GITHUB_ENV"
 
       - name: Commit and push updated outputs
@@ -89,6 +91,7 @@ jobs:
           git add dbb2-engine/raw_data/games_${SEASON_START}_${NEXT_TWO_DIGIT}.csv || true
           git add betting-engine/data/projections/${DATE}.json
           git add betting-engine/data/risk/${DATE}.json
+          git add exchange-engine/data/risk/${DATE}.json
 
           if git diff --cached --quiet; then
             echo "No projection changes to commit"

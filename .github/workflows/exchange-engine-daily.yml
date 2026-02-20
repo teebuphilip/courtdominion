@@ -31,12 +31,17 @@ jobs:
         run: |
           mkdir -p logs
           mkdir -p data/projections
+          mkdir -p data/risk
           mkdir -p data/exchange_odds/novig
           mkdir -p data/exchange_odds/prophetx
           mkdir -p data/ev_results
           mkdir -p data/sized_bets
+          mkdir -p data/sized_bets_enhanced
           mkdir -p data/bet_slips
+          mkdir -p data/bet_slips_enhanced
           mkdir -p data/orders
+          mkdir -p data/orders_enhanced
+          mkdir -p data/reports
 
       - name: Check DBB2 API URL
         id: check-dbb2
@@ -59,6 +64,17 @@ jobs:
         run: |
           python -m src.bet_placer
 
+      - name: Copy latest DBB2 risk snapshot (optional)
+        if: steps.check-dbb2.outputs.can_run == 'true'
+        run: |
+          DATE=$(date +%Y-%m-%d)
+          if [ -f ../dbb2-engine/output/risk.json ]; then
+            cp ../dbb2-engine/output/risk.json data/risk/${DATE}.json
+            echo "Copied dbb2 risk snapshot for ${DATE}"
+          else
+            echo "No local dbb2 risk snapshot found; using fallback behavior"
+          fi
+
       - name: Commit exchange outputs
         if: steps.check-dbb2.outputs.can_run == 'true'
         run: |
@@ -68,10 +84,15 @@ jobs:
           DATE=$(date +%Y-%m-%d)
           git add exchange-engine/data/projections/ || true
           git add exchange-engine/data/exchange_odds/ || true
+          git add exchange-engine/data/risk/ || true
           git add exchange-engine/data/ev_results/ || true
           git add exchange-engine/data/sized_bets/ || true
+          git add exchange-engine/data/sized_bets_enhanced/ || true
           git add exchange-engine/data/bet_slips/ || true
+          git add exchange-engine/data/bet_slips_enhanced/ || true
           git add exchange-engine/data/orders/ || true
+          git add exchange-engine/data/orders_enhanced/ || true
+          git add exchange-engine/data/reports/ || true
           git add exchange-engine/data/ledger.json || true
           git diff --cached --quiet && echo "No exchange changes to commit" && exit 0
           git commit -m "exchange: ${DATE} daily run outputs"
