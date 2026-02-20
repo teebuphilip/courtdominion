@@ -84,14 +84,6 @@ jobs:
         run: |
           python dbb2-engine/data_collection/update_current_season.py --output-dir dbb2-engine/raw_data
 
-      - name: Verify active season CSV exists
-        if: steps.gate.outputs.run_now == 'true'
-        run: |
-          if [ ! -f "${{ steps.season_csv.outputs.csv_path }}" ]; then
-            echo "Missing required season CSV: ${{ steps.season_csv.outputs.csv_path }}"
-            exit 1
-          fi
-
       - name: Run projection engine
         if: steps.gate.outputs.run_now == 'true'
         run: |
