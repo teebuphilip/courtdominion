@@ -84,10 +84,31 @@ jobs:
         run: |
           python dbb2-engine/data_collection/update_current_season.py --output-dir dbb2-engine/raw_data
 
-      - name: Run projection engine
+      - name: Decide projection source
         if: steps.gate.outputs.run_now == 'true'
+        id: projection_source
+        run: |
+          if [ -f "${{ steps.season_csv.outputs.csv_path }}" ]; then
+            echo "run_engine=true" >> "$GITHUB_OUTPUT"
+            echo "Current-season CSV available; running projection engine"
+          else
+            echo "run_engine=false" >> "$GITHUB_OUTPUT"
+            echo "Current-season CSV unavailable; using committed dbb2-engine/output JSON files"
+          fi
+
+      - name: Run projection engine
+        if: steps.gate.outputs.run_now == 'true' && steps.projection_source.outputs.run_engine == 'true'
         run: |
           python dbb2-engine/run_engine.py --game-day --validate --output-dir dbb2-engine/output
+
+      - name: Verify required DBB2 outputs exist
+        if: steps.gate.outputs.run_now == 'true'
+        run: |
+          test -f dbb2-engine/output/players.json
+          test -f dbb2-engine/output/projections.json
+          test -f dbb2-engine/output/risk.json
+          test -f dbb2-engine/output/insights.json
+          test -f dbb2-engine/output/betting_contract.json
 
       - name: Copy betting contract to betting-engine daily projections
         if: steps.gate.outputs.run_now == 'true'
