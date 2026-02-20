@@ -1,0 +1,74 @@
+name: DFSRASE Public Model
+
+on:
+  schedule:
+    # Run hourly and gate to 06:00 America/New_York for DST-safe scheduling.
+    - cron: "0 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: dfsrase-public-model
+  cancel-in-progress: false
+
+jobs:
+  run-model-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Gate scheduled runs to 06:00 AM New York time
+        id: gate
+        run: |
+          if [ "${{ github.event_name }}" != "schedule" ]; then
+            echo "run_now=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          NY_HOUR=$(TZ=America/New_York date +%H)
+          if [ "$NY_HOUR" = "06" ]; then
+            echo "run_now=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run_now=false" >> "$GITHUB_OUTPUT"
+            echo "Skipping scheduled run: current America/New_York hour is $NY_HOUR"
+          fi
+
+      - name: Set up Python
+        if: steps.gate.outputs.run_now == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run public bankroll model
+        if: steps.gate.outputs.run_now == 'true'
+        run: |
+          python dfsrase/src/public_model.py
+
+      - name: Build DFSRASE public page
+        if: steps.gate.outputs.run_now == 'true'
+        run: |
+          python scripts/generate_dfsrase_page.py
+
+      - name: Sync page into free-site
+        if: steps.gate.outputs.run_now == 'true'
+        run: |
+          mkdir -p free-site/public
+          cp reports/web/dfsrase_public_model.html free-site/public/dfsrase-public-model.html
+
+      - name: Commit and push model/page updates
+        if: steps.gate.outputs.run_now == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          DATE=$(TZ=America/New_York date +%Y-%m-%d)
+          git add dfsrase/data/ || true
+          git add reports/web/dfsrase_public_model.html reports/web/dfsrase_public_model_data.json || true
+          git add free-site/public/dfsrase-public-model.html || true
+          git diff --cached --quiet && echo "No DFSRASE changes to commit" && exit 0
+          git commit -m "dfsrase: ${DATE} public bankroll model update"
+          git push
