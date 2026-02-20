@@ -141,10 +141,10 @@ jobs:
             SEASON_START=$((CURRENT_YEAR - 1))
           fi
           NEXT_TWO_DIGIT=$(printf "%02d" $(((SEASON_START + 1) % 100)))
-          git add dbb2-engine/raw_data/games_${SEASON_START}_${NEXT_TWO_DIGIT}.csv || true
-          git add betting-engine/data/projections/${DATE}.json
-          git add betting-engine/data/risk/${DATE}.json
-          git add exchange-engine/data/risk/${DATE}.json
+          git add -f dbb2-engine/raw_data/games_${SEASON_START}_${NEXT_TWO_DIGIT}.csv || true
+          git add -f betting-engine/data/projections/${DATE}.json || true
+          git add -f betting-engine/data/risk/${DATE}.json || true
+          git add -f exchange-engine/data/risk/${DATE}.json || true
 
           if git diff --cached --quiet; then
             echo "No projection changes to commit"
