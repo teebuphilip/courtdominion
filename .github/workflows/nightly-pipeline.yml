@@ -178,6 +178,7 @@ jobs:
           [ -d betting-engine/data/kalshi/bet_slips ] && git add -f betting-engine/data/kalshi/bet_slips || true
           [ -d betting-engine/data/polymarket ] && git add -f betting-engine/data/polymarket || true
           [ -d betting-engine/data/reports ] && git add -f betting-engine/data/reports || true
+          [ -d betting-engine/data/private ] && git add -f betting-engine/data/private || true
 
           git diff --cached --quiet && echo "No changes to commit" && exit 0
           git commit -m "pipeline: ${DATE} projections + bets"
