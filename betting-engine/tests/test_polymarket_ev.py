@@ -1,6 +1,10 @@
 import pytest
 
-from src.polymarket_ingestion import parse_market_question, normalize_polymarket_markets
+from src.polymarket_ingestion import (
+    parse_market_question,
+    normalize_polymarket_markets,
+    mentions_projected_player,
+)
 from src.polymarket_ev_calculator import (
     calculate_implied_probability,
     calculate_polymarket_ev,
@@ -20,6 +24,28 @@ def test_market_parsing():
     assert parsed[0]["line"] == 25.0
     assert parsed[1]["prop_type"] == "threes"
     assert parsed[2]["prop_type"] == "rebounds"
+
+
+def test_market_parsing_alt_line_formats():
+    q1 = "Will Jayson Tatum over 27.5 points tonight?"
+    q2 = "Karl-Anthony Towns 10 or more rebounds vs Knicks?"
+    q3 = "Donovan Mitchell O/U 6.5 assists tonight?"
+
+    p1 = parse_market_question(q1)
+    p2 = parse_market_question(q2)
+    p3 = parse_market_question(q3)
+
+    assert p1["player_name"] == "Jayson Tatum"
+    assert p1["prop_type"] == "points"
+    assert p1["line"] == 27.5
+
+    assert p2["player_name"] == "Karl-Anthony Towns"
+    assert p2["prop_type"] == "rebounds"
+    assert p2["line"] == 10.0
+
+    assert p3["player_name"] == "Donovan Mitchell"
+    assert p3["prop_type"] == "assists"
+    assert p3["line"] == 6.5
 
 
 def test_probability_calculation():
@@ -99,3 +125,9 @@ def test_legal_disclaimer(tmp_path, monkeypatch):
     payload = json.loads(Path(output_path).read_text())
     assert "DEMONSTRATION ONLY" in payload["legal_notice"]
     assert payload["demo_bets"][0]["demo_only"] is True
+
+
+def test_mentions_projected_player_filter():
+    market = {"question": "Will LeBron James score 25+ points vs Warriors?"}
+    assert mentions_projected_player(market, {"lebron james"})
+    assert not mentions_projected_player(market, {"nikola jokic"})

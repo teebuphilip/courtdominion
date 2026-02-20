@@ -26,29 +26,82 @@ def log_disclaimer(settings: dict) -> None:
     print("=" * 70)
 
 
+def _market_text(market: dict) -> str:
+    """Build a normalized text blob across common Gamma market fields."""
+    parts = [
+        str(market.get("question", "")),
+        str(market.get("title", "")),
+        str(market.get("slug", "")),
+        str(market.get("description", "")),
+    ]
+    return " ".join(parts).lower()
+
+
 def is_player_prop(market: dict) -> bool:
     """
     WHY: Gamma returns mixed market types; only player props are relevant here.
     """
-    question = str(market.get("question", "")).lower()
+    question = _market_text(market)
     prop_keywords = [
         "points",
+        "point",
+        "pts",
         "rebounds",
+        "rebound",
+        "reb",
         "assists",
+        "assist",
+        "ast",
         "threes",
         "three-pointers",
-        "score",
-        "rebound",
-        "assist",
+        "3pt",
+        "3-pointer",
+        "3 pointers",
+        "pra",
+        "double double",
+        "triple double",
         "make",
     ]
-    game_keywords = ["win", "winner", "beat", "defeat", "spread", "over/under"]
+    game_keywords = ["moneyline", "spread", "first half", "first quarter", "to win game"]
     has_prop_keyword = any(kw in question for kw in prop_keywords)
     has_game_keyword = any(kw in question for kw in game_keywords)
     return has_prop_keyword and not has_game_keyword
 
 
-def fetch_nba_markets(settings: dict, force: bool = False) -> list:
+def load_projection_player_names(today: str) -> set:
+    """
+    Build a set of projected NBA player names so we can hard-filter noisy tag results.
+    """
+    path = Path(f"data/projections/{today}.json")
+    if not path.exists():
+        return set()
+    try:
+        payload = load_json(str(path))
+    except Exception:
+        return set()
+
+    names = set()
+    if isinstance(payload, dict):
+        for _, row in payload.items():
+            if isinstance(row, dict):
+                name = str(row.get("name", "")).strip()
+                if name:
+                    names.add(name.lower())
+    return names
+
+
+def mentions_projected_player(market: dict, projected_names: set) -> bool:
+    """Return True when market text mentions a known projected player name."""
+    if not projected_names:
+        return True
+    text = _market_text(market)
+    for name in projected_names:
+        if name in text:
+            return True
+    return False
+
+
+def fetch_nba_markets(settings: dict, force: bool = False, projected_names: set = None) -> list:
     """
     WHY: Metadata discovery should happen from Gamma once and be cached.
     """
@@ -83,8 +136,34 @@ def fetch_nba_markets(settings: dict, force: bool = False) -> list:
         logger.warning("Gamma response shape unexpected; defaulting to empty list")
         markets = []
 
-    prop_markets = [m for m in markets if is_player_prop(m)]
-    logger.info(f"Polymarket: {len(markets)} NBA markets, {len(prop_markets)} player props")
+    projected_names = projected_names or set()
+    candidate_markets = [m for m in markets if is_player_prop(m)]
+    if projected_names:
+        candidate_markets = [m for m in candidate_markets if mentions_projected_player(m, projected_names)]
+    prop_markets = []
+    dropped_samples = []
+    for m in candidate_markets:
+        q = str(
+            m.get("question")
+            or m.get("title")
+            or m.get("slug")
+            or m.get("description")
+            or ""
+        ).strip()
+        if parse_market_question(q):
+            prop_markets.append(m)
+        elif len(dropped_samples) < 8:
+            dropped_samples.append(q)
+
+    logger.info(
+        f"Polymarket: {len(markets)} NBA markets, "
+        f"{len(candidate_markets)} keyword candidates, {len(prop_markets)} parseable player props"
+    )
+    if not prop_markets and dropped_samples:
+        logger.warning(f"Polymarket candidate questions not parseable (sample): {dropped_samples}")
+    if not prop_markets and markets:
+        sample = [str(m.get("question", "")).strip() for m in markets[:8]]
+        logger.warning(f"Polymarket sample questions (first 8): {sample}")
     write_json(str(output_path), prop_markets)
     return prop_markets
 
@@ -144,36 +223,48 @@ def parse_market_question(question: str) -> dict:
     WHY: Questions are natural language; downstream EV needs structured fields.
     """
     q = str(question).strip()
+    if not q:
+        return None
+    q = q.replace("’", "'")
     q_lower = q.lower()
 
-    line_match = re.search(r"(\d+(?:\.\d+)?)\+", q_lower)
-    if not line_match:
-        return None
-    line = float(line_match.group(1))
-
-    if "three" in q_lower or "3-point" in q_lower or "threes" in q_lower:
+    if "three" in q_lower or "3-point" in q_lower or "threes" in q_lower or re.search(r"\b3pt\b", q_lower):
         prop_type = "threes"
-    elif "point" in q_lower or "score" in q_lower:
+    elif "point" in q_lower or "score" in q_lower or re.search(r"\bpts?\b", q_lower):
         prop_type = "points"
-    elif "rebound" in q_lower:
+    elif "rebound" in q_lower or re.search(r"\breb\b", q_lower):
         prop_type = "rebounds"
-    elif "assist" in q_lower:
+    elif "assist" in q_lower or re.search(r"\bast\b", q_lower):
         prop_type = "assists"
     else:
         return None
 
-    prefix = re.split(r"\d+(?:\.\d+)?\+", q, maxsplit=1)[0]
-    prefix = re.sub(r"\b(will|to|make|score|get|have)\b", " ", prefix, flags=re.IGNORECASE)
-    prefix = re.sub(r"[^A-Za-z\-\s]", " ", prefix)
-    tokens = [t for t in prefix.split() if t]
+    line_patterns = [
+        r"(\d+(?:\.\d+)?)\s*\+",
+        r"\b(?:over|under|o/u|ou|o|u)\s*(\d+(?:\.\d+)?)\b",
+        r"\b(\d+(?:\.\d+)?)\s*(?:or more|or fewer|or less)\b",
+    ]
+    line_match = None
+    for pat in line_patterns:
+        line_match = re.search(pat, q_lower)
+        if line_match:
+            break
+    if line_match is None:
+        return None
+    line = float(line_match.group(1))
 
-    if len(tokens) >= 3 and tokens[0].lower() == "will":
-        tokens = tokens[1:]
+    prefix = q[:line_match.start()]
+    prefix = re.sub(
+        r"\b(will|to|make|score|get|have|record|grab|hit|dish|tally|over|under|o/u|ou)\b",
+        " ",
+        prefix,
+        flags=re.IGNORECASE,
+    )
+    prefix = re.sub(r"[^A-Za-z\.'\-\s]", " ", prefix)
+    tokens = [t for t in prefix.split() if t]
     if len(tokens) < 2:
         return None
-
-    # WHY: Last two/three capitalizable words are the most stable heuristic for names.
-    player_name = " ".join(tokens[-3:] if len(tokens[-3:]) == 3 and len(tokens) >= 3 else tokens[-2:]).title()
+    player_name = " ".join(tokens[-3:] if len(tokens) >= 3 else tokens[-2:]).title()
 
     return {
         "player_name": player_name,
@@ -194,7 +285,13 @@ def normalize_polymarket_markets(settings: dict, raw_markets: list) -> dict:
 
     for market in raw_markets:
         market_id = str(market.get("id", "")).strip()
-        question = str(market.get("question", "")).strip()
+        question = str(
+            market.get("question")
+            or market.get("title")
+            or market.get("slug")
+            or market.get("description")
+            or ""
+        ).strip()
         if not market_id or not question:
             continue
 
@@ -249,9 +346,10 @@ def run(fetch_markets: bool = False, force: bool = False) -> dict:
         logger.info("No action selected. Use --fetch-markets")
         return {}
 
-    raw_markets = fetch_nba_markets(settings, force=force)
-    normalized = normalize_polymarket_markets(settings, raw_markets)
     today = get_today_date()
+    projected_names = load_projection_player_names(today)
+    raw_markets = fetch_nba_markets(settings, force=force, projected_names=projected_names)
+    normalized = normalize_polymarket_markets(settings, raw_markets)
     output_path = f"data/polymarket/odds/{today}.json"
     write_json(output_path, normalized)
 
