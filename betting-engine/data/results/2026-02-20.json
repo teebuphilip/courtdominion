@@ -1,0 +1,60 @@
+{
+  "date": "2026-02-20",
+  "graded_at": "2026-02-23T20:47:46.358007+00:00",
+  "total_bets": 4,
+  "wins": 1,
+  "losses": 3,
+  "pushes": 0,
+  "no_action": 0,
+  "daily_pnl": -74.5,
+  "bets": [
+    {
+      "player_name": "John Collins",
+      "prop_type": "points",
+      "direction": "OVER",
+      "source": "sportsbook",
+      "sportsbook_line": 14.5,
+      "dbb2_projection": 17.3,
+      "actual_stat": 12,
+      "outcome": "LOSS",
+      "units": 0.5,
+      "payout_dollars": -25.0
+    },
+    {
+      "player_name": "Julius Randle",
+      "prop_type": "points",
+      "direction": "UNDER",
+      "source": "sportsbook",
+      "sportsbook_line": 20.5,
+      "dbb2_projection": 19.3,
+      "actual_stat": 13,
+      "outcome": "WIN",
+      "units": 0.5,
+      "payout_dollars": 0.5
+    },
+    {
+      "player_name": "Zion Williamson",
+      "prop_type": "points",
+      "direction": "UNDER",
+      "source": "sportsbook",
+      "sportsbook_line": 23.5,
+      "dbb2_projection": 22.3,
+      "actual_stat": 32,
+      "outcome": "LOSS",
+      "units": 0.5,
+      "payout_dollars": -25.0
+    },
+    {
+      "player_name": "Julius Randle",
+      "prop_type": "rebounds",
+      "direction": "OVER",
+      "source": "sportsbook",
+      "sportsbook_line": 7.5,
+      "dbb2_projection": 7.7,
+      "actual_stat": 5,
+      "outcome": "LOSS",
+      "units": 0.5,
+      "payout_dollars": -25.0
+    }
+  ]
+}

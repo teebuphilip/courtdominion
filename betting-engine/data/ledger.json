@@ -1,16 +1,28 @@
 {
   "created_at": "2026-02-14T13:23:01.941014+00:00",
   "starting_bankroll": 5000.0,
-  "current_bankroll": 5000.0,
-  "unit_value": 50.0,
-  "total_bets": 0,
-  "wins": 0,
-  "losses": 0,
+  "current_bankroll": 4925.5,
+  "unit_value": 49.26,
+  "total_bets": 4,
+  "wins": 1,
+  "losses": 3,
   "pushes": 0,
   "no_action": 0,
-  "total_wagered": 0.0,
-  "total_pnl": 0.0,
-  "roi_pct": 0.0,
-  "win_rate_pct": 0.0,
-  "daily_log": []
+  "total_wagered": 100.0,
+  "total_pnl": -74.5,
+  "roi_pct": -74.5,
+  "win_rate_pct": 25.0,
+  "daily_log": [
+    {
+      "date": "2026-02-20",
+      "bets": 4,
+      "wins": 1,
+      "losses": 3,
+      "pushes": 0,
+      "no_action": 0,
+      "wagered": 100.0,
+      "pnl": -74.5,
+      "bankroll_after": 4925.5
+    }
+  ]
 }

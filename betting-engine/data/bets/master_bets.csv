@@ -1,5 +1,5 @@
 bet_id,date,source,player_name,team,prop_type,direction,dbb2_projection,sportsbook_line,edge_pct,confidence,units,dollar_amount,odds_or_price,dbb2_implied_prob,market_implied_prob,actual_result,status,pnl,closing_line,clv,notes
-7fcb10cd,2026-02-20,sportsbook,John Collins,,points,OVER,17.3,14.5,57.0,0.52,0.5,50.0,2.0,,,,PENDING,,,,
-ecb9ce95,2026-02-20,sportsbook,Julius Randle,,points,UNDER,19.3,20.5,18.7,0.5,0.5,50.0,1.98,,,,PENDING,,,,
-17159e55,2026-02-20,sportsbook,Zion Williamson,,points,UNDER,22.3,23.5,16.7,0.5,0.5,50.0,1.93,,,,PENDING,,,,
-2bb6419b,2026-02-20,sportsbook,Julius Randle,,rebounds,OVER,7.7,7.5,8.1,0.5,0.5,50.0,1.98,,,,PENDING,,,,
+7fcb10cd,2026-02-20,sportsbook,John Collins,,points,OVER,17.3,14.5,57.0,0.52,0.5,50.0,2.0,,,12,LOSS,-25.0,,,
+ecb9ce95,2026-02-20,sportsbook,Julius Randle,,points,UNDER,19.3,20.5,18.7,0.5,0.5,50.0,1.98,,,13,WIN,0.5,,,
+17159e55,2026-02-20,sportsbook,Zion Williamson,,points,UNDER,22.3,23.5,16.7,0.5,0.5,50.0,1.93,,,32,LOSS,-25.0,,,
+2bb6419b,2026-02-20,sportsbook,Julius Randle,,rebounds,OVER,7.7,7.5,8.1,0.5,0.5,50.0,1.98,,,5,LOSS,-25.0,,,
