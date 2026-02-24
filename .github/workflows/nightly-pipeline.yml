@@ -1,6 +1,10 @@
-name: Nightly Pipeline (Legacy Manual)
+name: Nightly Pipeline
 
 on:
+  schedule:
+    # Daily run for automated nightly betting flow.
+    # 09:45 UTC ~= 4:45 AM ET (EST) / 5:45 AM ET (EDT).
+    - cron: "45 9 * * *"
   workflow_dispatch:
     inputs:
       season:
@@ -24,6 +28,10 @@ on:
 
 permissions:
   contents: write
+
+concurrency:
+  group: nightly-pipeline
+  cancel-in-progress: false
 
 jobs:
   collect-project-bet:

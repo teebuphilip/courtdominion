@@ -16,7 +16,7 @@
   {
     "player_id": "1642358",
     "name": "AJ Johnson",
-    "team": "WAS",
+    "team": "DAL",
     "position": "PG",
     "status": "active"
   },
@@ -49,10 +49,10 @@
     "status": "active"
   },
   {
-    "player_id": "1641745",
-    "name": "Adam Flagler",
-    "team": "OKC",
-    "position": "PG",
+    "player_id": "1642846",
+    "name": "Ace Bailey",
+    "team": "UTA",
+    "position": "SF",
     "status": "active"
   },
   {
@@ -60,6 +60,13 @@
     "name": "Adem Bona",
     "team": "PHI",
     "position": "SF",
+    "status": "active"
+  },
+  {
+    "player_id": "1642876",
+    "name": "Adou Thiero",
+    "team": "LAL",
+    "position": "PG",
     "status": "active"
   },
   {
@@ -72,15 +79,8 @@
   {
     "player_id": "201143",
     "name": "Al Horford",
-    "team": "BOS",
+    "team": "GSW",
     "position": "PF",
-    "status": "active"
-  },
-  {
-    "player_id": "202692",
-    "name": "Alec Burks",
-    "team": "MIA",
-    "position": "PG",
     "status": "active"
   },
   {
@@ -91,27 +91,6 @@
     "status": "active"
   },
   {
-    "player_id": "1642505",
-    "name": "Alex Ducas",
-    "team": "OKC",
-    "position": "PG",
-    "status": "active"
-  },
-  {
-    "player_id": "203458",
-    "name": "Alex Len",
-    "team": "LAL",
-    "position": "C",
-    "status": "active"
-  },
-  {
-    "player_id": "1642024",
-    "name": "Alex Reese",
-    "team": "PHI",
-    "position": "PF",
-    "status": "active"
-  },
-  {
     "player_id": "1642259",
     "name": "Alex Sarr",
     "team": "WAS",
@@ -119,10 +98,24 @@
     "status": "active"
   },
   {
+    "player_id": "1642918",
+    "name": "Alijah Martin",
+    "team": "TOR",
+    "position": "PG",
+    "status": "active"
+  },
+  {
     "player_id": "1630578",
     "name": "Alperen Sengun",
     "team": "HOU",
     "position": "C",
+    "status": "active"
+  },
+  {
+    "player_id": "1642873",
+    "name": "Amari Williams",
+    "team": "BOS",
+    "position": "PF",
     "status": "active"
   },
   {
@@ -135,7 +128,7 @@
   {
     "player_id": "1629599",
     "name": "Amir Coffey",
-    "team": "LAC",
+    "team": "PHX",
     "position": "SG",
     "status": "active"
   },
@@ -170,7 +163,7 @@
   {
     "player_id": "1629014",
     "name": "Anfernee Simons",
-    "team": "POR",
+    "team": "CHI",
     "position": "PG",
     "status": "active"
   },
@@ -203,17 +196,17 @@
     "status": "active"
   },
   {
-    "player_id": "1641810",
-    "name": "Antonio Reeves",
-    "team": "NOP",
-    "position": "PG",
-    "status": "active"
-  },
-  {
     "player_id": "1630574",
     "name": "Ariel Hukporti",
     "team": "NYK",
     "position": "C",
+    "status": "active"
+  },
+  {
+    "player_id": "1642854",
+    "name": "Asa Newell",
+    "team": "ATL",
+    "position": "SF",
     "status": "active"
   },
   {
@@ -233,7 +226,7 @@
   {
     "player_id": "1630245",
     "name": "Ayo Dosunmu",
-    "team": "CHI",
+    "team": "MIN",
     "position": "PG",
     "status": "active"
   },
@@ -252,6 +245,13 @@
     "status": "active"
   },
   {
+    "player_id": "1642879",
+    "name": "Ben Saraf",
+    "team": "BKN",
+    "position": "PG",
+    "status": "active"
+  },
+  {
     "player_id": "1641767",
     "name": "Ben Sheppard",
     "team": "IND",
@@ -259,16 +259,9 @@
     "status": "active"
   },
   {
-    "player_id": "1627732",
-    "name": "Ben Simmons",
-    "team": "LAC",
-    "position": "SG",
-    "status": "active"
-  },
-  {
     "player_id": "1631097",
     "name": "Bennedict Mathurin",
-    "team": "IND",
+    "team": "LAC",
     "position": "SG",
     "status": "active"
   },
@@ -289,7 +282,7 @@
   {
     "player_id": "1631104",
     "name": "Blake Wesley",
-    "team": "SAS",
+    "team": "POR",
     "position": "PG",
     "status": "active"
   },
@@ -308,23 +301,9 @@
     "status": "active"
   },
   {
-    "player_id": "1629626",
-    "name": "Bol Bol",
-    "team": "PHX",
-    "position": "PF",
-    "status": "active"
-  },
-  {
     "player_id": "1630538",
     "name": "Bones Hyland",
     "team": "MIN",
-    "position": "PG",
-    "status": "active"
-  },
-  {
-    "player_id": "203078",
-    "name": "Bradley Beal",
-    "team": "PHX",
     "position": "PG",
     "status": "active"
   },
@@ -343,23 +322,9 @@
     "status": "active"
   },
   {
-    "player_id": "1630527",
-    "name": "Brandon Boston",
-    "team": "NOP",
-    "position": "PG",
-    "status": "active"
-  },
-  {
-    "player_id": "1629634",
-    "name": "Brandon Clarke",
-    "team": "MEM",
-    "position": "SF",
-    "status": "active"
-  },
-  {
     "player_id": "1627742",
     "name": "Brandon Ingram",
-    "team": "NOP",
+    "team": "TOR",
     "position": "SF",
     "status": "active"
   },
@@ -394,28 +359,28 @@
   {
     "player_id": "201572",
     "name": "Brook Lopez",
-    "team": "MIL",
+    "team": "LAC",
     "position": "C",
+    "status": "active"
+  },
+  {
+    "player_id": "1642964",
+    "name": "Brooks Barnhizer",
+    "team": "OKC",
+    "position": "PG",
     "status": "active"
   },
   {
     "player_id": "1628971",
     "name": "Bruce Brown",
-    "team": "NOP",
+    "team": "DEN",
     "position": "SG",
-    "status": "active"
-  },
-  {
-    "player_id": "1628981",
-    "name": "Bruno Fernando",
-    "team": "TOR",
-    "position": "PF",
     "status": "active"
   },
   {
     "player_id": "1631121",
     "name": "Bryce McGowens",
-    "team": "POR",
+    "team": "NOP",
     "position": "PG",
     "status": "active"
   },
@@ -429,14 +394,14 @@
   {
     "player_id": "1627741",
     "name": "Buddy Hield",
-    "team": "GSW",
+    "team": "ATL",
     "position": "PG",
     "status": "active"
   },
   {
     "player_id": "203468",
     "name": "CJ McCollum",
-    "team": "NOP",
+    "team": "ATL",
     "position": "PG",
     "status": "active"
   },
@@ -450,7 +415,14 @@
   {
     "player_id": "1631216",
     "name": "Caleb Houstan",
-    "team": "ORL",
+    "team": "ATL",
+    "position": "PG",
+    "status": "active"
+  },
+  {
+    "player_id": "1631126",
+    "name": "Caleb Love",
+    "team": "POR",
     "position": "PG",
     "status": "active"
   },
@@ -469,13 +441,6 @@
     "status": "active"
   },
   {
-    "player_id": "1629629",
-    "name": "Cam Reddish",
-    "team": "LAL",
-    "position": "SG",
-    "status": "active"
-  },
-  {
     "player_id": "1642285",
     "name": "Cam Spencer",
     "team": "MEM",
@@ -485,36 +450,36 @@
   {
     "player_id": "1630560",
     "name": "Cam Thomas",
-    "team": "BKN",
+    "team": "MIL",
     "position": "PG",
     "status": "active"
   },
   {
     "player_id": "1641715",
     "name": "Cam Whitmore",
-    "team": "HOU",
+    "team": "WAS",
     "position": "SF",
     "status": "active"
   },
   {
     "player_id": "1629661",
     "name": "Cameron Johnson",
-    "team": "BKN",
+    "team": "DEN",
     "position": "SF",
-    "status": "active"
-  },
-  {
-    "player_id": "1626166",
-    "name": "Cameron Payne",
-    "team": "NYK",
-    "position": "PG",
     "status": "active"
   },
   {
     "player_id": "1627747",
     "name": "Caris LeVert",
-    "team": "ATL",
+    "team": "DET",
     "position": "PG",
+    "status": "active"
+  },
+  {
+    "player_id": "1642868",
+    "name": "Carter Bryant",
+    "team": "SAS",
+    "position": "SF",
     "status": "active"
   },
   {
@@ -525,10 +490,17 @@
     "status": "active"
   },
   {
-    "player_id": "1629646",
-    "name": "Charles Bassey",
-    "team": "SAS",
-    "position": "PF",
+    "player_id": "1642907",
+    "name": "Cedric Coward",
+    "team": "MEM",
+    "position": "PG",
+    "status": "active"
+  },
+  {
+    "player_id": "1642404",
+    "name": "Chaz Lanier",
+    "team": "DET",
+    "position": "PG",
     "status": "active"
   },
   {
@@ -539,30 +511,16 @@
     "status": "active"
   },
   {
-    "player_id": "1628449",
-    "name": "Chris Boucher",
-    "team": "TOR",
-    "position": "SF",
-    "status": "active"
-  },
-  {
-    "player_id": "1630537",
-    "name": "Chris Duarte",
-    "team": "CHI",
+    "player_id": "101108",
+    "name": "Chris Paul",
+    "team": "LAC",
     "position": "PG",
     "status": "active"
   },
   {
-    "player_id": "1641753",
-    "name": "Chris Livingston",
-    "team": "MIL",
-    "position": "SF",
-    "status": "active"
-  },
-  {
-    "player_id": "101108",
-    "name": "Chris Paul",
-    "team": "SAS",
+    "player_id": "1642959",
+    "name": "Chris Youngblood",
+    "team": "OKC",
     "position": "PG",
     "status": "active"
   },
@@ -576,14 +534,14 @@
   {
     "player_id": "1631132",
     "name": "Christian Koloko",
-    "team": "LAL",
+    "team": "ATL",
     "position": "C",
     "status": "active"
   },
   {
     "player_id": "203991",
     "name": "Clint Capela",
-    "team": "ATL",
+    "team": "HOU",
     "position": "C",
     "status": "active"
   },
@@ -595,13 +553,6 @@
     "status": "active"
   },
   {
-    "player_id": "1628998",
-    "name": "Cody Martin",
-    "team": "PHX",
-    "position": "SF",
-    "status": "active"
-  },
-  {
     "player_id": "1642262",
     "name": "Cody Williams",
     "team": "UTA",
@@ -609,31 +560,10 @@
     "status": "active"
   },
   {
-    "player_id": "1641732",
-    "name": "Colby Jones",
-    "team": "WAS",
-    "position": "PG",
-    "status": "active"
-  },
-  {
     "player_id": "1630175",
     "name": "Cole Anthony",
-    "team": "ORL",
+    "team": "MIL",
     "position": "PG",
-    "status": "active"
-  },
-  {
-    "player_id": "1631306",
-    "name": "Cole Swider",
-    "team": "TOR",
-    "position": "SF",
-    "status": "active"
-  },
-  {
-    "player_id": "1630658",
-    "name": "Colin Castleton",
-    "team": "TOR",
-    "position": "C",
     "status": "active"
   },
   {
@@ -644,24 +574,31 @@
     "status": "active"
   },
   {
+    "player_id": "1642867",
+    "name": "Collin Murray-Boyles",
+    "team": "TOR",
+    "position": "SF",
+    "status": "active"
+  },
+  {
     "player_id": "1629012",
     "name": "Collin Sexton",
-    "team": "UTA",
+    "team": "CHI",
     "position": "PG",
+    "status": "active"
+  },
+  {
+    "player_id": "1642843",
+    "name": "Cooper Flagg",
+    "team": "DAL",
+    "position": "SF",
     "status": "active"
   },
   {
     "player_id": "1630557",
     "name": "Corey Kispert",
-    "team": "WAS",
+    "team": "ATL",
     "position": "SF",
-    "status": "active"
-  },
-  {
-    "player_id": "202709",
-    "name": "Cory Joseph",
-    "team": "ORL",
-    "position": "PG",
     "status": "active"
   },
   {
@@ -674,28 +611,21 @@
   {
     "player_id": "1626156",
     "name": "D'Angelo Russell",
-    "team": "BKN",
+    "team": "DAL",
     "position": "PG",
     "status": "active"
   },
   {
-    "player_id": "1629610",
-    "name": "DaQuan Jeffries",
-    "team": "CHA",
-    "position": "SG",
-    "status": "active"
-  },
-  {
-    "player_id": "1630625",
-    "name": "Dalano Banton",
-    "team": "POR",
+    "player_id": "1641747",
+    "name": "DaRon Holmes II",
+    "team": "DEN",
     "position": "SF",
     "status": "active"
   },
   {
     "player_id": "1631207",
     "name": "Dalen Terry",
-    "team": "CHI",
+    "team": "PHI",
     "position": "SF",
     "status": "active"
   },
@@ -707,27 +637,6 @@
     "status": "active"
   },
   {
-    "player_id": "203081",
-    "name": "Damian Lillard",
-    "team": "MIL",
-    "position": "PG",
-    "status": "active"
-  },
-  {
-    "player_id": "1641878",
-    "name": "Damion Baugh",
-    "team": "CHA",
-    "position": "PG",
-    "status": "active"
-  },
-  {
-    "player_id": "1627814",
-    "name": "Damion Lee",
-    "team": "PHX",
-    "position": "SG",
-    "status": "active"
-  },
-  {
     "player_id": "1629655",
     "name": "Daniel Gafford",
     "team": "DAL",
@@ -735,31 +644,17 @@
     "status": "active"
   },
   {
-    "player_id": "1628464",
-    "name": "Daniel Theis",
-    "team": "NOP",
-    "position": "PF",
-    "status": "active"
-  },
-  {
-    "player_id": "203957",
-    "name": "Dant\u00e9 Exum",
-    "team": "DAL",
+    "player_id": "1642450",
+    "name": "Daniss Jenkins",
+    "team": "DET",
     "position": "PG",
     "status": "active"
   },
   {
-    "player_id": "203967",
-    "name": "Dario \u0160ari\u0107",
-    "team": "DEN",
-    "position": "PF",
-    "status": "active"
-  },
-  {
-    "player_id": "1641727",
-    "name": "Dariq Whitehead",
+    "player_id": "1642874",
+    "name": "Danny Wolf",
     "team": "BKN",
-    "position": "SG",
+    "position": "SF",
     "status": "active"
   },
   {
@@ -770,10 +665,10 @@
     "status": "active"
   },
   {
-    "player_id": "1631223",
-    "name": "David Roddy",
-    "team": "HOU",
-    "position": "SF",
+    "player_id": "1642357",
+    "name": "David Jones Garcia",
+    "team": "SAS",
+    "position": "PG",
     "status": "active"
   },
   {
@@ -800,15 +695,15 @@
   {
     "player_id": "1629631",
     "name": "De'Andre Hunter",
-    "team": "CLE",
+    "team": "SAC",
     "position": "SG",
     "status": "active"
   },
   {
-    "player_id": "201599",
-    "name": "DeAndre Jordan",
-    "team": "DEN",
-    "position": "C",
+    "player_id": "1629001",
+    "name": "De'Anthony Melton",
+    "team": "GSW",
+    "position": "PG",
     "status": "active"
   },
   {
@@ -828,22 +723,8 @@
   {
     "player_id": "1629028",
     "name": "Deandre Ayton",
-    "team": "POR",
+    "team": "LAL",
     "position": "C",
-    "status": "active"
-  },
-  {
-    "player_id": "1627749",
-    "name": "Dejounte Murray",
-    "team": "NOP",
-    "position": "PG",
-    "status": "active"
-  },
-  {
-    "player_id": "1626153",
-    "name": "Delon Wright",
-    "team": "NYK",
-    "position": "PG",
     "status": "active"
   },
   {
@@ -856,14 +737,14 @@
   {
     "player_id": "203471",
     "name": "Dennis Schr\u00f6der",
-    "team": "DET",
+    "team": "CLE",
     "position": "PG",
     "status": "active"
   },
   {
-    "player_id": "1641726",
-    "name": "Dereck Lively II",
-    "team": "DAL",
+    "player_id": "1642852",
+    "name": "Derik Queen",
+    "team": "NOP",
     "position": "C",
     "status": "active"
   },
@@ -884,7 +765,7 @@
   {
     "player_id": "1630217",
     "name": "Desmond Bane",
-    "team": "MEM",
+    "team": "ORL",
     "position": "PG",
     "status": "active"
   },
@@ -912,15 +793,8 @@
   {
     "player_id": "1628415",
     "name": "Dillon Brooks",
-    "team": "HOU",
+    "team": "PHX",
     "position": "SG",
-    "status": "active"
-  },
-  {
-    "player_id": "1641794",
-    "name": "Dillon Jones",
-    "team": "OKC",
-    "position": "SF",
     "status": "active"
   },
   {
@@ -933,7 +807,7 @@
   {
     "player_id": "1631230",
     "name": "Dominick Barlow",
-    "team": "ATL",
+    "team": "PHI",
     "position": "SF",
     "status": "active"
   },
@@ -961,7 +835,7 @@
   {
     "player_id": "1627827",
     "name": "Dorian Finney-Smith",
-    "team": "LAL",
+    "team": "HOU",
     "position": "SF",
     "status": "active"
   },
@@ -970,6 +844,13 @@
     "name": "Doug McDermott",
     "team": "SAC",
     "position": "SF",
+    "status": "active"
+  },
+  {
+    "player_id": "1642962",
+    "name": "Drake Powell",
+    "team": "BKN",
+    "position": "SG",
     "status": "active"
   },
   {
@@ -982,14 +863,14 @@
   {
     "player_id": "1629234",
     "name": "Drew Eubanks",
-    "team": "LAC",
+    "team": "SAC",
     "position": "PF",
     "status": "active"
   },
   {
-    "player_id": "1641809",
-    "name": "Drew Peterson",
-    "team": "BOS",
+    "player_id": "1631166",
+    "name": "Drew Timme",
+    "team": "LAL",
     "position": "SF",
     "status": "active"
   },
@@ -1003,7 +884,7 @@
   {
     "player_id": "1629130",
     "name": "Duncan Robinson",
-    "team": "MIA",
+    "team": "DET",
     "position": "SF",
     "status": "active"
   },
@@ -1022,6 +903,20 @@
     "status": "active"
   },
   {
+    "player_id": "1642928",
+    "name": "Dylan Cardwell",
+    "team": "SAC",
+    "position": "C",
+    "status": "active"
+  },
+  {
+    "player_id": "1642844",
+    "name": "Dylan Harper",
+    "team": "SAS",
+    "position": "PG",
+    "status": "active"
+  },
+  {
     "player_id": "1630700",
     "name": "Dyson Daniels",
     "team": "ATL",
@@ -1031,42 +926,21 @@
   {
     "player_id": "1630604",
     "name": "E.J. Liddell",
-    "team": "CHI",
+    "team": "BKN",
     "position": "SF",
     "status": "active"
   },
   {
-    "player_id": "203901",
-    "name": "Elfrid Payton",
-    "team": "NOP",
+    "player_id": "1642856",
+    "name": "Egor D\u00ebmin",
+    "team": "BKN",
     "position": "PG",
     "status": "active"
   },
   {
-    "player_id": "1641989",
-    "name": "Elijah Harkless",
-    "team": "UTA",
-    "position": "PG",
-    "status": "active"
-  },
-  {
-    "player_id": "1641734",
-    "name": "Emoni Bates",
-    "team": "CLE",
-    "position": "SF",
-    "status": "active"
-  },
-  {
-    "player_id": "1642402",
-    "name": "Enrique Freeman",
+    "player_id": "1630679",
+    "name": "Ethan Thompson",
     "team": "IND",
-    "position": "SF",
-    "status": "active"
-  },
-  {
-    "player_id": "201569",
-    "name": "Eric Gordon",
-    "team": "PHI",
     "position": "PG",
     "status": "active"
   },
@@ -1085,13 +959,6 @@
     "status": "active"
   },
   {
-    "player_id": "1627832",
-    "name": "Fred VanVleet",
-    "team": "HOU",
-    "position": "PG",
-    "status": "active"
-  },
-  {
     "player_id": "1641713",
     "name": "GG Jackson",
     "team": "MEM",
@@ -1101,7 +968,7 @@
   {
     "player_id": "1629216",
     "name": "Gabe Vincent",
-    "team": "LAL",
+    "team": "ATL",
     "position": "PG",
     "status": "active"
   },
@@ -1115,14 +982,14 @@
   {
     "player_id": "1629726",
     "name": "Garrison Mathews",
-    "team": "ATL",
+    "team": "IND",
     "position": "PG",
     "status": "active"
   },
   {
     "player_id": "203914",
     "name": "Gary Harris",
-    "team": "ORL",
+    "team": "MIL",
     "position": "PG",
     "status": "active"
   },
@@ -1138,13 +1005,6 @@
     "name": "Gary Trent Jr.",
     "team": "MIL",
     "position": "PG",
-    "status": "active"
-  },
-  {
-    "player_id": "1627777",
-    "name": "Georges Niang",
-    "team": "ATL",
-    "position": "SF",
     "status": "active"
   },
   {
@@ -1185,7 +1045,7 @@
   {
     "player_id": "1627824",
     "name": "Guerschon Yabusele",
-    "team": "PHI",
+    "team": "CHI",
     "position": "SF",
     "status": "active"
   },
@@ -1204,17 +1064,17 @@
     "status": "active"
   },
   {
-    "player_id": "1629312",
-    "name": "Haywood Highsmith",
-    "team": "MIA",
-    "position": "SF",
-    "status": "active"
-  },
-  {
     "player_id": "1630529",
     "name": "Herbert Jones",
     "team": "NOP",
     "position": "SF",
+    "status": "active"
+  },
+  {
+    "player_id": "1642864",
+    "name": "Hugo Gonz\u00e1lez",
+    "team": "BOS",
+    "position": "PG",
     "status": "active"
   },
   {
@@ -1232,16 +1092,9 @@
     "status": "active"
   },
   {
-    "player_id": "1642403",
-    "name": "Isaac Jones",
-    "team": "SAC",
-    "position": "SF",
-    "status": "active"
-  },
-  {
     "player_id": "1630171",
     "name": "Isaac Okoro",
-    "team": "CLE",
+    "team": "CHI",
     "position": "SG",
     "status": "active"
   },
@@ -1253,17 +1106,17 @@
     "status": "active"
   },
   {
-    "player_id": "1642384",
-    "name": "Isaiah Crawford",
-    "team": "SAC",
-    "position": "SF",
-    "status": "active"
-  },
-  {
     "player_id": "1628392",
     "name": "Isaiah Hartenstein",
     "team": "OKC",
     "position": "PF",
+    "status": "active"
+  },
+  {
+    "player_id": "1630543",
+    "name": "Isaiah Jackson",
+    "team": "LAC",
+    "position": "SF",
     "status": "active"
   },
   {
@@ -1274,17 +1127,17 @@
     "status": "active"
   },
   {
+    "player_id": "1630587",
+    "name": "Isaiah Livers",
+    "team": "PHX",
+    "position": "SF",
+    "status": "active"
+  },
+  {
     "player_id": "1630191",
     "name": "Isaiah Stewart",
     "team": "DET",
     "position": "PF",
-    "status": "active"
-  },
-  {
-    "player_id": "1631209",
-    "name": "Isaiah Wong",
-    "team": "CHA",
-    "position": "PG",
     "status": "active"
   },
   {
@@ -1297,15 +1150,8 @@
   {
     "player_id": "1631120",
     "name": "JD Davison",
-    "team": "BOS",
+    "team": "HOU",
     "position": "PG",
-    "status": "active"
-  },
-  {
-    "player_id": "1630550",
-    "name": "JT Thor",
-    "team": "WAS",
-    "position": "SF",
     "status": "active"
   },
   {
@@ -1332,28 +1178,21 @@
   {
     "player_id": "1631133",
     "name": "Jabari Walker",
-    "team": "POR",
-    "position": "SF",
-    "status": "active"
-  },
-  {
-    "player_id": "1631210",
-    "name": "Jacob Toppin",
-    "team": "ATL",
+    "team": "PHI",
     "position": "SF",
     "status": "active"
   },
   {
     "player_id": "1630702",
     "name": "Jaden Hardy",
-    "team": "DAL",
+    "team": "WAS",
     "position": "PG",
     "status": "active"
   },
   {
     "player_id": "1631093",
     "name": "Jaden Ivey",
-    "team": "DET",
+    "team": "CHI",
     "position": "PG",
     "status": "active"
   },
@@ -1365,17 +1204,17 @@
     "status": "active"
   },
   {
-    "player_id": "1630531",
-    "name": "Jaden Springer",
-    "team": "UTA",
-    "position": "PG",
-    "status": "active"
-  },
-  {
     "player_id": "1630256",
     "name": "Jae'Sean Tate",
     "team": "HOU",
     "position": "SF",
+    "status": "active"
+  },
+  {
+    "player_id": "1642942",
+    "name": "Jahmai Mashack",
+    "team": "MEM",
+    "position": "PG",
     "status": "active"
   },
   {
@@ -1388,7 +1227,7 @@
   {
     "player_id": "1631222",
     "name": "Jake LaRavia",
-    "team": "SAC",
+    "team": "LAL",
     "position": "SF",
     "status": "active"
   },
@@ -1416,14 +1255,7 @@
   {
     "player_id": "1630224",
     "name": "Jalen Green",
-    "team": "HOU",
-    "position": "PG",
-    "status": "active"
-  },
-  {
-    "player_id": "1641720",
-    "name": "Jalen Hood-Schifino",
-    "team": "PHI",
+    "team": "PHX",
     "position": "PG",
     "status": "active"
   },
@@ -1472,7 +1304,7 @@
   {
     "player_id": "1631288",
     "name": "Jamal Cain",
-    "team": "NOP",
+    "team": "ORL",
     "position": "SF",
     "status": "active"
   },
@@ -1491,16 +1323,23 @@
     "status": "active"
   },
   {
-    "player_id": "201935",
-    "name": "James Harden",
-    "team": "LAC",
+    "player_id": "1631123",
+    "name": "Jamaree Bouyea",
+    "team": "PHX",
     "position": "PG",
     "status": "active"
   },
   {
-    "player_id": "201949",
-    "name": "James Johnson",
-    "team": "IND",
+    "player_id": "201935",
+    "name": "James Harden",
+    "team": "CLE",
+    "position": "PG",
+    "status": "active"
+  },
+  {
+    "player_id": "1642364",
+    "name": "Jamir Watkins",
+    "team": "WAS",
     "position": "SF",
     "status": "active"
   },
@@ -1519,30 +1358,16 @@
     "status": "active"
   },
   {
-    "player_id": "1630215",
-    "name": "Jared Butler",
-    "team": "PHI",
-    "position": "PG",
-    "status": "active"
-  },
-  {
     "player_id": "1642272",
     "name": "Jared McCain",
-    "team": "PHI",
-    "position": "PG",
-    "status": "active"
-  },
-  {
-    "player_id": "1631197",
-    "name": "Jared Rhoden",
-    "team": "TOR",
+    "team": "OKC",
     "position": "PG",
     "status": "active"
   },
   {
     "player_id": "1628991",
     "name": "Jaren Jackson Jr.",
-    "team": "MEM",
+    "team": "UTA",
     "position": "PF",
     "status": "active"
   },
@@ -1561,9 +1386,30 @@
     "status": "active"
   },
   {
+    "player_id": "1642859",
+    "name": "Jase Richardson",
+    "team": "ORL",
+    "position": "PG",
+    "status": "active"
+  },
+  {
+    "player_id": "1642914",
+    "name": "Javon Small",
+    "team": "MEM",
+    "position": "PG",
+    "status": "active"
+  },
+  {
+    "player_id": "1631451",
+    "name": "Javonte Cooke",
+    "team": "POR",
+    "position": "PG",
+    "status": "active"
+  },
+  {
     "player_id": "1629750",
     "name": "Javonte Green",
-    "team": "CLE",
+    "team": "DET",
     "position": "PG",
     "status": "active"
   },
@@ -1577,7 +1423,7 @@
   {
     "player_id": "1630643",
     "name": "Jay Huff",
-    "team": "MEM",
+    "team": "IND",
     "position": "C",
     "status": "active"
   },
@@ -1592,13 +1438,6 @@
     "player_id": "1641740",
     "name": "Jaylen Clark",
     "team": "MIN",
-    "position": "PG",
-    "status": "active"
-  },
-  {
-    "player_id": "1641798",
-    "name": "Jaylen Martin",
-    "team": "WAS",
     "position": "PG",
     "status": "active"
   },
@@ -1624,27 +1463,6 @@
     "status": "active"
   },
   {
-    "player_id": "1628369",
-    "name": "Jayson Tatum",
-    "team": "BOS",
-    "position": "SG",
-    "status": "active"
-  },
-  {
-    "player_id": "1641789",
-    "name": "Jazian Gortman",
-    "team": "DAL",
-    "position": "PG",
-    "status": "active"
-  },
-  {
-    "player_id": "1630288",
-    "name": "Jeff Dowtin Jr.",
-    "team": "PHI",
-    "position": "PG",
-    "status": "active"
-  },
-  {
     "player_id": "201145",
     "name": "Jeff Green",
     "team": "HOU",
@@ -1659,16 +1477,23 @@
     "status": "active"
   },
   {
+    "player_id": "1642847",
+    "name": "Jeremiah Fears",
+    "team": "NOP",
+    "position": "PG",
+    "status": "active"
+  },
+  {
     "player_id": "1630526",
     "name": "Jeremiah Robinson-Earl",
-    "team": "NOP",
+    "team": "DAL",
     "position": "SF",
     "status": "active"
   },
   {
     "player_id": "1631110",
     "name": "Jeremy Sochan",
-    "team": "SAS",
+    "team": "NYK",
     "position": "SF",
     "status": "active"
   },
@@ -1689,7 +1514,7 @@
   {
     "player_id": "1628975",
     "name": "Jevon Carter",
-    "team": "CHI",
+    "team": "ORL",
     "position": "PG",
     "status": "active"
   },
@@ -1701,9 +1526,16 @@
     "status": "active"
   },
   {
+    "player_id": "1642866",
+    "name": "Joan Beringer",
+    "team": "MIN",
+    "position": "SF",
+    "status": "active"
+  },
+  {
     "player_id": "1629111",
     "name": "Jock Landale",
-    "team": "HOU",
+    "team": "ATL",
     "position": "C",
     "status": "active"
   },
@@ -1724,22 +1556,22 @@
   {
     "player_id": "1628381",
     "name": "John Collins",
-    "team": "UTA",
+    "team": "LAC",
     "position": "PF",
     "status": "active"
   },
   {
     "player_id": "1629723",
     "name": "John Konchar",
-    "team": "MEM",
+    "team": "UTA",
     "position": "PG",
     "status": "active"
   },
   {
-    "player_id": "1631098",
-    "name": "Johnny Davis",
-    "team": "WAS",
-    "position": "PG",
+    "player_id": "1641780",
+    "name": "Johni Broome",
+    "team": "PHI",
+    "position": "SF",
     "status": "active"
   },
   {
@@ -1752,14 +1584,14 @@
   {
     "player_id": "1630548",
     "name": "Johnny Juzang",
-    "team": "UTA",
+    "team": "MIN",
     "position": "PG",
     "status": "active"
   },
   {
     "player_id": "202685",
     "name": "Jonas Valan\u010di\u016bnas",
-    "team": "SAC",
+    "team": "DEN",
     "position": "C",
     "status": "active"
   },
@@ -1787,14 +1619,14 @@
   {
     "player_id": "203903",
     "name": "Jordan Clarkson",
-    "team": "UTA",
+    "team": "NYK",
     "position": "PG",
     "status": "active"
   },
   {
     "player_id": "1630692",
     "name": "Jordan Goodwin",
-    "team": "LAL",
+    "team": "PHX",
     "position": "PG",
     "status": "active"
   },
@@ -1822,7 +1654,7 @@
   {
     "player_id": "1629673",
     "name": "Jordan Poole",
-    "team": "WAS",
+    "team": "NOP",
     "position": "PG",
     "status": "active"
   },
@@ -1836,14 +1668,7 @@
   {
     "player_id": "1630631",
     "name": "Jose Alvarado",
-    "team": "NOP",
-    "position": "PG",
-    "status": "active"
-  },
-  {
-    "player_id": "1630528",
-    "name": "Josh Christopher",
-    "team": "MIA",
+    "team": "NYK",
     "position": "PG",
     "status": "active"
   },
@@ -1871,21 +1696,21 @@
   {
     "player_id": "1631169",
     "name": "Josh Minott",
-    "team": "MIN",
+    "team": "BOS",
     "position": "SF",
     "status": "active"
   },
   {
     "player_id": "1629006",
     "name": "Josh Okogie",
-    "team": "CHA",
+    "team": "HOU",
     "position": "PG",
     "status": "active"
   },
   {
     "player_id": "201950",
     "name": "Jrue Holiday",
-    "team": "BOS",
+    "team": "POR",
     "position": "PG",
     "status": "active"
   },
@@ -1899,7 +1724,7 @@
   {
     "player_id": "1641763",
     "name": "Julian Phillips",
-    "team": "CHI",
+    "team": "MIN",
     "position": "SF",
     "status": "active"
   },
@@ -1932,38 +1757,24 @@
     "status": "active"
   },
   {
-    "player_id": "1631303",
-    "name": "Justin Minaya",
-    "team": "POR",
-    "position": "SF",
-    "status": "active"
-  },
-  {
     "player_id": "203994",
     "name": "Jusuf Nurki\u0107",
-    "team": "CHA",
-    "position": "C",
-    "status": "active"
-  },
-  {
-    "player_id": "1630231",
-    "name": "KJ Martin",
     "team": "UTA",
-    "position": "SF",
+    "position": "C",
     "status": "active"
   },
   {
     "player_id": "1642354",
     "name": "KJ Simpson",
-    "team": "CHA",
+    "team": "DEN",
     "position": "PG",
     "status": "active"
   },
   {
-    "player_id": "1630539",
-    "name": "Kai Jones",
-    "team": "DAL",
-    "position": "PF",
+    "player_id": "1642880",
+    "name": "Kam Jones",
+    "team": "IND",
+    "position": "PG",
     "status": "active"
   },
   {
@@ -1978,6 +1789,13 @@
     "name": "Karlo Matkovi\u0107",
     "team": "NOP",
     "position": "PF",
+    "status": "active"
+  },
+  {
+    "player_id": "1642857",
+    "name": "Kasparas Jaku\u010dionis",
+    "team": "MIA",
+    "position": "PG",
     "status": "active"
   },
   {
@@ -2002,13 +1820,6 @@
     "status": "active"
   },
   {
-    "player_id": "1631232",
-    "name": "Keion Brooks Jr.",
-    "team": "NOP",
-    "position": "SF",
-    "status": "active"
-  },
-  {
     "player_id": "1642276",
     "name": "Kel'el Ware",
     "team": "MIA",
@@ -2025,7 +1836,7 @@
   {
     "player_id": "203482",
     "name": "Kelly Olynyk",
-    "team": "NOP",
+    "team": "SAS",
     "position": "PF",
     "status": "active"
   },
@@ -2046,21 +1857,14 @@
   {
     "player_id": "203484",
     "name": "Kentavious Caldwell-Pope",
-    "team": "ORL",
+    "team": "MEM",
     "position": "PG",
     "status": "active"
   },
   {
     "player_id": "1631165",
     "name": "Keon Ellis",
-    "team": "SAC",
-    "position": "PG",
-    "status": "active"
-  },
-  {
-    "player_id": "1630553",
-    "name": "Keon Johnson",
-    "team": "BKN",
+    "team": "CLE",
     "position": "PG",
     "status": "active"
   },
@@ -2072,38 +1876,31 @@
     "status": "active"
   },
   {
-    "player_id": "1630556",
-    "name": "Kessler Edwards",
-    "team": "DAL",
-    "position": "SF",
-    "status": "active"
-  },
-  {
     "player_id": "201142",
     "name": "Kevin Durant",
-    "team": "PHX",
+    "team": "HOU",
     "position": "SF",
     "status": "active"
   },
   {
     "player_id": "1628989",
     "name": "Kevin Huerter",
-    "team": "CHI",
+    "team": "DET",
     "position": "SG",
-    "status": "active"
-  },
-  {
-    "player_id": "1628995",
-    "name": "Kevin Knox II",
-    "team": "GSW",
-    "position": "SF",
     "status": "active"
   },
   {
     "player_id": "201567",
     "name": "Kevin Love",
-    "team": "MIA",
+    "team": "UTA",
     "position": "PF",
+    "status": "active"
+  },
+  {
+    "player_id": "1641755",
+    "name": "Kevin McCullar Jr.",
+    "team": "NYK",
+    "position": "PG",
     "status": "active"
   },
   {
@@ -2116,7 +1913,7 @@
   {
     "player_id": "1626172",
     "name": "Kevon Looney",
-    "team": "GSW",
+    "team": "NOP",
     "position": "SF",
     "status": "active"
   },
@@ -2128,9 +1925,16 @@
     "status": "active"
   },
   {
+    "player_id": "1642863",
+    "name": "Khaman Maluach",
+    "team": "PHX",
+    "position": "C",
+    "status": "active"
+  },
+  {
     "player_id": "203114",
     "name": "Khris Middleton",
-    "team": "WAS",
+    "team": "DAL",
     "position": "SF",
     "status": "active"
   },
@@ -2144,15 +1948,22 @@
   {
     "player_id": "1641738",
     "name": "Kobe Brown",
-    "team": "LAC",
+    "team": "IND",
     "position": "SF",
     "status": "active"
   },
   {
-    "player_id": "1641723",
-    "name": "Kobe Bufkin",
-    "team": "ATL",
+    "player_id": "1642920",
+    "name": "Kobe Sanders",
+    "team": "LAC",
     "position": "PG",
+    "status": "active"
+  },
+  {
+    "player_id": "1642851",
+    "name": "Kon Knueppel",
+    "team": "CHA",
+    "position": "SG",
     "status": "active"
   },
   {
@@ -2172,14 +1983,14 @@
   {
     "player_id": "204001",
     "name": "Kristaps Porzi\u0146\u0123is",
-    "team": "BOS",
+    "team": "GSW",
     "position": "PF",
     "status": "active"
   },
   {
     "player_id": "203937",
     "name": "Kyle Anderson",
-    "team": "MIA",
+    "team": "MEM",
     "position": "SG",
     "status": "active"
   },
@@ -2198,27 +2009,6 @@
     "status": "active"
   },
   {
-    "player_id": "200768",
-    "name": "Kyle Lowry",
-    "team": "PHI",
-    "position": "PG",
-    "status": "active"
-  },
-  {
-    "player_id": "1630283",
-    "name": "Kylor Kelley",
-    "team": "NOP",
-    "position": "C",
-    "status": "active"
-  },
-  {
-    "player_id": "202681",
-    "name": "Kyrie Irving",
-    "team": "DAL",
-    "position": "PG",
-    "status": "active"
-  },
-  {
     "player_id": "1642273",
     "name": "Kyshawn George",
     "team": "WAS",
@@ -2233,10 +2023,10 @@
     "status": "active"
   },
   {
-    "player_id": "1630205",
-    "name": "Lamar Stevens",
-    "team": "MEM",
-    "position": "SF",
+    "player_id": "1642950",
+    "name": "Lachlan Olbrich",
+    "team": "CHI",
+    "position": "C",
     "status": "active"
   },
   {
@@ -2249,7 +2039,7 @@
   {
     "player_id": "1626204",
     "name": "Larry Nance Jr.",
-    "team": "ATL",
+    "team": "CLE",
     "position": "PF",
     "status": "active"
   },
@@ -2270,42 +2060,28 @@
   {
     "player_id": "1631159",
     "name": "Leonard Miller",
-    "team": "MIN",
+    "team": "CHI",
     "position": "SF",
     "status": "active"
   },
   {
-    "player_id": "1631311",
-    "name": "Lester Quinones",
-    "team": "NOP",
-    "position": "PG",
-    "status": "active"
-  },
-  {
-    "player_id": "1641857",
-    "name": "Liam Robbins",
-    "team": "MIL",
-    "position": "C",
+    "player_id": "1642862",
+    "name": "Liam McNeeley",
+    "team": "CHA",
+    "position": "SF",
     "status": "active"
   },
   {
     "player_id": "1630322",
     "name": "Lindy Waters III",
-    "team": "DET",
+    "team": "SAS",
     "position": "SF",
-    "status": "active"
-  },
-  {
-    "player_id": "1629022",
-    "name": "Lonnie Walker IV",
-    "team": "PHI",
-    "position": "SG",
     "status": "active"
   },
   {
     "player_id": "1628366",
     "name": "Lonzo Ball",
-    "team": "CHI",
+    "team": "CLE",
     "position": "PG",
     "status": "active"
   },
@@ -2326,21 +2102,21 @@
   {
     "player_id": "1630568",
     "name": "Luka Garza",
-    "team": "MIN",
+    "team": "BOS",
     "position": "C",
     "status": "active"
   },
   {
     "player_id": "1628379",
     "name": "Luke Kennard",
-    "team": "MEM",
+    "team": "LAL",
     "position": "PG",
     "status": "active"
   },
   {
     "player_id": "1628436",
     "name": "Luke Kornet",
-    "team": "BOS",
+    "team": "SAS",
     "position": "PF",
     "status": "active"
   },
@@ -2354,22 +2130,8 @@
   {
     "player_id": "1631103",
     "name": "Malaki Branham",
-    "team": "SAS",
-    "position": "SF",
-    "status": "active"
-  },
-  {
-    "player_id": "1627763",
-    "name": "Malcolm Brogdon",
     "team": "WAS",
-    "position": "PG",
-    "status": "active"
-  },
-  {
-    "player_id": "1627736",
-    "name": "Malik Beasley",
-    "team": "DET",
-    "position": "PG",
+    "position": "SF",
     "status": "active"
   },
   {
@@ -2377,20 +2139,6 @@
     "name": "Malik Monk",
     "team": "SAC",
     "position": "PG",
-    "status": "active"
-  },
-  {
-    "player_id": "1630699",
-    "name": "MarJon Beauchamp",
-    "team": "NYK",
-    "position": "SF",
-    "status": "active"
-  },
-  {
-    "player_id": "1630542",
-    "name": "Marcus Bagley",
-    "team": "PHI",
-    "position": "SF",
     "status": "active"
   },
   {
@@ -2403,49 +2151,28 @@
   {
     "player_id": "203935",
     "name": "Marcus Smart",
-    "team": "WAS",
+    "team": "LAL",
     "position": "PG",
     "status": "active"
   },
   {
     "player_id": "1631109",
     "name": "Mark Williams",
-    "team": "CHA",
+    "team": "PHX",
     "position": "C",
-    "status": "active"
-  },
-  {
-    "player_id": "1628365",
-    "name": "Markelle Fultz",
-    "team": "SAC",
-    "position": "PG",
-    "status": "active"
-  },
-  {
-    "player_id": "202693",
-    "name": "Markieff Morris",
-    "team": "LAL",
-    "position": "SF",
     "status": "active"
   },
   {
     "player_id": "1628963",
     "name": "Marvin Bagley III",
-    "team": "MEM",
+    "team": "DAL",
     "position": "SF",
-    "status": "active"
-  },
-  {
-    "player_id": "1630222",
-    "name": "Mason Jones",
-    "team": "SAC",
-    "position": "PG",
     "status": "active"
   },
   {
     "player_id": "203486",
     "name": "Mason Plumlee",
-    "team": "PHX",
+    "team": "CHA",
     "position": "PF",
     "status": "active"
   },
@@ -2457,20 +2184,6 @@
     "status": "active"
   },
   {
-    "player_id": "1629680",
-    "name": "Matisse Thybulle",
-    "team": "POR",
-    "position": "SG",
-    "status": "active"
-  },
-  {
-    "player_id": "1630346",
-    "name": "Matt Ryan",
-    "team": "NYK",
-    "position": "SF",
-    "status": "active"
-  },
-  {
     "player_id": "1631108",
     "name": "Max Christie",
     "team": "DAL",
@@ -2478,37 +2191,37 @@
     "status": "active"
   },
   {
-    "player_id": "1629622",
-    "name": "Max Strus",
-    "team": "CLE",
-    "position": "SG",
-    "status": "active"
-  },
-  {
     "player_id": "1628467",
     "name": "Maxi Kleber",
-    "team": "DAL",
+    "team": "LAL",
     "position": "SF",
     "status": "active"
   },
   {
-    "player_id": "1641721",
-    "name": "Maxwell Lewis",
-    "team": "BKN",
-    "position": "SF",
+    "player_id": "1642875",
+    "name": "Maxime Raynaud",
+    "team": "SAC",
+    "position": "C",
+    "status": "active"
+  },
+  {
+    "player_id": "1642877",
+    "name": "Micah Peavy",
+    "team": "NOP",
+    "position": "SG",
     "status": "active"
   },
   {
     "player_id": "1630695",
     "name": "Micah Potter",
-    "team": "UTA",
+    "team": "IND",
     "position": "C",
     "status": "active"
   },
   {
     "player_id": "1629008",
     "name": "Michael Porter Jr.",
-    "team": "DEN",
+    "team": "BKN",
     "position": "SF",
     "status": "active"
   },
@@ -2534,6 +2247,13 @@
     "status": "active"
   },
   {
+    "player_id": "1642939",
+    "name": "Miles Kelly",
+    "team": "DAL",
+    "position": "PG",
+    "status": "active"
+  },
+  {
     "player_id": "1630540",
     "name": "Miles McBride",
     "team": "NYK",
@@ -2548,17 +2268,10 @@
     "status": "active"
   },
   {
-    "player_id": "1628964",
-    "name": "Mo Bamba",
-    "team": "NOP",
-    "position": "C",
-    "status": "active"
-  },
-  {
-    "player_id": "1628420",
-    "name": "Monte Morris",
-    "team": "PHX",
-    "position": "PG",
+    "player_id": "1642885",
+    "name": "Mohamed Diawara",
+    "team": "NYK",
+    "position": "SF",
     "status": "active"
   },
   {
@@ -2566,13 +2279,6 @@
     "name": "Moritz Wagner",
     "team": "ORL",
     "position": "PF",
-    "status": "active"
-  },
-  {
-    "player_id": "1629650",
-    "name": "Moses Brown",
-    "team": "DAL",
-    "position": "C",
     "status": "active"
   },
   {
@@ -2590,6 +2296,13 @@
     "status": "active"
   },
   {
+    "player_id": "1630619",
+    "name": "Moussa Cisse",
+    "team": "DAL",
+    "position": "C",
+    "status": "active"
+  },
+  {
     "player_id": "1631217",
     "name": "Moussa Diabat\u00e9",
     "team": "CHA",
@@ -2599,8 +2312,22 @@
   {
     "player_id": "1626167",
     "name": "Myles Turner",
-    "team": "IND",
+    "team": "MIL",
     "position": "PF",
+    "status": "active"
+  },
+  {
+    "player_id": "1642066",
+    "name": "Myron Gardner",
+    "team": "MIA",
+    "position": "SF",
+    "status": "active"
+  },
+  {
+    "player_id": "1641772",
+    "name": "Nae'Qwan Tomlin",
+    "team": "CLE",
+    "position": "SF",
     "status": "active"
   },
   {
@@ -2608,13 +2335,6 @@
     "name": "Naji Marshall",
     "team": "DAL",
     "position": "SF",
-    "status": "active"
-  },
-  {
-    "player_id": "1631466",
-    "name": "Nate Williams",
-    "team": "HOU",
-    "position": "PG",
     "status": "active"
   },
   {
@@ -2641,21 +2361,21 @@
   {
     "player_id": "1630208",
     "name": "Nick Richards",
-    "team": "PHX",
+    "team": "CHI",
     "position": "C",
     "status": "active"
   },
   {
     "player_id": "1641733",
     "name": "Nick Smith Jr.",
-    "team": "CHA",
+    "team": "LAL",
     "position": "PG",
     "status": "active"
   },
   {
     "player_id": "1629638",
     "name": "Nickeil Alexander-Walker",
-    "team": "MIN",
+    "team": "ATL",
     "position": "PG",
     "status": "active"
   },
@@ -2664,6 +2384,13 @@
     "name": "Nicolas Batum",
     "team": "LAC",
     "position": "SG",
+    "status": "active"
+  },
+  {
+    "player_id": "1628502",
+    "name": "Nigel Hayes-Davis",
+    "team": "PHX",
+    "position": "SF",
     "status": "active"
   },
   {
@@ -2683,8 +2410,15 @@
   {
     "player_id": "202696",
     "name": "Nikola Vu\u010devi\u0107",
-    "team": "CHI",
+    "team": "BOS",
     "position": "C",
+    "status": "active"
+  },
+  {
+    "player_id": "1642363",
+    "name": "Nique Clifford",
+    "team": "SAC",
+    "position": "PG",
     "status": "active"
   },
   {
@@ -2695,9 +2429,23 @@
     "status": "active"
   },
   {
+    "player_id": "1642869",
+    "name": "Noah Penda",
+    "team": "ORL",
+    "position": "SG",
+    "status": "active"
+  },
+  {
+    "player_id": "1642849",
+    "name": "Nolan Traore",
+    "team": "BKN",
+    "position": "PG",
+    "status": "active"
+  },
+  {
     "player_id": "1626181",
     "name": "Norman Powell",
-    "team": "LAC",
+    "team": "MIA",
     "position": "PG",
     "status": "active"
   },
@@ -2709,23 +2457,16 @@
     "status": "active"
   },
   {
-    "player_id": "1630167",
-    "name": "Obi Toppin",
-    "team": "IND",
-    "position": "SF",
-    "status": "active"
-  },
-  {
     "player_id": "1630534",
     "name": "Ochai Agbaji",
-    "team": "TOR",
+    "team": "BKN",
     "position": "PG",
     "status": "active"
   },
   {
     "player_id": "1641765",
     "name": "Olivier-Maxence Prosper",
-    "team": "DAL",
+    "team": "MEM",
     "position": "SF",
     "status": "active"
   },
@@ -2733,20 +2474,6 @@
     "player_id": "1630168",
     "name": "Onyeka Okongwu",
     "team": "ATL",
-    "position": "PF",
-    "status": "active"
-  },
-  {
-    "player_id": "1631115",
-    "name": "Orlando Robinson",
-    "team": "TOR",
-    "position": "C",
-    "status": "active"
-  },
-  {
-    "player_id": "1631131",
-    "name": "Oscar Tshiebwe",
-    "team": "UTA",
     "position": "PF",
     "status": "active"
   },
@@ -2760,7 +2487,7 @@
   {
     "player_id": "1631172",
     "name": "Ousmane Dieng",
-    "team": "OKC",
+    "team": "MIL",
     "position": "SF",
     "status": "active"
   },
@@ -2774,7 +2501,7 @@
   {
     "player_id": "1641790",
     "name": "PJ Hall",
-    "team": "DEN",
+    "team": "CHA",
     "position": "C",
     "status": "active"
   },
@@ -2802,7 +2529,7 @@
   {
     "player_id": "1626192",
     "name": "Pat Connaughton",
-    "team": "MIL",
+    "team": "CHA",
     "position": "PG",
     "status": "active"
   },
@@ -2814,24 +2541,10 @@
     "status": "active"
   },
   {
-    "player_id": "1631116",
-    "name": "Patrick Baldwin Jr.",
-    "team": "LAC",
-    "position": "SF",
-    "status": "active"
-  },
-  {
     "player_id": "1630172",
     "name": "Patrick Williams",
     "team": "CHI",
     "position": "SF",
-    "status": "active"
-  },
-  {
-    "player_id": "201988",
-    "name": "Patty Mills",
-    "team": "LAC",
-    "position": "PG",
     "status": "active"
   },
   {
@@ -2879,7 +2592,7 @@
   {
     "player_id": "1630173",
     "name": "Precious Achiuwa",
-    "team": "NYK",
+    "team": "SAC",
     "position": "SF",
     "status": "active"
   },
@@ -2912,9 +2625,16 @@
     "status": "active"
   },
   {
+    "player_id": "1642853",
+    "name": "Rasheer Fleming",
+    "team": "PHX",
+    "position": "SF",
+    "status": "active"
+  },
+  {
     "player_id": "1642484",
     "name": "RayJ Dennis",
-    "team": "IND",
+    "team": "ATL",
     "position": "PG",
     "status": "active"
   },
@@ -2926,13 +2646,6 @@
     "status": "active"
   },
   {
-    "player_id": "1641736",
-    "name": "Reece Beekman",
-    "team": "BKN",
-    "position": "PG",
-    "status": "active"
-  },
-  {
     "player_id": "1642263",
     "name": "Reed Sheppard",
     "team": "HOU",
@@ -2940,30 +2653,9 @@
     "status": "active"
   },
   {
-    "player_id": "202704",
-    "name": "Reggie Jackson",
-    "team": "PHI",
-    "position": "PG",
-    "status": "active"
-  },
-  {
-    "player_id": "1626158",
-    "name": "Richaun Holmes",
-    "team": "WAS",
-    "position": "SF",
-    "status": "active"
-  },
-  {
-    "player_id": "1641741",
-    "name": "Ricky Council IV",
-    "team": "PHI",
-    "position": "PG",
-    "status": "active"
-  },
-  {
     "player_id": "1642265",
     "name": "Rob Dillingham",
-    "team": "MIN",
+    "team": "CHI",
     "position": "PG",
     "status": "active"
   },
@@ -2972,6 +2664,13 @@
     "name": "Robert Williams III",
     "team": "POR",
     "position": "PF",
+    "status": "active"
+  },
+  {
+    "player_id": "1631199",
+    "name": "Ron Harper Jr.",
+    "team": "BOS",
+    "position": "SG",
     "status": "active"
   },
   {
@@ -3005,7 +2704,7 @@
   {
     "player_id": "201566",
     "name": "Russell Westbrook",
-    "team": "DEN",
+    "team": "SAC",
     "position": "PG",
     "status": "active"
   },
@@ -3017,10 +2716,31 @@
     "status": "active"
   },
   {
+    "player_id": "1641750",
+    "name": "Ryan Kalkbrenner",
+    "team": "CHA",
+    "position": "C",
+    "status": "active"
+  },
+  {
+    "player_id": "1642948",
+    "name": "Ryan Nembhard",
+    "team": "DAL",
+    "position": "PG",
+    "status": "active"
+  },
+  {
     "player_id": "1631157",
     "name": "Ryan Rollins",
     "team": "MIL",
     "position": "PG",
+    "status": "active"
+  },
+  {
+    "player_id": "1630180",
+    "name": "Saddiq Bey",
+    "team": "NOP",
+    "position": "SG",
     "status": "active"
   },
   {
@@ -3040,7 +2760,7 @@
   {
     "player_id": "1630572",
     "name": "Sandro Mamukelashvili",
-    "team": "SAS",
+    "team": "TOR",
     "position": "PF",
     "status": "active"
   },
@@ -3052,31 +2772,10 @@
     "status": "active"
   },
   {
-    "player_id": "1630703",
-    "name": "Scoot Henderson",
-    "team": "POR",
-    "position": "PG",
-    "status": "active"
-  },
-  {
     "player_id": "1630567",
     "name": "Scottie Barnes",
     "team": "TOR",
     "position": "SG",
-    "status": "active"
-  },
-  {
-    "player_id": "1630590",
-    "name": "Scotty Pippen Jr.",
-    "team": "MEM",
-    "position": "PG",
-    "status": "active"
-  },
-  {
-    "player_id": "203552",
-    "name": "Seth Curry",
-    "team": "CHA",
-    "position": "PG",
     "status": "active"
   },
   {
@@ -3094,9 +2793,9 @@
     "status": "active"
   },
   {
-    "player_id": "1629003",
-    "name": "Shake Milton",
-    "team": "LAL",
+    "player_id": "1630536",
+    "name": "Sharife Cooper",
+    "team": "WAS",
     "position": "PG",
     "status": "active"
   },
@@ -3110,14 +2809,14 @@
   {
     "player_id": "1631323",
     "name": "Simone Fontecchio",
-    "team": "DET",
+    "team": "MIA",
     "position": "SF",
     "status": "active"
   },
   {
-    "player_id": "203915",
-    "name": "Spencer Dinwiddie",
-    "team": "DAL",
+    "player_id": "1642883",
+    "name": "Sion James",
+    "team": "CHA",
     "position": "PG",
     "status": "active"
   },
@@ -3126,13 +2825,6 @@
     "name": "Spencer Jones",
     "team": "DEN",
     "position": "SF",
-    "status": "active"
-  },
-  {
-    "player_id": "1630649",
-    "name": "Stanley Umude",
-    "team": "MIL",
-    "position": "PG",
     "status": "active"
   },
   {
@@ -3171,16 +2863,9 @@
     "status": "active"
   },
   {
-    "player_id": "201959",
-    "name": "Taj Gibson",
-    "team": "CHA",
-    "position": "SF",
-    "status": "active"
-  },
-  {
-    "player_id": "1629659",
-    "name": "Talen Horton-Tucker",
-    "team": "CHI",
+    "player_id": "1643007",
+    "name": "Taelon Peter",
+    "team": "IND",
     "position": "PG",
     "status": "active"
   },
@@ -3192,16 +2877,16 @@
     "status": "active"
   },
   {
-    "player_id": "1627752",
-    "name": "Taurean Prince",
-    "team": "MIL",
+    "player_id": "1641707",
+    "name": "Taylor Hendricks",
+    "team": "MEM",
     "position": "SF",
     "status": "active"
   },
   {
     "player_id": "1629611",
     "name": "Terance Mann",
-    "team": "ATL",
+    "team": "BKN",
     "position": "SG",
     "status": "active"
   },
@@ -3213,16 +2898,16 @@
     "status": "active"
   },
   {
-    "player_id": "1626179",
-    "name": "Terry Rozier",
-    "team": "MIA",
-    "position": "PG",
+    "player_id": "203648",
+    "name": "Thanasis Antetokounmpo",
+    "team": "MIL",
+    "position": "SF",
     "status": "active"
   },
   {
     "player_id": "1628418",
     "name": "Thomas Bryant",
-    "team": "IND",
+    "team": "CLE",
     "position": "PF",
     "status": "active"
   },
@@ -3236,7 +2921,7 @@
   {
     "player_id": "203501",
     "name": "Tim Hardaway Jr.",
-    "team": "DET",
+    "team": "DEN",
     "position": "SG",
     "status": "active"
   },
@@ -3252,20 +2937,6 @@
     "name": "Tony Bradley",
     "team": "IND",
     "position": "PF",
-    "status": "active"
-  },
-  {
-    "player_id": "1628470",
-    "name": "Torrey Craig",
-    "team": "BOS",
-    "position": "SF",
-    "status": "active"
-  },
-  {
-    "player_id": "1641787",
-    "name": "Tosan Evbuomwan",
-    "team": "BKN",
-    "position": "SF",
     "status": "active"
   },
   {
@@ -3285,8 +2956,15 @@
   {
     "player_id": "1631218",
     "name": "Trayce Jackson-Davis",
-    "team": "GSW",
+    "team": "TOR",
     "position": "SF",
+    "status": "active"
+  },
+  {
+    "player_id": "1642848",
+    "name": "Tre Johnson",
+    "team": "WAS",
+    "position": "PG",
     "status": "active"
   },
   {
@@ -3306,36 +2984,8 @@
   {
     "player_id": "1630570",
     "name": "Trendon Watford",
-    "team": "BKN",
+    "team": "PHI",
     "position": "SG",
-    "status": "active"
-  },
-  {
-    "player_id": "1630243",
-    "name": "Trevelin Queen",
-    "team": "ORL",
-    "position": "PG",
-    "status": "active"
-  },
-  {
-    "player_id": "1641725",
-    "name": "Trey Alexander",
-    "team": "DEN",
-    "position": "PG",
-    "status": "active"
-  },
-  {
-    "player_id": "1641998",
-    "name": "Trey Jemison III",
-    "team": "LAL",
-    "position": "C",
-    "status": "active"
-  },
-  {
-    "player_id": "1626168",
-    "name": "Trey Lyles",
-    "team": "SAC",
-    "position": "SF",
     "status": "active"
   },
   {
@@ -3343,13 +2993,6 @@
     "name": "Trey Murphy III",
     "team": "NOP",
     "position": "SF",
-    "status": "active"
-  },
-  {
-    "player_id": "202684",
-    "name": "Tristan Thompson",
-    "team": "CLE",
-    "position": "PF",
     "status": "active"
   },
   {
@@ -3367,20 +3010,6 @@
     "status": "active"
   },
   {
-    "player_id": "1629660",
-    "name": "Ty Jerome",
-    "team": "CLE",
-    "position": "SG",
-    "status": "active"
-  },
-  {
-    "player_id": "1631102",
-    "name": "TyTy Washington Jr.",
-    "team": "PHX",
-    "position": "PG",
-    "status": "active"
-  },
-  {
     "player_id": "1629639",
     "name": "Tyler Herro",
     "team": "MIA",
@@ -3395,23 +3024,9 @@
     "status": "active"
   },
   {
-    "player_id": "1641890",
-    "name": "Tyler Smith",
-    "team": "MIL",
-    "position": "SF",
-    "status": "active"
-  },
-  {
-    "player_id": "1630169",
-    "name": "Tyrese Haliburton",
-    "team": "IND",
-    "position": "PG",
-    "status": "active"
-  },
-  {
     "player_id": "1631213",
     "name": "Tyrese Martin",
-    "team": "BKN",
+    "team": "PHI",
     "position": "SF",
     "status": "active"
   },
@@ -3423,16 +3038,23 @@
     "status": "active"
   },
   {
-    "player_id": "1626145",
-    "name": "Tyus Jones",
-    "team": "PHX",
+    "player_id": "1642878",
+    "name": "Tyrese Proctor",
+    "team": "CLE",
     "position": "PG",
     "status": "active"
   },
   {
-    "player_id": "203995",
-    "name": "Vasilije Micic",
-    "team": "PHX",
+    "player_id": "1626145",
+    "name": "Tyus Jones",
+    "team": "DAL",
+    "position": "PG",
+    "status": "active"
+  },
+  {
+    "player_id": "1642845",
+    "name": "VJ Edgecombe",
+    "team": "PHI",
     "position": "PG",
     "status": "active"
   },
@@ -3446,29 +3068,22 @@
   {
     "player_id": "1631246",
     "name": "Vince Williams Jr.",
-    "team": "MEM",
+    "team": "UTA",
     "position": "PG",
-    "status": "active"
-  },
-  {
-    "player_id": "1628427",
-    "name": "Vlatko \u010can\u010dar",
-    "team": "DEN",
-    "position": "SF",
     "status": "active"
   },
   {
     "player_id": "1630249",
     "name": "V\u00edt Krej\u010d\u00ed",
-    "team": "ATL",
+    "team": "POR",
     "position": "PG",
     "status": "active"
   },
   {
-    "player_id": "1631117",
-    "name": "Walker Kessler",
-    "team": "UTA",
-    "position": "C",
+    "player_id": "1642383",
+    "name": "Walter Clayton Jr.",
+    "team": "MEM",
+    "position": "PG",
     "status": "active"
   },
   {
@@ -3479,24 +3094,38 @@
     "status": "active"
   },
   {
-    "player_id": "1631111",
-    "name": "Wendell Moore Jr.",
-    "team": "CHA",
+    "player_id": "1642954",
+    "name": "Will Richard",
+    "team": "GSW",
     "position": "PG",
+    "status": "active"
+  },
+  {
+    "player_id": "1642860",
+    "name": "Will Riley",
+    "team": "WAS",
+    "position": "SF",
     "status": "active"
   },
   {
     "player_id": "1630214",
     "name": "Xavier Tillman",
-    "team": "BOS",
+    "team": "CHA",
     "position": "SF",
     "status": "active"
   },
   {
-    "player_id": "1642530",
-    "name": "Yuki Kawamura",
-    "team": "MEM",
-    "position": "PG",
+    "player_id": "1642905",
+    "name": "Yang Hansen",
+    "team": "POR",
+    "position": "C",
+    "status": "active"
+  },
+  {
+    "player_id": "1642949",
+    "name": "Yanic Konan Niederh\u00e4user",
+    "team": "LAC",
+    "position": "C",
     "status": "active"
   },
   {

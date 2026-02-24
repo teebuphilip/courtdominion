@@ -1,0 +1,64 @@
+name: Nightly Bets Guard
+
+on:
+  schedule:
+    # Run after nightly pipelines to verify bet artifacts were produced.
+    # 12:30 UTC ~= 7:30 AM ET (EST) / 8:30 AM ET (EDT).
+    - cron: "30 12 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-nightly-bets:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify nightly betting outputs
+        run: |
+          DATE=$(TZ=America/New_York date +%Y-%m-%d)
+          echo "Checking bet outputs for ${DATE}"
+
+          SB_JSON="betting-engine/data/bet_slips/${DATE}.json"
+          EX_ORDERS="exchange-engine/data/orders/${DATE}.json"
+          CSV="betting-engine/data/bets/master_bets.csv"
+
+          has_sportsbook=0
+          has_exchange=0
+          csv_rows=0
+          exchange_orders=0
+
+          if [ -f "$SB_JSON" ]; then
+            has_sportsbook=1
+          fi
+
+          if [ -f "$EX_ORDERS" ]; then
+            exchange_orders=$(jq 'length' "$EX_ORDERS" 2>/dev/null || echo 0)
+            if [ "${exchange_orders}" -gt 0 ]; then
+              has_exchange=1
+            fi
+          fi
+
+          if [ -f "$CSV" ]; then
+            csv_rows=$(awk -F, -v d="$DATE" 'NR>1 && $2==d {c++} END {print c+0}' "$CSV")
+          fi
+
+          {
+            echo "## Nightly Bets Guard"
+            echo "- Date (America/New_York): ${DATE}"
+            echo "- Sportsbook slip exists: ${has_sportsbook}"
+            echo "- Master CSV rows for date: ${csv_rows}"
+            echo "- Exchange orders for date: ${exchange_orders}"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+          if [ "$has_sportsbook" -eq 1 ] || [ "$csv_rows" -gt 0 ] || [ "$has_exchange" -eq 1 ]; then
+            echo "Nightly betting outputs detected."
+            exit 0
+          fi
+
+          echo "::error::No nightly bets detected for ${DATE} (no sportsbook slip, no dated CSV rows, no exchange orders)."
+          exit 1

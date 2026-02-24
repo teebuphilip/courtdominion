@@ -1,2599 +1,2312 @@
 [
   {
     "player_id": "1630639",
-    "value_score": 74,
-    "risk_score": 48,
-    "opportunity_index": 63,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with inconsistent."
+    "value_score": 70,
+    "risk_score": 47,
+    "opportunity_index": 61,
+    "notes": "Strong value ($1), moderate risk. Young G Bench with elite consistency."
   },
   {
     "player_id": "1631260",
-    "value_score": 74,
-    "risk_score": 39,
-    "opportunity_index": 67,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
+    "value_score": 70,
+    "risk_score": 35,
+    "opportunity_index": 70,
+    "notes": "Strong value ($1), moderate risk. Young G Starter with solid consistency."
   },
   {
     "player_id": "1642358",
-    "value_score": 74,
-    "risk_score": 40,
-    "opportunity_index": 72,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
+    "value_score": 70,
+    "risk_score": 51,
+    "opportunity_index": 64,
+    "notes": "Strong value ($1), moderate risk. Young G Bench with solid consistency."
   },
   {
     "player_id": "203932",
-    "value_score": 78,
-    "risk_score": 35,
-    "opportunity_index": 74,
-    "notes": "Strong value ($4), moderate risk. Prime F Starter with solid consistency."
+    "value_score": 70,
+    "risk_score": 36,
+    "opportunity_index": 67,
+    "notes": "Strong value ($1), moderate risk. Prime F Rotation with solid consistency."
   },
   {
     "player_id": "1628988",
-    "value_score": 74,
-    "risk_score": 53,
-    "opportunity_index": 60,
+    "value_score": 70,
+    "risk_score": 55,
+    "opportunity_index": 57,
     "notes": "Strong value ($1), moderate risk. Prime G Bench with solid consistency."
   },
   {
     "player_id": "1630174",
-    "value_score": 74,
-    "risk_score": 36,
-    "opportunity_index": 69,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with elite consistency."
+    "value_score": 77,
+    "risk_score": 34,
+    "opportunity_index": 74,
+    "notes": "Strong value ($7), moderate risk. Young G Starter with solid consistency."
   },
   {
     "player_id": "1630598",
-    "value_score": 74,
-    "risk_score": 41,
+    "value_score": 70,
+    "risk_score": 38,
     "opportunity_index": 66,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
+    "notes": "Strong value ($1), moderate risk. Prime G Rotation with solid consistency."
   },
   {
-    "player_id": "1641745",
-    "value_score": 74,
-    "risk_score": 68,
-    "opportunity_index": 53,
-    "notes": "Strong value ($1), high risk. Young G Scrub with inconsistent."
+    "player_id": "1642846",
+    "value_score": 70,
+    "risk_score": 36,
+    "opportunity_index": 72,
+    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
   },
   {
     "player_id": "1641737",
-    "value_score": 74,
-    "risk_score": 44,
-    "opportunity_index": 70,
-    "notes": "Strong value ($1), moderate risk. Young F Rotation with inconsistent."
-  },
-  {
-    "player_id": "1642349",
-    "value_score": 74,
-    "risk_score": 40,
-    "opportunity_index": 72,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
-  },
-  {
-    "player_id": "201143",
-    "value_score": 97,
-    "risk_score": 38,
-    "opportunity_index": 79,
-    "notes": "Elite value ($30), moderate risk. Veteran C Rotation with elite consistency."
-  },
-  {
-    "player_id": "202692",
-    "value_score": 74,
-    "risk_score": 42,
-    "opportunity_index": 66,
-    "notes": "Strong value ($1), moderate risk. Veteran G Rotation with solid consistency."
-  },
-  {
-    "player_id": "1627936",
-    "value_score": 77,
-    "risk_score": 35,
+    "value_score": 70,
+    "risk_score": 37,
     "opportunity_index": 71,
-    "notes": "Strong value ($3), moderate risk. Veteran G Rotation with elite consistency."
+    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
   },
   {
-    "player_id": "1642505",
-    "value_score": 74,
-    "risk_score": 64,
-    "opportunity_index": 55,
+    "player_id": "1642876",
+    "value_score": 70,
+    "risk_score": 61,
+    "opportunity_index": 59,
     "notes": "Strong value ($1), high risk. Young G Scrub with solid consistency."
   },
   {
-    "player_id": "203458",
-    "value_score": 74,
-    "risk_score": 39,
-    "opportunity_index": 67,
-    "notes": "Strong value ($1), moderate risk. Veteran C Bench with solid consistency."
+    "player_id": "1642349",
+    "value_score": 70,
+    "risk_score": 35,
+    "opportunity_index": 72,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with elite consistency."
   },
   {
-    "player_id": "1642024",
-    "value_score": 74,
-    "risk_score": 47,
-    "opportunity_index": 63,
-    "notes": "Strong value ($1), moderate risk. Young F Bench with elite consistency."
+    "player_id": "201143",
+    "value_score": 96,
+    "risk_score": 37,
+    "opportunity_index": 79,
+    "notes": "Elite value ($29), moderate risk. Veteran C Rotation with elite consistency."
+  },
+  {
+    "player_id": "1627936",
+    "value_score": 70,
+    "risk_score": 36,
+    "opportunity_index": 67,
+    "notes": "Strong value ($1), moderate risk. Veteran G Rotation with elite consistency."
   },
   {
     "player_id": "1642259",
     "value_score": 97,
-    "risk_score": 34,
+    "risk_score": 39,
     "opportunity_index": 86,
-    "notes": "Elite value ($31), moderate risk. Young C Rotation with elite consistency."
+    "notes": "Elite value ($36), moderate risk. Young C Starter with solid consistency."
+  },
+  {
+    "player_id": "1642918",
+    "value_score": 70,
+    "risk_score": 70,
+    "opportunity_index": 50,
+    "notes": "Strong value ($1), high risk. Young G Scrub with inconsistent."
   },
   {
     "player_id": "1630578",
-    "value_score": 97,
-    "risk_score": 34,
-    "opportunity_index": 89,
-    "notes": "Elite value ($31), moderate risk. Young C Starter with solid consistency."
+    "value_score": 98,
+    "risk_score": 36,
+    "opportunity_index": 88,
+    "notes": "Elite value ($43), moderate risk. Young C Starter with solid consistency."
+  },
+  {
+    "player_id": "1642873",
+    "value_score": 70,
+    "risk_score": 54,
+    "opportunity_index": 58,
+    "notes": "Strong value ($1), moderate risk. Young F Bench with solid consistency."
   },
   {
     "player_id": "1641708",
-    "value_score": 92,
-    "risk_score": 36,
-    "opportunity_index": 85,
-    "notes": "Elite value ($17), moderate risk. Young G Starter with solid consistency."
+    "value_score": 91,
+    "risk_score": 30,
+    "opportunity_index": 88,
+    "notes": "Elite value ($17), moderate risk. Young G Starter with elite consistency."
   },
   {
     "player_id": "1629599",
-    "value_score": 74,
-    "risk_score": 36,
-    "opportunity_index": 69,
-    "notes": "Strong value ($1), moderate risk. Prime G Rotation with solid consistency."
+    "value_score": 70,
+    "risk_score": 53,
+    "opportunity_index": 58,
+    "notes": "Strong value ($1), moderate risk. Prime G Bench with solid consistency."
   },
   {
     "player_id": "203083",
-    "value_score": 74,
-    "risk_score": 35,
-    "opportunity_index": 69,
+    "value_score": 70,
+    "risk_score": 36,
+    "opportunity_index": 67,
     "notes": "Strong value ($1), moderate risk. Veteran C Rotation with solid consistency."
   },
   {
     "player_id": "1641748",
-    "value_score": 74,
-    "risk_score": 40,
-    "opportunity_index": 72,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
+    "value_score": 70,
+    "risk_score": 61,
+    "opportunity_index": 54,
+    "notes": "Strong value ($1), high risk. Young G Scrub with elite consistency."
   },
   {
     "player_id": "1629614",
-    "value_score": 74,
+    "value_score": 72,
     "risk_score": 35,
-    "opportunity_index": 72,
-    "notes": "Strong value ($1), moderate risk. Young G Starter with solid consistency."
+    "opportunity_index": 71,
+    "notes": "Strong value ($3), moderate risk. Young G Starter with solid consistency."
   },
   {
     "player_id": "203952",
-    "value_score": 81,
-    "risk_score": 33,
-    "opportunity_index": 76,
-    "notes": "Strong value ($8), moderate risk. Prime F Starter with solid consistency."
+    "value_score": 84,
+    "risk_score": 32,
+    "opportunity_index": 78,
+    "notes": "Strong value ($11), moderate risk. Veteran F Starter with elite consistency."
   },
   {
     "player_id": "1629014",
-    "value_score": 79,
-    "risk_score": 34,
-    "opportunity_index": 75,
-    "notes": "Strong value ($6), moderate risk. Young G Starter with solid consistency."
+    "value_score": 70,
+    "risk_score": 35,
+    "opportunity_index": 67,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with elite consistency."
   },
   {
     "player_id": "1641710",
-    "value_score": 74,
-    "risk_score": 38,
-    "opportunity_index": 73,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
+    "value_score": 76,
+    "risk_score": 37,
+    "opportunity_index": 77,
+    "notes": "Strong value ($6), moderate risk. Young G Starter with solid consistency."
   },
   {
     "player_id": "203076",
-    "value_score": 95,
-    "risk_score": 31,
-    "opportunity_index": 84,
-    "notes": "Elite value ($23), moderate risk. Veteran F Starter with solid consistency."
+    "value_score": 94,
+    "risk_score": 32,
+    "opportunity_index": 83,
+    "notes": "Elite value ($20), moderate risk. Veteran F Starter with solid consistency."
   },
   {
     "player_id": "1630162",
-    "value_score": 94,
-    "risk_score": 31,
-    "opportunity_index": 89,
-    "notes": "Elite value ($22), moderate risk. Young G Starter with elite consistency."
+    "value_score": 95,
+    "risk_score": 32,
+    "opportunity_index": 84,
+    "notes": "Elite value ($25), moderate risk. Young G Starter with elite consistency."
   },
   {
     "player_id": "1630264",
-    "value_score": 74,
-    "risk_score": 49,
-    "opportunity_index": 62,
-    "notes": "Strong value ($1), moderate risk. Veteran F Bench with solid consistency."
-  },
-  {
-    "player_id": "1641810",
-    "value_score": 74,
-    "risk_score": 46,
-    "opportunity_index": 64,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with inconsistent."
+    "value_score": 70,
+    "risk_score": 57,
+    "opportunity_index": 56,
+    "notes": "Strong value ($1), moderate risk. Veteran F Bench with inconsistent."
   },
   {
     "player_id": "1630574",
-    "value_score": 74,
-    "risk_score": 53,
+    "value_score": 70,
+    "risk_score": 58,
+    "opportunity_index": 61,
+    "notes": "Strong value ($1), moderate risk. Young C Bench with inconsistent."
+  },
+  {
+    "player_id": "1642854",
+    "value_score": 70,
+    "risk_score": 50,
     "opportunity_index": 65,
-    "notes": "Strong value ($1), moderate risk. Young C Bench with solid consistency."
+    "notes": "Strong value ($1), moderate risk. Young F Bench with solid consistency."
   },
   {
     "player_id": "1641709",
-    "value_score": 76,
-    "risk_score": 37,
-    "opportunity_index": 74,
-    "notes": "Strong value ($2), moderate risk. Young G Rotation with solid consistency."
+    "value_score": 74,
+    "risk_score": 34,
+    "opportunity_index": 75,
+    "notes": "Strong value ($5), moderate risk. Young G Rotation with elite consistency."
   },
   {
     "player_id": "1630559",
-    "value_score": 85,
-    "risk_score": 35,
-    "opportunity_index": 77,
-    "notes": "Strong value ($11), moderate risk. Young G Starter with solid consistency."
+    "value_score": 86,
+    "risk_score": 34,
+    "opportunity_index": 78,
+    "notes": "Strong value ($12), moderate risk. Prime G Starter with solid consistency."
   },
   {
     "player_id": "1630245",
-    "value_score": 77,
-    "risk_score": 35,
-    "opportunity_index": 73,
-    "notes": "Strong value ($3), moderate risk. Young G Starter with solid consistency."
+    "value_score": 70,
+    "risk_score": 36,
+    "opportunity_index": 67,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with elite consistency."
   },
   {
     "player_id": "1628389",
     "value_score": 98,
     "risk_score": 32,
     "opportunity_index": 85,
-    "notes": "Elite value ($35), moderate risk. Prime C Starter with elite consistency."
+    "notes": "Elite value ($43), moderate risk. Prime C Starter with elite consistency."
   },
   {
     "player_id": "1631248",
-    "value_score": 74,
-    "risk_score": 57,
+    "value_score": 70,
+    "risk_score": 54,
     "opportunity_index": 58,
     "notes": "Strong value ($1), moderate risk. Young G Bench with solid consistency."
   },
   {
-    "player_id": "1641767",
-    "value_score": 74,
-    "risk_score": 37,
-    "opportunity_index": 73,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
-  },
-  {
-    "player_id": "1627732",
-    "value_score": 74,
-    "risk_score": 38,
-    "opportunity_index": 68,
-    "notes": "Strong value ($1), moderate risk. Prime G Rotation with solid consistency."
-  },
-  {
-    "player_id": "1631097",
-    "value_score": 74,
+    "player_id": "1642879",
+    "value_score": 70,
     "risk_score": 36,
-    "opportunity_index": 76,
-    "notes": "Strong value ($1), moderate risk. Young G Starter with solid consistency."
-  },
-  {
-    "player_id": "1641731",
-    "value_score": 83,
-    "risk_score": 37,
-    "opportunity_index": 80,
-    "notes": "Strong value ($9), moderate risk. Young G Starter with solid consistency."
-  },
-  {
-    "player_id": "202687",
-    "value_score": 74,
-    "risk_score": 36,
-    "opportunity_index": 69,
-    "notes": "Strong value ($1), moderate risk. Veteran C Rotation with solid consistency."
-  },
-  {
-    "player_id": "1631104",
-    "value_score": 74,
-    "risk_score": 53,
-    "opportunity_index": 65,
-    "notes": "Strong value ($1), moderate risk. Young G Bench with solid consistency."
-  },
-  {
-    "player_id": "1626171",
-    "value_score": 74,
-    "risk_score": 37,
-    "opportunity_index": 68,
-    "notes": "Strong value ($1), moderate risk. Prime F Rotation with solid consistency."
-  },
-  {
-    "player_id": "203992",
-    "value_score": 74,
-    "risk_score": 36,
-    "opportunity_index": 69,
-    "notes": "Strong value ($1), moderate risk. Veteran G Rotation with elite consistency."
-  },
-  {
-    "player_id": "1629626",
-    "value_score": 74,
-    "risk_score": 56,
-    "opportunity_index": 59,
-    "notes": "Strong value ($1), moderate risk. Young C Bench with inconsistent."
-  },
-  {
-    "player_id": "1630538",
-    "value_score": 74,
-    "risk_score": 52,
-    "opportunity_index": 61,
-    "notes": "Strong value ($1), moderate risk. Young G Bench with solid consistency."
-  },
-  {
-    "player_id": "203078",
-    "value_score": 83,
-    "risk_score": 33,
-    "opportunity_index": 77,
-    "notes": "Strong value ($9), moderate risk. Veteran G Starter with solid consistency."
-  },
-  {
-    "player_id": "1642382",
-    "value_score": 74,
-    "risk_score": 58,
-    "opportunity_index": 58,
-    "notes": "Strong value ($1), moderate risk. Young C Bench with inconsistent."
-  },
-  {
-    "player_id": "1641764",
-    "value_score": 74,
-    "risk_score": 38,
-    "opportunity_index": 73,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
-  },
-  {
-    "player_id": "1630527",
-    "value_score": 74,
-    "risk_score": 40,
     "opportunity_index": 72,
     "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
   },
   {
-    "player_id": "1629634",
-    "value_score": 74,
+    "player_id": "1641767",
+    "value_score": 70,
+    "risk_score": 39,
+    "opportunity_index": 65,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
+  },
+  {
+    "player_id": "1631097",
+    "value_score": 73,
+    "risk_score": 34,
+    "opportunity_index": 77,
+    "notes": "Strong value ($4), moderate risk. Young G Starter with solid consistency."
+  },
+  {
+    "player_id": "1641731",
+    "value_score": 76,
+    "risk_score": 34,
+    "opportunity_index": 76,
+    "notes": "Strong value ($6), moderate risk. Young G Rotation with elite consistency."
+  },
+  {
+    "player_id": "202687",
+    "value_score": 70,
+    "risk_score": 34,
+    "opportunity_index": 68,
+    "notes": "Strong value ($1), moderate risk. Veteran C Scrub with elite consistency."
+  },
+  {
+    "player_id": "1631104",
+    "value_score": 70,
+    "risk_score": 50,
+    "opportunity_index": 65,
+    "notes": "Strong value ($1), moderate risk. Young G Bench with elite consistency."
+  },
+  {
+    "player_id": "1626171",
+    "value_score": 70,
+    "risk_score": 34,
+    "opportunity_index": 68,
+    "notes": "Strong value ($1), moderate risk. Veteran F Rotation with elite consistency."
+  },
+  {
+    "player_id": "203992",
+    "value_score": 70,
+    "risk_score": 41,
+    "opportunity_index": 64,
+    "notes": "Strong value ($1), moderate risk. Veteran G Rotation with solid consistency."
+  },
+  {
+    "player_id": "1630538",
+    "value_score": 70,
+    "risk_score": 42,
+    "opportunity_index": 64,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
+  },
+  {
+    "player_id": "1642382",
+    "value_score": 70,
+    "risk_score": 51,
+    "opportunity_index": 59,
+    "notes": "Strong value ($1), moderate risk. Young C Bench with solid consistency."
+  },
+  {
+    "player_id": "1641764",
+    "value_score": 70,
     "risk_score": 35,
-    "opportunity_index": 69,
-    "notes": "Strong value ($1), moderate risk. Prime F Rotation with solid consistency."
+    "opportunity_index": 72,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with elite consistency."
   },
   {
     "player_id": "1627742",
-    "value_score": 94,
-    "risk_score": 33,
+    "value_score": 92,
+    "risk_score": 30,
     "opportunity_index": 83,
-    "notes": "Elite value ($20), moderate risk. Prime F Starter with solid consistency."
+    "notes": "Elite value ($18), moderate risk. Prime F Starter with elite consistency."
   },
   {
     "player_id": "1641706",
     "value_score": 94,
-    "risk_score": 34,
-    "opportunity_index": 87,
-    "notes": "Elite value ($19), moderate risk. Young F Starter with solid consistency."
+    "risk_score": 33,
+    "opportunity_index": 88,
+    "notes": "Elite value ($20), moderate risk. Young F Starter with solid consistency."
   },
   {
     "player_id": "1630314",
-    "value_score": 74,
-    "risk_score": 58,
-    "opportunity_index": 58,
-    "notes": "Strong value ($1), moderate risk. Young G Bench with inconsistent."
+    "value_score": 70,
+    "risk_score": 40,
+    "opportunity_index": 65,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
   },
   {
     "player_id": "1641729",
-    "value_score": 74,
-    "risk_score": 39,
-    "opportunity_index": 72,
-    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
-  },
-  {
-    "player_id": "1642355",
-    "value_score": 74,
-    "risk_score": 64,
-    "opportunity_index": 60,
-    "notes": "Strong value ($1), high risk. Young G Scrub with solid consistency."
-  },
-  {
-    "player_id": "201572",
-    "value_score": 98,
-    "risk_score": 45,
-    "opportunity_index": 79,
-    "notes": "Elite value ($38), moderate risk. Veteran C Starter with solid consistency."
-  },
-  {
-    "player_id": "1628971",
-    "value_score": 74,
-    "risk_score": 39,
-    "opportunity_index": 67,
-    "notes": "Strong value ($1), moderate risk. Prime G Rotation with solid consistency."
-  },
-  {
-    "player_id": "1628981",
-    "value_score": 74,
-    "risk_score": 52,
-    "opportunity_index": 61,
-    "notes": "Strong value ($1), moderate risk. Young F Bench with solid consistency."
-  },
-  {
-    "player_id": "1631121",
-    "value_score": 74,
-    "risk_score": 54,
-    "opportunity_index": 65,
-    "notes": "Strong value ($1), moderate risk. Young G Scrub with elite consistency."
-  },
-  {
-    "player_id": "1642267",
-    "value_score": 74,
-    "risk_score": 35,
-    "opportunity_index": 77,
-    "notes": "Strong value ($1), moderate risk. Young G Starter with solid consistency."
-  },
-  {
-    "player_id": "1627741",
-    "value_score": 74,
+    "value_score": 70,
     "risk_score": 38,
-    "opportunity_index": 68,
-    "notes": "Strong value ($1), moderate risk. Veteran G Rotation with solid consistency."
-  },
-  {
-    "player_id": "203468",
-    "value_score": 88,
-    "risk_score": 34,
-    "opportunity_index": 79,
-    "notes": "Strong value ($14), moderate risk. Veteran G Starter with solid consistency."
-  },
-  {
-    "player_id": "1630595",
-    "value_score": 94,
-    "risk_score": 31,
-    "opportunity_index": 89,
-    "notes": "Elite value ($21), moderate risk. Young G Starter with elite consistency."
-  },
-  {
-    "player_id": "1631216",
-    "value_score": 74,
-    "risk_score": 56,
-    "opportunity_index": 64,
-    "notes": "Strong value ($1), moderate risk. Young G Bench with solid consistency."
-  },
-  {
-    "player_id": "1628997",
-    "value_score": 74,
-    "risk_score": 36,
-    "opportunity_index": 69,
-    "notes": "Strong value ($1), moderate risk. Prime F Rotation with solid consistency."
-  },
-  {
-    "player_id": "1642353",
-    "value_score": 74,
-    "risk_score": 60,
-    "opportunity_index": 62,
-    "notes": "Strong value ($1), high risk. Young G Scrub with solid consistency."
-  },
-  {
-    "player_id": "1629629",
-    "value_score": 74,
-    "risk_score": 40,
-    "opportunity_index": 67,
-    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
-  },
-  {
-    "player_id": "1642285",
-    "value_score": 74,
-    "risk_score": 59,
-    "opportunity_index": 57,
-    "notes": "Strong value ($1), moderate risk. Young G Bench with inconsistent."
-  },
-  {
-    "player_id": "1630560",
-    "value_score": 78,
-    "risk_score": 32,
-    "opportunity_index": 80,
-    "notes": "Strong value ($4), moderate risk. Young G Starter with solid consistency."
-  },
-  {
-    "player_id": "1641715",
-    "value_score": 74,
-    "risk_score": 41,
     "opportunity_index": 71,
     "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
   },
   {
-    "player_id": "1629661",
-    "value_score": 87,
-    "risk_score": 32,
-    "opportunity_index": 80,
-    "notes": "Strong value ($12), moderate risk. Prime F Starter with elite consistency."
+    "player_id": "1642355",
+    "value_score": 70,
+    "risk_score": 65,
+    "opportunity_index": 57,
+    "notes": "Strong value ($1), high risk. Young G Scrub with solid consistency."
   },
   {
-    "player_id": "1626166",
-    "value_score": 74,
+    "player_id": "201572",
+    "value_score": 96,
     "risk_score": 39,
+    "opportunity_index": 78,
+    "notes": "Elite value ($26), moderate risk. Veteran C Rotation with solid consistency."
+  },
+  {
+    "player_id": "1642964",
+    "value_score": 70,
+    "risk_score": 63,
+    "opportunity_index": 58,
+    "notes": "Strong value ($1), high risk. Young G Scrub with solid consistency."
+  },
+  {
+    "player_id": "1628971",
+    "value_score": 70,
+    "risk_score": 36,
     "opportunity_index": 67,
     "notes": "Strong value ($1), moderate risk. Prime G Rotation with solid consistency."
   },
   {
-    "player_id": "1627747",
-    "value_score": 74,
-    "risk_score": 36,
-    "opportunity_index": 69,
-    "notes": "Strong value ($1), moderate risk. Prime G Rotation with elite consistency."
+    "player_id": "1631121",
+    "value_score": 70,
+    "risk_score": 45,
+    "opportunity_index": 67,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with inconsistent."
   },
   {
-    "player_id": "1641717",
-    "value_score": 74,
+    "player_id": "1642267",
+    "value_score": 70,
     "risk_score": 34,
-    "opportunity_index": 75,
+    "opportunity_index": 73,
     "notes": "Strong value ($1), moderate risk. Young G Rotation with elite consistency."
   },
   {
-    "player_id": "1629646",
-    "value_score": 74,
-    "risk_score": 54,
+    "player_id": "1627741",
+    "value_score": 70,
+    "risk_score": 40,
+    "opportunity_index": 65,
+    "notes": "Strong value ($1), moderate risk. Veteran G Rotation with solid consistency."
+  },
+  {
+    "player_id": "203468",
+    "value_score": 84,
+    "risk_score": 33,
+    "opportunity_index": 78,
+    "notes": "Strong value ($11), moderate risk. Veteran G Starter with elite consistency."
+  },
+  {
+    "player_id": "1630595",
+    "value_score": 96,
+    "risk_score": 33,
+    "opportunity_index": 84,
+    "notes": "Elite value ($27), moderate risk. Young G Starter with solid consistency."
+  },
+  {
+    "player_id": "1631216",
+    "value_score": 70,
+    "risk_score": 61,
+    "opportunity_index": 59,
+    "notes": "Strong value ($1), high risk. Young G Scrub with solid consistency."
+  },
+  {
+    "player_id": "1631126",
+    "value_score": 70,
+    "risk_score": 40,
+    "opportunity_index": 65,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
+  },
+  {
+    "player_id": "1628997",
+    "value_score": 70,
+    "risk_score": 50,
     "opportunity_index": 60,
-    "notes": "Strong value ($1), moderate risk. Young C Bench with solid consistency."
+    "notes": "Strong value ($1), moderate risk. Prime F Bench with solid consistency."
+  },
+  {
+    "player_id": "1642353",
+    "value_score": 70,
+    "risk_score": 52,
+    "opportunity_index": 64,
+    "notes": "Strong value ($1), moderate risk. Young G Bench with solid consistency."
+  },
+  {
+    "player_id": "1642285",
+    "value_score": 70,
+    "risk_score": 38,
+    "opportunity_index": 66,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
+  },
+  {
+    "player_id": "1630560",
+    "value_score": 70,
+    "risk_score": 37,
+    "opportunity_index": 66,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
+  },
+  {
+    "player_id": "1641715",
+    "value_score": 70,
+    "risk_score": 36,
+    "opportunity_index": 72,
+    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
+  },
+  {
+    "player_id": "1629661",
+    "value_score": 79,
+    "risk_score": 34,
+    "opportunity_index": 75,
+    "notes": "Strong value ($8), moderate risk. Prime F Starter with solid consistency."
+  },
+  {
+    "player_id": "1627747",
+    "value_score": 70,
+    "risk_score": 33,
+    "opportunity_index": 68,
+    "notes": "Strong value ($1), moderate risk. Veteran G Rotation with elite consistency."
+  },
+  {
+    "player_id": "1642868",
+    "value_score": 70,
+    "risk_score": 51,
+    "opportunity_index": 64,
+    "notes": "Strong value ($1), moderate risk. Young F Bench with solid consistency."
+  },
+  {
+    "player_id": "1641717",
+    "value_score": 70,
+    "risk_score": 37,
+    "opportunity_index": 71,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
+  },
+  {
+    "player_id": "1642907",
+    "value_score": 71,
+    "risk_score": 35,
+    "opportunity_index": 73,
+    "notes": "Strong value ($2), moderate risk. Young G Rotation with elite consistency."
+  },
+  {
+    "player_id": "1642404",
+    "value_score": 70,
+    "risk_score": 53,
+    "opportunity_index": 58,
+    "notes": "Strong value ($1), moderate risk. Young G Bench with solid consistency."
   },
   {
     "player_id": "1631096",
     "value_score": 97,
     "risk_score": 35,
-    "opportunity_index": 86,
-    "notes": "Elite value ($33), moderate risk. Young C Rotation with solid consistency."
-  },
-  {
-    "player_id": "1628449",
-    "value_score": 74,
-    "risk_score": 39,
-    "opportunity_index": 67,
-    "notes": "Strong value ($1), moderate risk. Veteran F Rotation with solid consistency."
-  },
-  {
-    "player_id": "1630537",
-    "value_score": 74,
-    "risk_score": 59,
-    "opportunity_index": 57,
-    "notes": "Strong value ($1), moderate risk. Prime G Scrub with elite consistency."
-  },
-  {
-    "player_id": "1641753",
-    "value_score": 74,
-    "risk_score": 65,
-    "opportunity_index": 59,
-    "notes": "Strong value ($1), high risk. Young F Scrub with solid consistency."
+    "opportunity_index": 88,
+    "notes": "Elite value ($40), moderate risk. Young C Starter with elite consistency."
   },
   {
     "player_id": "101108",
-    "value_score": 74,
-    "risk_score": 34,
-    "opportunity_index": 70,
-    "notes": "Strong value ($1), moderate risk. Veteran G Rotation with elite consistency."
+    "value_score": 70,
+    "risk_score": 36,
+    "opportunity_index": 67,
+    "notes": "Strong value ($1), moderate risk. Veteran G Bench with elite consistency."
+  },
+  {
+    "player_id": "1642959",
+    "value_score": 70,
+    "risk_score": 61,
+    "opportunity_index": 54,
+    "notes": "Strong value ($1), high risk. Young G Scrub with solid consistency."
   },
   {
     "player_id": "1631128",
-    "value_score": 76,
-    "risk_score": 34,
-    "opportunity_index": 73,
+    "value_score": 71,
+    "risk_score": 35,
+    "opportunity_index": 70,
     "notes": "Strong value ($2), moderate risk. Young G Starter with solid consistency."
   },
   {
     "player_id": "1631132",
-    "value_score": 74,
-    "risk_score": 53,
-    "opportunity_index": 60,
-    "notes": "Strong value ($1), moderate risk. Young C Bench with solid consistency."
+    "value_score": 70,
+    "risk_score": 39,
+    "opportunity_index": 65,
+    "notes": "Strong value ($1), moderate risk. Young C Rotation with solid consistency."
   },
   {
     "player_id": "203991",
-    "value_score": 74,
-    "risk_score": 32,
-    "opportunity_index": 71,
-    "notes": "Strong value ($1), moderate risk. Prime C Rotation with elite consistency."
+    "value_score": 70,
+    "risk_score": 35,
+    "opportunity_index": 67,
+    "notes": "Strong value ($1), moderate risk. Veteran C Bench with elite consistency."
   },
   {
     "player_id": "1629632",
-    "value_score": 83,
-    "risk_score": 35,
-    "opportunity_index": 76,
-    "notes": "Strong value ($9), moderate risk. Young G Starter with solid consistency."
-  },
-  {
-    "player_id": "1628998",
-    "value_score": 74,
-    "risk_score": 36,
-    "opportunity_index": 69,
-    "notes": "Strong value ($1), moderate risk. Prime F Rotation with solid consistency."
+    "value_score": 77,
+    "risk_score": 33,
+    "opportunity_index": 74,
+    "notes": "Strong value ($7), moderate risk. Young G Starter with solid consistency."
   },
   {
     "player_id": "1642262",
-    "value_score": 74,
-    "risk_score": 36,
-    "opportunity_index": 74,
+    "value_score": 70,
+    "risk_score": 39,
+    "opportunity_index": 70,
     "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
   },
   {
-    "player_id": "1641732",
-    "value_score": 74,
-    "risk_score": 60,
-    "opportunity_index": 62,
-    "notes": "Strong value ($1), high risk. Young G Bench with inconsistent."
-  },
-  {
     "player_id": "1630175",
-    "value_score": 74,
-    "risk_score": 42,
+    "value_score": 70,
+    "risk_score": 38,
     "opportunity_index": 66,
     "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
   },
   {
-    "player_id": "1631306",
-    "value_score": 74,
-    "risk_score": 41,
-    "opportunity_index": 66,
-    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
-  },
-  {
-    "player_id": "1630658",
-    "value_score": 74,
-    "risk_score": 42,
-    "opportunity_index": 66,
-    "notes": "Strong value ($1), moderate risk. Young C Rotation with inconsistent."
-  },
-  {
     "player_id": "1631221",
-    "value_score": 74,
-    "risk_score": 54,
-    "opportunity_index": 60,
-    "notes": "Strong value ($1), moderate risk. Young G Bench with solid consistency."
+    "value_score": 70,
+    "risk_score": 36,
+    "opportunity_index": 69,
+    "notes": "Strong value ($1), moderate risk. Young G Starter with solid consistency."
+  },
+  {
+    "player_id": "1642867",
+    "value_score": 70,
+    "risk_score": 40,
+    "opportunity_index": 70,
+    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
   },
   {
     "player_id": "1629012",
-    "value_score": 74,
-    "risk_score": 35,
-    "opportunity_index": 69,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with elite consistency."
+    "value_score": 70,
+    "risk_score": 33,
+    "opportunity_index": 68,
+    "notes": "Strong value ($1), moderate risk. Prime G Rotation with elite consistency."
+  },
+  {
+    "player_id": "1642843",
+    "value_score": 89,
+    "risk_score": 33,
+    "opportunity_index": 85,
+    "notes": "Strong value ($14), moderate risk. Young F Starter with solid consistency."
   },
   {
     "player_id": "1630557",
-    "value_score": 74,
-    "risk_score": 34,
-    "opportunity_index": 70,
-    "notes": "Strong value ($1), moderate risk. Young F Rotation with elite consistency."
-  },
-  {
-    "player_id": "202709",
-    "value_score": 74,
-    "risk_score": 55,
-    "opportunity_index": 59,
-    "notes": "Strong value ($1), moderate risk. Veteran G Bench with solid consistency."
-  },
-  {
-    "player_id": "1641854",
-    "value_score": 74,
-    "risk_score": 53,
-    "opportunity_index": 60,
-    "notes": "Strong value ($1), moderate risk. Young G Bench with solid consistency."
-  },
-  {
-    "player_id": "1626156",
-    "value_score": 77,
-    "risk_score": 37,
-    "opportunity_index": 70,
-    "notes": "Strong value ($3), moderate risk. Prime G Rotation with solid consistency."
-  },
-  {
-    "player_id": "1629610",
-    "value_score": 74,
-    "risk_score": 40,
+    "value_score": 70,
+    "risk_score": 36,
     "opportunity_index": 67,
-    "notes": "Strong value ($1), moderate risk. Prime G Rotation with solid consistency."
-  },
-  {
-    "player_id": "1630625",
-    "value_score": 74,
-    "risk_score": 41,
-    "opportunity_index": 66,
     "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
   },
   {
+    "player_id": "1641854",
+    "value_score": 70,
+    "risk_score": 45,
+    "opportunity_index": 62,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with inconsistent."
+  },
+  {
+    "player_id": "1626156",
+    "value_score": 70,
+    "risk_score": 39,
+    "opportunity_index": 65,
+    "notes": "Strong value ($1), moderate risk. Prime G Rotation with solid consistency."
+  },
+  {
+    "player_id": "1641747",
+    "value_score": 70,
+    "risk_score": 50,
+    "opportunity_index": 65,
+    "notes": "Strong value ($1), moderate risk. Young F Bench with solid consistency."
+  },
+  {
     "player_id": "1631207",
-    "value_score": 74,
-    "risk_score": 49,
-    "opportunity_index": 67,
+    "value_score": 70,
+    "risk_score": 54,
+    "opportunity_index": 63,
     "notes": "Strong value ($1), moderate risk. Young F Bench with solid consistency."
   },
   {
     "player_id": "1642261",
-    "value_score": 74,
-    "risk_score": 42,
-    "opportunity_index": 66,
-    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
-  },
-  {
-    "player_id": "203081",
-    "value_score": 88,
-    "risk_score": 32,
-    "opportunity_index": 80,
-    "notes": "Strong value ($14), moderate risk. Veteran G Starter with elite consistency."
-  },
-  {
-    "player_id": "1641878",
-    "value_score": 74,
-    "risk_score": 38,
-    "opportunity_index": 68,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
-  },
-  {
-    "player_id": "1627814",
-    "value_score": 74,
-    "risk_score": 39,
-    "opportunity_index": 67,
-    "notes": "Strong value ($1), moderate risk. Veteran G Scrub with elite consistency."
-  },
-  {
-    "player_id": "1629655",
-    "value_score": 74,
-    "risk_score": 37,
-    "opportunity_index": 68,
-    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
-  },
-  {
-    "player_id": "1628464",
-    "value_score": 74,
-    "risk_score": 38,
-    "opportunity_index": 68,
-    "notes": "Strong value ($1), moderate risk. Veteran F Rotation with solid consistency."
-  },
-  {
-    "player_id": "203957",
-    "value_score": 74,
-    "risk_score": 41,
-    "opportunity_index": 66,
-    "notes": "Strong value ($1), moderate risk. Prime G Rotation with solid consistency."
-  },
-  {
-    "player_id": "203967",
-    "value_score": 74,
-    "risk_score": 50,
-    "opportunity_index": 62,
-    "notes": "Strong value ($1), moderate risk. Veteran F Bench with solid consistency."
-  },
-  {
-    "player_id": "1641727",
-    "value_score": 74,
-    "risk_score": 52,
-    "opportunity_index": 66,
-    "notes": "Strong value ($1), moderate risk. Young G Bench with solid consistency."
-  },
-  {
-    "player_id": "1629636",
-    "value_score": 81,
-    "risk_score": 32,
-    "opportunity_index": 77,
-    "notes": "Strong value ($8), moderate risk. Young G Starter with elite consistency."
-  },
-  {
-    "player_id": "1631223",
-    "value_score": 74,
-    "risk_score": 52,
-    "opportunity_index": 61,
+    "value_score": 70,
+    "risk_score": 51,
+    "opportunity_index": 59,
     "notes": "Strong value ($1), moderate risk. Young F Bench with solid consistency."
   },
   {
-    "player_id": "1630558",
-    "value_score": 74,
-    "risk_score": 39,
+    "player_id": "1629655",
+    "value_score": 70,
+    "risk_score": 36,
     "opportunity_index": 67,
+    "notes": "Strong value ($1), moderate risk. Prime F Rotation with solid consistency."
+  },
+  {
+    "player_id": "1642450",
+    "value_score": 70,
+    "risk_score": 43,
+    "opportunity_index": 63,
     "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
   },
   {
-    "player_id": "1630549",
-    "value_score": 74,
+    "player_id": "1642874",
+    "value_score": 70,
     "risk_score": 36,
+    "opportunity_index": 72,
+    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
+  },
+  {
+    "player_id": "1629636",
+    "value_score": 77,
+    "risk_score": 33,
     "opportunity_index": 74,
+    "notes": "Strong value ($7), moderate risk. Young G Starter with solid consistency."
+  },
+  {
+    "player_id": "1642357",
+    "value_score": 70,
+    "risk_score": 68,
+    "opportunity_index": 51,
+    "notes": "Strong value ($1), high risk. Young G Scrub with inconsistent."
+  },
+  {
+    "player_id": "1630558",
+    "value_score": 70,
+    "risk_score": 33,
+    "opportunity_index": 71,
+    "notes": "Strong value ($1), moderate risk. Prime G Starter with solid consistency."
+  },
+  {
+    "player_id": "1630549",
+    "value_score": 70,
+    "risk_score": 36,
+    "opportunity_index": 67,
     "notes": "Strong value ($1), moderate risk. Young C Rotation with solid consistency."
   },
   {
     "player_id": "1628368",
-    "value_score": 91,
-    "risk_score": 31,
-    "opportunity_index": 82,
-    "notes": "Elite value ($16), moderate risk. Prime G Starter with elite consistency."
-  },
-  {
-    "player_id": "1629631",
-    "value_score": 74,
-    "risk_score": 34,
-    "opportunity_index": 70,
-    "notes": "Strong value ($1), moderate risk. Prime F Rotation with elite consistency."
-  },
-  {
-    "player_id": "201599",
-    "value_score": 74,
-    "risk_score": 45,
-    "opportunity_index": 64,
-    "notes": "Strong value ($1), moderate risk. Veteran C Bench with solid consistency."
-  },
-  {
-    "player_id": "201942",
-    "value_score": 81,
-    "risk_score": 32,
-    "opportunity_index": 77,
-    "notes": "Strong value ($8), moderate risk. Veteran G Starter with elite consistency."
-  },
-  {
-    "player_id": "1629731",
-    "value_score": 74,
-    "risk_score": 36,
-    "opportunity_index": 69,
-    "notes": "Strong value ($1), moderate risk. Prime F Rotation with solid consistency."
-  },
-  {
-    "player_id": "1629028",
-    "value_score": 80,
-    "risk_score": 33,
-    "opportunity_index": 76,
-    "notes": "Strong value ($7), moderate risk. Young C Starter with solid consistency."
-  },
-  {
-    "player_id": "1627749",
-    "value_score": 91,
-    "risk_score": 33,
-    "opportunity_index": 81,
-    "notes": "Elite value ($16), moderate risk. Prime G Starter with solid consistency."
-  },
-  {
-    "player_id": "1626153",
-    "value_score": 74,
-    "risk_score": 41,
-    "opportunity_index": 66,
-    "notes": "Strong value ($1), moderate risk. Veteran G Rotation with solid consistency."
-  },
-  {
-    "player_id": "1630166",
-    "value_score": 87,
-    "risk_score": 36,
-    "opportunity_index": 78,
-    "notes": "Strong value ($12), moderate risk. Young F Starter with solid consistency."
-  },
-  {
-    "player_id": "203471",
-    "value_score": 74,
-    "risk_score": 35,
-    "opportunity_index": 72,
-    "notes": "Strong value ($1), moderate risk. Veteran G Starter with solid consistency."
-  },
-  {
-    "player_id": "1641726",
-    "value_score": 74,
-    "risk_score": 35,
-    "opportunity_index": 74,
-    "notes": "Strong value ($1), moderate risk. Young C Rotation with elite consistency."
-  },
-  {
-    "player_id": "1627884",
-    "value_score": 74,
-    "risk_score": 35,
-    "opportunity_index": 69,
-    "notes": "Strong value ($1), moderate risk. Prime F Rotation with solid consistency."
-  },
-  {
-    "player_id": "1628401",
-    "value_score": 96,
-    "risk_score": 30,
-    "opportunity_index": 85,
-    "notes": "Elite value ($24), moderate risk. Prime G Starter with elite consistency."
-  },
-  {
-    "player_id": "1630217",
-    "value_score": 91,
-    "risk_score": 33,
-    "opportunity_index": 81,
-    "notes": "Elite value ($16), moderate risk. Young G Starter with solid consistency."
-  },
-  {
-    "player_id": "1626164",
     "value_score": 87,
     "risk_score": 31,
     "opportunity_index": 80,
     "notes": "Strong value ($13), moderate risk. Prime G Starter with elite consistency."
   },
   {
-    "player_id": "1642269",
+    "player_id": "1629631",
+    "value_score": 70,
+    "risk_score": 35,
+    "opportunity_index": 67,
+    "notes": "Strong value ($1), moderate risk. Prime F Rotation with elite consistency."
+  },
+  {
+    "player_id": "1629001",
+    "value_score": 70,
+    "risk_score": 34,
+    "opportunity_index": 68,
+    "notes": "Strong value ($1), moderate risk. Prime G Rotation with elite consistency."
+  },
+  {
+    "player_id": "201942",
     "value_score": 74,
-    "risk_score": 55,
-    "opportunity_index": 64,
+    "risk_score": 33,
+    "opportunity_index": 73,
+    "notes": "Strong value ($5), moderate risk. Veteran G Starter with solid consistency."
+  },
+  {
+    "player_id": "1629731",
+    "value_score": 70,
+    "risk_score": 37,
+    "opportunity_index": 66,
+    "notes": "Strong value ($1), moderate risk. Prime F Rotation with solid consistency."
+  },
+  {
+    "player_id": "1629028",
+    "value_score": 72,
+    "risk_score": 36,
+    "opportunity_index": 70,
+    "notes": "Strong value ($3), moderate risk. Prime C Starter with solid consistency."
+  },
+  {
+    "player_id": "1630166",
+    "value_score": 94,
+    "risk_score": 34,
+    "opportunity_index": 82,
+    "notes": "Elite value ($20), moderate risk. Young F Starter with solid consistency."
+  },
+  {
+    "player_id": "203471",
+    "value_score": 70,
+    "risk_score": 36,
+    "opportunity_index": 67,
+    "notes": "Strong value ($1), moderate risk. Veteran G Rotation with elite consistency."
+  },
+  {
+    "player_id": "1642852",
+    "value_score": 87,
+    "risk_score": 35,
+    "opportunity_index": 81,
+    "notes": "Strong value ($13), moderate risk. Young C Rotation with solid consistency."
+  },
+  {
+    "player_id": "1627884",
+    "value_score": 70,
+    "risk_score": 36,
+    "opportunity_index": 67,
+    "notes": "Strong value ($1), moderate risk. Prime F Rotation with solid consistency."
+  },
+  {
+    "player_id": "1628401",
+    "value_score": 96,
+    "risk_score": 32,
+    "opportunity_index": 84,
+    "notes": "Elite value ($29), moderate risk. Veteran G Starter with elite consistency."
+  },
+  {
+    "player_id": "1630217",
+    "value_score": 89,
+    "risk_score": 31,
+    "opportunity_index": 81,
+    "notes": "Strong value ($14), moderate risk. Prime G Starter with elite consistency."
+  },
+  {
+    "player_id": "1626164",
+    "value_score": 86,
+    "risk_score": 32,
+    "opportunity_index": 79,
+    "notes": "Strong value ($12), moderate risk. Prime G Starter with elite consistency."
+  },
+  {
+    "player_id": "1642269",
+    "value_score": 70,
+    "risk_score": 57,
+    "opportunity_index": 61,
     "notes": "Strong value ($1), moderate risk. Young G Bench with solid consistency."
   },
   {
     "player_id": "1630170",
-    "value_score": 84,
+    "value_score": 79,
     "risk_score": 34,
-    "opportunity_index": 77,
-    "notes": "Strong value ($10), moderate risk. Young G Starter with solid consistency."
+    "opportunity_index": 75,
+    "notes": "Strong value ($8), moderate risk. Young G Starter with solid consistency."
   },
   {
     "player_id": "1628415",
-    "value_score": 74,
-    "risk_score": 34,
-    "opportunity_index": 72,
-    "notes": "Strong value ($1), moderate risk. Prime G Starter with solid consistency."
-  },
-  {
-    "player_id": "1641794",
-    "value_score": 74,
-    "risk_score": 54,
-    "opportunity_index": 65,
-    "notes": "Strong value ($1), moderate risk. Young F Bench with solid consistency."
+    "value_score": 71,
+    "risk_score": 33,
+    "opportunity_index": 71,
+    "notes": "Strong value ($2), moderate risk. Prime G Starter with solid consistency."
   },
   {
     "player_id": "1627734",
-    "value_score": 95,
-    "risk_score": 30,
-    "opportunity_index": 85,
-    "notes": "Elite value ($23), moderate risk. Prime F Starter with elite consistency."
+    "value_score": 90,
+    "risk_score": 32,
+    "opportunity_index": 81,
+    "notes": "Elite value ($16), moderate risk. Prime F Starter with elite consistency."
   },
   {
     "player_id": "1631230",
-    "value_score": 74,
-    "risk_score": 50,
-    "opportunity_index": 67,
-    "notes": "Strong value ($1), moderate risk. Young F Bench with solid consistency."
+    "value_score": 70,
+    "risk_score": 39,
+    "opportunity_index": 70,
+    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
   },
   {
     "player_id": "1642270",
-    "value_score": 74,
-    "risk_score": 38,
-    "opportunity_index": 73,
-    "notes": "Strong value ($1), moderate risk. Young C Rotation with solid consistency."
+    "value_score": 82,
+    "risk_score": 34,
+    "opportunity_index": 79,
+    "notes": "Strong value ($10), moderate risk. Young C Rotation with solid consistency."
   },
   {
     "player_id": "1628378",
     "value_score": 92,
-    "risk_score": 32,
-    "opportunity_index": 82,
-    "notes": "Elite value ($17), moderate risk. Prime G Starter with elite consistency."
+    "risk_score": 31,
+    "opportunity_index": 83,
+    "notes": "Elite value ($18), moderate risk. Prime G Starter with elite consistency."
   },
   {
     "player_id": "1628978",
-    "value_score": 76,
-    "risk_score": 36,
-    "opportunity_index": 70,
-    "notes": "Strong value ($2), moderate risk. Prime G Rotation with elite consistency."
+    "value_score": 84,
+    "risk_score": 32,
+    "opportunity_index": 78,
+    "notes": "Strong value ($11), moderate risk. Prime G Starter with elite consistency."
   },
   {
     "player_id": "1627827",
-    "value_score": 74,
-    "risk_score": 35,
-    "opportunity_index": 72,
-    "notes": "Strong value ($1), moderate risk. Veteran F Starter with solid consistency."
+    "value_score": 70,
+    "risk_score": 33,
+    "opportunity_index": 68,
+    "notes": "Strong value ($1), moderate risk. Veteran F Rotation with elite consistency."
   },
   {
     "player_id": "203926",
-    "value_score": 74,
-    "risk_score": 49,
-    "opportunity_index": 62,
+    "value_score": 70,
+    "risk_score": 44,
+    "opportunity_index": 63,
     "notes": "Strong value ($1), moderate risk. Veteran F Bench with solid consistency."
   },
   {
+    "player_id": "1642962",
+    "value_score": 70,
+    "risk_score": 37,
+    "opportunity_index": 71,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
+  },
+  {
     "player_id": "203110",
-    "value_score": 91,
-    "risk_score": 31,
-    "opportunity_index": 82,
-    "notes": "Elite value ($16), moderate risk. Veteran F Starter with elite consistency."
+    "value_score": 81,
+    "risk_score": 34,
+    "opportunity_index": 73,
+    "notes": "Strong value ($9), moderate risk. Veteran F Rotation with elite consistency."
   },
   {
     "player_id": "1629234",
-    "value_score": 74,
-    "risk_score": 51,
-    "opportunity_index": 61,
+    "value_score": 70,
+    "risk_score": 46,
+    "opportunity_index": 62,
     "notes": "Strong value ($1), moderate risk. Prime F Bench with solid consistency."
   },
   {
-    "player_id": "1641809",
-    "value_score": 74,
-    "risk_score": 60,
+    "player_id": "1631166",
+    "value_score": 70,
+    "risk_score": 55,
     "opportunity_index": 57,
-    "notes": "Strong value ($1), high risk. Young F Scrub with elite consistency."
+    "notes": "Strong value ($1), moderate risk. Young F Bench with solid consistency."
   },
   {
     "player_id": "1630696",
-    "value_score": 74,
-    "risk_score": 40,
-    "opportunity_index": 67,
+    "value_score": 70,
+    "risk_score": 38,
+    "opportunity_index": 66,
     "notes": "Strong value ($1), moderate risk. Prime G Rotation with solid consistency."
   },
   {
     "player_id": "1629130",
-    "value_score": 74,
-    "risk_score": 37,
+    "value_score": 70,
+    "risk_score": 34,
     "opportunity_index": 68,
-    "notes": "Strong value ($1), moderate risk. Prime F Rotation with solid consistency."
+    "notes": "Strong value ($1), moderate risk. Veteran F Rotation with elite consistency."
   },
   {
     "player_id": "1641871",
-    "value_score": 74,
-    "risk_score": 48,
-    "opportunity_index": 63,
-    "notes": "Strong value ($1), moderate risk. Prime C Bench with solid consistency."
+    "value_score": 70,
+    "risk_score": 45,
+    "opportunity_index": 62,
+    "notes": "Strong value ($1), moderate risk. Prime C Bench with elite consistency."
   },
   {
     "player_id": "203939",
-    "value_score": 74,
-    "risk_score": 49,
-    "opportunity_index": 62,
+    "value_score": 70,
+    "risk_score": 47,
+    "opportunity_index": 61,
     "notes": "Strong value ($1), moderate risk. Veteran F Bench with solid consistency."
   },
   {
+    "player_id": "1642928",
+    "value_score": 70,
+    "risk_score": 34,
+    "opportunity_index": 68,
+    "notes": "Strong value ($1), moderate risk. Young C Rotation with elite consistency."
+  },
+  {
+    "player_id": "1642844",
+    "value_score": 70,
+    "risk_score": 34,
+    "opportunity_index": 73,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with elite consistency."
+  },
+  {
     "player_id": "1630700",
-    "value_score": 85,
-    "risk_score": 33,
-    "opportunity_index": 83,
+    "value_score": 84,
+    "risk_score": 34,
+    "opportunity_index": 82,
     "notes": "Strong value ($11), moderate risk. Young G Starter with solid consistency."
   },
   {
     "player_id": "1630604",
-    "value_score": 74,
-    "risk_score": 66,
-    "opportunity_index": 54,
-    "notes": "Strong value ($1), high risk. Young F Scrub with solid consistency."
+    "value_score": 70,
+    "risk_score": 58,
+    "opportunity_index": 56,
+    "notes": "Strong value ($1), moderate risk. Young F Scrub with elite consistency."
   },
   {
-    "player_id": "203901",
-    "value_score": 74,
-    "risk_score": 41,
-    "opportunity_index": 66,
-    "notes": "Strong value ($1), moderate risk. Veteran G Rotation with solid consistency."
+    "player_id": "1642856",
+    "value_score": 70,
+    "risk_score": 35,
+    "opportunity_index": 72,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with elite consistency."
   },
   {
-    "player_id": "1641989",
-    "value_score": 74,
-    "risk_score": 52,
-    "opportunity_index": 61,
-    "notes": "Strong value ($1), moderate risk. Young G Bench with solid consistency."
-  },
-  {
-    "player_id": "1641734",
-    "value_score": 74,
-    "risk_score": 73,
-    "opportunity_index": 55,
-    "notes": "Strong value ($1), high risk. Young F Scrub with inconsistent."
-  },
-  {
-    "player_id": "1642402",
-    "value_score": 74,
-    "risk_score": 53,
-    "opportunity_index": 60,
-    "notes": "Strong value ($1), moderate risk. Young F Bench with solid consistency."
-  },
-  {
-    "player_id": "201569",
-    "value_score": 74,
-    "risk_score": 38,
-    "opportunity_index": 68,
-    "notes": "Strong value ($1), moderate risk. Veteran G Rotation with solid consistency."
+    "player_id": "1630679",
+    "value_score": 70,
+    "risk_score": 45,
+    "opportunity_index": 62,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with inconsistent."
   },
   {
     "player_id": "1630596",
     "value_score": 98,
-    "risk_score": 36,
-    "opportunity_index": 88,
-    "notes": "Elite value ($35), moderate risk. Young C Starter with solid consistency."
+    "risk_score": 33,
+    "opportunity_index": 85,
+    "notes": "Elite value ($41), moderate risk. Young C Starter with solid consistency."
   },
   {
     "player_id": "1630532",
     "value_score": 89,
     "risk_score": 32,
-    "opportunity_index": 86,
-    "notes": "Strong value ($15), moderate risk. Young F Starter with elite consistency."
-  },
-  {
-    "player_id": "1627832",
-    "value_score": 91,
-    "risk_score": 33,
     "opportunity_index": 81,
-    "notes": "Elite value ($16), moderate risk. Veteran G Starter with solid consistency."
+    "notes": "Strong value ($14), moderate risk. Young F Starter with elite consistency."
   },
   {
     "player_id": "1641713",
-    "value_score": 74,
+    "value_score": 70,
     "risk_score": 38,
-    "opportunity_index": 73,
+    "opportunity_index": 71,
     "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
   },
   {
     "player_id": "1629216",
-    "value_score": 74,
-    "risk_score": 41,
+    "value_score": 70,
+    "risk_score": 37,
     "opportunity_index": 66,
     "notes": "Strong value ($1), moderate risk. Prime G Rotation with solid consistency."
   },
   {
     "player_id": "202066",
-    "value_score": 74,
-    "risk_score": 42,
+    "value_score": 70,
+    "risk_score": 38,
     "opportunity_index": 66,
-    "notes": "Strong value ($1), moderate risk. Veteran G Bench with solid consistency."
+    "notes": "Strong value ($1), moderate risk. Veteran G Scrub with elite consistency."
   },
   {
     "player_id": "1629726",
-    "value_score": 74,
-    "risk_score": 42,
-    "opportunity_index": 66,
-    "notes": "Strong value ($1), moderate risk. Prime G Rotation with solid consistency."
-  },
-  {
-    "player_id": "203914",
-    "value_score": 74,
-    "risk_score": 48,
-    "opportunity_index": 63,
+    "value_score": 70,
+    "risk_score": 52,
+    "opportunity_index": 59,
     "notes": "Strong value ($1), moderate risk. Prime G Bench with elite consistency."
   },
   {
+    "player_id": "203914",
+    "value_score": 70,
+    "risk_score": 51,
+    "opportunity_index": 59,
+    "notes": "Strong value ($1), moderate risk. Veteran G Bench with elite consistency."
+  },
+  {
     "player_id": "1627780",
-    "value_score": 74,
-    "risk_score": 52,
-    "opportunity_index": 61,
+    "value_score": 70,
+    "risk_score": 53,
+    "opportunity_index": 58,
     "notes": "Strong value ($1), moderate risk. Veteran G Bench with solid consistency."
   },
   {
     "player_id": "1629018",
-    "value_score": 74,
-    "risk_score": 37,
-    "opportunity_index": 68,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
-  },
-  {
-    "player_id": "1627777",
-    "value_score": 74,
+    "value_score": 70,
     "risk_score": 36,
-    "opportunity_index": 69,
-    "notes": "Strong value ($1), moderate risk. Veteran F Rotation with solid consistency."
+    "opportunity_index": 67,
+    "notes": "Strong value ($1), moderate risk. Prime G Rotation with solid consistency."
   },
   {
     "player_id": "203507",
-    "value_score": 96,
-    "risk_score": 30,
-    "opportunity_index": 85,
-    "notes": "Elite value ($26), moderate risk. Prime F Starter with elite consistency."
+    "value_score": 94,
+    "risk_score": 33,
+    "opportunity_index": 83,
+    "notes": "Elite value ($24), moderate risk. Veteran F Starter with elite consistency."
   },
   {
     "player_id": "1629048",
-    "value_score": 74,
-    "risk_score": 39,
+    "value_score": 70,
+    "risk_score": 36,
     "opportunity_index": 67,
     "notes": "Strong value ($1), moderate risk. Young C Rotation with solid consistency."
   },
   {
     "player_id": "1641711",
-    "value_score": 74,
-    "risk_score": 36,
-    "opportunity_index": 76,
-    "notes": "Strong value ($1), moderate risk. Young G Starter with solid consistency."
+    "value_score": 70,
+    "risk_score": 37,
+    "opportunity_index": 71,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
   },
   {
     "player_id": "1629684",
-    "value_score": 79,
-    "risk_score": 32,
-    "opportunity_index": 76,
-    "notes": "Strong value ($5), moderate risk. Young F Starter with solid consistency."
+    "value_score": 70,
+    "risk_score": 36,
+    "opportunity_index": 67,
+    "notes": "Strong value ($1), moderate risk. Prime F Rotation with solid consistency."
   },
   {
     "player_id": "1628960",
-    "value_score": 74,
-    "risk_score": 36,
-    "opportunity_index": 69,
-    "notes": "Strong value ($1), moderate risk. Prime G Rotation with elite consistency."
+    "value_score": 79,
+    "risk_score": 33,
+    "opportunity_index": 75,
+    "notes": "Strong value ($8), moderate risk. Prime G Starter with solid consistency."
   },
   {
     "player_id": "1627824",
-    "value_score": 74,
-    "risk_score": 36,
-    "opportunity_index": 69,
-    "notes": "Strong value ($1), moderate risk. Prime F Rotation with solid consistency."
+    "value_score": 70,
+    "risk_score": 49,
+    "opportunity_index": 60,
+    "notes": "Strong value ($1), moderate risk. Prime F Bench with elite consistency."
   },
   {
     "player_id": "1630611",
-    "value_score": 74,
-    "risk_score": 52,
-    "opportunity_index": 66,
-    "notes": "Strong value ($1), moderate risk. Young F Bench with solid consistency."
+    "value_score": 70,
+    "risk_score": 45,
+    "opportunity_index": 67,
+    "notes": "Strong value ($1), moderate risk. Young F Rotation with inconsistent."
   },
   {
     "player_id": "203084",
-    "value_score": 74,
-    "risk_score": 38,
-    "opportunity_index": 68,
-    "notes": "Strong value ($1), moderate risk. Veteran F Rotation with solid consistency."
-  },
-  {
-    "player_id": "1629312",
-    "value_score": 74,
-    "risk_score": 38,
-    "opportunity_index": 68,
-    "notes": "Strong value ($1), moderate risk. Prime F Rotation with solid consistency."
+    "value_score": 70,
+    "risk_score": 35,
+    "opportunity_index": 67,
+    "notes": "Strong value ($1), moderate risk. Veteran F Rotation with elite consistency."
   },
   {
     "player_id": "1630529",
-    "value_score": 80,
-    "risk_score": 33,
-    "opportunity_index": 76,
-    "notes": "Strong value ($7), moderate risk. Young F Starter with solid consistency."
+    "value_score": 76,
+    "risk_score": 35,
+    "opportunity_index": 73,
+    "notes": "Strong value ($6), moderate risk. Prime F Starter with solid consistency."
+  },
+  {
+    "player_id": "1642864",
+    "value_score": 70,
+    "risk_score": 39,
+    "opportunity_index": 70,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
   },
   {
     "player_id": "1641816",
-    "value_score": 74,
-    "risk_score": 55,
-    "opportunity_index": 59,
-    "notes": "Strong value ($1), moderate risk. Young F Bench with solid consistency."
+    "value_score": 70,
+    "risk_score": 63,
+    "opportunity_index": 53,
+    "notes": "Strong value ($1), high risk. Young F Scrub with solid consistency."
   },
   {
     "player_id": "1630193",
-    "value_score": 74,
-    "risk_score": 35,
-    "opportunity_index": 69,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with elite consistency."
-  },
-  {
-    "player_id": "1642403",
-    "value_score": 74,
-    "risk_score": 63,
-    "opportunity_index": 55,
-    "notes": "Strong value ($1), high risk. Young F Scrub with solid consistency."
+    "value_score": 79,
+    "risk_score": 32,
+    "opportunity_index": 76,
+    "notes": "Strong value ($8), moderate risk. Young G Starter with elite consistency."
   },
   {
     "player_id": "1630171",
-    "value_score": 74,
-    "risk_score": 36,
-    "opportunity_index": 69,
-    "notes": "Strong value ($1), moderate risk. Young F Rotation with elite consistency."
+    "value_score": 70,
+    "risk_score": 38,
+    "opportunity_index": 66,
+    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
   },
   {
     "player_id": "1642268",
-    "value_score": 74,
+    "value_score": 70,
     "risk_score": 38,
-    "opportunity_index": 73,
+    "opportunity_index": 71,
     "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
-  },
-  {
-    "player_id": "1642384",
-    "value_score": 74,
-    "risk_score": 62,
-    "opportunity_index": 61,
-    "notes": "Strong value ($1), high risk. Young F Scrub with solid consistency."
   },
   {
     "player_id": "1628392",
-    "value_score": 76,
-    "risk_score": 32,
-    "opportunity_index": 72,
-    "notes": "Strong value ($2), moderate risk. Young C Rotation with elite consistency."
+    "value_score": 73,
+    "risk_score": 33,
+    "opportunity_index": 70,
+    "notes": "Strong value ($4), moderate risk. Prime C Rotation with elite consistency."
+  },
+  {
+    "player_id": "1630543",
+    "value_score": 70,
+    "risk_score": 41,
+    "opportunity_index": 64,
+    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
   },
   {
     "player_id": "1630198",
-    "value_score": 74,
-    "risk_score": 40,
-    "opportunity_index": 67,
+    "value_score": 70,
+    "risk_score": 39,
+    "opportunity_index": 65,
     "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
   },
   {
-    "player_id": "1630191",
-    "value_score": 74,
-    "risk_score": 35,
-    "opportunity_index": 74,
-    "notes": "Strong value ($1), moderate risk. Young F Rotation with elite consistency."
+    "player_id": "1630587",
+    "value_score": 70,
+    "risk_score": 51,
+    "opportunity_index": 59,
+    "notes": "Strong value ($1), moderate risk. Prime F Bench with solid consistency."
   },
   {
-    "player_id": "1631209",
-    "value_score": 74,
-    "risk_score": 50,
-    "opportunity_index": 62,
-    "notes": "Strong value ($1), moderate risk. Young G Bench with elite consistency."
+    "player_id": "1630191",
+    "value_score": 70,
+    "risk_score": 37,
+    "opportunity_index": 66,
+    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
   },
   {
     "player_id": "1627826",
-    "value_score": 83,
-    "risk_score": 33,
-    "opportunity_index": 77,
-    "notes": "Strong value ($9), moderate risk. Prime C Starter with solid consistency."
+    "value_score": 79,
+    "risk_score": 32,
+    "opportunity_index": 76,
+    "notes": "Strong value ($8), moderate risk. Prime C Starter with elite consistency."
   },
   {
     "player_id": "1631120",
-    "value_score": 74,
-    "risk_score": 62,
-    "opportunity_index": 61,
+    "value_score": 70,
+    "risk_score": 64,
+    "opportunity_index": 58,
     "notes": "Strong value ($1), high risk. Young G Scrub with solid consistency."
   },
   {
-    "player_id": "1630550",
-    "value_score": 74,
-    "risk_score": 51,
-    "opportunity_index": 66,
-    "notes": "Strong value ($1), moderate risk. Young F Bench with solid consistency."
-  },
-  {
     "player_id": "1629630",
-    "value_score": 85,
+    "value_score": 82,
     "risk_score": 33,
-    "opportunity_index": 78,
-    "notes": "Strong value ($11), moderate risk. Young G Starter with elite consistency."
+    "opportunity_index": 77,
+    "notes": "Strong value ($10), moderate risk. Young G Starter with solid consistency."
   },
   {
     "player_id": "1642266",
-    "value_score": 74,
+    "value_score": 70,
     "risk_score": 37,
-    "opportunity_index": 73,
+    "opportunity_index": 71,
     "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
   },
   {
     "player_id": "1631095",
-    "value_score": 79,
-    "risk_score": 33,
-    "opportunity_index": 80,
-    "notes": "Strong value ($5), moderate risk. Young F Starter with solid consistency."
+    "value_score": 81,
+    "risk_score": 31,
+    "opportunity_index": 82,
+    "notes": "Strong value ($9), moderate risk. Young F Starter with elite consistency."
   },
   {
     "player_id": "1631133",
-    "value_score": 74,
-    "risk_score": 48,
-    "opportunity_index": 68,
+    "value_score": 70,
+    "risk_score": 50,
+    "opportunity_index": 65,
     "notes": "Strong value ($1), moderate risk. Young F Bench with solid consistency."
   },
   {
-    "player_id": "1631210",
-    "value_score": 74,
-    "risk_score": 69,
-    "opportunity_index": 52,
-    "notes": "Strong value ($1), high risk. Young F Scrub with inconsistent."
-  },
-  {
     "player_id": "1630702",
-    "value_score": 74,
-    "risk_score": 42,
-    "opportunity_index": 71,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
-  },
-  {
-    "player_id": "1631093",
-    "value_score": 81,
-    "risk_score": 33,
-    "opportunity_index": 81,
-    "notes": "Strong value ($8), moderate risk. Young G Starter with solid consistency."
-  },
-  {
-    "player_id": "1630183",
-    "value_score": 77,
-    "risk_score": 36,
-    "opportunity_index": 73,
-    "notes": "Strong value ($3), moderate risk. Young F Starter with solid consistency."
-  },
-  {
-    "player_id": "1630531",
-    "value_score": 74,
-    "risk_score": 54,
-    "opportunity_index": 65,
+    "value_score": 70,
+    "risk_score": 53,
+    "opportunity_index": 63,
     "notes": "Strong value ($1), moderate risk. Young G Bench with solid consistency."
   },
   {
+    "player_id": "1631093",
+    "value_score": 70,
+    "risk_score": 35,
+    "opportunity_index": 67,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with elite consistency."
+  },
+  {
+    "player_id": "1630183",
+    "value_score": 79,
+    "risk_score": 34,
+    "opportunity_index": 75,
+    "notes": "Strong value ($8), moderate risk. Young F Starter with solid consistency."
+  },
+  {
     "player_id": "1630256",
-    "value_score": 74,
-    "risk_score": 47,
-    "opportunity_index": 63,
-    "notes": "Strong value ($1), moderate risk. Prime F Bench with solid consistency."
+    "value_score": 70,
+    "risk_score": 49,
+    "opportunity_index": 60,
+    "notes": "Strong value ($1), moderate risk. Prime F Bench with elite consistency."
+  },
+  {
+    "player_id": "1642942",
+    "value_score": 70,
+    "risk_score": 43,
+    "opportunity_index": 68,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with inconsistent."
   },
   {
     "player_id": "1631170",
-    "value_score": 74,
-    "risk_score": 41,
-    "opportunity_index": 66,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
+    "value_score": 70,
+    "risk_score": 36,
+    "opportunity_index": 69,
+    "notes": "Strong value ($1), moderate risk. Young G Starter with solid consistency."
   },
   {
     "player_id": "1631222",
-    "value_score": 74,
-    "risk_score": 38,
-    "opportunity_index": 73,
+    "value_score": 70,
+    "risk_score": 39,
+    "opportunity_index": 65,
     "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
   },
   {
     "player_id": "1627751",
-    "value_score": 87,
+    "value_score": 70,
     "risk_score": 34,
-    "opportunity_index": 79,
-    "notes": "Strong value ($13), moderate risk. Prime C Starter with elite consistency."
+    "opportunity_index": 68,
+    "notes": "Strong value ($1), moderate risk. Prime C Rotation with elite consistency."
   },
   {
     "player_id": "1628973",
-    "value_score": 84,
-    "risk_score": 31,
-    "opportunity_index": 79,
+    "value_score": 82,
+    "risk_score": 32,
+    "opportunity_index": 77,
     "notes": "Strong value ($10), moderate risk. Prime G Starter with elite consistency."
   },
   {
     "player_id": "1631105",
-    "value_score": 74,
-    "risk_score": 35,
-    "opportunity_index": 74,
+    "value_score": 70,
+    "risk_score": 33,
+    "opportunity_index": 73,
     "notes": "Strong value ($1), moderate risk. Young C Rotation with elite consistency."
   },
   {
     "player_id": "1630224",
-    "value_score": 85,
-    "risk_score": 34,
-    "opportunity_index": 83,
-    "notes": "Strong value ($11), moderate risk. Young G Starter with solid consistency."
-  },
-  {
-    "player_id": "1641720",
-    "value_score": 74,
-    "risk_score": 41,
-    "opportunity_index": 71,
+    "value_score": 70,
+    "risk_score": 39,
+    "opportunity_index": 65,
     "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
   },
   {
     "player_id": "1630552",
-    "value_score": 94,
+    "value_score": 96,
     "risk_score": 33,
-    "opportunity_index": 88,
-    "notes": "Elite value ($19), moderate risk. Young F Starter with solid consistency."
+    "opportunity_index": 84,
+    "notes": "Elite value ($27), moderate risk. Young F Starter with solid consistency."
   },
   {
     "player_id": "1629618",
-    "value_score": 74,
-    "risk_score": 58,
-    "opportunity_index": 58,
-    "notes": "Strong value ($1), moderate risk. Young G Bench with inconsistent."
+    "value_score": 70,
+    "risk_score": 46,
+    "opportunity_index": 62,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with inconsistent."
   },
   {
     "player_id": "1630188",
-    "value_score": 74,
-    "risk_score": 36,
-    "opportunity_index": 69,
-    "notes": "Strong value ($1), moderate risk. Young F Rotation with elite consistency."
-  },
-  {
-    "player_id": "1630591",
-    "value_score": 88,
-    "risk_score": 36,
-    "opportunity_index": 83,
-    "notes": "Strong value ($14), moderate risk. Young G Starter with solid consistency."
-  },
-  {
-    "player_id": "1631114",
-    "value_score": 89,
-    "risk_score": 32,
-    "opportunity_index": 81,
-    "notes": "Strong value ($15), moderate risk. Young G Starter with elite consistency."
-  },
-  {
-    "player_id": "1630592",
-    "value_score": 74,
-    "risk_score": 38,
-    "opportunity_index": 68,
+    "value_score": 70,
+    "risk_score": 37,
+    "opportunity_index": 66,
     "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
   },
   {
+    "player_id": "1630591",
+    "value_score": 84,
+    "risk_score": 36,
+    "opportunity_index": 74,
+    "notes": "Strong value ($11), moderate risk. Young G Rotation with elite consistency."
+  },
+  {
+    "player_id": "1631114",
+    "value_score": 86,
+    "risk_score": 29,
+    "opportunity_index": 81,
+    "notes": "Strong value ($12), low risk. Young G Starter with elite consistency."
+  },
+  {
+    "player_id": "1630592",
+    "value_score": 70,
+    "risk_score": 47,
+    "opportunity_index": 61,
+    "notes": "Strong value ($1), moderate risk. Young F Bench with elite consistency."
+  },
+  {
     "player_id": "1631288",
-    "value_score": 74,
-    "risk_score": 56,
-    "opportunity_index": 59,
-    "notes": "Strong value ($1), moderate risk. Young F Bench with inconsistent."
+    "value_score": 70,
+    "risk_score": 50,
+    "opportunity_index": 60,
+    "notes": "Strong value ($1), moderate risk. Young F Scrub with elite consistency."
   },
   {
     "player_id": "1627750",
-    "value_score": 91,
-    "risk_score": 33,
-    "opportunity_index": 81,
-    "notes": "Elite value ($16), moderate risk. Prime G Starter with solid consistency."
+    "value_score": 92,
+    "risk_score": 31,
+    "opportunity_index": 83,
+    "notes": "Elite value ($18), moderate risk. Prime G Starter with elite consistency."
   },
   {
     "player_id": "1642347",
-    "value_score": 74,
-    "risk_score": 39,
+    "value_score": 70,
+    "risk_score": 36,
     "opportunity_index": 72,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with elite consistency."
+  },
+  {
+    "player_id": "1631123",
+    "value_score": 70,
+    "risk_score": 40,
+    "opportunity_index": 65,
     "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
   },
   {
     "player_id": "201935",
-    "value_score": 96,
+    "value_score": 94,
     "risk_score": 32,
-    "opportunity_index": 84,
+    "opportunity_index": 83,
     "notes": "Elite value ($24), moderate risk. Veteran G Starter with elite consistency."
   },
   {
-    "player_id": "201949",
-    "value_score": 74,
-    "risk_score": 39,
-    "opportunity_index": 67,
-    "notes": "Strong value ($1), moderate risk. Veteran F Scrub with elite consistency."
+    "player_id": "1642364",
+    "value_score": 70,
+    "risk_score": 41,
+    "opportunity_index": 64,
+    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
   },
   {
     "player_id": "1642419",
-    "value_score": 74,
-    "risk_score": 39,
-    "opportunity_index": 72,
-    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
+    "value_score": 70,
+    "risk_score": 49,
+    "opportunity_index": 60,
+    "notes": "Strong value ($1), moderate risk. Young F Bench with elite consistency."
   },
   {
     "player_id": "1641716",
-    "value_score": 74,
-    "risk_score": 41,
-    "opportunity_index": 71,
+    "value_score": 70,
+    "risk_score": 40,
+    "opportunity_index": 70,
     "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
   },
   {
-    "player_id": "1630215",
-    "value_score": 74,
-    "risk_score": 42,
-    "opportunity_index": 66,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
-  },
-  {
     "player_id": "1642272",
-    "value_score": 74,
+    "value_score": 70,
     "risk_score": 39,
-    "opportunity_index": 72,
+    "opportunity_index": 70,
     "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
-  },
-  {
-    "player_id": "1631197",
-    "value_score": 74,
-    "risk_score": 51,
-    "opportunity_index": 61,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with inconsistent."
   },
   {
     "player_id": "1628991",
-    "value_score": 92,
+    "value_score": 90,
     "risk_score": 32,
-    "opportunity_index": 82,
-    "notes": "Elite value ($17), moderate risk. Young F Starter with solid consistency."
+    "opportunity_index": 81,
+    "notes": "Elite value ($16), moderate risk. Young F Starter with solid consistency."
   },
   {
     "player_id": "1629020",
-    "value_score": 74,
+    "value_score": 70,
     "risk_score": 38,
-    "opportunity_index": 68,
+    "opportunity_index": 66,
     "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
   },
   {
     "player_id": "1628386",
-    "value_score": 74,
-    "risk_score": 35,
+    "value_score": 70,
+    "risk_score": 34,
+    "opportunity_index": 68,
+    "notes": "Strong value ($1), moderate risk. Prime C Rotation with elite consistency."
+  },
+  {
+    "player_id": "1642859",
+    "value_score": 70,
+    "risk_score": 51,
+    "opportunity_index": 64,
+    "notes": "Strong value ($1), moderate risk. Young G Bench with solid consistency."
+  },
+  {
+    "player_id": "1642914",
+    "value_score": 70,
+    "risk_score": 42,
     "opportunity_index": 69,
-    "notes": "Strong value ($1), moderate risk. Young C Rotation with elite consistency."
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
+  },
+  {
+    "player_id": "1631451",
+    "value_score": 70,
+    "risk_score": 61,
+    "opportunity_index": 54,
+    "notes": "Strong value ($1), high risk. Young G Scrub with solid consistency."
   },
   {
     "player_id": "1629750",
-    "value_score": 74,
+    "value_score": 70,
     "risk_score": 39,
-    "opportunity_index": 67,
+    "opportunity_index": 65,
     "notes": "Strong value ($1), moderate risk. Veteran G Rotation with solid consistency."
   },
   {
     "player_id": "1629637",
-    "value_score": 74,
-    "risk_score": 36,
-    "opportunity_index": 69,
+    "value_score": 70,
+    "risk_score": 35,
+    "opportunity_index": 67,
     "notes": "Strong value ($1), moderate risk. Young C Rotation with solid consistency."
   },
   {
     "player_id": "1630643",
-    "value_score": 74,
-    "risk_score": 55,
-    "opportunity_index": 59,
-    "notes": "Strong value ($1), moderate risk. Prime C Bench with inconsistent."
+    "value_score": 73,
+    "risk_score": 38,
+    "opportunity_index": 67,
+    "notes": "Strong value ($4), moderate risk. Prime C Rotation with solid consistency."
   },
   {
     "player_id": "1627759",
-    "value_score": 87,
+    "value_score": 89,
     "risk_score": 31,
-    "opportunity_index": 80,
-    "notes": "Strong value ($12), moderate risk. Prime G Starter with elite consistency."
+    "opportunity_index": 81,
+    "notes": "Strong value ($15), moderate risk. Prime G Starter with elite consistency."
   },
   {
     "player_id": "1641740",
-    "value_score": 74,
-    "risk_score": 55,
-    "opportunity_index": 64,
+    "value_score": 70,
+    "risk_score": 52,
+    "opportunity_index": 59,
     "notes": "Strong value ($1), moderate risk. Young G Bench with solid consistency."
   },
   {
-    "player_id": "1641798",
-    "value_score": 74,
-    "risk_score": 43,
-    "opportunity_index": 70,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with inconsistent."
-  },
-  {
     "player_id": "1642377",
-    "value_score": 74,
-    "risk_score": 34,
-    "opportunity_index": 75,
+    "value_score": 70,
+    "risk_score": 35,
+    "opportunity_index": 72,
     "notes": "Strong value ($1), moderate risk. Young F Rotation with elite consistency."
   },
   {
     "player_id": "1631119",
-    "value_score": 74,
-    "risk_score": 43,
-    "opportunity_index": 70,
-    "notes": "Strong value ($1), moderate risk. Young F Rotation with inconsistent."
+    "value_score": 70,
+    "risk_score": 38,
+    "opportunity_index": 71,
+    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
   },
   {
     "player_id": "1642281",
-    "value_score": 74,
-    "risk_score": 60,
-    "opportunity_index": 62,
-    "notes": "Strong value ($1), high risk. Young G Bench with inconsistent."
-  },
-  {
-    "player_id": "1628369",
-    "value_score": 97,
-    "risk_score": 30,
-    "opportunity_index": 86,
-    "notes": "Elite value ($30), moderate risk. Prime F Starter with elite consistency."
-  },
-  {
-    "player_id": "1641789",
-    "value_score": 74,
-    "risk_score": 62,
-    "opportunity_index": 61,
-    "notes": "Strong value ($1), high risk. Young G Scrub with solid consistency."
-  },
-  {
-    "player_id": "1630288",
-    "value_score": 74,
-    "risk_score": 46,
-    "opportunity_index": 64,
-    "notes": "Strong value ($1), moderate risk. Prime G Rotation with inconsistent."
+    "value_score": 70,
+    "risk_score": 38,
+    "opportunity_index": 71,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
   },
   {
     "player_id": "201145",
-    "value_score": 74,
-    "risk_score": 42,
+    "value_score": 70,
+    "risk_score": 38,
     "opportunity_index": 66,
-    "notes": "Strong value ($1), moderate risk. Veteran F Bench with solid consistency."
+    "notes": "Strong value ($1), moderate risk. Veteran F Scrub with elite consistency."
   },
   {
     "player_id": "203924",
-    "value_score": 84,
+    "value_score": 82,
     "risk_score": 34,
-    "opportunity_index": 77,
+    "opportunity_index": 76,
     "notes": "Strong value ($10), moderate risk. Veteran F Starter with solid consistency."
   },
   {
+    "player_id": "1642847",
+    "value_score": 70,
+    "risk_score": 34,
+    "opportunity_index": 73,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with elite consistency."
+  },
+  {
     "player_id": "1630526",
-    "value_score": 74,
-    "risk_score": 41,
-    "opportunity_index": 66,
+    "value_score": 70,
+    "risk_score": 42,
+    "opportunity_index": 64,
     "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
   },
   {
     "player_id": "1631110",
-    "value_score": 74,
-    "risk_score": 34,
-    "opportunity_index": 75,
-    "notes": "Strong value ($1), moderate risk. Young F Rotation with elite consistency."
+    "value_score": 70,
+    "risk_score": 46,
+    "opportunity_index": 67,
+    "notes": "Strong value ($1), moderate risk. Young F Bench with elite consistency."
   },
   {
     "player_id": "1630579",
-    "value_score": 74,
-    "risk_score": 49,
-    "opportunity_index": 62,
-    "notes": "Strong value ($1), moderate risk. Young C Bench with solid consistency."
+    "value_score": 70,
+    "risk_score": 41,
+    "opportunity_index": 64,
+    "notes": "Strong value ($1), moderate risk. Prime C Rotation with solid consistency."
   },
   {
     "player_id": "1641724",
-    "value_score": 74,
-    "risk_score": 54,
-    "opportunity_index": 65,
-    "notes": "Strong value ($1), moderate risk. Young G Bench with solid consistency."
+    "value_score": 70,
+    "risk_score": 58,
+    "opportunity_index": 61,
+    "notes": "Strong value ($1), moderate risk. Young G Bench with inconsistent."
   },
   {
     "player_id": "1628975",
-    "value_score": 74,
-    "risk_score": 58,
-    "opportunity_index": 58,
+    "value_score": 70,
+    "risk_score": 55,
+    "opportunity_index": 57,
     "notes": "Strong value ($1), moderate risk. Prime G Bench with solid consistency."
   },
   {
     "player_id": "202710",
-    "value_score": 85,
-    "risk_score": 33,
-    "opportunity_index": 78,
-    "notes": "Strong value ($11), moderate risk. Veteran F Starter with solid consistency."
+    "value_score": 86,
+    "risk_score": 32,
+    "opportunity_index": 79,
+    "notes": "Strong value ($12), moderate risk. Veteran F Starter with elite consistency."
+  },
+  {
+    "player_id": "1642866",
+    "value_score": 70,
+    "risk_score": 43,
+    "opportunity_index": 68,
+    "notes": "Strong value ($1), moderate risk. Young F Scrub with solid consistency."
   },
   {
     "player_id": "1629111",
-    "value_score": 74,
-    "risk_score": 48,
-    "opportunity_index": 63,
-    "notes": "Strong value ($1), moderate risk. Prime C Bench with solid consistency."
+    "value_score": 70,
+    "risk_score": 37,
+    "opportunity_index": 66,
+    "notes": "Strong value ($1), moderate risk. Prime C Rotation with solid consistency."
   },
   {
     "player_id": "204060",
-    "value_score": 74,
-    "risk_score": 36,
-    "opportunity_index": 69,
-    "notes": "Strong value ($1), moderate risk. Veteran F Bench with elite consistency."
+    "value_score": 70,
+    "risk_score": 37,
+    "opportunity_index": 66,
+    "notes": "Strong value ($1), moderate risk. Veteran F Scrub with elite consistency."
   },
   {
     "player_id": "203954",
+    "value_score": 99,
+    "risk_score": 32,
+    "opportunity_index": 86,
+    "notes": "Elite value ($52), moderate risk. Veteran C Starter with elite consistency."
+  },
+  {
+    "player_id": "1628381",
+    "value_score": 70,
+    "risk_score": 33,
+    "opportunity_index": 68,
+    "notes": "Strong value ($1), moderate risk. Prime F Rotation with elite consistency."
+  },
+  {
+    "player_id": "1629723",
+    "value_score": 70,
+    "risk_score": 40,
+    "opportunity_index": 65,
+    "notes": "Strong value ($1), moderate risk. Prime G Rotation with solid consistency."
+  },
+  {
+    "player_id": "1641780",
+    "value_score": 70,
+    "risk_score": 65,
+    "opportunity_index": 57,
+    "notes": "Strong value ($1), high risk. Young F Scrub with solid consistency."
+  },
+  {
+    "player_id": "1642277",
+    "value_score": 70,
+    "risk_score": 40,
+    "opportunity_index": 70,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
+  },
+  {
+    "player_id": "1630548",
+    "value_score": 70,
+    "risk_score": 57,
+    "opportunity_index": 56,
+    "notes": "Strong value ($1), moderate risk. Young G Scrub with elite consistency."
+  },
+  {
+    "player_id": "202685",
+    "value_score": 70,
+    "risk_score": 36,
+    "opportunity_index": 67,
+    "notes": "Strong value ($1), moderate risk. Veteran C Bench with elite consistency."
+  },
+  {
+    "player_id": "1628371",
+    "value_score": 70,
+    "risk_score": 47,
+    "opportunity_index": 61,
+    "notes": "Strong value ($1), moderate risk. Prime F Bench with elite consistency."
+  },
+  {
+    "player_id": "1630228",
+    "value_score": 70,
+    "risk_score": 36,
+    "opportunity_index": 72,
+    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
+  },
+  {
+    "player_id": "1642367",
+    "value_score": 70,
+    "risk_score": 56,
+    "opportunity_index": 57,
+    "notes": "Strong value ($1), moderate risk. Young F Scrub with elite consistency."
+  },
+  {
+    "player_id": "203903",
+    "value_score": 70,
+    "risk_score": 37,
+    "opportunity_index": 66,
+    "notes": "Strong value ($1), moderate risk. Veteran G Rotation with elite consistency."
+  },
+  {
+    "player_id": "1630692",
+    "value_score": 70,
+    "risk_score": 37,
+    "opportunity_index": 66,
+    "notes": "Strong value ($1), moderate risk. Prime G Rotation with solid consistency."
+  },
+  {
+    "player_id": "1641722",
+    "value_score": 70,
+    "risk_score": 51,
+    "opportunity_index": 64,
+    "notes": "Strong value ($1), moderate risk. Young G Bench with elite consistency."
+  },
+  {
+    "player_id": "1629162",
+    "value_score": 70,
+    "risk_score": 30,
+    "opportunity_index": 70,
+    "notes": "Strong value ($1), moderate risk. Prime G Scrub with solid consistency."
+  },
+  {
+    "player_id": "1641757",
+    "value_score": 70,
+    "risk_score": 43,
+    "opportunity_index": 63,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
+  },
+  {
+    "player_id": "1629673",
+    "value_score": 71,
+    "risk_score": 37,
+    "opportunity_index": 67,
+    "notes": "Strong value ($2), moderate risk. Young G Rotation with solid consistency."
+  },
+  {
+    "player_id": "1641775",
+    "value_score": 70,
+    "risk_score": 45,
+    "opportunity_index": 67,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with inconsistent."
+  },
+  {
+    "player_id": "1630631",
+    "value_score": 70,
+    "risk_score": 37,
+    "opportunity_index": 66,
+    "notes": "Strong value ($1), moderate risk. Prime G Rotation with solid consistency."
+  },
+  {
+    "player_id": "1630581",
+    "value_score": 92,
+    "risk_score": 34,
+    "opportunity_index": 86,
+    "notes": "Elite value ($18), moderate risk. Young G Starter with solid consistency."
+  },
+  {
+    "player_id": "1630182",
+    "value_score": 70,
+    "risk_score": 39,
+    "opportunity_index": 65,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
+  },
+  {
+    "player_id": "1628404",
+    "value_score": 86,
+    "risk_score": 32,
+    "opportunity_index": 79,
+    "notes": "Strong value ($12), moderate risk. Prime G Starter with solid consistency."
+  },
+  {
+    "player_id": "1631169",
+    "value_score": 70,
+    "risk_score": 46,
+    "opportunity_index": 67,
+    "notes": "Strong value ($1), moderate risk. Young F Rotation with inconsistent."
+  },
+  {
+    "player_id": "1629006",
+    "value_score": 70,
+    "risk_score": 38,
+    "opportunity_index": 66,
+    "notes": "Strong value ($1), moderate risk. Prime G Rotation with solid consistency."
+  },
+  {
+    "player_id": "201950",
+    "value_score": 81,
+    "risk_score": 33,
+    "opportunity_index": 76,
+    "notes": "Strong value ($9), moderate risk. Veteran G Starter with solid consistency."
+  },
+  {
+    "player_id": "1630577",
+    "value_score": 70,
+    "risk_score": 38,
+    "opportunity_index": 66,
+    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
+  },
+  {
+    "player_id": "1641763",
+    "value_score": 70,
+    "risk_score": 48,
+    "opportunity_index": 66,
+    "notes": "Strong value ($1), moderate risk. Young F Bench with solid consistency."
+  },
+  {
+    "player_id": "1631124",
+    "value_score": 70,
+    "risk_score": 56,
+    "opportunity_index": 62,
+    "notes": "Strong value ($1), moderate risk. Young G Bench with solid consistency."
+  },
+  {
+    "player_id": "203944",
+    "value_score": 90,
+    "risk_score": 31,
+    "opportunity_index": 82,
+    "notes": "Elite value ($16), moderate risk. Veteran F Starter with elite consistency."
+  },
+  {
+    "player_id": "1630551",
+    "value_score": 70,
+    "risk_score": 40,
+    "opportunity_index": 65,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
+  },
+  {
+    "player_id": "1642348",
+    "value_score": 70,
+    "risk_score": 47,
+    "opportunity_index": 66,
+    "notes": "Strong value ($1), moderate risk. Young F Bench with elite consistency."
+  },
+  {
+    "player_id": "203994",
+    "value_score": 92,
+    "risk_score": 34,
+    "opportunity_index": 79,
+    "notes": "Elite value ($18), moderate risk. Veteran C Rotation with elite consistency."
+  },
+  {
+    "player_id": "1642354",
+    "value_score": 70,
+    "risk_score": 37,
+    "opportunity_index": 71,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
+  },
+  {
+    "player_id": "1642880",
+    "value_score": 70,
+    "risk_score": 56,
+    "opportunity_index": 57,
+    "notes": "Strong value ($1), moderate risk. Young G Bench with solid consistency."
+  },
+  {
+    "player_id": "1626157",
     "value_score": 99,
     "risk_score": 34,
     "opportunity_index": 85,
     "notes": "Elite value ($56), moderate risk. Prime C Starter with elite consistency."
   },
   {
-    "player_id": "1628381",
-    "value_score": 83,
-    "risk_score": 31,
-    "opportunity_index": 78,
-    "notes": "Strong value ($9), moderate risk. Prime F Starter with elite consistency."
+    "player_id": "1631255",
+    "value_score": 70,
+    "risk_score": 47,
+    "opportunity_index": 61,
+    "notes": "Strong value ($1), moderate risk. Young F Bench with elite consistency."
   },
   {
-    "player_id": "1629723",
-    "value_score": 74,
-    "risk_score": 55,
+    "player_id": "1642857",
+    "value_score": 70,
+    "risk_score": 39,
+    "opportunity_index": 70,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
+  },
+  {
+    "player_id": "202695",
+    "value_score": 94,
+    "risk_score": 31,
+    "opportunity_index": 84,
+    "notes": "Elite value ($21), moderate risk. Veteran F Starter with elite consistency."
+  },
+  {
+    "player_id": "1630811",
+    "value_score": 70,
+    "risk_score": 51,
     "opportunity_index": 59,
     "notes": "Strong value ($1), moderate risk. Prime G Bench with solid consistency."
   },
   {
-    "player_id": "1631098",
-    "value_score": 74,
-    "risk_score": 63,
-    "opportunity_index": 60,
-    "notes": "Strong value ($1), high risk. Young G Scrub with solid consistency."
-  },
-  {
-    "player_id": "1642277",
-    "value_score": 74,
-    "risk_score": 65,
-    "opportunity_index": 59,
-    "notes": "Strong value ($1), high risk. Young G Scrub with solid consistency."
-  },
-  {
-    "player_id": "1630548",
-    "value_score": 74,
-    "risk_score": 39,
-    "opportunity_index": 67,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
-  },
-  {
-    "player_id": "202685",
-    "value_score": 74,
-    "risk_score": 35,
-    "opportunity_index": 69,
-    "notes": "Strong value ($1), moderate risk. Veteran C Rotation with solid consistency."
-  },
-  {
-    "player_id": "1628371",
-    "value_score": 74,
-    "risk_score": 37,
-    "opportunity_index": 68,
-    "notes": "Strong value ($1), moderate risk. Prime F Rotation with solid consistency."
-  },
-  {
-    "player_id": "1630228",
-    "value_score": 74,
-    "risk_score": 36,
-    "opportunity_index": 74,
-    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
-  },
-  {
-    "player_id": "1642367",
-    "value_score": 74,
-    "risk_score": 40,
-    "opportunity_index": 72,
-    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
-  },
-  {
-    "player_id": "203903",
-    "value_score": 74,
-    "risk_score": 36,
-    "opportunity_index": 69,
-    "notes": "Strong value ($1), moderate risk. Veteran G Rotation with elite consistency."
-  },
-  {
-    "player_id": "1630692",
-    "value_score": 74,
-    "risk_score": 40,
-    "opportunity_index": 67,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
-  },
-  {
-    "player_id": "1641722",
-    "value_score": 74,
-    "risk_score": 39,
-    "opportunity_index": 72,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
-  },
-  {
-    "player_id": "1629162",
-    "value_score": 74,
-    "risk_score": 28,
-    "opportunity_index": 73,
-    "notes": "Strong value ($1), low risk. Prime G Scrub with elite consistency."
-  },
-  {
-    "player_id": "1641757",
-    "value_score": 74,
-    "risk_score": 54,
-    "opportunity_index": 60,
-    "notes": "Strong value ($1), moderate risk. Young G Bench with solid consistency."
-  },
-  {
-    "player_id": "1629673",
-    "value_score": 84,
-    "risk_score": 37,
-    "opportunity_index": 76,
-    "notes": "Strong value ($10), moderate risk. Young G Starter with solid consistency."
-  },
-  {
-    "player_id": "1641775",
-    "value_score": 74,
-    "risk_score": 53,
-    "opportunity_index": 65,
-    "notes": "Strong value ($1), moderate risk. Young G Bench with solid consistency."
-  },
-  {
-    "player_id": "1630631",
-    "value_score": 74,
-    "risk_score": 38,
-    "opportunity_index": 68,
-    "notes": "Strong value ($1), moderate risk. Prime G Rotation with solid consistency."
-  },
-  {
-    "player_id": "1630528",
-    "value_score": 74,
-    "risk_score": 77,
-    "opportunity_index": 53,
-    "notes": "Strong value ($1), high risk. Young G Scrub with inconsistent."
-  },
-  {
-    "player_id": "1630581",
-    "value_score": 92,
-    "risk_score": 37,
-    "opportunity_index": 85,
-    "notes": "Elite value ($17), moderate risk. Young G Starter with solid consistency."
-  },
-  {
-    "player_id": "1630182",
-    "value_score": 74,
-    "risk_score": 38,
-    "opportunity_index": 68,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
-  },
-  {
-    "player_id": "1628404",
-    "value_score": 87,
-    "risk_score": 32,
-    "opportunity_index": 80,
-    "notes": "Strong value ($12), moderate risk. Prime G Starter with elite consistency."
-  },
-  {
-    "player_id": "1631169",
-    "value_score": 74,
-    "risk_score": 55,
-    "opportunity_index": 64,
-    "notes": "Strong value ($1), moderate risk. Young F Scrub with solid consistency."
-  },
-  {
-    "player_id": "1629006",
-    "value_score": 74,
-    "risk_score": 42,
-    "opportunity_index": 66,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
-  },
-  {
-    "player_id": "201950",
-    "value_score": 83,
-    "risk_score": 33,
-    "opportunity_index": 77,
-    "notes": "Strong value ($9), moderate risk. Veteran G Starter with elite consistency."
-  },
-  {
-    "player_id": "1630577",
-    "value_score": 74,
-    "risk_score": 37,
-    "opportunity_index": 73,
-    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
-  },
-  {
-    "player_id": "1641763",
-    "value_score": 74,
-    "risk_score": 52,
-    "opportunity_index": 66,
-    "notes": "Strong value ($1), moderate risk. Young F Bench with solid consistency."
-  },
-  {
-    "player_id": "1631124",
-    "value_score": 74,
-    "risk_score": 39,
-    "opportunity_index": 72,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
-  },
-  {
-    "player_id": "203944",
-    "value_score": 89,
-    "risk_score": 30,
-    "opportunity_index": 82,
-    "notes": "Strong value ($15), moderate risk. Prime F Starter with elite consistency."
-  },
-  {
-    "player_id": "1630551",
-    "value_score": 74,
-    "risk_score": 42,
-    "opportunity_index": 71,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
-  },
-  {
-    "player_id": "1642348",
-    "value_score": 74,
-    "risk_score": 37,
-    "opportunity_index": 73,
-    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
-  },
-  {
-    "player_id": "1631303",
-    "value_score": 74,
-    "risk_score": 53,
-    "opportunity_index": 60,
-    "notes": "Strong value ($1), moderate risk. Young F Scrub with solid consistency."
-  },
-  {
-    "player_id": "203994",
-    "value_score": 83,
-    "risk_score": 35,
-    "opportunity_index": 74,
-    "notes": "Strong value ($9), moderate risk. Prime C Rotation with solid consistency."
-  },
-  {
-    "player_id": "1630231",
-    "value_score": 74,
-    "risk_score": 41,
-    "opportunity_index": 66,
-    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
-  },
-  {
-    "player_id": "1642354",
-    "value_score": 74,
-    "risk_score": 38,
-    "opportunity_index": 73,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
-  },
-  {
-    "player_id": "1630539",
-    "value_score": 74,
-    "risk_score": 56,
-    "opportunity_index": 59,
-    "notes": "Strong value ($1), moderate risk. Young C Bench with solid consistency."
-  },
-  {
-    "player_id": "1626157",
-    "value_score": 99,
-    "risk_score": 33,
-    "opportunity_index": 85,
-    "notes": "Elite value ($60), moderate risk. Prime C Starter with elite consistency."
-  },
-  {
-    "player_id": "1631255",
-    "value_score": 74,
-    "risk_score": 39,
-    "opportunity_index": 67,
-    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
-  },
-  {
-    "player_id": "202695",
-    "value_score": 92,
-    "risk_score": 30,
-    "opportunity_index": 83,
-    "notes": "Elite value ($17), moderate risk. Veteran F Starter with elite consistency."
-  },
-  {
-    "player_id": "1630811",
-    "value_score": 74,
-    "risk_score": 49,
-    "opportunity_index": 62,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with inconsistent."
-  },
-  {
     "player_id": "1631099",
-    "value_score": 83,
-    "risk_score": 32,
-    "opportunity_index": 78,
-    "notes": "Strong value ($9), moderate risk. Young F Starter with elite consistency."
-  },
-  {
-    "player_id": "1631232",
-    "value_score": 74,
-    "risk_score": 40,
-    "opportunity_index": 67,
-    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
+    "value_score": 84,
+    "risk_score": 34,
+    "opportunity_index": 77,
+    "notes": "Strong value ($11), moderate risk. Young F Starter with solid consistency."
   },
   {
     "player_id": "1642276",
-    "value_score": 74,
-    "risk_score": 38,
-    "opportunity_index": 73,
-    "notes": "Strong value ($1), moderate risk. Young C Rotation with solid consistency."
+    "value_score": 77,
+    "risk_score": 37,
+    "opportunity_index": 75,
+    "notes": "Strong value ($7), moderate risk. Young C Rotation with solid consistency."
   },
   {
     "player_id": "1629640",
-    "value_score": 74,
-    "risk_score": 36,
-    "opportunity_index": 69,
+    "value_score": 70,
+    "risk_score": 34,
+    "opportunity_index": 68,
     "notes": "Strong value ($1), moderate risk. Young F Rotation with elite consistency."
   },
   {
     "player_id": "203482",
-    "value_score": 74,
-    "risk_score": 35,
-    "opportunity_index": 69,
-    "notes": "Strong value ($1), moderate risk. Veteran F Rotation with elite consistency."
+    "value_score": 70,
+    "risk_score": 39,
+    "opportunity_index": 65,
+    "notes": "Strong value ($1), moderate risk. Veteran F Bench with elite consistency."
   },
   {
     "player_id": "1626162",
-    "value_score": 78,
-    "risk_score": 33,
-    "opportunity_index": 75,
-    "notes": "Strong value ($4), moderate risk. Prime F Starter with elite consistency."
+    "value_score": 76,
+    "risk_score": 34,
+    "opportunity_index": 73,
+    "notes": "Strong value ($6), moderate risk. Prime F Starter with solid consistency."
   },
   {
     "player_id": "1629026",
-    "value_score": 74,
-    "risk_score": 41,
-    "opportunity_index": 66,
-    "notes": "Strong value ($1), moderate risk. Prime G Rotation with solid consistency."
+    "value_score": 70,
+    "risk_score": 42,
+    "opportunity_index": 64,
+    "notes": "Strong value ($1), moderate risk. Veteran G Rotation with solid consistency."
   },
   {
     "player_id": "203484",
-    "value_score": 74,
+    "value_score": 70,
     "risk_score": 35,
-    "opportunity_index": 72,
-    "notes": "Strong value ($1), moderate risk. Veteran G Starter with solid consistency."
+    "opportunity_index": 67,
+    "notes": "Strong value ($1), moderate risk. Veteran G Rotation with elite consistency."
   },
   {
     "player_id": "1631165",
-    "value_score": 74,
-    "risk_score": 41,
-    "opportunity_index": 66,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
-  },
-  {
-    "player_id": "1630553",
-    "value_score": 74,
-    "risk_score": 38,
-    "opportunity_index": 73,
+    "value_score": 70,
+    "risk_score": 40,
+    "opportunity_index": 65,
     "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
   },
   {
     "player_id": "1642352",
-    "value_score": 74,
-    "risk_score": 69,
-    "opportunity_index": 57,
-    "notes": "Strong value ($1), high risk. Young F Scrub with inconsistent."
-  },
-  {
-    "player_id": "1630556",
-    "value_score": 74,
-    "risk_score": 49,
-    "opportunity_index": 62,
-    "notes": "Strong value ($1), moderate risk. Young F Rotation with inconsistent."
+    "value_score": 70,
+    "risk_score": 65,
+    "opportunity_index": 52,
+    "notes": "Strong value ($1), high risk. Young F Scrub with solid consistency."
   },
   {
     "player_id": "201142",
-    "value_score": 96,
-    "risk_score": 30,
-    "opportunity_index": 85,
-    "notes": "Elite value ($25), moderate risk. Veteran F Starter with elite consistency."
+    "value_score": 95,
+    "risk_score": 28,
+    "opportunity_index": 86,
+    "notes": "Elite value ($25), low risk. Veteran F Starter with elite consistency."
   },
   {
     "player_id": "1628989",
-    "value_score": 74,
-    "risk_score": 40,
-    "opportunity_index": 67,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
-  },
-  {
-    "player_id": "1628995",
-    "value_score": 74,
-    "risk_score": 63,
-    "opportunity_index": 55,
-    "notes": "Strong value ($1), high risk. Young F Scrub with solid consistency."
+    "value_score": 70,
+    "risk_score": 37,
+    "opportunity_index": 66,
+    "notes": "Strong value ($1), moderate risk. Prime G Rotation with solid consistency."
   },
   {
     "player_id": "201567",
-    "value_score": 74,
-    "risk_score": 41,
-    "opportunity_index": 66,
-    "notes": "Strong value ($1), moderate risk. Veteran F Bench with solid consistency."
+    "value_score": 70,
+    "risk_score": 32,
+    "opportunity_index": 69,
+    "notes": "Strong value ($1), moderate risk. Veteran F Rotation with solid consistency."
+  },
+  {
+    "player_id": "1641755",
+    "value_score": 70,
+    "risk_score": 57,
+    "opportunity_index": 56,
+    "notes": "Strong value ($1), moderate risk. Young G Bench with solid consistency."
   },
   {
     "player_id": "1629645",
-    "value_score": 74,
-    "risk_score": 40,
-    "opportunity_index": 67,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
+    "value_score": 81,
+    "risk_score": 35,
+    "opportunity_index": 75,
+    "notes": "Strong value ($9), moderate risk. Young G Starter with solid consistency."
   },
   {
     "player_id": "1626172",
-    "value_score": 74,
-    "risk_score": 37,
-    "opportunity_index": 68,
-    "notes": "Strong value ($1), moderate risk. Prime F Rotation with solid consistency."
+    "value_score": 70,
+    "risk_score": 47,
+    "opportunity_index": 61,
+    "notes": "Strong value ($1), moderate risk. Prime F Bench with elite consistency."
   },
   {
     "player_id": "1641718",
-    "value_score": 77,
-    "risk_score": 33,
-    "opportunity_index": 79,
-    "notes": "Strong value ($3), moderate risk. Young G Starter with solid consistency."
+    "value_score": 81,
+    "risk_score": 36,
+    "opportunity_index": 80,
+    "notes": "Strong value ($9), moderate risk. Young G Starter with solid consistency."
+  },
+  {
+    "player_id": "1642863",
+    "value_score": 70,
+    "risk_score": 41,
+    "opportunity_index": 69,
+    "notes": "Strong value ($1), moderate risk. Young C Scrub with solid consistency."
   },
   {
     "player_id": "203114",
-    "value_score": 76,
+    "value_score": 70,
     "risk_score": 34,
-    "opportunity_index": 71,
-    "notes": "Strong value ($2), moderate risk. Veteran F Rotation with elite consistency."
+    "opportunity_index": 68,
+    "notes": "Strong value ($1), moderate risk. Veteran F Rotation with elite consistency."
   },
   {
     "player_id": "202691",
-    "value_score": 76,
-    "risk_score": 36,
-    "opportunity_index": 70,
-    "notes": "Strong value ($2), moderate risk. Veteran G Rotation with elite consistency."
+    "value_score": 70,
+    "risk_score": 35,
+    "opportunity_index": 67,
+    "notes": "Strong value ($1), moderate risk. Veteran G Rotation with elite consistency."
   },
   {
     "player_id": "1641738",
-    "value_score": 74,
-    "risk_score": 62,
-    "opportunity_index": 56,
-    "notes": "Strong value ($1), high risk. Young F Scrub with solid consistency."
+    "value_score": 70,
+    "risk_score": 56,
+    "opportunity_index": 57,
+    "notes": "Strong value ($1), moderate risk. Young F Bench with solid consistency."
   },
   {
-    "player_id": "1641723",
-    "value_score": 74,
-    "risk_score": 47,
-    "opportunity_index": 68,
-    "notes": "Strong value ($1), moderate risk. Young G Bench with elite consistency."
+    "player_id": "1642920",
+    "value_score": 70,
+    "risk_score": 38,
+    "opportunity_index": 71,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
+  },
+  {
+    "player_id": "1642851",
+    "value_score": 86,
+    "risk_score": 33,
+    "opportunity_index": 84,
+    "notes": "Strong value ($12), moderate risk. Young G Starter with solid consistency."
   },
   {
     "player_id": "1627739",
-    "value_score": 74,
-    "risk_score": 37,
-    "opportunity_index": 68,
-    "notes": "Strong value ($1), moderate risk. Veteran G Rotation with solid consistency."
+    "value_score": 70,
+    "risk_score": 35,
+    "opportunity_index": 67,
+    "notes": "Strong value ($1), moderate risk. Veteran G Rotation with elite consistency."
   },
   {
     "player_id": "1631200",
-    "value_score": 74,
-    "risk_score": 40,
-    "opportunity_index": 67,
+    "value_score": 70,
+    "risk_score": 37,
+    "opportunity_index": 66,
     "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
   },
   {
     "player_id": "204001",
-    "value_score": 93,
-    "risk_score": 32,
-    "opportunity_index": 83,
-    "notes": "Elite value ($18), moderate risk. Prime F Starter with elite consistency."
+    "value_score": 82,
+    "risk_score": 34,
+    "opportunity_index": 74,
+    "notes": "Strong value ($10), moderate risk. Prime F Rotation with elite consistency."
   },
   {
     "player_id": "203937",
-    "value_score": 74,
+    "value_score": 70,
     "risk_score": 38,
-    "opportunity_index": 68,
+    "opportunity_index": 66,
     "notes": "Strong value ($1), moderate risk. Veteran F Rotation with solid consistency."
   },
   {
     "player_id": "1642271",
-    "value_score": 84,
-    "risk_score": 39,
+    "value_score": 82,
+    "risk_score": 37,
     "opportunity_index": 77,
     "notes": "Strong value ($10), moderate risk. Young C Rotation with solid consistency."
   },
   {
     "player_id": "1628398",
-    "value_score": 83,
-    "risk_score": 33,
-    "opportunity_index": 77,
-    "notes": "Strong value ($9), moderate risk. Prime F Starter with elite consistency."
-  },
-  {
-    "player_id": "200768",
-    "value_score": 74,
+    "value_score": 70,
     "risk_score": 36,
-    "opportunity_index": 69,
-    "notes": "Strong value ($1), moderate risk. Veteran G Rotation with solid consistency."
-  },
-  {
-    "player_id": "1630283",
-    "value_score": 74,
-    "risk_score": 51,
-    "opportunity_index": 61,
-    "notes": "Strong value ($1), moderate risk. Prime C Bench with solid consistency."
-  },
-  {
-    "player_id": "202681",
-    "value_score": 91,
-    "risk_score": 32,
-    "opportunity_index": 82,
-    "notes": "Elite value ($16), moderate risk. Veteran G Starter with elite consistency."
+    "opportunity_index": 67,
+    "notes": "Strong value ($1), moderate risk. Prime F Rotation with solid consistency."
   },
   {
     "player_id": "1642273",
-    "value_score": 74,
-    "risk_score": 35,
-    "opportunity_index": 74,
-    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
+    "value_score": 89,
+    "risk_score": 38,
+    "opportunity_index": 83,
+    "notes": "Strong value ($14), moderate risk. Young F Starter with solid consistency."
   },
   {
     "player_id": "1630163",
-    "value_score": 94,
-    "risk_score": 34,
-    "opportunity_index": 87,
-    "notes": "Elite value ($19), moderate risk. Young G Starter with solid consistency."
+    "value_score": 87,
+    "risk_score": 35,
+    "opportunity_index": 76,
+    "notes": "Strong value ($13), moderate risk. Young G Rotation with elite consistency."
   },
   {
-    "player_id": "1630205",
-    "value_score": 74,
-    "risk_score": 57,
-    "opportunity_index": 58,
-    "notes": "Strong value ($1), moderate risk. Prime F Bench with inconsistent."
+    "player_id": "1642950",
+    "value_score": 70,
+    "risk_score": 43,
+    "opportunity_index": 68,
+    "notes": "Strong value ($1), moderate risk. Young C Scrub with solid consistency."
   },
   {
     "player_id": "1629013",
-    "value_score": 74,
+    "value_score": 70,
     "risk_score": 40,
-    "opportunity_index": 67,
+    "opportunity_index": 65,
     "notes": "Strong value ($1), moderate risk. Prime G Rotation with solid consistency."
   },
   {
     "player_id": "1626204",
-    "value_score": 74,
-    "risk_score": 41,
-    "opportunity_index": 66,
-    "notes": "Strong value ($1), moderate risk. Veteran F Rotation with solid consistency."
+    "value_score": 70,
+    "risk_score": 46,
+    "opportunity_index": 62,
+    "notes": "Strong value ($1), moderate risk. Veteran F Bench with elite consistency."
   },
   {
     "player_id": "1628374",
-    "value_score": 88,
-    "risk_score": 31,
+    "value_score": 90,
+    "risk_score": 32,
     "opportunity_index": 81,
-    "notes": "Strong value ($14), moderate risk. Prime F Starter with elite consistency."
+    "notes": "Elite value ($16), moderate risk. Prime F Starter with solid consistency."
   },
   {
     "player_id": "2544",
-    "value_score": 98,
+    "value_score": 97,
     "risk_score": 38,
     "opportunity_index": 82,
-    "notes": "Elite value ($35), moderate risk. Veteran F Starter with elite consistency."
+    "notes": "Elite value ($33), moderate risk. Veteran F Starter with elite consistency."
   },
   {
     "player_id": "1631159",
-    "value_score": 74,
-    "risk_score": 58,
-    "opportunity_index": 63,
-    "notes": "Strong value ($1), moderate risk. Young F Scrub with elite consistency."
+    "value_score": 70,
+    "risk_score": 51,
+    "opportunity_index": 64,
+    "notes": "Strong value ($1), moderate risk. Young F Scrub with solid consistency."
   },
   {
-    "player_id": "1631311",
-    "value_score": 74,
-    "risk_score": 59,
-    "opportunity_index": 57,
-    "notes": "Strong value ($1), moderate risk. Young G Bench with inconsistent."
-  },
-  {
-    "player_id": "1641857",
-    "value_score": 74,
-    "risk_score": 30,
-    "opportunity_index": 72,
-    "notes": "Strong value ($1), moderate risk. Young C Scrub with elite consistency."
+    "player_id": "1642862",
+    "value_score": 70,
+    "risk_score": 48,
+    "opportunity_index": 66,
+    "notes": "Strong value ($1), moderate risk. Young F Bench with solid consistency."
   },
   {
     "player_id": "1630322",
-    "value_score": 74,
-    "risk_score": 55,
-    "opportunity_index": 59,
-    "notes": "Strong value ($1), moderate risk. Prime F Bench with solid consistency."
-  },
-  {
-    "player_id": "1629022",
-    "value_score": 74,
-    "risk_score": 42,
-    "opportunity_index": 66,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
+    "value_score": 70,
+    "risk_score": 49,
+    "opportunity_index": 60,
+    "notes": "Strong value ($1), moderate risk. Prime F Scrub with elite consistency."
   },
   {
     "player_id": "1628366",
-    "value_score": 74,
-    "risk_score": 34,
-    "opportunity_index": 70,
+    "value_score": 70,
+    "risk_score": 36,
+    "opportunity_index": 67,
     "notes": "Strong value ($1), moderate risk. Prime G Rotation with elite consistency."
   },
   {
     "player_id": "1629652",
-    "value_score": 80,
+    "value_score": 70,
     "risk_score": 36,
-    "opportunity_index": 74,
-    "notes": "Strong value ($7), moderate risk. Young G Starter with solid consistency."
+    "opportunity_index": 67,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with elite consistency."
   },
   {
     "player_id": "1629029",
-    "value_score": 99,
-    "risk_score": 31,
-    "opportunity_index": 86,
-    "notes": "Elite value ($43), moderate risk. Young F Starter with elite consistency."
+    "value_score": 98,
+    "risk_score": 32,
+    "opportunity_index": 85,
+    "notes": "Elite value ($45), moderate risk. Prime F Starter with solid consistency."
   },
   {
     "player_id": "1630568",
-    "value_score": 74,
-    "risk_score": 32,
-    "opportunity_index": 71,
-    "notes": "Strong value ($1), moderate risk. Young C Scrub with solid consistency."
+    "value_score": 70,
+    "risk_score": 39,
+    "opportunity_index": 65,
+    "notes": "Strong value ($1), moderate risk. Prime C Rotation with solid consistency."
   },
   {
     "player_id": "1628379",
-    "value_score": 74,
-    "risk_score": 39,
+    "value_score": 70,
+    "risk_score": 36,
     "opportunity_index": 67,
     "notes": "Strong value ($1), moderate risk. Prime G Rotation with solid consistency."
   },
   {
     "player_id": "1628436",
-    "value_score": 74,
-    "risk_score": 37,
+    "value_score": 70,
+    "risk_score": 34,
     "opportunity_index": 68,
-    "notes": "Strong value ($1), moderate risk. Prime C Rotation with solid consistency."
+    "notes": "Strong value ($1), moderate risk. Prime C Rotation with elite consistency."
   },
   {
     "player_id": "1631247",
-    "value_score": 74,
-    "risk_score": 66,
+    "value_score": 70,
+    "risk_score": 52,
     "opportunity_index": 59,
-    "notes": "Strong value ($1), high risk. Young F Scrub with solid consistency."
-  },
-  {
-    "player_id": "1631103",
-    "value_score": 74,
-    "risk_score": 48,
-    "opportunity_index": 68,
     "notes": "Strong value ($1), moderate risk. Young F Bench with solid consistency."
   },
   {
-    "player_id": "1627763",
-    "value_score": 74,
-    "risk_score": 37,
-    "opportunity_index": 68,
-    "notes": "Strong value ($1), moderate risk. Veteran G Rotation with elite consistency."
-  },
-  {
-    "player_id": "1627736",
-    "value_score": 74,
-    "risk_score": 37,
-    "opportunity_index": 68,
-    "notes": "Strong value ($1), moderate risk. Prime G Rotation with solid consistency."
+    "player_id": "1631103",
+    "value_score": 70,
+    "risk_score": 49,
+    "opportunity_index": 65,
+    "notes": "Strong value ($1), moderate risk. Young F Bench with solid consistency."
   },
   {
     "player_id": "1628370",
-    "value_score": 85,
-    "risk_score": 34,
-    "opportunity_index": 78,
-    "notes": "Strong value ($11), moderate risk. Prime G Starter with solid consistency."
-  },
-  {
-    "player_id": "1630699",
-    "value_score": 74,
-    "risk_score": 60,
-    "opportunity_index": 57,
-    "notes": "Strong value ($1), high risk. Young F Scrub with elite consistency."
-  },
-  {
-    "player_id": "1630542",
-    "value_score": 74,
-    "risk_score": 40,
-    "opportunity_index": 72,
-    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
+    "value_score": 71,
+    "risk_score": 38,
+    "opportunity_index": 66,
+    "notes": "Strong value ($2), moderate risk. Prime G Rotation with solid consistency."
   },
   {
     "player_id": "1631204",
-    "value_score": 74,
-    "risk_score": 52,
-    "opportunity_index": 61,
+    "value_score": 70,
+    "risk_score": 53,
+    "opportunity_index": 58,
     "notes": "Strong value ($1), moderate risk. Young G Bench with solid consistency."
   },
   {
     "player_id": "203935",
-    "value_score": 74,
-    "risk_score": 36,
-    "opportunity_index": 69,
-    "notes": "Strong value ($1), moderate risk. Veteran G Rotation with elite consistency."
+    "value_score": 70,
+    "risk_score": 34,
+    "opportunity_index": 70,
+    "notes": "Strong value ($1), moderate risk. Veteran G Starter with solid consistency."
   },
   {
     "player_id": "1631109",
-    "value_score": 74,
+    "value_score": 70,
     "risk_score": 34,
-    "opportunity_index": 75,
+    "opportunity_index": 68,
     "notes": "Strong value ($1), moderate risk. Young C Rotation with elite consistency."
   },
   {
-    "player_id": "1628365",
-    "value_score": 74,
-    "risk_score": 48,
-    "opportunity_index": 63,
-    "notes": "Strong value ($1), moderate risk. Young G Bench with elite consistency."
+    "player_id": "1628963",
+    "value_score": 70,
+    "risk_score": 38,
+    "opportunity_index": 66,
+    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
   },
   {
-    "player_id": "202693",
-    "value_score": 74,
-    "risk_score": 43,
+    "player_id": "203486",
+    "value_score": 70,
+    "risk_score": 39,
     "opportunity_index": 65,
     "notes": "Strong value ($1), moderate risk. Veteran F Bench with solid consistency."
   },
   {
-    "player_id": "1628963",
-    "value_score": 74,
-    "risk_score": 54,
-    "opportunity_index": 60,
-    "notes": "Strong value ($1), moderate risk. Young F Bench with solid consistency."
-  },
-  {
-    "player_id": "1630222",
-    "value_score": 74,
-    "risk_score": 59,
-    "opportunity_index": 57,
-    "notes": "Strong value ($1), moderate risk. Young G Scrub with elite consistency."
-  },
-  {
-    "player_id": "203486",
-    "value_score": 74,
-    "risk_score": 37,
-    "opportunity_index": 68,
-    "notes": "Strong value ($1), moderate risk. Veteran F Rotation with solid consistency."
-  },
-  {
     "player_id": "1641824",
-    "value_score": 74,
-    "risk_score": 40,
-    "opportunity_index": 72,
-    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
-  },
-  {
-    "player_id": "1629680",
-    "value_score": 74,
-    "risk_score": 37,
-    "opportunity_index": 68,
-    "notes": "Strong value ($1), moderate risk. Prime G Rotation with solid consistency."
-  },
-  {
-    "player_id": "1630346",
-    "value_score": 74,
-    "risk_score": 49,
-    "opportunity_index": 62,
-    "notes": "Strong value ($1), moderate risk. Prime F Scrub with elite consistency."
+    "value_score": 77,
+    "risk_score": 34,
+    "opportunity_index": 79,
+    "notes": "Strong value ($7), moderate risk. Young F Starter with solid consistency."
   },
   {
     "player_id": "1631108",
-    "value_score": 74,
-    "risk_score": 38,
-    "opportunity_index": 73,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
-  },
-  {
-    "player_id": "1629622",
-    "value_score": 74,
-    "risk_score": 34,
-    "opportunity_index": 70,
-    "notes": "Strong value ($1), moderate risk. Prime G Rotation with elite consistency."
+    "value_score": 70,
+    "risk_score": 35,
+    "opportunity_index": 75,
+    "notes": "Strong value ($1), moderate risk. Young G Starter with solid consistency."
   },
   {
     "player_id": "1628467",
-    "value_score": 74,
-    "risk_score": 37,
-    "opportunity_index": 68,
-    "notes": "Strong value ($1), moderate risk. Veteran F Rotation with solid consistency."
+    "value_score": 70,
+    "risk_score": 41,
+    "opportunity_index": 64,
+    "notes": "Strong value ($1), moderate risk. Veteran F Bench with solid consistency."
   },
   {
-    "player_id": "1641721",
-    "value_score": 74,
-    "risk_score": 56,
-    "opportunity_index": 64,
-    "notes": "Strong value ($1), moderate risk. Young F Bench with inconsistent."
+    "player_id": "1642875",
+    "value_score": 70,
+    "risk_score": 36,
+    "opportunity_index": 72,
+    "notes": "Strong value ($1), moderate risk. Young C Rotation with solid consistency."
+  },
+  {
+    "player_id": "1642877",
+    "value_score": 70,
+    "risk_score": 44,
+    "opportunity_index": 63,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with inconsistent."
   },
   {
     "player_id": "1630695",
-    "value_score": 74,
-    "risk_score": 38,
-    "opportunity_index": 68,
+    "value_score": 70,
+    "risk_score": 37,
+    "opportunity_index": 66,
     "notes": "Strong value ($1), moderate risk. Prime C Rotation with solid consistency."
   },
   {
     "player_id": "1629008",
-    "value_score": 87,
-    "risk_score": 32,
-    "opportunity_index": 80,
-    "notes": "Strong value ($12), moderate risk. Young F Starter with elite consistency."
+    "value_score": 91,
+    "risk_score": 33,
+    "opportunity_index": 81,
+    "notes": "Elite value ($17), moderate risk. Prime F Starter with solid consistency."
   },
   {
     "player_id": "1628969",
-    "value_score": 83,
-    "risk_score": 32,
-    "opportunity_index": 78,
-    "notes": "Strong value ($9), moderate risk. Prime G Starter with elite consistency."
+    "value_score": 87,
+    "risk_score": 33,
+    "opportunity_index": 79,
+    "notes": "Strong value ($13), moderate risk. Prime G Starter with elite consistency."
   },
   {
     "player_id": "201144",
-    "value_score": 74,
-    "risk_score": 35,
+    "value_score": 70,
+    "risk_score": 32,
     "opportunity_index": 69,
     "notes": "Strong value ($1), moderate risk. Veteran G Rotation with elite consistency."
   },
   {
     "player_id": "1628970",
-    "value_score": 92,
+    "value_score": 90,
     "risk_score": 33,
-    "opportunity_index": 82,
-    "notes": "Elite value ($17), moderate risk. Prime F Starter with solid consistency."
+    "opportunity_index": 81,
+    "notes": "Elite value ($16), moderate risk. Prime F Starter with solid consistency."
+  },
+  {
+    "player_id": "1642939",
+    "value_score": 70,
+    "risk_score": 54,
+    "opportunity_index": 63,
+    "notes": "Strong value ($1), moderate risk. Young G Bench with solid consistency."
   },
   {
     "player_id": "1630540",
-    "value_score": 74,
-    "risk_score": 40,
-    "opportunity_index": 67,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
+    "value_score": 70,
+    "risk_score": 34,
+    "opportunity_index": 70,
+    "notes": "Strong value ($1), moderate risk. Young G Starter with solid consistency."
   },
   {
     "player_id": "1629011",
-    "value_score": 74,
-    "risk_score": 35,
-    "opportunity_index": 69,
-    "notes": "Strong value ($1), moderate risk. Prime C Rotation with solid consistency."
+    "value_score": 70,
+    "risk_score": 34,
+    "opportunity_index": 68,
+    "notes": "Strong value ($1), moderate risk. Prime C Rotation with elite consistency."
   },
   {
-    "player_id": "1628964",
-    "value_score": 74,
-    "risk_score": 47,
-    "opportunity_index": 63,
-    "notes": "Strong value ($1), moderate risk. Young C Bench with elite consistency."
-  },
-  {
-    "player_id": "1628420",
-    "value_score": 74,
-    "risk_score": 51,
-    "opportunity_index": 61,
-    "notes": "Strong value ($1), moderate risk. Prime G Bench with elite consistency."
+    "player_id": "1642885",
+    "value_score": 70,
+    "risk_score": 62,
+    "opportunity_index": 59,
+    "notes": "Strong value ($1), high risk. Young F Scrub with solid consistency."
   },
   {
     "player_id": "1629021",
-    "value_score": 74,
-    "risk_score": 37,
-    "opportunity_index": 68,
-    "notes": "Strong value ($1), moderate risk. Prime F Rotation with solid consistency."
-  },
-  {
-    "player_id": "1629650",
-    "value_score": 74,
-    "risk_score": 60,
-    "opportunity_index": 57,
-    "notes": "Strong value ($1), high risk. Young C Bench with inconsistent."
+    "value_score": 70,
+    "risk_score": 46,
+    "opportunity_index": 62,
+    "notes": "Strong value ($1), moderate risk. Prime F Bench with elite consistency."
   },
   {
     "player_id": "1630541",
-    "value_score": 74,
+    "value_score": 70,
     "risk_score": 38,
-    "opportunity_index": 73,
+    "opportunity_index": 71,
     "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
   },
   {
     "player_id": "1631243",
-    "value_score": 74,
+    "value_score": 70,
     "risk_score": 40,
-    "opportunity_index": 72,
+    "opportunity_index": 70,
     "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
   },
   {
+    "player_id": "1630619",
+    "value_score": 70,
+    "risk_score": 53,
+    "opportunity_index": 63,
+    "notes": "Strong value ($1), moderate risk. Young C Bench with solid consistency."
+  },
+  {
     "player_id": "1631217",
-    "value_score": 74,
-    "risk_score": 42,
-    "opportunity_index": 71,
+    "value_score": 70,
+    "risk_score": 39,
+    "opportunity_index": 65,
     "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
   },
   {
@@ -2601,958 +2314,874 @@
     "value_score": 99,
     "risk_score": 34,
     "opportunity_index": 85,
-    "notes": "Elite value ($46), moderate risk. Prime C Starter with elite consistency."
+    "notes": "Elite value ($49), moderate risk. Prime C Starter with solid consistency."
+  },
+  {
+    "player_id": "1642066",
+    "value_score": 70,
+    "risk_score": 54,
+    "opportunity_index": 58,
+    "notes": "Strong value ($1), moderate risk. Young F Bench with solid consistency."
+  },
+  {
+    "player_id": "1641772",
+    "value_score": 70,
+    "risk_score": 38,
+    "opportunity_index": 66,
+    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
   },
   {
     "player_id": "1630230",
-    "value_score": 74,
-    "risk_score": 39,
-    "opportunity_index": 67,
-    "notes": "Strong value ($1), moderate risk. Prime F Rotation with solid consistency."
-  },
-  {
-    "player_id": "1631466",
-    "value_score": 74,
-    "risk_score": 66,
-    "opportunity_index": 54,
-    "notes": "Strong value ($1), high risk. Young G Scrub with solid consistency."
+    "value_score": 71,
+    "risk_score": 34,
+    "opportunity_index": 71,
+    "notes": "Strong value ($2), moderate risk. Prime F Starter with solid consistency."
   },
   {
     "player_id": "1629675",
     "value_score": 98,
     "risk_score": 34,
     "opportunity_index": 82,
-    "notes": "Elite value ($36), moderate risk. Young C Rotation with solid consistency."
+    "notes": "Elite value ($44), moderate risk. Young C Rotation with elite consistency."
   },
   {
     "player_id": "1629674",
-    "value_score": 74,
-    "risk_score": 49,
-    "opportunity_index": 62,
-    "notes": "Strong value ($1), moderate risk. Young C Bench with solid consistency."
+    "value_score": 70,
+    "risk_score": 36,
+    "opportunity_index": 67,
+    "notes": "Strong value ($1), moderate risk. Young C Rotation with solid consistency."
   },
   {
     "player_id": "1629651",
-    "value_score": 74,
+    "value_score": 87,
     "risk_score": 33,
-    "opportunity_index": 70,
-    "notes": "Strong value ($1), moderate risk. Young C Rotation with elite consistency."
+    "opportunity_index": 79,
+    "notes": "Strong value ($13), moderate risk. Young C Starter with solid consistency."
   },
   {
     "player_id": "1630208",
-    "value_score": 74,
-    "risk_score": 36,
-    "opportunity_index": 69,
-    "notes": "Strong value ($1), moderate risk. Prime C Rotation with solid consistency."
+    "value_score": 70,
+    "risk_score": 44,
+    "opportunity_index": 63,
+    "notes": "Strong value ($1), moderate risk. Prime C Bench with elite consistency."
   },
   {
     "player_id": "1641733",
-    "value_score": 74,
-    "risk_score": 40,
-    "opportunity_index": 72,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
+    "value_score": 70,
+    "risk_score": 52,
+    "opportunity_index": 64,
+    "notes": "Strong value ($1), moderate risk. Young G Bench with solid consistency."
   },
   {
     "player_id": "1629638",
-    "value_score": 74,
-    "risk_score": 37,
-    "opportunity_index": 68,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
+    "value_score": 81,
+    "risk_score": 32,
+    "opportunity_index": 77,
+    "notes": "Strong value ($9), moderate risk. Prime G Starter with solid consistency."
   },
   {
     "player_id": "201587",
-    "value_score": 74,
+    "value_score": 70,
     "risk_score": 36,
-    "opportunity_index": 69,
+    "opportunity_index": 67,
     "notes": "Strong value ($1), moderate risk. Veteran G Rotation with elite consistency."
+  },
+  {
+    "player_id": "1628502",
+    "value_score": 70,
+    "risk_score": 33,
+    "opportunity_index": 68,
+    "notes": "Strong value ($1), moderate risk. Veteran F Scrub with solid consistency."
   },
   {
     "player_id": "203999",
     "value_score": 100,
-    "risk_score": 33,
+    "risk_score": 32,
     "opportunity_index": 86,
-    "notes": "Elite value ($68), moderate risk. Prime C Starter with elite consistency."
+    "notes": "Elite value ($69), moderate risk. Veteran C Starter with elite consistency."
   },
   {
     "player_id": "1631107",
-    "value_score": 74,
-    "risk_score": 37,
-    "opportunity_index": 73,
+    "value_score": 70,
+    "risk_score": 41,
+    "opportunity_index": 69,
     "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
   },
   {
     "player_id": "202696",
     "value_score": 99,
-    "risk_score": 32,
-    "opportunity_index": 86,
-    "notes": "Elite value ($46), moderate risk. Veteran C Starter with elite consistency."
+    "risk_score": 35,
+    "opportunity_index": 84,
+    "notes": "Elite value ($48), moderate risk. Veteran C Starter with solid consistency."
+  },
+  {
+    "player_id": "1642363",
+    "value_score": 70,
+    "risk_score": 41,
+    "opportunity_index": 64,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
   },
   {
     "player_id": "1641730",
-    "value_score": 74,
-    "risk_score": 37,
-    "opportunity_index": 73,
-    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
+    "value_score": 71,
+    "risk_score": 35,
+    "opportunity_index": 75,
+    "notes": "Strong value ($2), moderate risk. Young F Starter with solid consistency."
+  },
+  {
+    "player_id": "1642869",
+    "value_score": 70,
+    "risk_score": 52,
+    "opportunity_index": 64,
+    "notes": "Strong value ($1), moderate risk. Young G Bench with solid consistency."
+  },
+  {
+    "player_id": "1642849",
+    "value_score": 70,
+    "risk_score": 38,
+    "opportunity_index": 71,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
   },
   {
     "player_id": "1626181",
     "value_score": 74,
-    "risk_score": 35,
-    "opportunity_index": 72,
-    "notes": "Strong value ($1), moderate risk. Veteran G Starter with solid consistency."
+    "risk_score": 32,
+    "opportunity_index": 73,
+    "notes": "Strong value ($5), moderate risk. Veteran G Starter with elite consistency."
   },
   {
     "player_id": "1628384",
     "value_score": 87,
-    "risk_score": 35,
-    "opportunity_index": 78,
-    "notes": "Strong value ($12), moderate risk. Prime F Starter with solid consistency."
-  },
-  {
-    "player_id": "1630167",
-    "value_score": 74,
-    "risk_score": 37,
-    "opportunity_index": 68,
-    "notes": "Strong value ($1), moderate risk. Prime F Rotation with solid consistency."
+    "risk_score": 34,
+    "opportunity_index": 79,
+    "notes": "Strong value ($13), moderate risk. Prime F Starter with solid consistency."
   },
   {
     "player_id": "1630534",
-    "value_score": 74,
-    "risk_score": 39,
-    "opportunity_index": 67,
+    "value_score": 70,
+    "risk_score": 37,
+    "opportunity_index": 66,
     "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
   },
   {
     "player_id": "1641765",
-    "value_score": 74,
-    "risk_score": 51,
-    "opportunity_index": 66,
-    "notes": "Strong value ($1), moderate risk. Young F Bench with solid consistency."
+    "value_score": 70,
+    "risk_score": 42,
+    "opportunity_index": 69,
+    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
   },
   {
     "player_id": "1630168",
-    "value_score": 74,
-    "risk_score": 37,
-    "opportunity_index": 68,
-    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
-  },
-  {
-    "player_id": "1631115",
-    "value_score": 74,
-    "risk_score": 42,
-    "opportunity_index": 66,
-    "notes": "Strong value ($1), moderate risk. Young C Rotation with inconsistent."
-  },
-  {
-    "player_id": "1631131",
-    "value_score": 74,
-    "risk_score": 39,
-    "opportunity_index": 67,
-    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
-  },
-  {
-    "player_id": "1642345",
-    "value_score": 74,
-    "risk_score": 39,
-    "opportunity_index": 72,
-    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
-  },
-  {
-    "player_id": "1631172",
-    "value_score": 74,
-    "risk_score": 51,
-    "opportunity_index": 66,
-    "notes": "Strong value ($1), moderate risk. Young F Bench with solid consistency."
-  },
-  {
-    "player_id": "1629023",
-    "value_score": 85,
-    "risk_score": 34,
+    "value_score": 84,
+    "risk_score": 32,
     "opportunity_index": 78,
     "notes": "Strong value ($11), moderate risk. Young F Starter with solid consistency."
   },
   {
-    "player_id": "1641790",
-    "value_score": 74,
-    "risk_score": 43,
+    "player_id": "1642345",
+    "value_score": 70,
+    "risk_score": 39,
     "opportunity_index": 70,
-    "notes": "Strong value ($1), moderate risk. Young C Scrub with solid consistency."
+    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
+  },
+  {
+    "player_id": "1631172",
+    "value_score": 70,
+    "risk_score": 54,
+    "opportunity_index": 63,
+    "notes": "Strong value ($1), moderate risk. Young F Bench with inconsistent."
+  },
+  {
+    "player_id": "1629023",
+    "value_score": 84,
+    "risk_score": 32,
+    "opportunity_index": 78,
+    "notes": "Strong value ($11), moderate risk. Prime F Starter with solid consistency."
+  },
+  {
+    "player_id": "1641790",
+    "value_score": 70,
+    "risk_score": 53,
+    "opportunity_index": 58,
+    "notes": "Strong value ($1), moderate risk. Young C Bench with solid consistency."
   },
   {
     "player_id": "1642359",
-    "value_score": 74,
-    "risk_score": 46,
-    "opportunity_index": 69,
-    "notes": "Strong value ($1), moderate risk. Young F Scrub with solid consistency."
+    "value_score": 70,
+    "risk_score": 57,
+    "opportunity_index": 61,
+    "notes": "Strong value ($1), moderate risk. Young F Scrub with elite consistency."
   },
   {
     "player_id": "1631094",
-    "value_score": 94,
+    "value_score": 92,
     "risk_score": 34,
-    "opportunity_index": 87,
+    "opportunity_index": 86,
     "notes": "Elite value ($19), moderate risk. Young F Starter with solid consistency."
   },
   {
     "player_id": "1627783",
-    "value_score": 87,
+    "value_score": 89,
     "risk_score": 32,
-    "opportunity_index": 80,
-    "notes": "Strong value ($12), moderate risk. Veteran F Starter with elite consistency."
+    "opportunity_index": 81,
+    "notes": "Strong value ($14), moderate risk. Veteran F Starter with elite consistency."
   },
   {
     "player_id": "1626192",
-    "value_score": 74,
-    "risk_score": 56,
-    "opportunity_index": 59,
-    "notes": "Strong value ($1), moderate risk. Veteran G Bench with solid consistency."
+    "value_score": 70,
+    "risk_score": 36,
+    "opportunity_index": 67,
+    "notes": "Strong value ($1), moderate risk. Veteran G Scrub with elite consistency."
   },
   {
     "player_id": "1630311",
-    "value_score": 74,
-    "risk_score": 40,
-    "opportunity_index": 67,
-    "notes": "Strong value ($1), moderate risk. Prime G Scrub with solid consistency."
-  },
-  {
-    "player_id": "1631116",
-    "value_score": 74,
-    "risk_score": 45,
-    "opportunity_index": 69,
-    "notes": "Strong value ($1), moderate risk. Young F Scrub with elite consistency."
+    "value_score": 70,
+    "risk_score": 48,
+    "opportunity_index": 61,
+    "notes": "Strong value ($1), moderate risk. Prime G Rotation with inconsistent."
   },
   {
     "player_id": "1630172",
-    "value_score": 74,
-    "risk_score": 36,
-    "opportunity_index": 74,
+    "value_score": 70,
+    "risk_score": 37,
+    "opportunity_index": 66,
     "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
   },
   {
-    "player_id": "201988",
-    "value_score": 74,
-    "risk_score": 40,
-    "opportunity_index": 67,
-    "notes": "Strong value ($1), moderate risk. Veteran G Bench with solid consistency."
-  },
-  {
     "player_id": "202331",
-    "value_score": 94,
-    "risk_score": 30,
+    "value_score": 92,
+    "risk_score": 29,
     "opportunity_index": 84,
-    "notes": "Elite value ($19), moderate risk. Veteran F Starter with elite consistency."
+    "notes": "Elite value ($18), low risk. Veteran F Starter with elite consistency."
   },
   {
     "player_id": "1630194",
-    "value_score": 74,
-    "risk_score": 49,
-    "opportunity_index": 62,
+    "value_score": 70,
+    "risk_score": 55,
+    "opportunity_index": 57,
     "notes": "Strong value ($1), moderate risk. Young F Bench with solid consistency."
   },
   {
     "player_id": "1630202",
-    "value_score": 76,
-    "risk_score": 36,
-    "opportunity_index": 72,
-    "notes": "Strong value ($2), moderate risk. Prime G Starter with solid consistency."
+    "value_score": 74,
+    "risk_score": 33,
+    "opportunity_index": 73,
+    "notes": "Strong value ($5), moderate risk. Prime G Starter with solid consistency."
   },
   {
     "player_id": "1641796",
-    "value_score": 74,
-    "risk_score": 56,
-    "opportunity_index": 59,
-    "notes": "Strong value ($1), moderate risk. Young G Bench with solid consistency."
+    "value_score": 70,
+    "risk_score": 42,
+    "opportunity_index": 64,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
   },
   {
     "player_id": "1631250",
-    "value_score": 74,
-    "risk_score": 61,
+    "value_score": 70,
+    "risk_score": 57,
     "opportunity_index": 56,
-    "notes": "Strong value ($1), high risk. Young F Bench with inconsistent."
+    "notes": "Strong value ($1), moderate risk. Young F Bench with inconsistent."
   },
   {
     "player_id": "1631212",
-    "value_score": 79,
-    "risk_score": 37,
-    "opportunity_index": 76,
-    "notes": "Strong value ($5), moderate risk. Young G Rotation with solid consistency."
+    "value_score": 89,
+    "risk_score": 38,
+    "opportunity_index": 83,
+    "notes": "Strong value ($15), moderate risk. Young G Starter with solid consistency."
   },
   {
     "player_id": "1630173",
-    "value_score": 74,
-    "risk_score": 40,
-    "opportunity_index": 67,
+    "value_score": 70,
+    "risk_score": 37,
+    "opportunity_index": 66,
     "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
   },
   {
     "player_id": "1629656",
-    "value_score": 74,
-    "risk_score": 44,
-    "opportunity_index": 65,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with inconsistent."
+    "value_score": 72,
+    "risk_score": 36,
+    "opportunity_index": 70,
+    "notes": "Strong value ($3), moderate risk. Young G Starter with solid consistency."
   },
   {
     "player_id": "1631245",
-    "value_score": 74,
-    "risk_score": 54,
-    "opportunity_index": 60,
-    "notes": "Strong value ($1), moderate risk. Young G Bench with solid consistency."
+    "value_score": 70,
+    "risk_score": 45,
+    "opportunity_index": 62,
+    "notes": "Strong value ($1), moderate risk. Prime G Rotation with inconsistent."
   },
   {
     "player_id": "1642366",
-    "value_score": 91,
+    "value_score": 89,
     "risk_score": 37,
-    "opportunity_index": 77,
-    "notes": "Elite value ($16), moderate risk. Young C Rotation with solid consistency."
+    "opportunity_index": 76,
+    "notes": "Strong value ($14), moderate risk. Young C Rotation with solid consistency."
   },
   {
     "player_id": "1629628",
-    "value_score": 88,
-    "risk_score": 32,
-    "opportunity_index": 80,
-    "notes": "Strong value ($14), moderate risk. Young F Starter with elite consistency."
+    "value_score": 87,
+    "risk_score": 28,
+    "opportunity_index": 82,
+    "notes": "Strong value ($13), low risk. Young F Starter with elite consistency."
+  },
+  {
+    "player_id": "1642853",
+    "value_score": 70,
+    "risk_score": 59,
+    "opportunity_index": 60,
+    "notes": "Strong value ($1), moderate risk. Young F Scrub with elite consistency."
   },
   {
     "player_id": "1642484",
-    "value_score": 74,
-    "risk_score": 72,
-    "opportunity_index": 51,
-    "notes": "Strong value ($1), high risk. Young G Scrub with inconsistent."
+    "value_score": 70,
+    "risk_score": 59,
+    "opportunity_index": 55,
+    "notes": "Strong value ($1), moderate risk. Young G Bench with inconsistent."
   },
   {
     "player_id": "1641712",
-    "value_score": 74,
+    "value_score": 70,
     "risk_score": 53,
-    "opportunity_index": 65,
-    "notes": "Strong value ($1), moderate risk. Young G Bench with solid consistency."
-  },
-  {
-    "player_id": "1641736",
-    "value_score": 74,
-    "risk_score": 56,
-    "opportunity_index": 64,
+    "opportunity_index": 63,
     "notes": "Strong value ($1), moderate risk. Young G Bench with solid consistency."
   },
   {
     "player_id": "1642263",
-    "value_score": 74,
-    "risk_score": 52,
-    "opportunity_index": 66,
-    "notes": "Strong value ($1), moderate risk. Young G Bench with solid consistency."
-  },
-  {
-    "player_id": "202704",
-    "value_score": 74,
-    "risk_score": 39,
-    "opportunity_index": 67,
-    "notes": "Strong value ($1), moderate risk. Veteran G Bench with elite consistency."
-  },
-  {
-    "player_id": "1626158",
-    "value_score": 74,
-    "risk_score": 39,
-    "opportunity_index": 67,
-    "notes": "Strong value ($1), moderate risk. Veteran F Rotation with solid consistency."
-  },
-  {
-    "player_id": "1641741",
-    "value_score": 74,
-    "risk_score": 44,
-    "opportunity_index": 70,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with inconsistent."
+    "value_score": 70,
+    "risk_score": 37,
+    "opportunity_index": 71,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
   },
   {
     "player_id": "1642265",
-    "value_score": 74,
-    "risk_score": 52,
-    "opportunity_index": 66,
+    "value_score": 70,
+    "risk_score": 50,
+    "opportunity_index": 65,
     "notes": "Strong value ($1), moderate risk. Young G Bench with solid consistency."
   },
   {
     "player_id": "1629057",
-    "value_score": 74,
-    "risk_score": 37,
+    "value_score": 70,
+    "risk_score": 33,
     "opportunity_index": 68,
-    "notes": "Strong value ($1), moderate risk. Prime C Rotation with solid consistency."
+    "notes": "Strong value ($1), moderate risk. Prime C Rotation with elite consistency."
+  },
+  {
+    "player_id": "1631199",
+    "value_score": 70,
+    "risk_score": 52,
+    "opportunity_index": 59,
+    "notes": "Strong value ($1), moderate risk. Young G Bench with solid consistency."
   },
   {
     "player_id": "1641842",
-    "value_score": 74,
-    "risk_score": 37,
-    "opportunity_index": 73,
-    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
+    "value_score": 70,
+    "risk_score": 35,
+    "opportunity_index": 72,
+    "notes": "Strong value ($1), moderate risk. Young F Rotation with elite consistency."
   },
   {
     "player_id": "1626220",
-    "value_score": 74,
-    "risk_score": 35,
-    "opportunity_index": 69,
-    "notes": "Strong value ($1), moderate risk. Veteran F Rotation with solid consistency."
+    "value_score": 81,
+    "risk_score": 31,
+    "opportunity_index": 77,
+    "notes": "Strong value ($9), moderate risk. Veteran F Starter with solid consistency."
   },
   {
     "player_id": "203497",
-    "value_score": 81,
-    "risk_score": 35,
+    "value_score": 79,
+    "risk_score": 33,
     "opportunity_index": 75,
-    "notes": "Strong value ($8), moderate risk. Veteran C Starter with solid consistency."
+    "notes": "Strong value ($8), moderate risk. Veteran C Starter with elite consistency."
   },
   {
     "player_id": "1629060",
-    "value_score": 74,
+    "value_score": 70,
     "risk_score": 32,
-    "opportunity_index": 73,
+    "opportunity_index": 71,
     "notes": "Strong value ($1), moderate risk. Prime F Starter with solid consistency."
   },
   {
     "player_id": "201566",
-    "value_score": 76,
-    "risk_score": 36,
-    "opportunity_index": 70,
-    "notes": "Strong value ($2), moderate risk. Veteran G Rotation with elite consistency."
+    "value_score": 79,
+    "risk_score": 35,
+    "opportunity_index": 74,
+    "notes": "Strong value ($8), moderate risk. Veteran G Starter with solid consistency."
   },
   {
     "player_id": "1642346",
-    "value_score": 74,
-    "risk_score": 39,
-    "opportunity_index": 72,
+    "value_score": 70,
+    "risk_score": 37,
+    "opportunity_index": 71,
     "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
   },
   {
+    "player_id": "1641750",
+    "value_score": 70,
+    "risk_score": 34,
+    "opportunity_index": 68,
+    "notes": "Strong value ($1), moderate risk. Young C Rotation with elite consistency."
+  },
+  {
+    "player_id": "1642948",
+    "value_score": 70,
+    "risk_score": 40,
+    "opportunity_index": 70,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
+  },
+  {
     "player_id": "1631157",
-    "value_score": 74,
-    "risk_score": 56,
-    "opportunity_index": 64,
-    "notes": "Strong value ($1), moderate risk. Young G Bench with solid consistency."
+    "value_score": 72,
+    "risk_score": 35,
+    "opportunity_index": 76,
+    "notes": "Strong value ($3), moderate risk. Young G Starter with solid consistency."
+  },
+  {
+    "player_id": "1630180",
+    "value_score": 73,
+    "risk_score": 35,
+    "opportunity_index": 71,
+    "notes": "Strong value ($4), moderate risk. Young G Starter with solid consistency."
   },
   {
     "player_id": "1630573",
-    "value_score": 74,
-    "risk_score": 37,
-    "opportunity_index": 68,
+    "value_score": 70,
+    "risk_score": 36,
+    "opportunity_index": 67,
     "notes": "Strong value ($1), moderate risk. Prime F Rotation with solid consistency."
   },
   {
     "player_id": "1630241",
-    "value_score": 74,
+    "value_score": 70,
     "risk_score": 38,
-    "opportunity_index": 68,
+    "opportunity_index": 66,
     "notes": "Strong value ($1), moderate risk. Prime G Rotation with solid consistency."
   },
   {
     "player_id": "1630572",
-    "value_score": 74,
-    "risk_score": 54,
-    "opportunity_index": 60,
-    "notes": "Strong value ($1), moderate risk. Young F Bench with solid consistency."
+    "value_score": 70,
+    "risk_score": 38,
+    "opportunity_index": 66,
+    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
   },
   {
     "player_id": "1630583",
-    "value_score": 76,
-    "risk_score": 37,
-    "opportunity_index": 69,
-    "notes": "Strong value ($2), moderate risk. Young F Rotation with solid consistency."
-  },
-  {
-    "player_id": "1630703",
-    "value_score": 74,
-    "risk_score": 35,
-    "opportunity_index": 74,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
+    "value_score": 73,
+    "risk_score": 36,
+    "opportunity_index": 68,
+    "notes": "Strong value ($4), moderate risk. Young F Rotation with elite consistency."
   },
   {
     "player_id": "1630567",
     "value_score": 96,
     "risk_score": 32,
-    "opportunity_index": 89,
-    "notes": "Elite value ($24), moderate risk. Young F Starter with elite consistency."
-  },
-  {
-    "player_id": "1630590",
-    "value_score": 74,
-    "risk_score": 38,
-    "opportunity_index": 68,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
-  },
-  {
-    "player_id": "203552",
-    "value_score": 74,
-    "risk_score": 41,
-    "opportunity_index": 66,
-    "notes": "Strong value ($1), moderate risk. Veteran G Rotation with solid consistency."
+    "opportunity_index": 84,
+    "notes": "Elite value ($26), moderate risk. Young F Starter with solid consistency."
   },
   {
     "player_id": "1631101",
-    "value_score": 79,
+    "value_score": 76,
     "risk_score": 34,
-    "opportunity_index": 80,
-    "notes": "Strong value ($5), moderate risk. Young G Starter with solid consistency."
+    "opportunity_index": 78,
+    "notes": "Strong value ($6), moderate risk. Young G Starter with solid consistency."
   },
   {
     "player_id": "1628983",
     "value_score": 96,
-    "risk_score": 30,
-    "opportunity_index": 85,
-    "notes": "Elite value ($27), moderate risk. Young G Starter with elite consistency."
+    "risk_score": 29,
+    "opportunity_index": 86,
+    "notes": "Elite value ($26), low risk. Prime G Starter with elite consistency."
   },
   {
-    "player_id": "1629003",
-    "value_score": 74,
-    "risk_score": 58,
-    "opportunity_index": 58,
-    "notes": "Strong value ($1), moderate risk. Prime G Bench with solid consistency."
+    "player_id": "1630536",
+    "value_score": 70,
+    "risk_score": 43,
+    "opportunity_index": 63,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
   },
   {
     "player_id": "1631321",
-    "value_score": 74,
-    "risk_score": 60,
-    "opportunity_index": 62,
-    "notes": "Strong value ($1), high risk. Young G Scrub with solid consistency."
+    "value_score": 70,
+    "risk_score": 40,
+    "opportunity_index": 70,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
   },
   {
     "player_id": "1631323",
-    "value_score": 74,
-    "risk_score": 35,
-    "opportunity_index": 69,
-    "notes": "Strong value ($1), moderate risk. Prime F Rotation with elite consistency."
+    "value_score": 70,
+    "risk_score": 38,
+    "opportunity_index": 66,
+    "notes": "Strong value ($1), moderate risk. Prime F Rotation with solid consistency."
   },
   {
-    "player_id": "203915",
-    "value_score": 74,
-    "risk_score": 39,
-    "opportunity_index": 67,
-    "notes": "Strong value ($1), moderate risk. Veteran G Rotation with solid consistency."
+    "player_id": "1642883",
+    "value_score": 70,
+    "risk_score": 36,
+    "opportunity_index": 72,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
   },
   {
     "player_id": "1642461",
-    "value_score": 74,
-    "risk_score": 65,
-    "opportunity_index": 59,
-    "notes": "Strong value ($1), high risk. Young F Scrub with solid consistency."
-  },
-  {
-    "player_id": "1630649",
-    "value_score": 74,
-    "risk_score": 56,
-    "opportunity_index": 59,
-    "notes": "Strong value ($1), moderate risk. Young G Scrub with elite consistency."
+    "value_score": 70,
+    "risk_score": 44,
+    "opportunity_index": 63,
+    "notes": "Strong value ($1), moderate risk. Young F Rotation with inconsistent."
   },
   {
     "player_id": "201939",
-    "value_score": 94,
-    "risk_score": 32,
-    "opportunity_index": 83,
+    "value_score": 92,
+    "risk_score": 33,
+    "opportunity_index": 82,
     "notes": "Elite value ($19), moderate risk. Veteran G Starter with elite consistency."
   },
   {
     "player_id": "1642264",
-    "value_score": 74,
-    "risk_score": 36,
-    "opportunity_index": 74,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
+    "value_score": 77,
+    "risk_score": 34,
+    "opportunity_index": 79,
+    "notes": "Strong value ($7), moderate risk. Young G Starter with solid consistency."
   },
   {
     "player_id": "203500",
-    "value_score": 74,
-    "risk_score": 38,
+    "value_score": 70,
+    "risk_score": 33,
     "opportunity_index": 68,
-    "notes": "Strong value ($1), moderate risk. Veteran C Bench with solid consistency."
+    "notes": "Strong value ($1), moderate risk. Veteran C Rotation with elite consistency."
   },
   {
     "player_id": "1629004",
-    "value_score": 74,
-    "risk_score": 40,
-    "opportunity_index": 67,
+    "value_score": 70,
+    "risk_score": 39,
+    "opportunity_index": 65,
     "notes": "Strong value ($1), moderate risk. Prime G Rotation with solid consistency."
   },
   {
     "player_id": "204456",
-    "value_score": 74,
+    "value_score": 70,
     "risk_score": 37,
-    "opportunity_index": 68,
+    "opportunity_index": 66,
     "notes": "Strong value ($1), moderate risk. Veteran G Rotation with elite consistency."
   },
   {
-    "player_id": "201959",
-    "value_score": 74,
-    "risk_score": 42,
-    "opportunity_index": 66,
-    "notes": "Strong value ($1), moderate risk. Veteran F Bench with solid consistency."
-  },
-  {
-    "player_id": "1629659",
-    "value_score": 74,
-    "risk_score": 53,
+    "player_id": "1643007",
+    "value_score": 70,
+    "risk_score": 59,
     "opportunity_index": 60,
-    "notes": "Strong value ($1), moderate risk. Young G Bench with solid consistency."
+    "notes": "Strong value ($1), moderate risk. Young G Bench with inconsistent."
   },
   {
     "player_id": "1631106",
-    "value_score": 74,
-    "risk_score": 36,
-    "opportunity_index": 74,
+    "value_score": 70,
+    "risk_score": 35,
+    "opportunity_index": 67,
+    "notes": "Strong value ($1), moderate risk. Young F Rotation with elite consistency."
+  },
+  {
+    "player_id": "1641707",
+    "value_score": 70,
+    "risk_score": 39,
+    "opportunity_index": 70,
     "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
   },
   {
-    "player_id": "1627752",
-    "value_score": 74,
-    "risk_score": 36,
-    "opportunity_index": 69,
-    "notes": "Strong value ($1), moderate risk. Veteran F Rotation with solid consistency."
-  },
-  {
     "player_id": "1629611",
-    "value_score": 74,
-    "risk_score": 37,
-    "opportunity_index": 68,
+    "value_score": 70,
+    "risk_score": 36,
+    "opportunity_index": 67,
     "notes": "Strong value ($1), moderate risk. Prime G Rotation with solid consistency."
   },
   {
     "player_id": "1630545",
-    "value_score": 74,
-    "risk_score": 60,
-    "opportunity_index": 57,
-    "notes": "Strong value ($1), high risk. Young G Bench with inconsistent."
+    "value_score": 70,
+    "risk_score": 54,
+    "opportunity_index": 58,
+    "notes": "Strong value ($1), moderate risk. Young G Bench with solid consistency."
   },
   {
-    "player_id": "1626179",
-    "value_score": 74,
-    "risk_score": 35,
+    "player_id": "203648",
+    "value_score": 70,
+    "risk_score": 31,
     "opportunity_index": 69,
-    "notes": "Strong value ($1), moderate risk. Veteran G Rotation with elite consistency."
+    "notes": "Strong value ($1), moderate risk. Veteran F Scrub with elite consistency."
   },
   {
     "player_id": "1628418",
-    "value_score": 74,
+    "value_score": 70,
     "risk_score": 47,
-    "opportunity_index": 63,
+    "opportunity_index": 61,
     "notes": "Strong value ($1), moderate risk. Prime C Bench with solid consistency."
   },
   {
     "player_id": "1642275",
-    "value_score": 74,
+    "value_score": 70,
     "risk_score": 37,
-    "opportunity_index": 73,
+    "opportunity_index": 71,
     "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
   },
   {
     "player_id": "203501",
-    "value_score": 74,
-    "risk_score": 36,
-    "opportunity_index": 69,
+    "value_score": 70,
+    "risk_score": 37,
+    "opportunity_index": 66,
     "notes": "Strong value ($1), moderate risk. Veteran G Rotation with elite consistency."
   },
   {
     "player_id": "202699",
-    "value_score": 80,
+    "value_score": 76,
     "risk_score": 30,
-    "opportunity_index": 77,
-    "notes": "Strong value ($7), moderate risk. Veteran F Starter with elite consistency."
+    "opportunity_index": 75,
+    "notes": "Strong value ($6), moderate risk. Veteran F Starter with elite consistency."
   },
   {
     "player_id": "1628396",
-    "value_score": 74,
-    "risk_score": 58,
-    "opportunity_index": 58,
-    "notes": "Strong value ($1), moderate risk. Prime C Bench with inconsistent."
-  },
-  {
-    "player_id": "1628470",
-    "value_score": 74,
-    "risk_score": 43,
-    "opportunity_index": 65,
-    "notes": "Strong value ($1), moderate risk. Veteran F Bench with solid consistency."
-  },
-  {
-    "player_id": "1641787",
-    "value_score": 74,
-    "risk_score": 36,
-    "opportunity_index": 69,
-    "notes": "Strong value ($1), moderate risk. Young F Rotation with elite consistency."
+    "value_score": 70,
+    "risk_score": 46,
+    "opportunity_index": 62,
+    "notes": "Strong value ($1), moderate risk. Prime C Bench with elite consistency."
   },
   {
     "player_id": "1641739",
-    "value_score": 77,
-    "risk_score": 34,
-    "opportunity_index": 74,
-    "notes": "Strong value ($3), moderate risk. Young F Starter with solid consistency."
+    "value_score": 79,
+    "risk_score": 32,
+    "opportunity_index": 76,
+    "notes": "Strong value ($8), moderate risk. Young F Starter with solid consistency."
   },
   {
     "player_id": "1629027",
-    "value_score": 92,
-    "risk_score": 32,
-    "opportunity_index": 82,
-    "notes": "Elite value ($17), moderate risk. Young G Starter with elite consistency."
+    "value_score": 76,
+    "risk_score": 35,
+    "opportunity_index": 70,
+    "notes": "Strong value ($6), moderate risk. Prime G Rotation with elite consistency."
   },
   {
     "player_id": "1631218",
-    "value_score": 74,
-    "risk_score": 41,
-    "opportunity_index": 66,
-    "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
+    "value_score": 70,
+    "risk_score": 50,
+    "opportunity_index": 60,
+    "notes": "Strong value ($1), moderate risk. Young F Bench with solid consistency."
+  },
+  {
+    "player_id": "1642848",
+    "value_score": 70,
+    "risk_score": 32,
+    "opportunity_index": 74,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with elite consistency."
   },
   {
     "player_id": "1630200",
-    "value_score": 74,
-    "risk_score": 38,
-    "opportunity_index": 68,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
+    "value_score": 70,
+    "risk_score": 36,
+    "opportunity_index": 67,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with elite consistency."
   },
   {
     "player_id": "1630544",
-    "value_score": 74,
+    "value_score": 70,
     "risk_score": 38,
-    "opportunity_index": 73,
+    "opportunity_index": 66,
     "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
   },
   {
     "player_id": "1630570",
-    "value_score": 74,
-    "risk_score": 37,
-    "opportunity_index": 68,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
-  },
-  {
-    "player_id": "1630243",
-    "value_score": 74,
-    "risk_score": 60,
-    "opportunity_index": 57,
-    "notes": "Strong value ($1), high risk. Prime G Bench with inconsistent."
-  },
-  {
-    "player_id": "1641725",
-    "value_score": 74,
-    "risk_score": 61,
-    "opportunity_index": 61,
-    "notes": "Strong value ($1), high risk. Young G Scrub with solid consistency."
-  },
-  {
-    "player_id": "1641998",
-    "value_score": 74,
+    "value_score": 70,
     "risk_score": 45,
-    "opportunity_index": 64,
-    "notes": "Strong value ($1), moderate risk. Young C Bench with elite consistency."
-  },
-  {
-    "player_id": "1626168",
-    "value_score": 74,
-    "risk_score": 38,
-    "opportunity_index": 68,
-    "notes": "Strong value ($1), moderate risk. Prime F Rotation with solid consistency."
+    "opportunity_index": 62,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with inconsistent."
   },
   {
     "player_id": "1630530",
-    "value_score": 92,
-    "risk_score": 33,
-    "opportunity_index": 82,
-    "notes": "Elite value ($17), moderate risk. Young F Starter with solid consistency."
-  },
-  {
-    "player_id": "202684",
-    "value_score": 74,
-    "risk_score": 43,
-    "opportunity_index": 65,
-    "notes": "Strong value ($1), moderate risk. Veteran C Bench with solid consistency."
+    "value_score": 94,
+    "risk_score": 32,
+    "opportunity_index": 83,
+    "notes": "Elite value ($20), moderate risk. Young F Starter with solid consistency."
   },
   {
     "player_id": "1641774",
-    "value_score": 74,
-    "risk_score": 51,
-    "opportunity_index": 66,
+    "value_score": 70,
+    "risk_score": 50,
+    "opportunity_index": 65,
     "notes": "Strong value ($1), moderate risk. Young F Bench with solid consistency."
   },
   {
     "player_id": "1641783",
-    "value_score": 74,
-    "risk_score": 39,
-    "opportunity_index": 72,
+    "value_score": 70,
+    "risk_score": 38,
+    "opportunity_index": 66,
     "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
   },
   {
-    "player_id": "1629660",
-    "value_score": 74,
-    "risk_score": 37,
-    "opportunity_index": 68,
-    "notes": "Strong value ($1), moderate risk. Prime G Rotation with solid consistency."
-  },
-  {
-    "player_id": "1631102",
-    "value_score": 74,
-    "risk_score": 67,
-    "opportunity_index": 58,
-    "notes": "Strong value ($1), high risk. Young G Scrub with inconsistent."
-  },
-  {
     "player_id": "1629639",
-    "value_score": 87,
-    "risk_score": 33,
+    "value_score": 84,
+    "risk_score": 30,
     "opportunity_index": 79,
-    "notes": "Strong value ($12), moderate risk. Young G Starter with elite consistency."
+    "notes": "Strong value ($11), moderate risk. Young G Starter with elite consistency."
   },
   {
     "player_id": "1642278",
-    "value_score": 74,
-    "risk_score": 65,
-    "opportunity_index": 54,
-    "notes": "Strong value ($1), high risk. Young G Scrub with solid consistency."
-  },
-  {
-    "player_id": "1641890",
-    "value_score": 74,
-    "risk_score": 67,
-    "opportunity_index": 58,
-    "notes": "Strong value ($1), high risk. Young F Scrub with inconsistent."
-  },
-  {
-    "player_id": "1630169",
-    "value_score": 95,
-    "risk_score": 34,
-    "opportunity_index": 83,
-    "notes": "Elite value ($23), moderate risk. Young G Starter with solid consistency."
+    "value_score": 70,
+    "risk_score": 57,
+    "opportunity_index": 56,
+    "notes": "Strong value ($1), moderate risk. Young G Bench with inconsistent."
   },
   {
     "player_id": "1631213",
-    "value_score": 74,
-    "risk_score": 37,
-    "opportunity_index": 68,
+    "value_score": 70,
+    "risk_score": 38,
+    "opportunity_index": 66,
     "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
   },
   {
     "player_id": "1630178",
-    "value_score": 92,
-    "risk_score": 34,
-    "opportunity_index": 81,
-    "notes": "Elite value ($17), moderate risk. Young G Starter with solid consistency."
+    "value_score": 94,
+    "risk_score": 33,
+    "opportunity_index": 83,
+    "notes": "Elite value ($23), moderate risk. Young G Starter with elite consistency."
+  },
+  {
+    "player_id": "1642878",
+    "value_score": 70,
+    "risk_score": 51,
+    "opportunity_index": 64,
+    "notes": "Strong value ($1), moderate risk. Young G Bench with solid consistency."
   },
   {
     "player_id": "1626145",
-    "value_score": 74,
+    "value_score": 70,
     "risk_score": 35,
-    "opportunity_index": 69,
+    "opportunity_index": 67,
     "notes": "Strong value ($1), moderate risk. Prime G Rotation with elite consistency."
   },
   {
-    "player_id": "203995",
-    "value_score": 74,
-    "risk_score": 42,
-    "opportunity_index": 66,
-    "notes": "Strong value ($1), moderate risk. Veteran G Rotation with solid consistency."
+    "player_id": "1642845",
+    "value_score": 87,
+    "risk_score": 33,
+    "opportunity_index": 84,
+    "notes": "Strong value ($13), moderate risk. Young G Starter with solid consistency."
   },
   {
     "player_id": "1641705",
-    "value_score": 98,
-    "risk_score": 31,
-    "opportunity_index": 91,
-    "notes": "Elite value ($41), moderate risk. Young F Starter with elite consistency."
+    "value_score": 97,
+    "risk_score": 33,
+    "opportunity_index": 89,
+    "notes": "Elite value ($37), moderate risk. Young F Starter with solid consistency."
   },
   {
     "player_id": "1631246",
-    "value_score": 74,
-    "risk_score": 35,
-    "opportunity_index": 69,
-    "notes": "Strong value ($1), moderate risk. Young G Rotation with elite consistency."
-  },
-  {
-    "player_id": "1628427",
-    "value_score": 74,
-    "risk_score": 55,
-    "opportunity_index": 59,
-    "notes": "Strong value ($1), moderate risk. Prime F Bench with inconsistent."
+    "value_score": 70,
+    "risk_score": 39,
+    "opportunity_index": 65,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
   },
   {
     "player_id": "1630249",
-    "value_score": 74,
-    "risk_score": 42,
+    "value_score": 70,
+    "risk_score": 38,
     "opportunity_index": 66,
     "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
   },
   {
-    "player_id": "1631117",
-    "value_score": 83,
+    "player_id": "1642383",
+    "value_score": 70,
     "risk_score": 37,
-    "opportunity_index": 80,
-    "notes": "Strong value ($9), moderate risk. Young C Starter with solid consistency."
+    "opportunity_index": 71,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
   },
   {
     "player_id": "1628976",
-    "value_score": 78,
-    "risk_score": 35,
-    "opportunity_index": 71,
-    "notes": "Strong value ($4), moderate risk. Young C Rotation with elite consistency."
+    "value_score": 94,
+    "risk_score": 32,
+    "opportunity_index": 83,
+    "notes": "Elite value ($20), moderate risk. Young C Starter with elite consistency."
   },
   {
-    "player_id": "1631111",
-    "value_score": 74,
-    "risk_score": 58,
-    "opportunity_index": 63,
-    "notes": "Strong value ($1), moderate risk. Young G Bench with solid consistency."
+    "player_id": "1642954",
+    "value_score": 70,
+    "risk_score": 41,
+    "opportunity_index": 69,
+    "notes": "Strong value ($1), moderate risk. Young G Rotation with solid consistency."
   },
   {
-    "player_id": "1630214",
-    "value_score": 74,
-    "risk_score": 48,
-    "opportunity_index": 63,
-    "notes": "Strong value ($1), moderate risk. Young F Scrub with elite consistency."
-  },
-  {
-    "player_id": "1642530",
-    "value_score": 74,
-    "risk_score": 70,
-    "opportunity_index": 57,
-    "notes": "Strong value ($1), high risk. Young G Scrub with inconsistent."
-  },
-  {
-    "player_id": "1642274",
-    "value_score": 74,
-    "risk_score": 34,
-    "opportunity_index": 75,
-    "notes": "Strong value ($1), moderate risk. Young C Rotation with elite consistency."
-  },
-  {
-    "player_id": "1642258",
-    "value_score": 74,
-    "risk_score": 38,
-    "opportunity_index": 73,
+    "player_id": "1642860",
+    "value_score": 70,
+    "risk_score": 40,
+    "opportunity_index": 70,
     "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
   },
   {
+    "player_id": "1630214",
+    "value_score": 70,
+    "risk_score": 55,
+    "opportunity_index": 57,
+    "notes": "Strong value ($1), moderate risk. Prime F Scrub with solid consistency."
+  },
+  {
+    "player_id": "1642905",
+    "value_score": 70,
+    "risk_score": 34,
+    "opportunity_index": 73,
+    "notes": "Strong value ($1), moderate risk. Young C Scrub with solid consistency."
+  },
+  {
+    "player_id": "1642949",
+    "value_score": 70,
+    "risk_score": 54,
+    "opportunity_index": 63,
+    "notes": "Strong value ($1), moderate risk. Young C Bench with solid consistency."
+  },
+  {
+    "player_id": "1642274",
+    "value_score": 70,
+    "risk_score": 35,
+    "opportunity_index": 72,
+    "notes": "Strong value ($1), moderate risk. Young C Rotation with solid consistency."
+  },
+  {
+    "player_id": "1642258",
+    "value_score": 70,
+    "risk_score": 35,
+    "opportunity_index": 72,
+    "notes": "Strong value ($1), moderate risk. Young F Rotation with elite consistency."
+  },
+  {
     "player_id": "1628380",
-    "value_score": 74,
-    "risk_score": 40,
-    "opportunity_index": 67,
-    "notes": "Strong value ($1), moderate risk. Prime F Rotation with solid consistency."
+    "value_score": 70,
+    "risk_score": 34,
+    "opportunity_index": 68,
+    "notes": "Strong value ($1), moderate risk. Prime F Rotation with elite consistency."
   },
   {
     "player_id": "1641744",
-    "value_score": 74,
-    "risk_score": 35,
-    "opportunity_index": 74,
+    "value_score": 70,
+    "risk_score": 38,
+    "opportunity_index": 71,
     "notes": "Strong value ($1), moderate risk. Young C Rotation with solid consistency."
   },
   {
     "player_id": "203897",
-    "value_score": 83,
-    "risk_score": 31,
-    "opportunity_index": 78,
-    "notes": "Strong value ($9), moderate risk. Prime G Starter with elite consistency."
+    "value_score": 77,
+    "risk_score": 33,
+    "opportunity_index": 74,
+    "notes": "Strong value ($7), moderate risk. Prime G Starter with solid consistency."
   },
   {
     "player_id": "1630192",
-    "value_score": 74,
-    "risk_score": 56,
-    "opportunity_index": 59,
-    "notes": "Strong value ($1), moderate risk. Young F Bench with solid consistency."
+    "value_score": 70,
+    "risk_score": 57,
+    "opportunity_index": 56,
+    "notes": "Strong value ($1), moderate risk. Young F Bench with inconsistent."
   },
   {
     "player_id": "1630533",
-    "value_score": 74,
+    "value_score": 70,
     "risk_score": 37,
-    "opportunity_index": 73,
+    "opportunity_index": 66,
     "notes": "Strong value ($1), moderate risk. Young F Rotation with solid consistency."
   },
   {
     "player_id": "1629627",
-    "value_score": 88,
+    "value_score": 84,
     "risk_score": 31,
-    "opportunity_index": 81,
-    "notes": "Strong value ($14), moderate risk. Young F Starter with elite consistency."
+    "opportunity_index": 79,
+    "notes": "Strong value ($11), moderate risk. Young F Starter with elite consistency."
   }
 ]
