@@ -43,20 +43,16 @@ jobs:
           mkdir -p data/orders_enhanced
           mkdir -p data/reports
 
-      - name: Check DBB2 API URL
-        id: check-dbb2
+      - name: Require DBB2 API URL
         env:
           DBB2_API_URL: ${{ secrets.DBB2_API_URL }}
         run: |
           if [ -z "$DBB2_API_URL" ]; then
-            echo "DBB2_API_URL secret not set, skipping exchange run"
-            echo "can_run=false" >> $GITHUB_OUTPUT
-          else
-            echo "can_run=true" >> $GITHUB_OUTPUT
+            echo "::error::DBB2_API_URL secret not set; failing run so this is visible immediately."
+            exit 1
           fi
 
       - name: Run exchange engine
-        if: steps.check-dbb2.outputs.can_run == 'true'
         env:
           DBB2_API_URL: ${{ secrets.DBB2_API_URL }}
           NOVIG_ODDS_URL: ${{ secrets.NOVIG_ODDS_URL }}
@@ -65,7 +61,6 @@ jobs:
           python -m src.bet_placer
 
       - name: Copy latest DBB2 risk snapshot (optional)
-        if: steps.check-dbb2.outputs.can_run == 'true'
         run: |
           DATE=$(date +%Y-%m-%d)
           if [ -f ../dbb2-engine/output/risk.json ]; then
@@ -76,7 +71,6 @@ jobs:
           fi
 
       - name: Commit exchange outputs
-        if: steps.check-dbb2.outputs.can_run == 'true'
         run: |
           cd ..
           git config user.name "github-actions[bot]"
