@@ -178,12 +178,14 @@ jobs:
           mkdir -p free-site/public
           cp reports/web/index.html free-site/public/historical-bets.html
           cp reports/web/today.html free-site/public/todays-bets.html
+          cp reports/web/history_data.json free-site/public/history_data.json
+          cp reports/web/today_data.json free-site/public/today_data.json
 
       - name: Commit generated bet pages
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add reports/web/ free-site/public/historical-bets.html free-site/public/todays-bets.html || true
+          git add reports/web/ free-site/public/historical-bets.html free-site/public/todays-bets.html free-site/public/history_data.json free-site/public/today_data.json || true
           git diff --cached --quiet && echo "No report page changes to commit" && exit 0
           DATE=$(date +%Y-%m-%d)
           git commit -m "reports: ${DATE} sync historical + today's bet pages to free-site"
