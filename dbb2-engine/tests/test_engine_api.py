@@ -15,6 +15,7 @@ from engine.api import (
     _get_std_dev,
     _get_confidence,
     _build_player_response,
+    _safe_cosine_similarity,
     STAT_MAP,
     VARIANCE_KEY_MAP,
 )
@@ -222,6 +223,16 @@ class TestStatMapping:
         assert len(VARIANCE_KEY_MAP) == 6
 
 
+class TestSimilarityMath:
+    def test_cosine_similarity_identical(self):
+        sim = _safe_cosine_similarity([1.0, 2.0, 3.0], [1.0, 2.0, 3.0])
+        assert sim == pytest.approx(1.0)
+
+    def test_cosine_similarity_zero_norm(self):
+        sim = _safe_cosine_similarity([0.0, 0.0], [1.0, 2.0])
+        assert sim == 0.0
+
+
 def _mock_pipeline():
     ctx1 = _make_context(player_id="P1", player_name="Alpha Guard", team="AAA", raw_position="G", age=26)
     ctx2 = _make_context(player_id="P2", player_name="Beta Big", team="BBB", raw_position="C", age=30)
@@ -310,6 +321,42 @@ class TestApiEndpoints:
         assert body["count"] == 1
         assert len(body["candidates"]) == 1
         assert "stream_score" in body["candidates"][0]
+
+    def test_similar_players_by_id(self, monkeypatch):
+        monkeypatch.setattr("engine.api._load_pipeline", _mock_pipeline)
+        client = TestClient(app)
+        res = client.get("/tools/similar-players?player_id=P1&top_n=1")
+        assert res.status_code == 200
+        body = res.json()
+        assert body["target"]["player_id"] == "P1"
+        assert body["count"] == 1
+        assert len(body["matches"]) == 1
+        assert body["matches"][0]["player_id"] == "P2"
+        assert "similarity" in body["matches"][0]
+
+    def test_similar_players_by_name(self, monkeypatch):
+        monkeypatch.setattr("engine.api._load_pipeline", _mock_pipeline)
+        client = TestClient(app)
+        res = client.get("/tools/similar-players?player_name=Alpha%20Guard")
+        assert res.status_code == 200
+        body = res.json()
+        assert body["target"]["name"] == "Alpha Guard"
+        assert body["count"] == 1
+
+    def test_similar_players_requires_single_selector(self, monkeypatch):
+        monkeypatch.setattr("engine.api._load_pipeline", _mock_pipeline)
+        client = TestClient(app)
+        res = client.get("/tools/similar-players")
+        assert res.status_code == 400
+
+        res2 = client.get("/tools/similar-players?player_id=P1&player_name=Alpha%20Guard")
+        assert res2.status_code == 400
+
+    def test_similar_players_not_found(self, monkeypatch):
+        monkeypatch.setattr("engine.api._load_pipeline", _mock_pipeline)
+        client = TestClient(app)
+        res = client.get("/tools/similar-players?player_id=NOPE")
+        assert res.status_code == 404
 
     def test_trade_analyze(self, monkeypatch):
         monkeypatch.setattr("engine.api._load_pipeline", _mock_pipeline)
