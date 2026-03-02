@@ -5,6 +5,7 @@ Primary endpoints:
 - GET /projections/today
 - GET /api/internal/baseline-projections (API-key protected)
 - POST /tools/lineup/optimize
+- GET /tools/similar-players
 - GET /tools/streaming-candidates
 - POST /tools/trade/analyze
 """
@@ -130,6 +131,39 @@ def _build_player_response(
     return result
 
 
+def _safe_cosine_similarity(a: List[float], b: List[float]) -> float:
+    """Cosine similarity with safe zero-norm handling."""
+    dot = sum(x * y for x, y in zip(a, b))
+    norm_a = math.sqrt(sum(x * x for x in a))
+    norm_b = math.sqrt(sum(y * y for y in b))
+    if norm_a == 0 or norm_b == 0:
+        return 0.0
+    return dot / (norm_a * norm_b)
+
+
+def _build_similarity_vector(ctx: PlayerContext, proj: SeasonProjection) -> List[float]:
+    """
+    Build a compact feature vector for player similarity.
+
+    Uses per-game production, efficiency, role, and reliability signals.
+    """
+    return [
+        float(proj.points),
+        float(proj.rebounds),
+        float(proj.assists),
+        float(proj.steals),
+        float(proj.blocks),
+        float(proj.three_pm),
+        float(proj.turnovers),
+        float(proj.minutes),
+        float(proj.fg_pct),
+        float(proj.ft_pct),
+        float(proj.usage_rate),
+        float(proj.consistency),
+        float(ctx.age),
+    ]
+
+
 @app.get("/projections/today")
 def get_today_projections():
     """Return all player projections in the betting engine contract shape."""
@@ -241,6 +275,93 @@ def optimize_lineup(request: LineupOptimizeRequest):
         "lineup": lineup,
         "bench": bench,
         "projected_total_fantasy_points": round(sum(p["fantasy_points"] for p in lineup), 1),
+    }
+
+
+@app.get("/tools/similar-players")
+def get_similar_players(
+    player_id: str = Query(default="", description="Player ID to compare against"),
+    player_name: str = Query(default="", description="Player name to compare against"),
+    top_n: int = Query(default=10, ge=1, le=50),
+):
+    """
+    Return players most similar to a target player based on projection profile.
+
+    Provide exactly one of `player_id` or `player_name`.
+    """
+    target_id = player_id.strip()
+    target_name = player_name.strip()
+    if bool(target_id) == bool(target_name):
+        raise HTTPException(
+            status_code=400,
+            detail="Provide exactly one of player_id or player_name",
+        )
+
+    contexts, projections, auction_values = _load_pipeline()
+    ctx_map = {c.player_id: c for c in contexts}
+    proj_map = {p.player_id: p for p in projections}
+    auction_map = {a.player_id: a for a in auction_values}
+
+    if target_id:
+        if target_id not in ctx_map or target_id not in proj_map:
+            raise HTTPException(status_code=404, detail="Target player not found")
+    else:
+        name_to_ids = []
+        for c in contexts:
+            if c.player_id not in proj_map:
+                continue
+            if c.player_name.lower() == target_name.lower():
+                name_to_ids = [c.player_id]
+                break
+            if target_name.lower() in c.player_name.lower():
+                name_to_ids.append(c.player_id)
+        if not name_to_ids:
+            raise HTTPException(status_code=404, detail="Target player not found")
+        if len(name_to_ids) > 1:
+            raise HTTPException(status_code=400, detail="player_name matched multiple players; use player_id")
+        target_id = name_to_ids[0]
+
+    target_ctx = ctx_map[target_id]
+    target_proj = proj_map[target_id]
+    target_vec = _build_similarity_vector(target_ctx, target_proj)
+
+    rows = []
+    for c in contexts:
+        pid = c.player_id
+        if pid == target_id:
+            continue
+        p = proj_map.get(pid)
+        if p is None:
+            continue
+        sim = _safe_cosine_similarity(target_vec, _build_similarity_vector(c, p))
+        auction = auction_map.get(pid)
+        rows.append(
+            {
+                "player_id": pid,
+                "name": c.player_name,
+                "team": c.team,
+                "position": c.raw_position,
+                "similarity": round(sim, 4),
+                "fantasy_points": _to_fantasy_points(p),
+                "auction_dollar": auction.dollar_value if auction else 1,
+            }
+        )
+
+    rows.sort(key=lambda x: (x["similarity"], x["fantasy_points"]), reverse=True)
+    top = rows[:top_n]
+    target_auction = auction_map.get(target_id)
+
+    return {
+        "target": {
+            "player_id": target_id,
+            "name": target_ctx.player_name,
+            "team": target_ctx.team,
+            "position": target_ctx.raw_position,
+            "fantasy_points": _to_fantasy_points(target_proj),
+            "auction_dollar": target_auction.dollar_value if target_auction else 1,
+        },
+        "matches": top,
+        "count": len(top),
     }
 
 

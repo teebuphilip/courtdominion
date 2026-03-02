@@ -59,6 +59,15 @@ Implications:
 - Subsequent requests are fast (same in-memory snapshot)
 - Data refresh requires process restart (or cache-clear code change)
 
+## Advanced Tools Index
+
+| Tool | Method | Path | Purpose |
+|---|---|---|---|
+| Lineup Optimizer | `POST` | `/tools/lineup/optimize` | Rank a provided player pool and pick best lineup by projected fantasy points |
+| Similar Players | `GET` | `/tools/similar-players` | Find projection-profile matches for a target player |
+| Streaming Candidates | `GET` | `/tools/streaming-candidates` | Rank low-cost, high-utility stream options |
+| Trade Analyzer | `POST` | `/tools/trade/analyze` | Compare give/receive packages via fantasy points and auction value |
+
 ---
 
 ## 1) Health
@@ -246,7 +255,78 @@ Selects the best lineup by projected fantasy points from a provided player ID po
 
 ---
 
-## 5) Advanced Tool: Streaming Candidates
+## 5) Advanced Tool: Similar Players
+
+### `GET /tools/similar-players`
+
+Finds projection-profile matches for a target player using cosine similarity.
+
+### Query Params
+
+- `player_id` (optional string)
+- `player_name` (optional string)
+- `top_n` (optional, default `10`, min `1`, max `50`)
+
+### Selector Rules
+
+- Provide exactly one of:
+  - `player_id`
+  - `player_name`
+- If neither or both are provided, request fails with `400`.
+- If `player_name` matches multiple players, request fails with `400` and asks for `player_id`.
+
+### Examples
+
+- `GET /tools/similar-players?player_id=203999&top_n=5`
+- `GET /tools/similar-players?player_name=Nikola%20Jokic&top_n=5`
+
+### Response `200`
+
+```json
+{
+  "target": {
+    "player_id": "203999",
+    "name": "Nikola Jokic",
+    "team": "DEN",
+    "position": "C",
+    "fantasy_points": 50.7,
+    "auction_dollar": 66
+  },
+  "matches": [
+    {
+      "player_id": "1629029",
+      "name": "Luka Doncic",
+      "team": "DAL",
+      "position": "G",
+      "similarity": 0.9831,
+      "fantasy_points": 49.9,
+      "auction_dollar": 64
+    }
+  ],
+  "count": 1
+}
+```
+
+### Error Responses
+
+`400`
+```json
+{"detail":"Provide exactly one of player_id or player_name"}
+```
+
+`400`
+```json
+{"detail":"player_name matched multiple players; use player_id"}
+```
+
+`404`
+```json
+{"detail":"Target player not found"}
+```
+
+---
+
+## 6) Advanced Tool: Streaming Candidates
 
 ### `GET /tools/streaming-candidates`
 
@@ -288,7 +368,7 @@ Returns value stream candidates ranked by `stream_score`.
 
 ---
 
-## 6) Advanced Tool: Trade Analyzer
+## 7) Advanced Tool: Trade Analyzer
 
 ### `POST /tools/trade/analyze`
 
@@ -404,6 +484,16 @@ curl -s -X POST http://localhost:8000/tools/lineup/optimize \
 
 ```bash
 curl -s "http://localhost:8000/tools/streaming-candidates?limit=10" | jq '.candidates[0]'
+```
+
+## Similar Players
+
+```bash
+curl -s "http://localhost:8000/tools/similar-players?player_name=Nikola%20Jokic&top_n=5" | jq '.matches[0]'
+```
+
+```bash
+curl -s "http://localhost:8000/tools/similar-players?player_id=203999&top_n=5" | jq '.matches'
 ```
 
 ## Trade Analyzer
