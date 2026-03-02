@@ -1,0 +1,36 @@
+{
+  "date": "2026-03-02",
+  "generated_at": "2026-03-02T10:32:50.756447+00:00",
+  "total_bets": 1,
+  "total_units": 0.5,
+  "bets": [
+    {
+      "player_name": "Kevin Durant",
+      "prop_type": "points",
+      "direction": "UNDER",
+      "dbb2_projection": 22.9,
+      "sportsbook_line": 24.5,
+      "raw_edge": -1.6,
+      "edge_pct": 23.5,
+      "std_dev": 6.8,
+      "confidence": 0.56,
+      "over_odds": 1.85,
+      "under_odds": 1.98,
+      "bookmaker": "fanduel",
+      "units": 0.5,
+      "decimal_odds": 1.02,
+      "kelly_raw": -14.8842,
+      "kelly_fractional": -3.721,
+      "source": "sportsbook_enhanced",
+      "decision_id": "1dd0ec1e9a04",
+      "enhanced_risk_penalty": 0.199,
+      "enhanced_risk_level": "Low",
+      "enhanced_availability_risk": 0.19,
+      "enhanced_confidence": 0.521,
+      "enhanced_min_edge_required": 5.8,
+      "enhanced_units": 0.5,
+      "enhanced_blocked": false,
+      "enhanced_block_reason": ""
+    }
+  ]
+}
