@@ -1,0 +1,31 @@
+{
+  "date": "2026-03-03",
+  "generated_at": "2026-03-03T10:26:57.348748+00:00",
+  "total_bets": 1,
+  "total_units": 0.5,
+  "sportsbook_count": 1,
+  "kalshi_count": 0,
+  "bets": [
+    {
+      "player_name": "Zion Williamson",
+      "prop_type": "points",
+      "direction": "OVER",
+      "dbb2_projection": 22.3,
+      "sportsbook_line": 19.5,
+      "raw_edge": 2.8,
+      "edge_pct": 38.9,
+      "std_dev": 7.19,
+      "confidence": 0.5,
+      "over_odds": 2.0,
+      "under_odds": 1.93,
+      "bookmaker": "fanduel",
+      "units": 0.5,
+      "decimal_odds": 1.02,
+      "kelly_raw": -14.5805,
+      "kelly_fractional": -3.6451,
+      "source": "sportsbook",
+      "line_movement": null,
+      "sharp_signal": "NONE"
+    }
+  ]
+}
