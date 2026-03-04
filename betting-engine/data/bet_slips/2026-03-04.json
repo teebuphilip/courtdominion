@@ -1,0 +1,52 @@
+{
+  "date": "2026-03-04",
+  "generated_at": "2026-03-04T10:23:48.454224+00:00",
+  "total_bets": 2,
+  "total_units": 1.0,
+  "sportsbook_count": 2,
+  "kalshi_count": 0,
+  "bets": [
+    {
+      "player_name": "Shai Gilgeous-Alexander",
+      "prop_type": "points",
+      "direction": "UNDER",
+      "dbb2_projection": 27.6,
+      "sportsbook_line": 31.5,
+      "raw_edge": -3.9,
+      "edge_pct": 51.7,
+      "std_dev": 7.54,
+      "confidence": 0.55,
+      "over_odds": 1.94,
+      "under_odds": 1.84,
+      "bookmaker": "fanduel",
+      "units": 0.5,
+      "decimal_odds": 1.018,
+      "kelly_raw": -8.1684,
+      "kelly_fractional": -2.0421,
+      "source": "sportsbook",
+      "line_movement": null,
+      "sharp_signal": "NONE"
+    },
+    {
+      "player_name": "Pascal Siakam",
+      "prop_type": "points",
+      "direction": "UNDER",
+      "dbb2_projection": 18.9,
+      "sportsbook_line": 20.5,
+      "raw_edge": -1.6,
+      "edge_pct": 25.5,
+      "std_dev": 6.27,
+      "confidence": 0.5,
+      "over_odds": 1.81,
+      "under_odds": 1.98,
+      "bookmaker": "fanduel",
+      "units": 0.5,
+      "decimal_odds": 1.02,
+      "kelly_raw": -18.1856,
+      "kelly_fractional": -4.5464,
+      "source": "sportsbook",
+      "line_movement": null,
+      "sharp_signal": "NONE"
+    }
+  ]
+}
