@@ -1,0 +1,34 @@
+{
+  "summary": {
+    "date": "2026-03-08",
+    "baseline_count": 1,
+    "enhanced_count": 0,
+    "dropped_count": 1,
+    "size_changed_count": 0,
+    "baseline_units": 0.5,
+    "enhanced_units": 0,
+    "mode": "observe"
+  },
+  "baseline_bets": [
+    {
+      "player_name": "Jayson Tatum",
+      "prop_type": "points",
+      "direction": "OVER",
+      "dbb2_projection": 24.0,
+      "sportsbook_line": 18.5,
+      "raw_edge": 5.5,
+      "edge_pct": 71.7,
+      "std_dev": 7.67,
+      "confidence": 0.5,
+      "over_odds": 2.04,
+      "under_odds": 1.83,
+      "bookmaker": "fanduel",
+      "units": 0.5,
+      "decimal_odds": 1.02,
+      "kelly_raw": -6.5029,
+      "kelly_fractional": -1.6257,
+      "source": "sportsbook"
+    }
+  ],
+  "enhanced_bets": []
+}
