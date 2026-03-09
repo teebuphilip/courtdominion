@@ -1,0 +1,11 @@
+{
+  "date": "2026-03-09",
+  "qualified_count": 0,
+  "evaluated_count": 0,
+  "rejected_count": 0,
+  "reason_counts": {},
+  "thresholds": {
+    "min_edge_pct": 5.0,
+    "min_confidence": 0.5
+  }
+}
