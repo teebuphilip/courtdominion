@@ -1,0 +1,52 @@
+{
+  "date": "2026-04-01",
+  "generated_at": "2026-04-01T10:43:12.039747+00:00",
+  "total_bets": 2,
+  "total_units": 1.0,
+  "sportsbook_count": 2,
+  "kalshi_count": 0,
+  "bets": [
+    {
+      "player_name": "Pascal Siakam",
+      "prop_type": "points",
+      "direction": "UNDER",
+      "dbb2_projection": 18.9,
+      "sportsbook_line": 24.5,
+      "raw_edge": -5.6,
+      "edge_pct": 89.3,
+      "std_dev": 6.27,
+      "confidence": 0.5,
+      "over_odds": 1.93,
+      "under_odds": 1.89,
+      "bookmaker": "fanduel",
+      "units": 0.5,
+      "decimal_odds": 1.019,
+      "kelly_raw": -7.0865,
+      "kelly_fractional": -1.7716,
+      "source": "sportsbook",
+      "line_movement": null,
+      "sharp_signal": "NONE"
+    },
+    {
+      "player_name": "Jayson Tatum",
+      "prop_type": "points",
+      "direction": "OVER",
+      "dbb2_projection": 24.0,
+      "sportsbook_line": 22.5,
+      "raw_edge": 1.5,
+      "edge_pct": 19.6,
+      "std_dev": 7.67,
+      "confidence": 0.5,
+      "over_odds": 1.93,
+      "under_odds": 1.88,
+      "bookmaker": "fanduel",
+      "units": 0.5,
+      "decimal_odds": 1.019,
+      "kelly_raw": -20.231,
+      "kelly_fractional": -5.0578,
+      "source": "sportsbook",
+      "line_movement": null,
+      "sharp_signal": "NONE"
+    }
+  ]
+}
