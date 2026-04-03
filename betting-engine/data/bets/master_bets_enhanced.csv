@@ -5,3 +5,4 @@ bet_id,date,source,player_name,team,prop_type,direction,dbb2_projection,sportsbo
 96ebb3c1,2026-03-06,sportsbook_enhanced,Kevin Durant,,points,UNDER,22.9,26.5,52.9,0.56,0.5,50.0,1.82,,,,PENDING,,,,
 8ac46451,2026-03-07,sportsbook_enhanced,Shai Gilgeous-Alexander,,points,UNDER,27.6,31.5,51.7,0.55,0.5,50.0,1.86,,,,PENDING,,,,
 07fbcc37,2026-04-02,sportsbook_enhanced,Shai Gilgeous-Alexander,,points,UNDER,27.6,30.5,38.5,0.55,0.5,50.0,1.96,,,,PENDING,,,,
+b78928be,2026-04-03,sportsbook_enhanced,Kevin Durant,,points,UNDER,22.9,24.5,23.5,0.56,0.5,50.0,1.94,,,,PENDING,,,,
