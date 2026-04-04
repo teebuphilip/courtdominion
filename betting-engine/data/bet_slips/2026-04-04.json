@@ -1,0 +1,31 @@
+{
+  "date": "2026-04-04",
+  "generated_at": "2026-04-04T10:09:30.820119+00:00",
+  "total_bets": 1,
+  "total_units": 0.5,
+  "sportsbook_count": 1,
+  "kalshi_count": 0,
+  "bets": [
+    {
+      "player_name": "Julius Randle",
+      "prop_type": "rebounds",
+      "direction": "OVER",
+      "dbb2_projection": 7.7,
+      "sportsbook_line": 6.5,
+      "raw_edge": 1.2,
+      "edge_pct": 48.4,
+      "std_dev": 2.48,
+      "confidence": 0.5,
+      "over_odds": 1.88,
+      "under_odds": 1.88,
+      "bookmaker": "fanduel",
+      "units": 0.5,
+      "decimal_odds": 1.019,
+      "kelly_raw": -12.9814,
+      "kelly_fractional": -3.2454,
+      "source": "sportsbook",
+      "line_movement": null,
+      "sharp_signal": "NONE"
+    }
+  ]
+}
