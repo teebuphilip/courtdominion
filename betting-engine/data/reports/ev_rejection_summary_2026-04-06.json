@@ -1,0 +1,15 @@
+{
+  "date": "2026-04-06",
+  "qualified_count": 1,
+  "evaluated_count": 216,
+  "rejected_count": 238,
+  "reason_counts": {
+    "no_projection_match": 23,
+    "below_confidence_threshold": 196,
+    "below_edge_threshold": 19
+  },
+  "thresholds": {
+    "min_edge_pct": 5.0,
+    "min_confidence": 0.5
+  }
+}
