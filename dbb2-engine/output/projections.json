@@ -656,8 +656,8 @@
     "floor": 22.7,
     "consistency": 72,
     "team_games_remaining": 42,
-    "games_remaining_projected": 36,
-    "three_pointers_made_projected": 20
+    "games_remaining_projected": 0,
+    "three_pointers_made_projected": 0
   },
   {
     "player_id": "1630169",
@@ -1106,8 +1106,8 @@
     "floor": 19.6,
     "consistency": 73,
     "team_games_remaining": 42,
-    "games_remaining_projected": 25,
-    "three_pointers_made_projected": 43
+    "games_remaining_projected": 30,
+    "three_pointers_made_projected": 52
   },
   {
     "player_id": "201939",
@@ -2816,8 +2816,8 @@
     "floor": 14.0,
     "consistency": 72,
     "team_games_remaining": 42,
-    "games_remaining_projected": 27,
-    "three_pointers_made_projected": 27
+    "games_remaining_projected": 32,
+    "three_pointers_made_projected": 32
   },
   {
     "player_id": "1630591",
@@ -3026,8 +3026,8 @@
     "floor": 14.0,
     "consistency": 68,
     "team_games_remaining": 42,
-    "games_remaining_projected": 22,
-    "three_pointers_made_projected": 40
+    "games_remaining_projected": 28,
+    "three_pointers_made_projected": 51
   },
   {
     "player_id": "203952",
@@ -5516,8 +5516,8 @@
     "floor": 7.2,
     "consistency": 70,
     "team_games_remaining": 42,
-    "games_remaining_projected": 31,
-    "three_pointers_made_projected": 63
+    "games_remaining_projected": 28,
+    "three_pointers_made_projected": 57
   },
   {
     "player_id": "1630549",
@@ -7526,8 +7526,8 @@
     "floor": 4.4,
     "consistency": 65,
     "team_games_remaining": 42,
-    "games_remaining_projected": 26,
-    "three_pointers_made_projected": 16
+    "games_remaining_projected": 0,
+    "three_pointers_made_projected": 0
   },
   {
     "player_id": "1630577",
@@ -7796,8 +7796,8 @@
     "floor": 5.3,
     "consistency": 69,
     "team_games_remaining": 42,
-    "games_remaining_projected": 27,
-    "three_pointers_made_projected": 18
+    "games_remaining_projected": 26,
+    "three_pointers_made_projected": 17
   },
   {
     "player_id": "1642366",
@@ -12146,7 +12146,7 @@
     "floor": 0.0,
     "consistency": 54,
     "team_games_remaining": 42,
-    "games_remaining_projected": 22,
+    "games_remaining_projected": 23,
     "three_pointers_made_projected": 12
   },
   {
@@ -13796,8 +13796,8 @@
     "floor": 0.0,
     "consistency": 53,
     "team_games_remaining": 42,
-    "games_remaining_projected": 16,
-    "three_pointers_made_projected": 10
+    "games_remaining_projected": 0,
+    "three_pointers_made_projected": 0
   },
   {
     "player_id": "1642402",
