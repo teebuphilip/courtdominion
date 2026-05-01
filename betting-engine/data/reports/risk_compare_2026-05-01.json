@@ -1,0 +1,72 @@
+{
+  "summary": {
+    "date": "2026-05-01",
+    "baseline_count": 3,
+    "enhanced_count": 0,
+    "dropped_count": 3,
+    "size_changed_count": 0,
+    "baseline_units": 1.5,
+    "enhanced_units": 0,
+    "mode": "observe"
+  },
+  "baseline_bets": [
+    {
+      "player_name": "Julius Randle",
+      "prop_type": "rebounds",
+      "direction": "OVER",
+      "dbb2_projection": 7.7,
+      "sportsbook_line": 6.5,
+      "raw_edge": 1.2,
+      "edge_pct": 48.4,
+      "std_dev": 2.48,
+      "confidence": 0.5,
+      "over_odds": 1.76,
+      "under_odds": 2.16,
+      "bookmaker": "draftkings",
+      "units": 0.5,
+      "decimal_odds": 1.018,
+      "kelly_raw": -13.9171,
+      "kelly_fractional": -3.4793,
+      "source": "sportsbook"
+    },
+    {
+      "player_name": "Julius Randle",
+      "prop_type": "points",
+      "direction": "UNDER",
+      "dbb2_projection": 19.3,
+      "sportsbook_line": 21.5,
+      "raw_edge": -2.2,
+      "edge_pct": 34.2,
+      "std_dev": 6.43,
+      "confidence": 0.5,
+      "over_odds": 1.98,
+      "under_odds": 1.88,
+      "bookmaker": "draftkings",
+      "units": 0.5,
+      "decimal_odds": 1.019,
+      "kelly_raw": -16.829,
+      "kelly_fractional": -4.2073,
+      "source": "sportsbook"
+    },
+    {
+      "player_name": "Jayson Tatum",
+      "prop_type": "points",
+      "direction": "UNDER",
+      "dbb2_projection": 24.0,
+      "sportsbook_line": 24.5,
+      "raw_edge": -0.5,
+      "edge_pct": 6.5,
+      "std_dev": 7.67,
+      "confidence": 0.5,
+      "over_odds": 1.95,
+      "under_odds": 1.85,
+      "bookmaker": "draftkings",
+      "units": 0.5,
+      "decimal_odds": 1.018,
+      "kelly_raw": -24.7378,
+      "kelly_fractional": -6.1844,
+      "source": "sportsbook"
+    }
+  ],
+  "enhanced_bets": []
+}
