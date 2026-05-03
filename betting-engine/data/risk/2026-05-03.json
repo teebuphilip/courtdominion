@@ -357,10 +357,10 @@
     "injury_risk": 17,
     "volatility": 27,
     "minutes_risk": 50,
-    "availability_risk": 0.571,
-    "role_risk": 0.483,
+    "availability_risk": 0.333,
+    "role_risk": 0.424,
     "composition_risk": 0.379,
-    "total_risk": 0.521,
+    "total_risk": 0.363,
     "risk_level": "Medium"
   },
   {
@@ -435,10 +435,10 @@
     "injury_risk": 20,
     "volatility": 37,
     "minutes_risk": 50,
-    "availability_risk": 0.357,
-    "role_risk": 0.315,
+    "availability_risk": 0.286,
+    "role_risk": 0.297,
     "composition_risk": 0.345,
-    "total_risk": 0.345,
+    "total_risk": 0.297,
     "risk_level": "Medium"
   },
   {
@@ -669,10 +669,10 @@
     "injury_risk": 16,
     "volatility": 33,
     "minutes_risk": 50,
-    "availability_risk": 0.476,
-    "role_risk": 0.269,
+    "availability_risk": 0.405,
+    "role_risk": 0.251,
     "composition_risk": 0.333,
-    "total_risk": 0.403,
+    "total_risk": 0.355,
     "risk_level": "Medium"
   },
   {
@@ -2009,9 +2009,9 @@
     "volatility": 29,
     "minutes_risk": 50,
     "availability_risk": 0.333,
-    "role_risk": 0.227,
+    "role_risk": 0.427,
     "composition_risk": 0.335,
-    "total_risk": 0.307,
+    "total_risk": 0.357,
     "risk_level": "Medium"
   },
   {
@@ -3022,11 +3022,11 @@
     "injury_risk": 16,
     "volatility": 26,
     "minutes_risk": 50,
-    "availability_risk": 0.143,
-    "role_risk": 0.125,
+    "availability_risk": 0.286,
+    "role_risk": 0.41,
     "composition_risk": 0.344,
-    "total_risk": 0.169,
-    "risk_level": "Low"
+    "total_risk": 0.326,
+    "risk_level": "Medium"
   },
   {
     "player_id": "1641789",
@@ -3191,10 +3191,10 @@
     "injury_risk": 24,
     "volatility": 30,
     "minutes_risk": 50,
-    "availability_risk": 0.524,
-    "role_risk": 0.346,
+    "availability_risk": 0.5,
+    "role_risk": 0.29,
     "composition_risk": 0.309,
-    "total_risk": 0.447,
+    "total_risk": 0.419,
     "risk_level": "Medium"
   },
   {
@@ -3282,11 +3282,11 @@
     "injury_risk": 27,
     "volatility": 35,
     "minutes_risk": 50,
-    "availability_risk": 0.381,
-    "role_risk": 0.678,
+    "availability_risk": 1.0,
+    "role_risk": 0.833,
     "composition_risk": 0.356,
-    "total_risk": 0.451,
-    "risk_level": "Medium"
+    "total_risk": 0.861,
+    "risk_level": "High"
   },
   {
     "player_id": "1630228",
@@ -3880,10 +3880,10 @@
     "injury_risk": 30,
     "volatility": 41,
     "minutes_risk": 50,
-    "availability_risk": 0.357,
-    "role_risk": 0.401,
+    "availability_risk": 0.286,
+    "role_risk": 0.383,
     "composition_risk": 0.388,
-    "total_risk": 0.373,
+    "total_risk": 0.325,
     "risk_level": "Medium"
   },
   {
