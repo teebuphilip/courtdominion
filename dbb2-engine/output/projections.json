@@ -236,8 +236,8 @@
     "floor": 24.2,
     "consistency": 70,
     "team_games_remaining": 42,
-    "games_remaining_projected": 21,
-    "three_pointers_made_projected": 20
+    "games_remaining_projected": 20,
+    "three_pointers_made_projected": 19
   },
   {
     "player_id": "1628369",
@@ -506,8 +506,8 @@
     "floor": 23.9,
     "consistency": 73,
     "team_games_remaining": 42,
-    "games_remaining_projected": 28,
-    "three_pointers_made_projected": 79
+    "games_remaining_projected": 0,
+    "three_pointers_made_projected": 0
   },
   {
     "player_id": "1630567",
@@ -1286,8 +1286,8 @@
     "floor": 17.8,
     "consistency": 67,
     "team_games_remaining": 42,
-    "games_remaining_projected": 25,
-    "three_pointers_made_projected": 42
+    "games_remaining_projected": 22,
+    "three_pointers_made_projected": 37
   },
   {
     "player_id": "1628970",
@@ -4436,8 +4436,8 @@
     "floor": 8.4,
     "consistency": 70,
     "team_games_remaining": 42,
-    "games_remaining_projected": 32,
-    "three_pointers_made_projected": 20
+    "games_remaining_projected": 30,
+    "three_pointers_made_projected": 19
   },
   {
     "player_id": "1626179",
@@ -6266,8 +6266,8 @@
     "floor": 2.4,
     "consistency": 59,
     "team_games_remaining": 42,
-    "games_remaining_projected": 30,
-    "three_pointers_made_projected": 49
+    "games_remaining_projected": 27,
+    "three_pointers_made_projected": 44
   },
   {
     "player_id": "1631107",
@@ -7436,8 +7436,8 @@
     "floor": 2.9,
     "consistency": 62,
     "team_games_remaining": 42,
-    "games_remaining_projected": 28,
-    "three_pointers_made_projected": 11
+    "games_remaining_projected": 33,
+    "three_pointers_made_projected": 13
   },
   {
     "player_id": "1630540",
@@ -7526,8 +7526,8 @@
     "floor": 4.4,
     "consistency": 65,
     "team_games_remaining": 42,
-    "games_remaining_projected": 0,
-    "three_pointers_made_projected": 0
+    "games_remaining_projected": 26,
+    "three_pointers_made_projected": 16
   },
   {
     "player_id": "1630577",
