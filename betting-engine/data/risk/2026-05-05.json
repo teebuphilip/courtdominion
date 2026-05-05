@@ -357,11 +357,11 @@
     "injury_risk": 17,
     "volatility": 27,
     "minutes_risk": 50,
-    "availability_risk": 1.0,
-    "role_risk": 0.591,
+    "availability_risk": 0.119,
+    "role_risk": 0.12,
     "composition_risk": 0.379,
-    "total_risk": 0.804,
-    "risk_level": "High"
+    "total_risk": 0.158,
+    "risk_level": "Low"
   },
   {
     "player_id": "1630264",
@@ -435,10 +435,10 @@
     "injury_risk": 20,
     "volatility": 37,
     "minutes_risk": 50,
-    "availability_risk": 0.286,
-    "role_risk": 0.297,
+    "availability_risk": 0.357,
+    "role_risk": 0.315,
     "composition_risk": 0.345,
-    "total_risk": 0.297,
+    "total_risk": 0.345,
     "risk_level": "Medium"
   },
   {
@@ -2710,10 +2710,10 @@
     "injury_risk": 17,
     "volatility": 30,
     "minutes_risk": 50,
-    "availability_risk": 0.381,
-    "role_risk": 0.44,
+    "availability_risk": 0.286,
+    "role_risk": 0.416,
     "composition_risk": 0.348,
-    "total_risk": 0.391,
+    "total_risk": 0.328,
     "risk_level": "Medium"
   },
   {
@@ -3100,10 +3100,10 @@
     "injury_risk": 23,
     "volatility": 30,
     "minutes_risk": 50,
-    "availability_risk": 0.286,
-    "role_risk": 0.366,
+    "availability_risk": 0.238,
+    "role_risk": 0.305,
     "composition_risk": 0.295,
-    "total_risk": 0.307,
+    "total_risk": 0.263,
     "risk_level": "Medium"
   },
   {
@@ -3191,10 +3191,10 @@
     "injury_risk": 24,
     "volatility": 30,
     "minutes_risk": 50,
-    "availability_risk": 0.524,
-    "role_risk": 0.346,
+    "availability_risk": 0.5,
+    "role_risk": 0.29,
     "composition_risk": 0.309,
-    "total_risk": 0.447,
+    "total_risk": 0.419,
     "risk_level": "Medium"
   },
   {
@@ -3880,10 +3880,10 @@
     "injury_risk": 30,
     "volatility": 41,
     "minutes_risk": 50,
-    "availability_risk": 0.357,
-    "role_risk": 0.601,
+    "availability_risk": 0.405,
+    "role_risk": 0.613,
     "composition_risk": 0.388,
-    "total_risk": 0.423,
+    "total_risk": 0.454,
     "risk_level": "Medium"
   },
   {
